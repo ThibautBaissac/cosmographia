@@ -1,0 +1,27 @@
+<h1 class="my-4">Maps</h1>
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <% @maps.each do |map| %>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><%= map.name %></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Created by: <%= map.user.email %></h6>
+            <p class="card-text"><%= truncate(map.description, length: 100) %></p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Creation Date:</strong> <%= map.creation_date %></li>
+              <li class="list-group-item"><strong>Scale:</strong> <%= map.scale %></li>
+              <li class="list-group-item"><strong>Sources:</strong> <%= map.sources %></li>
+              <li class="list-group-item"><strong>Geographic Coverage:</strong> <%= map.geographic_coverage %></li>
+              <li class="list-group-item"><strong>Projection:</strong> <%= map.projection %></li>
+              <li class="list-group-item"><strong>Coordinate System:</strong> <%= map.coordinate_system %></li>
+            </ul>
+          </div>
+          <div class="card-footer text-center">
+            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
