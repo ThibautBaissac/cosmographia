@@ -4,6 +4,11 @@
     <% @maps.each do |map| %>
       <div class="col">
         <div class="card h-100 shadow-sm">
+          <% if map.image.attached? %>
+            <%= image_tag(map.image, class: "card-img-top", alt: "#{map.name} image") %>
+          <% else %>
+            <%= image_tag("placeholder.jpg", class: "card-img-top", alt: "Placeholder image") %>
+          <% end %>
           <div class="card-body">
             <h5 class="card-title"><%= map.name %></h5>
             <h6 class="card-subtitle mb-2 text-muted">Created by: <%= map.user.email %></h6>
