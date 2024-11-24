@@ -1,0 +1,29 @@
+<div id="homepageCarousel" class="carousel slide homepage_carousel">
+  <% images = ["homepage/sample_0.jpg", "homepage/sample_1.jpg", "homepage/sample_2.jpg"] %>
+  <div class="carousel-indicators">
+    <% images.each_with_index do |_, index| %>
+      <button type="button" data-bs-target="#homepageCarousel" data-bs-slide-to="<%= index %>" class="<%= 'active' if index.zero? %>" aria-label="Slide <%= index + 1 %>"></button>
+    <% end %>
+  </div>
+
+  <div class="carousel-inner">
+    <% images.each_with_index do |img, index| %>
+      <div class="carousel-item <%= 'active' if index.zero? %>">
+        <%= image_tag(img, class: "d-block w-100 object-fit-cover", alt: "Placeholder image") %>
+        <div class="carousel-caption bg-dark bg-opacity-25 rounded-4">
+          <h5>Slide <%= index + 1 %> label</h5>
+          <p>Some representative placeholder content for slide <%= index + 1 %>.</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#homepageCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
