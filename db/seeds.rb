@@ -1,11 +1,12 @@
 require 'faker'
 
 # Create 10 users
-10.times do
+10.times do |i|
   User.create!(
     email: Faker::Internet.unique.email,
     password: 'password',
-    password_confirmation: 'password'
+    password_confirmation: 'password',
+    superadmin: i == 0
   )
 end
 puts "10 users created!"
