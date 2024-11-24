@@ -21,7 +21,8 @@ puts "10 users created!"
     sources: Faker::Lorem.sentence(word_count: 5),
     geographic_coverage: Faker::Address.country,
     projection: [ "Mercator", "Lambert", "Orthographic", "Gnomonic" ].sample,
-    coordinate_system: [ "WGS84", "NAD83", "ETRS89" ].sample
+    coordinate_system: [ "WGS84", "NAD83", "ETRS89" ].sample,
+    is_public: [ true, false ].sample
   )
 
   image_path = Rails.root.join('db/seeds/images', "sample_#{rand(0..8)}.jpg")
