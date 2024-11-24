@@ -2,9 +2,14 @@
   <div class="col">
     <div class="card h-100 rounded-4">
       <% if map.image.attached? %>
-        <%= image_tag(map.image, class: "card-img-top rounded-4", alt: "#{map.title} image") %>
+      <div class="image-container rounded-4">
+        <%= image_tag(map.image, class: "card-img-top", alt: "#{map.title} image") %>
+        <div class="image-overlay">
+          <%= map.title %>
+        </div>
+      </div>
       <% else %>
-        <%= image_tag("placeholder.jpg", class: "card-img-top", alt: "Placeholder image") %>
+        <%= image_tag("default.png", class: "card-img-top", alt: "Placeholder image") %>
       <% end %>
       <div class="card-body">
         <h5 class="card-title"><%= map.title %></h5>
