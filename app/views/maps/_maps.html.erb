@@ -1,27 +1,16 @@
 <% maps.each do |map| %>
   <div class="col">
-    <div class="card h-100 shadow-sm">
+    <div class="card h-100 rounded-4">
       <% if map.image.attached? %>
-        <%= image_tag(map.image, class: "card-img-top", alt: "#{map.name} image") %>
+        <%= image_tag(map.image, class: "card-img-top rounded-4", alt: "#{map.title} image") %>
       <% else %>
         <%= image_tag("placeholder.jpg", class: "card-img-top", alt: "Placeholder image") %>
       <% end %>
       <div class="card-body">
-        <h5 class="card-title"><%= map.name %></h5>
+        <h5 class="card-title"><%= map.title %></h5>
         <h6 class="card-subtitle mb-2 text-muted">Created by: <%= map.user.email %></h6>
-        <p class="card-text"><%= truncate(map.description, length: 100) %></p>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Creation Date:</strong> <%= map.creation_date %></li>
-          <li class="list-group-item"><strong>Scale:</strong> <%= map.scale %></li>
-          <li class="list-group-item"><strong>Sources:</strong> <%= map.sources %></li>
-          <li class="list-group-item"><strong>Geographic Coverage:</strong> <%= map.geographic_coverage %></li>
-          <li class="list-group-item"><strong>Projection:</strong> <%= map.projection %></li>
-          <li class="list-group-item"><strong>Coordinate System:</strong> <%= map.coordinate_system %></li>
-        </ul>
       </div>
-      <div class="card-footer text-center">
-        <a href="#" class="btn btn-primary btn-sm">View Details</a>
-      </div>
+      <%= link_to("View Details", map, class: "btn btn-primary btn-sm m-1 rounded-4") %>
     </div>
   </div>
 <% end %>

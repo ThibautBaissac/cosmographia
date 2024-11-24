@@ -44,7 +44,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_24_141233) do
 
   create_table "maps", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "name", null: false
+    t.string "title", null: false
     t.text "description"
     t.date "creation_date"
     t.integer "scale"

@@ -2,7 +2,7 @@ class CreateMaps < ActiveRecord::Migration[8.0]
   def change
     create_table :maps do |t|
       t.references :user, null: false, foreign_key: true
-      t.string :name, null: false
+      t.string :title, null: false
       t.text :description
       t.date :creation_date
       t.integer :scale

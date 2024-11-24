@@ -15,7 +15,7 @@ puts "10 users created!"
 100.times do
   map = Map.create!(
     user_id: User.pluck(:id).sample,
-    name: Faker::Lorem.sentence(word_count: 3),
+    title: Faker::Lorem.sentence(word_count: 3),
     description: Faker::Lorem.paragraph(sentence_count: 2),
     creation_date: Faker::Date.backward(days: 365 * 10),
     scale: rand(1..10000),
