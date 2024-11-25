@@ -1,23 +1,32 @@
-<h1 class="my-4"><%= @map.title %></h1>
-<div class="col">
-  <div class="card h-100 shadow-sm">
-    <% if @map.image.attached? %>
-      <%= image_tag(@map.image, class: "card-img-top", alt: "#{@map.title} image") %>
-    <% else %>
-      <%= image_tag("placeholder.jpg", class: "card-img-top", alt: "Placeholder image") %>
-    <% end %>
-    <div class="card-body">
-      <h5 class="card-title"><%= @map.title %></h5>
-      <h6 class="card-subtitle mb-2 text-muted">Created by: <%= @map.user.email %></h6>
-      <p class="card-text"><%= truncate(@map.description, length: 100) %></p>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><strong>Creation Date:</strong> <%= @map.creation_date %></li>
-        <li class="list-group-item"><strong>Scale:</strong> <%= @map.scale %></li>
-        <li class="list-group-item"><strong>Sources:</strong> <%= @map.sources %></li>
-        <li class="list-group-item"><strong>Geographic Coverage:</strong> <%= @map.geographic_coverage %></li>
-        <li class="list-group-item"><strong>Projection:</strong> <%= @map.projection %></li>
-        <li class="list-group-item"><strong>Coordinate System:</strong> <%= @map.coordinate_system %></li>
-      </ul>
+<div class="container">
+  <h1 class="my-4"><%= @map.title %></h1>
+</div>
+<div data-controller="expand-image" class="container">
+  <% if @map.image.attached? %>
+    <%= image_tag(@map.image, class: "w-100", alt: "#{@map.title} image") %>
+    <div class="w-100 bg-dark bg-opacity-10 d-flex justify-content-between align-items-center p-2">
+      <div class="text-dark"><%= @map.user.email %></div>
+      <button type="button" class="btn btn-none" data-action="click->expand-image#toggle" data-expand-image-target="expandButton">
+        <i class="fa-solid fa-expand fa-2x text-dark"></i>
+      </button>
     </div>
+  <% else %>
+    <%= image_tag("default.png", class: "w-100", alt: "Placeholder image") %>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="card-body">
+    <h5 class="card-title"><%= @map.title %></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Created by: <%= @map.user.email %></h6>
+    <p class="card-text"><%= truncate(@map.description, length: 100) %></p>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Creation Date:</strong> <%= @map.creation_date %></li>
+      <li class="list-group-item"><strong>Scale:</strong> <%= @map.scale %></li>
+      <li class="list-group-item"><strong>Sources:</strong> <%= @map.sources %></li>
+      <li class="list-group-item"><strong>Geographic Coverage:</strong> <%= @map.geographic_coverage %></li>
+      <li class="list-group-item"><strong>Projection:</strong> <%= @map.projection %></li>
+      <li class="list-group-item"><strong>Coordinate System:</strong> <%= @map.coordinate_system %></li>
+    </ul>
   </div>
 </div>

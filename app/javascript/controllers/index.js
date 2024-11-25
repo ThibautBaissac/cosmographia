@@ -4,5 +4,5 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+import ExpandImageController from "./expand_image_controller"
+application.register("expand-image", ExpandImageController)
