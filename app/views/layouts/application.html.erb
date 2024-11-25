@@ -24,9 +24,11 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body>
+  <body class="bg-light">
     <%= render("layouts/navbar/main") %>
-    <%= yield %>
+    <div class="my-3">
+      <%= yield %>
+    </div>
     <%= render("layouts/footer") %>
   </body>
 </html>
