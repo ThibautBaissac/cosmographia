@@ -4,7 +4,7 @@
     <%= render("maps", maps: @maps) %>
   </div>
   <div class="d-flex justify-content-center align-items-center mt-3">
-    <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1  %>
+    <%== pagy_nav(@pagy) if @pagy.pages > 1  %>
   </div>
-  <p class="text-center text-secondary"><%== pagy_info @pagy %></p>
+  <p class="text-center fw-light text-secondary"><%= @maps.length %> elements displayed of <%= @pagy.count %> in total</p>
 </div>
