@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import ExpandImageController from "./expand_image_controller"
 application.register("expand-image", ExpandImageController)
+
+import PwaInstallController from "./pwa_install_controller"
+application.register("pwa-install", PwaInstallController)

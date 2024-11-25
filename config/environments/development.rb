@@ -1,6 +1,8 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.hosts << ".ngrok-free.app"
+
   config.after_initialize do
     Bullet.enable        = true
     Bullet.alert         = true
