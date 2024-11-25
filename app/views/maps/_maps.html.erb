@@ -3,10 +3,12 @@
     <div class="card h-100 rounded-4">
       <% if map.image.attached? %>
       <div class="image-container rounded-4">
-        <%= image_tag(map.image, class: "card-img-top disable_img", alt: "#{map.title} image") %>
-        <div class="image-overlay text-center">
-          <%= map.description&.truncate(50) %>
-        </div>
+        <%= link_to(map) do %>
+          <%= image_tag(map.image, class: "card-img-top disable_img", alt: "#{map.title} image") %>
+          <div class="image-overlay text-center">
+            <%= map.description&.truncate(50) %>
+          </div>
+        <% end %>
       </div>
       <% else %>
         <%= image_tag("default.png", class: "card-img-top", alt: "Placeholder image") %>
@@ -15,7 +17,6 @@
         <h5 class="card-title"><%= map.title %></h5>
         <h6 class="card-subtitle mb-2 text-muted">Created by: <%= map.user.email %></h6>
       </div>
-      <%= link_to("View Details", map, class: "btn btn-primary btn-sm m-1 rounded-4") %>
     </div>
   </div>
 <% end %>
