@@ -3,7 +3,7 @@
     <div class="card h-100 rounded-4">
       <% if map.image.attached? %>
       <div class="image-container rounded-4">
-        <%= image_tag(map.image, class: "card-img-top", alt: "#{map.title} image") %>
+        <%= image_tag(map.image, class: "card-img-top disable_img", alt: "#{map.title} image") %>
         <div class="image-overlay">
           <%= map.title %>
         </div>
