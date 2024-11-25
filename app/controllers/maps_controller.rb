@@ -6,5 +6,6 @@ class MapsController < ApplicationController
 
   def show
     @map = Map.find(params[:id])
+    @maps = Map.order("RANDOM()").includes(:user, :image_attachment).limit(10)
   end
 end
