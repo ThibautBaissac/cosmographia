@@ -4,8 +4,8 @@
       <% if map.image.attached? %>
       <div class="image-container rounded-4">
         <%= image_tag(map.image, class: "card-img-top disable_img", alt: "#{map.title} image") %>
-        <div class="image-overlay">
-          <%= map.title %>
+        <div class="image-overlay text-center">
+          <%= map.description&.truncate(50) %>
         </div>
       </div>
       <% else %>
