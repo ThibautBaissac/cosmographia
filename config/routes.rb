@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   draw :maps
-  get "home/index"
-  root "home#index"
+  draw :static_pages
+  root "static_pages/home#index"
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
