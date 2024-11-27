@@ -58,6 +58,7 @@ group :development do
   gem "web-console"
   gem "bullet", "~> 8.0"
   gem "erb_lint", require: false
+  gem "letter_opener_web"
 end
 
 group :test do
