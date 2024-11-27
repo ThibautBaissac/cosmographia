@@ -1,8 +1,8 @@
 (0..@nb_users).each do |i|
   user = User.create!(
     email: Faker::Internet.unique.email,
-    password: 'password',
-    password_confirmation: 'password',
+    password: 'Password123.',
+    password_confirmation: 'Password123.',
     superadmin: i == 0
   )
   puts("--(#{i + 1}/#{@nb_users}) #{user.email}")

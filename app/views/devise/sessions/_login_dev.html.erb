@@ -1,0 +1,38 @@
+<div class="container my-3 col-md-6">
+  <table class="table table-striped table-hover small align-middle mb-5" id="user-table">
+    <thead>
+      <tr>
+        <th scope="col">Email</th>
+        <th scope="col">Superadmin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% User.all.each do |user| %>
+      <tr class="cursor-pointer" data-email="<%= user.email %>" data-password="Password123.">
+        <td><%= user.email %></td>
+        <td><%= user.superadmin %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var rows = document.querySelectorAll('#user-table tbody tr');
+
+    rows.forEach(function(row) {
+      row.addEventListener('click', function() {
+        var email = this.getAttribute('data-email');
+        var password = this.getAttribute('data-password');
+
+        var emailInput = document.querySelector('#user_email');
+        var passwordInput = document.querySelector('#user_password');
+
+        emailInput.value = email;
+        passwordInput.value = password;
+        emailInput.closest('form').submit();
+      });
+    });
+  });
+</script>
