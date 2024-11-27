@@ -1,1 +1,1 @@
-resources :maps, only: [ :index, :show ]
+resources :maps, only: [ :index, :show, :new, :create, :edit, :update ]

@@ -1,5 +1,8 @@
-<div class="container">
+<div class="container d-flex justify-content-between align-items-center">
   <h1 class="my-4"><%= @map.title %></h1>
+  <%= link_to(edit_map_path(@map)) do %>
+    <i class="fa-regular fa-pen-to-square fa-2x text-primary"></i>
+  <% end %>
 </div>
 <div data-controller="expand-image" class="container">
   <% if @map.image.attached? %>
