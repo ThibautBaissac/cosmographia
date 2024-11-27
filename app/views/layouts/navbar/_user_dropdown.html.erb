@@ -13,12 +13,12 @@
         <li><%= link_to(t("navbar.edit_profile"), edit_user_registration_path, class: "dropdown-item") %></li>
         <li><hr class="dropdown-divider"></li>
         <li><%= button_to(t("navbar.sign_out"), destroy_user_session_path, method: :delete, class: "dropdown-item") %></li>
+        <li><%= link_to "Feedback", "#offcanvaFeedback", class: "dropdown-item", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvasExample"} %></li>
       <% else %>
         <li><%= link_to(t("navbar.sign_in"), new_user_session_path, class: "dropdown-item") %></li>
         <li><%= link_to(t("navbar.sign_up"), new_user_registration_path, class: "dropdown-item") %></li>
-        <li><hr class="dropdown-divider"></li>
       <% end %>
-      <li><%= link_to 'Feedback', '#offcanvaFeedback', class: 'dropdown-item', data: { bs_toggle: 'offcanvas' }, role: 'button', aria: { controls: 'offcanvasExample' } %></li>
+      <%= render("layouts/navbar/superadmin_dropdown") %>
     </ul>
   </li>
 </ul>

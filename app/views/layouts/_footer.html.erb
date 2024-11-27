@@ -7,7 +7,9 @@
       <span class="mb-3 mb-md-0 text-light">© <%= Date.current.year %> Cosmographia</span>
     </div>
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li><%= link_to 'Feedback', '#offcanvaFeedback', class: 'text-light', data: { bs_toggle: 'offcanvas' }, role: 'button', aria: { controls: 'offcanvasExample' } %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to "Feedback", "#offcanvaFeedback", class: "text-light", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvasExample"} %></li>
+      <% end %>
       <li class="ms-3"><%= link_to("GitHub", "https://github.com/ThibautBaissac/cosmographia", class: "text-light", target: :_blank) %></li>
     </ul>
   </div>

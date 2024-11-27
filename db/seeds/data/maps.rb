@@ -18,6 +18,6 @@
     filename: "sample#{rand(1..5)}.png",
     content_type: 'image/png'
   )
-  puts("--(#{i + 1}/#{@nb_maps})")
+  puts("--(#{i + 1}/#{@nb_maps}) map created!")
 end
 puts("----#{@nb_maps} maps created!")

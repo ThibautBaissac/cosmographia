@@ -1,0 +1,14 @@
+<% feedback = current_user.feedbacks.new %>
+<%= form_with(model: feedback, local: true, class: "mt-4") do |form| %>
+  <div class="mb-3">
+    <%= form.label(:subject, class: "form-label") %>
+    <%= form.text_field(:subject, class: "form-control", placeholder: "Enter subject") %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label(:message, class: "form-label") %>
+    <%= form.text_area(:message, class: "form-control", rows: 5, placeholder: "Enter your feedback") %>
+  </div>
+
+  <%= form.submit("Submit Feedback", class: "btn btn-primary") %>
+<% end %>
