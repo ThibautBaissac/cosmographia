@@ -1,2 +1,11 @@
 fr:
-  hello: "Bonjour"
+  navbar:
+    about: À propos
+    cartography: Cartographie
+    edit_profile: Modifier le profil
+    install_pwa: Installer l'application
+    search: Rechercher
+    search_placeholder: Rechercher...
+    sign_in: Se connecter
+    sign_out: Se déconnecter
+    sign_up: S'inscrire

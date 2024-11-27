@@ -1,21 +1,21 @@
 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="fa-regular fa-user"></i>
+
       <% if user_signed_in? %>
         <%= current_user.email %>
       <% else %>
-        User
+        <i class="fa-regular fa-user"></i>
       <% end %>
     </a>
     <ul class="dropdown-menu dropdown-menu-end">
       <% if user_signed_in? %>
-        <li><%= link_to("Edit profil", edit_user_registration_path, class: "dropdown-item") %></li>
+        <li><%= link_to(t("navbar.edit_profile"), edit_user_registration_path, class: "dropdown-item") %></li>
         <li><hr class="dropdown-divider"></li>
-        <li><%= button_to("Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item") %></li>
+        <li><%= button_to(t("navbar.sign_out"), destroy_user_session_path, method: :delete, class: "dropdown-item") %></li>
       <% else %>
-        <li><%= link_to("Login", new_user_session_path, class: "dropdown-item") %></li>
-        <li><%= link_to("Sign up", new_user_registration_path, class: "dropdown-item") %></li>
+        <li><%= link_to(t("navbar.sign_in"), new_user_session_path, class: "dropdown-item") %></li>
+        <li><%= link_to(t("navbar.sign_up"), new_user_registration_path, class: "dropdown-item") %></li>
         <li><hr class="dropdown-divider"></li>
         <li><%= link_to("Something else here", "#", class: "dropdown-item") %></li>
       <% end %>
