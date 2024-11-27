@@ -67,6 +67,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_24_141233) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "superadmin", default: false
+    t.string "locale", default: "fr", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
