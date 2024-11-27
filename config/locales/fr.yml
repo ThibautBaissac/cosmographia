@@ -2,6 +2,9 @@
 fr:
   activerecord:
     attributes:
+      feedbacks:
+        subject: Sujet
+        message: Message
       maps:
         coordinate_system: Système de coordonnées
         creation_date: Date de création
@@ -27,5 +30,6 @@ fr:
     sign_in: Se connecter
     sign_out: Se déconnecter
     sign_up: S'inscrire
-  feedback:
+  feedbacks:
     title: Feedback
+    submit: Envoyer le feedback
