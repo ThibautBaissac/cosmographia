@@ -9,3 +9,20 @@ fr:
     sign_in: Se connecter
     sign_out: Se déconnecter
     sign_up: S'inscrire
+  cartography:
+    title: Cartographie
+  common:
+    created_by: Créé par %{name}
+    discover: Découvrir
+  activerecord:
+    attributes:
+      maps:
+        title: Titre
+        description: Description
+        creation_date: Date de création
+        scale: Échelle
+        sources: Sources
+        geographic_coverage: Couverture géographique
+        projection: Projection
+        coordinate_system: Système de coordonnées
+        is_public: Publique

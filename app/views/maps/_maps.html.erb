@@ -15,7 +15,7 @@
       <% end %>
       <div class="card-body">
         <h5 class="card-title"><%= map.title %></h5>
-        <h6 class="card-subtitle mb-2 text-muted">Created by: <%= map.user.email %></h6>
+        <h6 class="card-subtitle mb-2 text-muted"><%= t("common.created_by", name: map.user.email) %></h6>
       </div>
     </div>
   </div>
