@@ -17,8 +17,8 @@
         <li><%= link_to(t("navbar.sign_in"), new_user_session_path, class: "dropdown-item") %></li>
         <li><%= link_to(t("navbar.sign_up"), new_user_registration_path, class: "dropdown-item") %></li>
         <li><hr class="dropdown-divider"></li>
-        <li><%= link_to("Something else here", "#", class: "dropdown-item") %></li>
       <% end %>
+      <li><%= link_to 'Feedback', '#offcanvaFeedback', class: 'dropdown-item', data: { bs_toggle: 'offcanvas' }, role: 'button', aria: { controls: 'offcanvasExample' } %></li>
     </ul>
   </li>
 </ul>

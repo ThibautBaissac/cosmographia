@@ -27,3 +27,5 @@ fr:
     sign_in: Se connecter
     sign_out: Se déconnecter
     sign_up: S'inscrire
+  feedback:
+    title: Feedback
