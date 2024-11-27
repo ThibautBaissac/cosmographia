@@ -26,11 +26,11 @@ puts "10 users created!"
     is_public: [ true, false ].sample
   )
 
-  image_path = Rails.root.join('db/seeds/images', "sample_#{rand(0..8)}.jpg")
+  image_path = Rails.root.join('db/seeds/images', "sample_#{rand(0..8)}.png")
   map.image.attach(
     io: File.open(image_path),
-    filename: "sample#{rand(1..5)}.jpg",
-    content_type: 'image/jpeg'
+    filename: "sample#{rand(1..5)}.png",
+    content_type: 'image/png'
   )
 end
 puts "100 maps created with images!"
