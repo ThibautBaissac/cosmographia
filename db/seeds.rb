@@ -1,36 +1,6 @@
 require 'faker'
 
-# Create 10 users
-10.times do |i|
-  User.create!(
-    email: Faker::Internet.unique.email,
-    password: 'password',
-    password_confirmation: 'password',
-    superadmin: i == 0
-  )
-end
-puts "10 users created!"
-
-# Attach images to 100 maps
-100.times do
-  map = Map.create!(
-    user_id: User.pluck(:id).sample,
-    title: Faker::Lorem.sentence(word_count: 3),
-    description: Faker::Lorem.paragraph(sentence_count: 2),
-    creation_date: Faker::Date.backward(days: 365 * 10),
-    scale: rand(1..10000),
-    sources: Faker::Lorem.sentence(word_count: 5),
-    geographic_coverage: Faker::Address.country,
-    projection: [ "Mercator", "Lambert", "Orthographic", "Gnomonic" ].sample,
-    coordinate_system: [ "WGS84", "NAD83", "ETRS89" ].sample,
-    is_public: [ true, false ].sample
-  )
-
-  image_path = Rails.root.join('db/seeds/images', "sample_#{rand(0..8)}.png")
-  map.image.attach(
-    io: File.open(image_path),
-    filename: "sample#{rand(1..5)}.png",
-    content_type: 'image/png'
-  )
-end
-puts "100 maps created with images!"
+@nb_users = 10
+@nb_maps = 100
+load(Rails.root.join("db", "seeds", "data", "users.rb"))
+load(Rails.root.join("db", "seeds", "data", "maps.rb"))
