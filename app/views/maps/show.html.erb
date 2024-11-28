@@ -1,37 +1,4 @@
-<div class="container d-flex justify-content-between align-items-center">
-  <h1 class="my-4"><%= @map.title %></h1>
-  <%= link_to(edit_map_path(@map)) do %>
-    <i class="fa-regular fa-pen-to-square fa-2x text-primary"></i>
-  <% end %>
-</div>
-<div data-controller="expand-image" class="container">
-  <% if @map.image.attached? %>
-    <%= image_tag(@map.image, class: "w-100 disable_img", alt: "#{@map.title} image") %>
-    <div class="w-100 bg-dark bg-opacity-10 d-flex justify-content-between align-items-center p-2">
-      <div class="text-dark"><%= @map.user.email %></div>
-      <button type="button" class="btn btn-light rounded-2" data-action="click->expand-image#toggle" data-expand-image-target="expandButton">
-        <i class="fa-solid fa-expand fa-2x text-dark"></i>
-      </button>
-    </div>
-  <% else %>
-    <%= image_tag("default.png", class: "w-100", alt: "Placeholder image") %>
-  <% end %>
-</div>
-
-<div class="container">
-  <div class="card-body">
-    <h5 class="card-title"><%= @map.title %></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= t("common.created_by", name: @map.user.email) %></h6>
-    <p class="card-text"><%= truncate(@map.description, length: 100) %></p>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><strong><%= t("activerecord.attributes.maps.creation_date") %>:</strong> <%= @map.creation_date %></li>
-      <li class="list-group-item"><strong><%= t("activerecord.attributes.maps.scale") %>:</strong> <%= @map.scale %></li>
-      <li class="list-group-item"><strong><%= t("activerecord.attributes.maps.source") %>:</strong> <%= @map.sources %></li>
-      <li class="list-group-item"><strong><%= t("activerecord.attributes.maps.geographic_coverage") %>:</strong> <%= @map.geographic_coverage %></li>
-      <li class="list-group-item"><strong><%= t("activerecord.attributes.maps.projection") %>:</strong> <%= @map.projection %></li>
-      <li class="list-group-item"><strong><%= t("activerecord.attributes.maps.coordinate_system") %>:</strong> <%= @map.coordinate_system %></li>
-    </ul>
-  </div>
-</div>
-
-<%= render("discover", maps: @maps) %>
+<%= render("maps/show/title", map: @map) %>
+<%= render("maps/show/image", map: @map) %>
+<%= render("maps/show/info", map: @map) %>
+<%= render("maps/show/discover", maps: @maps) %>

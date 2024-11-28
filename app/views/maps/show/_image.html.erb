@@ -1,0 +1,13 @@
+<div data-controller="expand-image" class="container">
+  <% if map.image.attached? %>
+    <%= image_tag(map.image, class: "w-100 disable_img", alt: "#{map.title} image") %>
+    <div class="w-100 bg-dark bg-opacity-10 d-flex justify-content-between align-items-center p-2">
+      <div class="text-dark"><%= map.user.email %></div>
+      <button type="button" class="btn btn-light rounded-2" data-action="click->expand-image#toggle" data-expand-image-target="expandButton">
+        <i class="fa-solid fa-expand fa-2x text-dark"></i>
+      </button>
+    </div>
+  <% else %>
+    <%= image_tag("default.png", class: "w-100", alt: "Placeholder image") %>
+  <% end %>
+</div>
