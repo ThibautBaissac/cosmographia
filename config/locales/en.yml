@@ -54,3 +54,5 @@ en:
     error_500: Looks like something went wrong.
     homepage: Go to homepage
     oops: Oops!
+  common:
+    by: By %{name}

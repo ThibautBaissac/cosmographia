@@ -1,18 +1,17 @@
 <div id="homepageCarousel" class="carousel slide homepage_carousel">
-  <% images = [ "homepage/sample_0.jpg", "homepage/sample_1.jpg", "homepage/sample_2.jpg" ] %>
   <div class="carousel-indicators">
-    <% images.each_with_index do |_, index| %>
+    <% maps.each_with_index do |_, index| %>
       <button type="button" data-bs-target="#homepageCarousel" data-bs-slide-to="<%= index %>" class="<%= "active" if index.zero? %>" aria-label="Slide <%= index + 1 %>"></button>
     <% end %>
   </div>
 
   <div class="carousel-inner">
-    <% images.each_with_index do |img, index| %>
+    <% maps.each_with_index do |map, index| %>
       <div class="carousel-item <%= "active" if index.zero? %>">
-        <%= image_tag(img, class: "d-block w-100 object-fit-cover", alt: "Placeholder image") %>
-        <div class="carousel-caption bg-dark bg-opacity-25 rounded-4">
-          <h5>Slide <%= index + 1 %> label</h5>
-          <p>Some representative placeholder content for slide <%= index + 1 %>.</p>
+        <%= image_tag(map.image, class: "d-block w-100 object-fit-cover", alt: "Placeholder image") %>
+        <div class="carousel-caption bg-dark bg-opacity-50 rounded-4">
+          <h5><%= map.title %></h5>
+          <p><%= t("common.by", name: map.user.email) %></p>
         </div>
       </div>
     <% end %>

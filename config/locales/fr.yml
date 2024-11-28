@@ -54,3 +54,5 @@ fr:
     error_500: Désolé, mais quelque chose s'est mal passé.
     homepage: Revenir à la page d'accueil
     oops: Oops !
+  common:
+    by: Par %{name}
