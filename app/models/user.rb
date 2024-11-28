@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :maps, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :locale, presence: true, inclusion: {in: I18n.available_locales.map(&:to_s)}
 

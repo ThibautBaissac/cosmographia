@@ -1,0 +1,18 @@
+<%= turbo_frame_tag(dom_id(comment)) do %>
+  <div class="bg-light rounded-4 p-2 my-2">
+    <div>
+      <div class="fw-bold"><%= comment.user.email %></div>
+      <div class="my-2"><%= comment.content %></div>
+    </div>
+    <div class="d-flex gap-2">
+      <%= link_to(edit_map_comment_path(comment. map, comment), class: "btn btn-outline-secondary btn-sm rounded-4") do %>
+        <i class="fa-solid fa-pencil"></i>
+        <%= t("common.edit") %>
+      <% end %>
+      <%= button_to(map_comment_path(comment. map, comment), method: :delete, class: "btn btn-outline-danger btn-sm rounded-4") do %>
+        <i class="fa-solid fa-trash-can"></i>
+        <%= t("common.delete") %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -9,6 +9,7 @@ class MapsController < ApplicationController
   def show
     @map = Map.find(params[:id])
     @maps = Map.order("RANDOM()").includes(:user, :image_attachment).limit(10)
+    @comment = Comment.new
   end
 
 
@@ -18,7 +19,7 @@ class MapsController < ApplicationController
 
   def create
     @map = Map.new(map_params)
-    @map.user_id = current_user.id # Assuming you are associating the map with a logged-in user.
+    @map.user_id = current_user.id
 
     if @map.save
       redirect_to(@map, notice: "Map was successfully created.")

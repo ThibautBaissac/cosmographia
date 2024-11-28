@@ -1,0 +1,11 @@
+<%= turbo_stream.replace("map_comment_form") do %>
+  <%= render(partial: "comments/form", locals: {comment: Comment.new, map: @map}) %>
+<% end %>
+
+<%= turbo_stream.update("map_#{@map.id}_comment_count") do %>
+  <h2><%= pluralize(@map.comments.size, "comment") %></h2>
+<% end %>
+
+<%= turbo_stream.append("map_#{@map.id}_comments") do %>
+  <%= render(partial: "comments/comment", locals: {comment: @comment}) %>
+<% end %>

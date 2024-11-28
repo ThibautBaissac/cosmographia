@@ -1,1 +1,3 @@
-resources :maps, only: [ :index, :show, :new, :create, :edit, :update ]
+resources :maps, only: [ :index, :show, :new, :create, :edit, :update ] do
+  resources :comments, only: [ :new, :create, :edit, :update, :destroy ]
+end

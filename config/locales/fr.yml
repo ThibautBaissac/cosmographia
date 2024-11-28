@@ -28,6 +28,8 @@ fr:
     title: Cartographie
   common:
     by: Par %{name}
+    delete: Supprimer
+    edit: Modifier
   errors:
     attributes:
       title:

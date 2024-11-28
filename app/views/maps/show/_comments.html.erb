@@ -1,0 +1,11 @@
+<div class="container bg-white border border-secondary-subtle rounded-4 mt-5 p-4">
+  <%= turbo_frame_tag("map_#{map.id}_comment_count") do %>
+    <h2><%= pluralize(map.comments.size, "comment") %></h2>
+  <% end %>
+  <%= turbo_frame_tag("map_comment_form") do %>
+    <%= render("comments/form", map:, comment:) %>
+  <% end %>
+  <%= turbo_frame_tag("map_#{map.id}_comments") do %>
+    <%= render(partial: "comments/comment", collection: map.comments.includes(:user)) %>
+  <% end %>
+</div>
