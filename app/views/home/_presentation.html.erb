@@ -1,53 +1,41 @@
 <main class="container my-5">
-    <section class="text-center mb-5">
-        <h2>Un espace pour vos créations</h2>
-        <p class="mt-3">
-            Cosmographia vous permet de partager vos cartes avec une communauté qui valorise la diversité
-            des approches et des styles. Que vous réalisiez des cartes topographiques, des représentations
-            artistiques ou des cartes interactives, chaque création trouve ici sa place et son public.
-        </p>
-    </section>
-
-    <section class="row text-center">
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title">Un lieu d’échange et d’inspiration</h3>
-                    <p class="card-text">Recevez des retours constructifs, partagez vos idées et connectez-vous avec
-                        des passionnés dans un esprit de respect et de bienveillance.</p>
-                </div>
-            </div>
+  <section class="text-center mb-5">
+    <h2>Un espace pour vos créations</h2>
+    <p class="mt-3"> Cosmographia vous permet de partager vos cartes avec une communauté qui valorise la diversité des approches et des styles. Que vous réalisiez des cartes topographiques, des représentations artistiques ou des cartes interactives, chaque création trouve ici sa place et son public. </p>
+  </section>
+  <section class="row text-center">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 rounded-4">
+        <div class="card-body">
+          <h3 class="card-title">Un lieu d’échange et d’inspiration</h3>
+          <p class="card-text">Recevez des retours constructifs, partagez vos idées et connectez-vous avec des passionnés dans un esprit de respect et de bienveillance.</p>
         </div>
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title">Bibliothèque communautaire</h3>
-                    <p class="card-text">Explorez des créations variées, découvrez des techniques innovantes et
-                        laissez-vous inspirer par d’autres cartographes.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title">Projets collaboratifs</h3>
-                    <p class="card-text">Rejoignez des projets de groupe et co-créez avec d’autres membres pour
-                        repousser les limites de votre créativité.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="text-center mb-5">
-        <h2>Pourquoi rejoindre Cosmographia ?</h2>
-        <ul class="list-group list-group-flush mt-3 mx-auto" style="max-width: 600px;">
-            <li class="list-group-item">Créer sans frontières dans un environnement respectueux et encourageant.</li>
-            <li class="list-group-item">Apprendre et progresser grâce aux retours d’une communauté expérimentée.</li>
-            <li class="list-group-item">Partager vos passions avec des amateurs de cartographie du monde entier.</li>
-        </ul>
-    </section>
-
-    <div class="text-center mt-5">
-      <%= link_to("Rejoignez-nous dès maintenant", new_user_session_path, class: "btn btn-primary btn-lg") %>
+      </div>
     </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 rounded-4">
+        <div class="card-body">
+          <h3 class="card-title">Bibliothèque communautaire</h3>
+          <p class="card-text">Explorez des créations variées, découvrez des techniques innovantes et laissez-vous inspirer par d’autres cartographes.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 rounded-4">
+        <div class="card-body">
+          <h3 class="card-title">Projets collaboratifs</h3>
+          <p class="card-text">Rejoignez des projets de groupe et co-créez avec d’autres membres pour repousser les limites de votre créativité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="text-center mb-5 p-5 rounded-5 bg-primary bg-gradient">
+    <h2 class="text-light">Pourquoi rejoindre Cosmographia ?</h2>
+    <ul class="list-group list-group-flush mt-3 mx-auto" style="max-width: 600px;">
+      <li class="list-group-item bg-transparent text-light">Créer sans frontières dans un environnement respectueux et encourageant.</li>
+      <li class="list-group-item bg-transparent text-light">Apprendre et progresser grâce aux retours d’une communauté expérimentée.</li>
+      <li class="list-group-item bg-transparent text-light">Partager vos passions avec des amateurs de cartographie du monde entier.</li>
+    </ul>
+  </section>
+  <div class="text-center mt-5"><%= link_to("Rejoignez-nous dès maintenant", new_user_session_path, class: "btn btn-primary btn-lg") %> </div>
 </main>

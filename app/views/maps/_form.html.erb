@@ -1,50 +1,50 @@
 <%= form_with(model: map, local: true) do |form| %>
   <div class="mb-3">
-    <%= form.label :title, class: "form-label" %>
-    <%= form.text_field :title, required: true, class: "form-control", placeholder: "Enter map title" %>
+    <%= form.label(:title, class: "form-label") %>
+    <%= form.text_field(:title, required: true, class: "form-control", placeholder: "Enter map title") %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :description, class: "form-label" %>
-    <%= form.text_area :description, class: "form-control", rows: 3, placeholder: "Enter a brief description" %>
+    <%= form.label(:description, class: "form-label") %>
+    <%= form.text_area(:description, class: "form-control", rows: 3, placeholder: "Enter a brief description") %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :creation_date, class: "form-label" %>
-    <%= form.date_field :creation_date, class: "form-control" %>
+    <%= form.label(:creation_date, class: "form-label") %>
+    <%= form.date_field(:creation_date, class: "form-control") %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :scale, class: "form-label" %>
-    <%= form.number_field :scale, class: "form-control", placeholder: "Enter scale (e.g., 1:1000)" %>
+    <%= form.label(:scale, class: "form-label") %>
+    <%= form.number_field(:scale, class: "form-control", placeholder: "Enter scale (e.g., 1:1000)") %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :sources, class: "form-label" %>
-    <%= form.text_area :sources, class: "form-control", rows: 3, placeholder: "Enter sources used" %>
+    <%= form.label(:sources, class: "form-label") %>
+    <%= form.text_area(:sources, class: "form-control", rows: 3, placeholder: "Enter sources used") %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :geographic_coverage, class: "form-label" %>
-    <%= form.text_field :geographic_coverage, class: "form-control", placeholder: "Enter geographic coverage" %>
+    <%= form.label(:geographic_coverage, class: "form-label") %>
+    <%= form.text_field(:geographic_coverage, class: "form-control", placeholder: "Enter geographic coverage") %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :projection, class: "form-label" %>
-    <%= form.text_field :projection, class: "form-control", placeholder: "Enter projection details" %>
+    <%= form.label(:projection, class: "form-label") %>
+    <%= form.text_field(:projection, class: "form-control", placeholder: "Enter projection details") %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :coordinate_system, class: "form-label" %>
-    <%= form.text_field :coordinate_system, class: "form-control", placeholder: "Enter coordinate system" %>
+    <%= form.label(:coordinate_system, class: "form-label") %>
+    <%= form.text_field(:coordinate_system, class: "form-control", placeholder: "Enter coordinate system") %>
   </div>
 
   <div class="form-check mb-3">
-    <%= form.check_box :is_public, class: "form-check-input", id: "map_is_public" %>
-    <%= form.label :is_public, class: "form-check-label", for: "map_is_public" %>
+    <%= form.check_box(:is_public, class: "form-check-input", id: "map_is_public") %>
+    <%= form.label(:is_public, class: "form-check-label", for: "map_is_public") %>
   </div>
 
   <div class="d-grid">
-    <%= form.submit "Save Map", class: "btn btn-primary btn-block" %>
+    <%= form.submit("Save Map", class: "btn btn-primary btn-block") %>
   </div>
 <% end %>
