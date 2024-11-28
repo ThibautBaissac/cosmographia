@@ -1,6 +1,15 @@
 ---
 fr:
   activerecord:
+    errors:
+      models:
+        map:
+          attributes:
+            title:
+              blank: Le titre ne peut pas être vide
+          blank: Les attributs du modèle Map ne peuvent pas être vides
+      messages:
+        blank: Ce champ ne peut pas être vide
     attributes:
       feedbacks:
         subject: Sujet
@@ -33,3 +42,9 @@ fr:
   feedbacks:
     title: Feedback
     submit: Envoyer le feedback
+  errors:
+    attributes:
+      title:
+        blank: Le titre ne peut pas être vide
+    messages:
+      blank: Ce champ ne peut pas être vide

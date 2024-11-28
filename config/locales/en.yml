@@ -1,6 +1,15 @@
 ---
 en:
   activerecord:
+    errors:
+      models:
+        map:
+          attributes:
+            title:
+              blank: Title can't be blank
+          blank: Map model attributes can't be blank
+      messages:
+        blank: This field can't be blank
     attributes:
       feedbacks:
         subject: Subject
@@ -33,3 +42,9 @@ en:
   feedbacks:
     title: Feedback
     submit: Submit feedback
+  errors:
+    attributes:
+      title:
+        blank: Title can't be blank
+    messages:
+      blank: This field can't be blank
