@@ -1,19 +1,10 @@
 ---
 fr:
   activerecord:
-    errors:
-      models:
-        map:
-          attributes:
-            title:
-              blank: Le titre ne peut pas être vide
-          blank: Les attributs du modèle Map ne peuvent pas être vides
-      messages:
-        blank: Ce champ ne peut pas être vide
     attributes:
       feedbacks:
-        subject: Sujet
         message: Message
+        subject: Sujet
       maps:
         coordinate_system: Système de coordonnées
         creation_date: Date de création
@@ -24,11 +15,35 @@ fr:
         scale: Échelle
         sources: Sources
         title: Titre
+    errors:
+      messages:
+        blank: Ce champ ne peut pas être vide
+      models:
+        map:
+          attributes:
+            title:
+              blank: Le titre ne peut pas être vide
+          blank: Les attributs du modèle Map ne peuvent pas être vides
   cartography:
     title: Cartographie
   common:
-    created_by: Créé par %{name}
-    discover: Découvrir
+    by: Par %{name}
+  errors:
+    attributes:
+      title:
+        blank: Le titre ne peut pas être vide
+    back: Revenir en arrière
+    error_404: Nous ne parvenons pas à trouver la page que vous recherchez.
+    error_500: Désolé, mais quelque chose s'est mal passé.
+    homepage: Revenir à la page d'accueil
+    messages:
+      blank: Ce champ ne peut pas être vide
+    oops: Oops !
+  feedbacks:
+    submit: Envoyer le feedback
+    text: Vos commentaires nous aident à nous améliorer. Que ce soit une suggestion
+      ou quelque chose que nous pouvons améliorer, dites le nous !
+    title: À vos commentaires !
   navbar:
     about: À propos
     cartography: Cartographie
@@ -39,20 +54,3 @@ fr:
     sign_in: Se connecter
     sign_out: Se déconnecter
     sign_up: S'inscrire
-  feedbacks:
-    title: À vos commentaires !
-    submit: Envoyer le feedback
-    text: Vos commentaires nous aident à nous améliorer. Que ce soit une suggestion ou quelque chose que nous pouvons améliorer, dites le nous !
-  errors:
-    attributes:
-      title:
-        blank: Le titre ne peut pas être vide
-    messages:
-      blank: Ce champ ne peut pas être vide
-    back: Revenir en arrière
-    error_404: Nous ne parvenons pas à trouver la page que vous recherchez.
-    error_500: Désolé, mais quelque chose s'est mal passé.
-    homepage: Revenir à la page d'accueil
-    oops: Oops !
-  common:
-    by: Par %{name}

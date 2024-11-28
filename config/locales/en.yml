@@ -1,19 +1,10 @@
 ---
 en:
   activerecord:
-    errors:
-      models:
-        map:
-          attributes:
-            title:
-              blank: Title can't be blank
-          blank: Map model attributes can't be blank
-      messages:
-        blank: This field can't be blank
     attributes:
       feedbacks:
-        subject: Subject
         message: Message
+        subject: Subject
       maps:
         coordinate_system: Coordinate system
         creation_date: Creation date
@@ -24,11 +15,35 @@ en:
         scale: Scale
         sources: Sources
         title: Title
+    errors:
+      messages:
+        blank: This field can't be blank
+      models:
+        map:
+          attributes:
+            title:
+              blank: Title can't be blank
+          blank: Map model attributes can't be blank
   cartography:
     title: Cartography
   common:
-    created_by: Created by %{name}
-    discover: Discover
+    by: By %{name}
+  errors:
+    attributes:
+      title:
+        blank: Title can't be blank
+    back: Back
+    error_404: We can't seem to find the page you're looking for.
+    error_500: Looks like something went wrong.
+    homepage: Go to homepage
+    messages:
+      blank: This field can't be blank
+    oops: Oops!
+  feedbacks:
+    submit: Submit feedback
+    text: Your thoughts and suggestions help us improve. Whether it’s comment, a suggestion,
+      or something we can do better, we’d love to hear from you!
+    title: We value your feedback!
   navbar:
     about: About
     cartography: Cartography
@@ -39,20 +54,3 @@ en:
     sign_in: Sign in
     sign_out: Sign out
     sign_up: Sign up
-  feedbacks:
-    title: We value your feedback!
-    submit: Submit feedback
-    text: Your thoughts and suggestions help us improve. Whether it’s comment, a suggestion, or something we can do better, we’d love to hear from you!
-  errors:
-    attributes:
-      title:
-        blank: Title can't be blank
-    messages:
-      blank: This field can't be blank
-    back: Back
-    error_404: We can't seem to find the page you're looking for.
-    error_500: Looks like something went wrong.
-    homepage: Go to homepage
-    oops: Oops!
-  common:
-    by: By %{name}
