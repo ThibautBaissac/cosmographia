@@ -49,3 +49,8 @@ en:
         blank: Title can't be blank
     messages:
       blank: This field can't be blank
+    back: Back
+    error_404: We can't seem to find the page you're looking for.
+    error_500: Looks like something went wrong.
+    homepage: Go to homepage
+    oops: Oops!

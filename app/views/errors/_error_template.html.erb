@@ -1,0 +1,10 @@
+<div class="container w-50 mt-5">
+  <h1><%= t("errors.oops") %></h1>
+  <h3><%= t("errors.error_#{error}") %></h3>
+  <div class="d-flex justify-content-around mt-4">
+    <button class="btn btn-primary rounded-4" onclick="history.back()">
+      <%= t("errors.back") %>
+    </button>
+    <%= link_to(t("errors.homepage"), root_path, class: "btn btn-secondary rounded-4") %>
+  </div>
+</div>

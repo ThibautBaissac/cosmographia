@@ -49,3 +49,8 @@ fr:
         blank: Le titre ne peut pas être vide
     messages:
       blank: Ce champ ne peut pas être vide
+    back: Revenir en arrière
+    error_404: Nous ne parvenons pas à trouver la page que vous recherchez.
+    error_500: Désolé, mais quelque chose s'est mal passé.
+    homepage: Revenir à la page d'accueil
+    oops: Oops !

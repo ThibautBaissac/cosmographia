@@ -16,5 +16,8 @@ Rails.application.routes.draw do
     # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
     get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
     # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
+
+    match "/404", to: "errors#not_found", via: :all
+    match "/500", to: "errors#internal_server_error", via: :all
   end
 end
