@@ -1,14 +1,17 @@
 <% feedback = current_user.feedbacks.new %>
+
+<%= t("feedbacks.text") %>
+
 <%= form_with(model: feedback, local: true, class: "mt-4") do |form| %>
   <div class="mb-3">
     <%= form.label(:subject, class: "form-label") %>
-    <%= form.text_field(:subject, class: "form-control") %>
+    <%= form.text_field(:subject, class: "form-control rounded-4") %>
   </div>
 
   <div class="mb-3">
     <%= form.label(:message, class: "form-label") %>
-    <%= form.text_area(:message, class: "form-control", rows: 5) %>
+    <%= form.text_area(:message, class: "form-control rounded-4", rows: 5) %>
   </div>
 
-  <%= form.submit(t("feedbacks.submit"), class: "btn btn-primary") %>
+  <%= form.submit(t("feedbacks.submit"), class: "btn btn-primary rounded-4") %>
 <% end %>

@@ -40,8 +40,9 @@ fr:
     sign_out: Se déconnecter
     sign_up: S'inscrire
   feedbacks:
-    title: Feedback
+    title: À vos commentaires !
     submit: Envoyer le feedback
+    text: Vos commentaires nous aident à nous améliorer. Que ce soit une suggestion ou quelque chose que nous pouvons améliorer, dites le nous !
   errors:
     attributes:
       title:

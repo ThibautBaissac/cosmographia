@@ -40,8 +40,9 @@ en:
     sign_out: Sign out
     sign_up: Sign up
   feedbacks:
-    title: Feedback
+    title: We value your feedback!
     submit: Submit feedback
+    text: Your thoughts and suggestions help us improve. Whether it’s comment, a suggestion, or something we can do better, we’d love to hear from you!
   errors:
     attributes:
       title:

@@ -29,7 +29,7 @@
     <div class="flex-grow-1 my-3">
       <%= yield %>
     </div>
-    <%= render("layouts/offcanvas/main") if user_signed_in? %>
+    <%= render("feedbacks/main") if user_signed_in? %>
     <%= render("layouts/footer") %>
   </body>
 </html>
