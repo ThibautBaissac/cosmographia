@@ -1,3 +1,5 @@
+<h4><%= t("me.last_maps", count: maps.size) %></h4>
+
 <div id="homepageCarousel" class="carousel slide homepage_carousel">
   <div class="carousel-indicators">
     <% maps.each_with_index do |_, index| %>
@@ -11,7 +13,6 @@
         <%= image_tag(map.image, class: "d-block w-100 object-fit-cover", alt: "Placeholder image") %>
         <div class="carousel-caption bg-dark bg-opacity-50 rounded-4">
           <h5><%= link_to(map.title, map, class: "link-light text-decoration-none") %></h5>
-          <p><%= t("common.by", name: map.user.email) %></p>
         </div>
       </div>
     <% end %>

@@ -79,3 +79,8 @@ en:
     sign_in: Sign in
     sign_out: Sign out
     sign_up: Sign up
+    profile: My profile
+  me:
+    last_maps: My %{count} last maps
+    my_last_comments: My last %{count} comments
+    total_comment_count: (%{count} in total)
