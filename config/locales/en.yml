@@ -28,6 +28,7 @@ en:
     title: Cartography
   common:
     by: By %{name}
+    created_by: Created by %{name}
     delete: Delete
     edit: Edit
   errors:
