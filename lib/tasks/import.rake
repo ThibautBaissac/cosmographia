@@ -9,7 +9,7 @@ namespace :import do
       puts "--Importing software row : #{row}"
       Software.create!(
         name: row[0],
-        code: row[1]
+        category: row[1]
       )
     end
     puts("----Softwares created!")
