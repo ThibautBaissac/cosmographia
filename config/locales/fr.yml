@@ -17,6 +17,13 @@ fr:
         scale: Échelle
         sources: Sources
         title: Titre
+      map_softwares:
+        name: Nom
+        category: Catégorie
+    models:
+      software:
+        one: Logiciel
+        other: Logiciels
     errors:
       messages:
         blank: Ce champ ne peut pas être vide

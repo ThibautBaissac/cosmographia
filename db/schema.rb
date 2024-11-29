@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_29_091615) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_29_092447) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -61,6 +61,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_29_091615) do
     t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
 
+  create_table "map_softwares", force: :cascade do |t|
+    t.bigint "software_id", null: false
+    t.bigint "map_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["map_id"], name: "index_map_softwares_on_map_id"
+    t.index ["software_id"], name: "index_map_softwares_on_software_id"
+  end
+
   create_table "maps", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title", null: false
@@ -79,7 +88,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_29_091615) do
 
   create_table "softwares", force: :cascade do |t|
     t.string "name", null: false
-    t.string "code", null: false
+    t.string "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -103,5 +112,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_29_091615) do
   add_foreign_key "comments", "maps"
   add_foreign_key "comments", "users"
   add_foreign_key "feedbacks", "users"
+  add_foreign_key "map_softwares", "maps"
+  add_foreign_key "map_softwares", "softwares"
   add_foreign_key "maps", "users"
 end

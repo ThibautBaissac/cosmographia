@@ -11,5 +11,7 @@
       <li class="list-group-item"><strong><%= t("activerecord.attributes.maps.projection") %>:</strong> <%= map.projection %></li>
       <li class="list-group-item"><strong><%= t("activerecord.attributes.maps.coordinate_system") %>:</strong> <%= map.coordinate_system %></li>
     </ul>
+
+    <%= render("maps/show/info_softwares", map:) %>
   </div>
 </div>

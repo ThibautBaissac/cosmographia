@@ -17,6 +17,13 @@ en:
         scale: Scale
         sources: Sources
         title: Title
+      map_softwares:
+        name: Name
+        category: Category
+    models:
+      software:
+        one: Software
+        other: Softwares
     errors:
       messages:
         blank: This field can't be blank

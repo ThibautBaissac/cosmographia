@@ -18,6 +18,13 @@
     filename: "sample#{rand(1..5)}.png",
     content_type: 'image/png'
   )
+
+  2.times do
+    map.map_softwares.create!(
+      software_id: Software.pluck(:id).sample,
+    )
+  end
+
   puts("--(#{i + 1}/#{@nb_maps}) map created!")
 end
 puts("----#{@nb_maps} maps created!")
