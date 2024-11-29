@@ -16,10 +16,7 @@
       </li>
     </ul>
     <div class="d-sm-flex">
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="<%= t("navbar.search_placeholder") %>" aria-label="<%= t("navbar.search") %>">
-        <button class="btn btn-outline-success" type="submit"><%= t("navbar.search") %></button>
-      </form>
+      <%= render("layouts/navbar/search") %>
       <%= render("layouts/navbar/user_dropdown") %>
     </div>
   </div>

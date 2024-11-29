@@ -1,2 +1,7 @@
-<%= render("carousel", maps: @maps) %>
-<%= render("presentation") %>
+<% if user_signed_in? %>
+  <%= render("home/user_signed_in/header") %>
+  <%= render("home/user_signed_in/install_pwa") %>
+<% else %>
+  <%= render("home/user_signed_out/carousel", maps: @maps) %>
+  <%= render("home/user_signed_out/presentation") %>
+<% end %>

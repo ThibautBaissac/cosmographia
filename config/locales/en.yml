@@ -37,6 +37,7 @@ en:
     created_by: Created by %{name}
     delete: Delete
     edit: Edit
+    hello: Hello %{name}
   errors:
     attributes:
       title:
