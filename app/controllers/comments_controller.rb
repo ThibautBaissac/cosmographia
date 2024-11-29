@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_map
   before_action :set_comment, only: %i[edit update destroy]
 

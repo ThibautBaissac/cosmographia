@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def index
     @maps = random_maps_for_today
   end
