@@ -3,7 +3,7 @@
 <% end %>
 
 <%= turbo_stream.update("map_#{@map.id}_comment_count") do %>
-  <h2><%= pluralize(@map.comments.size, "comment") %></h2>
+  <%= render("comments/title", map: @map) %>
 <% end %>
 
 <%= turbo_stream.append("map_#{@map.id}_comments") do %>

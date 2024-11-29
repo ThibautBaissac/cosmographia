@@ -2,6 +2,8 @@
 fr:
   activerecord:
     attributes:
+      comments:
+        content: Contenu
       feedbacks:
         message: Message
         subject: Sujet
@@ -26,6 +28,10 @@ fr:
           blank: Les attributs du modèle Map ne peuvent pas être vides
   cartography:
     title: Cartographie
+  comments:
+    one: commentaire
+    other: commentaires
+    zero: commentaire
   common:
     by: Par %{name}
     created_by: Créé par %{name}
@@ -47,6 +53,10 @@ fr:
     text: Vos commentaires nous aident à nous améliorer. Que ce soit une suggestion
       ou quelque chose que nous pouvons améliorer, dites le nous !
     title: À vos commentaires !
+  helpers:
+    submit:
+      comment:
+        create: Poster votre commentaire
   navbar:
     about: À propos
     cartography: Cartographie

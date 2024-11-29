@@ -2,6 +2,8 @@
 en:
   activerecord:
     attributes:
+      comments:
+        content: Content
       feedbacks:
         message: Message
         subject: Subject
@@ -26,6 +28,10 @@ en:
           blank: Map model attributes can't be blank
   cartography:
     title: Cartography
+  comments:
+    one: comment
+    other: comments
+    zero: comment
   common:
     by: By %{name}
     created_by: Created by %{name}
@@ -47,6 +53,10 @@ en:
     text: Your thoughts and suggestions help us improve. Whether it’s comment, a suggestion,
       or something we can do better, we’d love to hear from you!
     title: We value your feedback!
+  helpers:
+    submit:
+      comment:
+        create: Post your comment
   navbar:
     about: About
     cartography: Cartography

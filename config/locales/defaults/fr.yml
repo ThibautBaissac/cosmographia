@@ -86,19 +86,19 @@ fr:
         other: il y a plus de %{count} ans
       x_days:
         one: il y a 1 jour
-        other: "il y a %{count} jours"
+        other: il y a %{count} jours
       x_minutes:
         one: il y a 1 minute
-        other: "il y a %{count} minutes"
+        other: il y a %{count} minutes
       x_months:
         one: il y a 1 mois
-        other: "il y a %{count} mois"
+        other: il y a %{count} mois
       x_seconds:
         one: il y a 1 seconde
-        other: "il y a %{count} secondes"
+        other: il y a %{count} secondes
       x_years:
         one: il y a 1 an
-        other: "il y a %{count} ans"
+        other: il y a %{count} ans
     prompts:
       day: Jour
       hour: Heure
