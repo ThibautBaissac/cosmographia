@@ -19,6 +19,13 @@
     content_type: 'image/png'
   )
 
+  10.times do
+    map.comments.create!(
+      content: Faker::Lorem.sentence(word_count: 10),
+      user_id: User.pluck(:id).sample
+    )
+  end
+
   2.times do
     map.map_softwares.create!(
       software_id: Software.pluck(:id).sample,

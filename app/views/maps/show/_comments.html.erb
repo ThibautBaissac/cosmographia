@@ -2,10 +2,19 @@
   <%= turbo_frame_tag("map_#{map.id}_comment_count") do %>
     <%= render("comments/title", map:) %>
   <% end %>
+
   <%= turbo_frame_tag("map_comment_form") do %>
     <%= render("comments/form", map:, comment:) %>
   <% end %>
-  <%= turbo_frame_tag("map_#{map.id}_comments") do %>
-    <%= render(partial: "comments/comment", collection: map.comments.includes(:user)) %>
+
+  <% if map.comments.any? %>
+    <a class="btn btn-outline-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      <%= t("comments.show_more") %>
+    </a>
+    <div class="collapse" id="collapseExample">
+      <%= turbo_frame_tag("map_#{map.id}_comments") do %>
+        <%= render(partial: "comments/comment", collection: map.comments.includes(:user)) %>
+      <% end %>
+    </div>
   <% end %>
 </div>
