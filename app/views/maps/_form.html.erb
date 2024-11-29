@@ -39,11 +39,6 @@
     <%= form.text_field(:coordinate_system, class: "form-control", placeholder: "Enter coordinate system") %>
   </div>
 
-  <div class="form-check mb-3">
-    <%= form.check_box(:is_public, class: "form-check-input", id: "map_is_public") %>
-    <%= form.label(:is_public, class: "form-check-label", for: "map_is_public") %>
-  </div>
-
   <div class="d-grid">
     <%= form.submit("Save Map", class: "btn btn-primary btn-block") %>
   </div>
