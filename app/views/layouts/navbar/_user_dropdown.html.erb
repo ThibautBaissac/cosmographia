@@ -1,25 +1,32 @@
-<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-
-      <% if user_signed_in? %>
-        <%= current_user.email %>
-      <% else %>
-        <i class="fa-regular fa-user"></i>
-      <% end %>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end">
-      <% if user_signed_in? %>
+<% if user_signed_in? %>
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-circle-user fa-2x"></i>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end">
         <li><%= link_to(t("navbar.edit_profile"), edit_user_registration_path, class: "dropdown-item") %></li>
         <li><hr class="dropdown-divider"></li>
         <li><%= button_to(t("navbar.sign_out"), destroy_user_session_path, method: :delete, class: "dropdown-item") %></li>
         <li><%= link_to "Feedback", "#offcanvaFeedback", class: "dropdown-item", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvasExample"} %></li>
-      <% else %>
-        <li><%= link_to(t("navbar.sign_in"), new_user_session_path, class: "dropdown-item") %></li>
-        <li><%= link_to(t("navbar.sign_up"), new_user_registration_path, class: "dropdown-item") %></li>
+        <%= render("layouts/navbar/install_pwa") %>
+        <%= render("layouts/navbar/superadmin_dropdown") %>
+      </ul>
+    </li>
+  </ul>
+<% else %>
+  <ul class="list-group list-group-horizontal">
+    <li class="list-group-item border border-0">
+      <%= link_to(new_user_registration_path, class: "btn btn-primary") do %>
+        <i class="fa-solid fa-user-plus"></i>
+        <%= t("navbar.navbar.sign_up") %>
       <% end %>
-      <%= render("layouts/navbar/install_pwa") %>
-      <%= render("layouts/navbar/superadmin_dropdown") %>
-    </ul>
-  </li>
-</ul>
+    </li>
+    <li class="list-group-item border border-0">
+      <%= link_to(new_user_session_path, class: "btn btn-outline-primary") do %>
+      <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        <%= t("navbar.navbar.sign_in") %>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
