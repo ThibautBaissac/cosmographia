@@ -7,6 +7,9 @@ en:
       feedbacks:
         message: Message
         subject: Subject
+      map_softwares:
+        category: Category
+        name: Name
       maps:
         coordinate_system: Coordinate system
         creation_date: Creation date
@@ -17,13 +20,6 @@ en:
         scale: Scale
         sources: Sources
         title: Title
-      map_softwares:
-        name: Name
-        category: Category
-    models:
-      software:
-        one: Software
-        other: Softwares
     errors:
       messages:
         blank: This field can't be blank
@@ -33,6 +29,10 @@ en:
             title:
               blank: Title can't be blank
           blank: Map model attributes can't be blank
+    models:
+      software:
+        one: Software
+        other: Softwares
   cartography:
     title: Cartography
   comments:
@@ -65,6 +65,9 @@ en:
     submit:
       comment:
         create: Post your comment
+  home:
+    user_signed_in:
+      see_all_maps: Discover all maps!
   navbar:
     about: About
     cartography: Cartography

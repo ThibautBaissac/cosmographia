@@ -7,6 +7,9 @@ fr:
       feedbacks:
         message: Message
         subject: Sujet
+      map_softwares:
+        category: Catégorie
+        name: Nom
       maps:
         coordinate_system: Système de coordonnées
         creation_date: Date de création
@@ -17,13 +20,6 @@ fr:
         scale: Échelle
         sources: Sources
         title: Titre
-      map_softwares:
-        name: Nom
-        category: Catégorie
-    models:
-      software:
-        one: Logiciel
-        other: Logiciels
     errors:
       messages:
         blank: Ce champ ne peut pas être vide
@@ -33,6 +29,10 @@ fr:
             title:
               blank: Le titre ne peut pas être vide
           blank: Les attributs du modèle Map ne peuvent pas être vides
+    models:
+      software:
+        one: Logiciel
+        other: Logiciels
   cartography:
     title: Cartographie
   comments:
@@ -65,6 +65,9 @@ fr:
     submit:
       comment:
         create: Poster votre commentaire
+  home:
+    user_signed_in:
+      see_all_maps: Découvrez toutes les cartes !
   navbar:
     about: À propos
     cartography: Cartographie

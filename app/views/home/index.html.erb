@@ -1,6 +1,9 @@
 <% if user_signed_in? %>
-  <%= render("home/user_signed_in/header") %>
-  <%= render("home/user_signed_in/install_pwa") %>
+  <div class="container d-flex justify-content-between align-items-center mb-4">
+    <%= render("home/user_signed_in/header") %>
+    <%= render("home/user_signed_in/install_pwa") %>
+  </div>
+  <%= render("home/user_signed_in/maps") %>
 <% else %>
   <%= render("home/user_signed_out/carousel", maps: @maps) %>
   <%= render("home/user_signed_out/presentation") %>
