@@ -2,10 +2,16 @@
   <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
     <% column.each do |map| %>
       <% if map.image.attached? %>
-        <div class="w-100 mb-4 text-center">
-          <%= image_tag(map.image, class: "w-100 rounded") %>
-          <span class="small fw-light"><%= map.user.email %></span>
+        <div class=" mb-4 image-container rounded-4">
+          <%= link_to(map) do %>
+            <%= image_tag(map.image, class: "w-100 card-img-top disable_img", alt: "#{map.title} image") %>
+            <div class="image-overlay text-center">
+              <%= map.user.email %>
+            </div>
+          <% end %>
         </div>
+      <% else %>
+        <%= image_tag("default.png", class: "mb-4 card-img-top", alt: "Placeholder image") %>
       <% end %>
     <% end %>
   </div>
