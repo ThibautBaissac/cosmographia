@@ -1,0 +1,8 @@
+<div class="bg-light rounded-4 p-3 my-2">
+  <% unless current_user == user %>
+    <span class="fw-bold"><%= t("common.by", name: user.email) %></span>
+  <% end %>
+  <span class="fw-light"><%= time_ago_in_words(comment.updated_at) %></span>
+  <div class="my-2"><%= comment.content %></div>
+  <div class="my-2"><%= link_to("Go to the map", comment.map) %></div>
+</div>

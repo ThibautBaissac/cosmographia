@@ -68,6 +68,8 @@ en:
         create: Post your comment
   home:
     user_signed_in:
+      last_comments: "The %{count} last comments"
+      last_maps: "The %{count} last maps"
       see_all_maps: Discover all maps!
   navbar:
     about: About

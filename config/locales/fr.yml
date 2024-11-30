@@ -68,6 +68,8 @@ fr:
         create: Poster votre commentaire
   home:
     user_signed_in:
+      last_comments: "Les %{count} derniers commentaires"
+      last_maps: "Les %{count} dernières cartes"
       see_all_maps: Découvrez toutes les cartes !
   navbar:
     about: À propos
