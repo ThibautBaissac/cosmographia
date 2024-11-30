@@ -4,7 +4,8 @@
     password: 'Password123.',
     password_confirmation: 'Password123.',
     superadmin: i == 0,
-    locale: I18n.available_locales.sample.to_s
+    locale: I18n.available_locales.sample.to_s,
+    created_at: Faker::Date.backward(days: 365 * 10)
   )
   puts("--(#{i + 1}/#{@nb_users}) #{user.email}")
 end

@@ -1,0 +1,35 @@
+<div class="container">
+  <h4 class="my-4">Charts</h4>
+
+  <!-- Row 1 -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <h6 class="text-center">Maps Created Over Time</h6>
+      <%= column_chart @maps_over_time, height: '300px' %>
+    </div>
+    <div class="col-md-6">
+      <h6 class="text-center">Comments Made Over Time</h6>
+      <%= line_chart @comments_over_time, height: '300px' %>
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <h6 class="text-center">Comments Received Per Map</h6>
+      <%= bar_chart @comments_per_map, height: '300px' %>
+    </div>
+  </div>
+
+  <!-- Row 3 -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <h6 class="text-center">Software Distribution Across Maps</h6>
+      <%= pie_chart @software_usage, height: '300px' %>
+    </div>
+    <div class="col-md-6">
+      <h6 class="text-center">Scale Distribution</h6>
+      <%= bar_chart @scale_distribution, height: '300px' %>
+    </div>
+  </div>
+</div>
