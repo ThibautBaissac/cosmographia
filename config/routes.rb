@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
     draw :feedbacks
     draw :maps
-    draw :me
+    draw :my
     draw :static_pages
 
     root "home#index"

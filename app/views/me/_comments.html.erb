@@ -1,9 +1,0 @@
-<div class="bg-white border border-secondary-subtle rounded-4 mt-5 p-4">
-<h4>
-  <%= t("me.my_last_comments", count: @comments.count) %>
-  <span class="small fw-light"><%= t("me.total_comment_count", count: @total_comment_count) %></span>
-</h4>
-  <% comments.each do |comment| %>
-    <%= render("me/comment", comment:, user: current_user) %>
-  <% end %>
-</div>

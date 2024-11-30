@@ -82,7 +82,7 @@ fr:
     sign_out: Se déconnecter
     sign_up: S'inscrire
     profile: Mon profil
-  me:
+  my:
     last_maps: Mes %{count} dernières cartes
     my_last_comments: Mes %{count} derniers commentaires
     total_comment_count: (%{count} au total)

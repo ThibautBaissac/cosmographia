@@ -1,4 +1,4 @@
-class MeController < ApplicationController
+class MyController < ApplicationController
   def show
     @maps = current_user.maps.includes(:image_attachment).last(5)
     @total_comment_count = current_user.comments.count
