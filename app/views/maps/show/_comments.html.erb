@@ -8,13 +8,21 @@
   <% end %>
 
   <% if map.comments.any? %>
-    <a class="btn btn-outline-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-      <%= t("comments.show_more") %>
-    </a>
-    <div class="collapse" id="collapseExample">
-      <%= turbo_frame_tag("map_#{map.id}_comments") do %>
-        <%= render(partial: "comments/comment", collection: map.comments.includes(:user)) %>
-      <% end %>
-    </div>
+    <!-- Render the first 5 comments -->
+    <%= render(partial: "comments/comment", collection: map.comments.limit(5).includes(:user)) %>
+
+    <% if map.comments.count > 5 %>
+      <!-- Show More button -->
+      <a class="btn btn-outline-secondary" data-bs-toggle="collapse" href="#collapseComments" role="button" aria-expanded="false" aria-controls="collapseComments">
+        <%= t("comments.show_more") %>
+      </a>
+
+      <!-- Collapsed section with the remaining comments -->
+      <div class="collapse" id="collapseComments">
+        <%= turbo_frame_tag("map_#{map.id}_remaining_comments") do %>
+          <%= render(partial: "comments/comment", collection: map.comments.offset(5).includes(:user)) %>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
 </div>

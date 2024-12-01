@@ -39,7 +39,7 @@ fr:
     one: commentaire
     other: commentaires
     zero: commentaire
-    show_more: Voir les commentaires
+    show_more: Voir plus de commentaires
   common:
     by: Par %{name}
     created_by: Créé par %{name}

@@ -39,7 +39,7 @@ en:
     one: comment
     other: comments
     zero: comment
-    show_more: Show the comments
+    show_more: Show more comments
   common:
     by: By %{name}
     created_by: Created by %{name}
