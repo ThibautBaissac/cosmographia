@@ -1,28 +1,28 @@
-<div class="container bg-white border border-secondary-subtle rounded-4 mt-5 p-4">
-  <%= turbo_frame_tag("map_#{map.id}_comment_count") do %>
-    <%= render("comments/title", map:) %>
-  <% end %>
-
-  <%= turbo_frame_tag("map_comment_form") do %>
-    <%= render("comments/form", map:, comment:) %>
-  <% end %>
-
-  <% if map.comments.any? %>
-    <!-- Render the first 5 comments -->
-    <%= render(partial: "comments/comment", collection: map.comments.limit(5).includes(:user)) %>
-
-    <% if map.comments.count > 5 %>
-      <!-- Show More button -->
-      <a class="btn btn-outline-secondary" data-bs-toggle="collapse" href="#collapseComments" role="button" aria-expanded="false" aria-controls="collapseComments">
-        <%= t("comments.show_more") %>
-      </a>
-
-      <!-- Collapsed section with the remaining comments -->
-      <div class="collapse" id="collapseComments">
-        <%= turbo_frame_tag("map_#{map.id}_remaining_comments") do %>
-          <%= render(partial: "comments/comment", collection: map.comments.offset(5).includes(:user)) %>
-        <% end %>
-      </div>
+<div class="bg-primary bg-opacity-75 mt-5 p-4">
+  <div class="container">
+    <%= turbo_frame_tag("map_#{map.id}_comment_count") do %>
+      <%= render("comments/title", map:) %>
     <% end %>
-  <% end %>
+
+    <%= turbo_frame_tag("map_comment_form") do %>
+      <%= render("comments/form", map:, comment:) %>
+    <% end %>
+
+    <% if map.comments.any? %>
+      <!-- Render the first 5 comments -->
+      <%= render(partial: "comments/comment", collection: map.comments.limit(5).includes(:user)) %>
+      <% if map.comments.count > 5 %>
+        <!-- Show More button -->
+        <a class="btn btn-outline-light" data-bs-toggle="collapse" href="#collapseComments" role="button" aria-expanded="false" aria-controls="collapseComments">
+          <%= t("comments.show_more") %>
+        </a>
+        <!-- Collapsed section with the remaining comments -->
+        <div class="collapse" id="collapseComments">
+          <%= turbo_frame_tag("map_#{map.id}_remaining_comments") do %>
+            <%= render(partial: "comments/comment", collection: map.comments.offset(5).includes(:user)) %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>

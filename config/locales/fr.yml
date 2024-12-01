@@ -40,10 +40,12 @@ fr:
     other: commentaires
     zero: commentaire
     show_more: Voir plus de commentaires
+    write_comment: Écrire un commentaire
   common:
     by: Par %{name}
     created_by: Créé par %{name}
     delete: Supprimer
+    discover: Découvrir
     edit: Modifier
     hello: Bonjour %{name}
   errors:

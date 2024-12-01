@@ -1,5 +1,3 @@
-<div class="container">
-  <%= render("charts") %>
-  <%= render("carousel", maps: @maps) %>
-  <%= render("comments", comments: @comments) if @comments.any? %>
-</div>
+<%= render("charts") %>
+<%= render("carousel", maps: @maps) %>
+<%= render("comments", comments: @comments) if @comments.any? %>

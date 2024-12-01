@@ -40,10 +40,12 @@ en:
     other: comments
     zero: comment
     show_more: Show more comments
+    write_comment: Write a comment
   common:
     by: By %{name}
     created_by: Created by %{name}
     delete: Delete
+    discover: Discover
     edit: Edit
     hello: Hello %{name}
   errors:
