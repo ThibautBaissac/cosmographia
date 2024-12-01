@@ -7,11 +7,13 @@
       <% end %>
     <% end %>
   </div>
+
+  <%= render("maps/index/search", query: @query, map_count: @pagy.count) %>
+
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <%= render("maps", maps: @maps) %>
   </div>
   <div class="d-flex justify-content-center align-items-center mt-3">
     <%== pagy_nav(@pagy) if @pagy.pages > 1  %>
   </div>
-  <p class="text-center fw-light text-secondary"><%= @maps.length %> elements displayed of <%= @pagy.count %> in total</p>
 </div>

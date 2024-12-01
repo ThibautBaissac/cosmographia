@@ -2,7 +2,11 @@ class MapsController < ApplicationController
   before_action :set_map, only: [ :edit, :update ]
 
   def index
-    maps = Map.all.includes(:user, :image_attachment)
+    @query = params[:query]&.strip
+    maps = Map.includes(:user, :image_attachment)
+    maps = maps.includes(:softwares) if @query.present?
+    maps = maps.search(@query).order(created_at: :desc)
+
     @pagy, @maps = pagy(maps)
   end
 

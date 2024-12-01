@@ -1,0 +1,8 @@
+<%= form_with(url: maps_path, method: :get, local: false) do |form| %>
+  <div class="small fw-light">Search maps by title, description, creation_date, scale, sources, geographic_coverage, projection, coordinate_system, softwares name, softwares category, users email</div>
+  <div class="input-group">
+    <%= form.text_field(:query, value: query, placeholder: "Search maps...", class: "form-control", aria: { label: "Search query" }) %>
+    <%= form.submit("Search", class: "btn btn-primary") %>
+  </div>
+  <p class="small fw-light text-secondary"><%= map_count %> maps found</p>
+<% end %>
