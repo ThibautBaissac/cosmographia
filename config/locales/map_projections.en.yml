@@ -1,0 +1,75 @@
+---
+en:
+  map_projections:
+    adams_square_ii: Adams square II
+    aitoff: Aitoff
+    albers: Albers
+    aspect_adaptive_cylindrical: Aspect-adaptive cylindrical
+    azimuthal_equidistant: Azimuthal equidistant
+    behrmann: Behrmann
+    berghaus_star: Berghaus star
+    bonne: Bonne
+    cassini: Cassini
+    compact_miller: Compact Miller
+    craster_parabolic: Craster parabolic
+    cube: Cube
+    cylindrical_equal_area: Cylindrical equal area
+    double_stereographic: Double stereographic
+    eckert_i: Eckert I
+    eckert_ii: Eckert II
+    eckert_iii: Eckert III
+    eckert_iv: Eckert IV
+    eckert_v: Eckert V
+    eckert_vi: Eckert VI
+    eckert_greifendorff: Eckert-Greifendorff
+    equal_earth: Equal Earth
+    equidistant_conic: Equidistant conic
+    equidistant_cylindrical: Equidistant cylindrical
+    fuller: Fuller
+    gall_stereographic: Gall stereographic
+    gauss_kruger: Gauss-Kruger
+    geostationary_satellite: Geostationary satellite
+    gnomonic: Gnomonic
+    goode_homolosine: Goode homolosine
+    hammer: Hammer
+    hotine_oblique_mercator: Hotine oblique mercator
+    igac_plano_cartesiano: IGAC plano cartesiano
+    krovak: Krovak
+    laborde_oblique_mercator: Laborde oblique mercator
+    lambert_azimuthal_equal_area: Lambert azimuthal equal area
+    lambert_conformal_conic: Lambert conformal conic
+    local: Local
+    loximuthal: Loximuthal
+    mcbryde_thomas_flat_polar_quartic: McBryde-Thomas flat-polar quartic
+    mercator: Mercator
+    miller_cylindrical: Miller cylindrical
+    mollweide: Mollweide
+    natural_earth: Natural Earth
+    natural_earth_ii: Natural Earth II
+    new_zealand_national_grid: New Zealand National Grid
+    ney_modified_conic: Ney modified conic
+    orthographic: Orthographic
+    patterson: Patterson
+    peirce_quincuncial: Peirce quincuncial
+    perspective_cylindrical: Perspective cylindrical
+    plate_carree: Plate Carrée
+    polyconic: Polyconic
+    quartic_authalic: Quartic authalic
+    rectified_skewed_orthomorphic: Rectified skewed orthomorphic
+    robinson: Robinson
+    sinusoidal: Sinusoidal
+    stereographic: Stereographic
+    times: Times
+    tobler_cylindrical_i: Tobler cylindrical I
+    tobler_cylindrical_ii: Tobler cylindrical II
+    transverse_cylindrical_equal_area: Transverse cylindrical equal area
+    transverse_mercator: Transverse mercator
+    two_point_equidistant: Two-point equidistant
+    van_der_grinten_i: Van der Grinten I
+    vertical_near_side_perspective: Vertical near-side perspective
+    wagner_iv: Wagner IV
+    wagner_v: Wagner V
+    wagner_vii: Wagner VII
+    winkel_i: Winkel I
+    winkel_ii: Winkel II
+    winkel_tripel: Winkel Tripel

@@ -1,4 +1,6 @@
 class Map < ApplicationRecord
+  include Map::Projections
+
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :map_softwares, dependent: :destroy

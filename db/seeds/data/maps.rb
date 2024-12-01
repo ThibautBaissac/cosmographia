@@ -7,7 +7,7 @@
     scale: [ "1000", "5000", "10000", "25000", "50000", "100000", "250000", "500000", "1000000" ].sample,
     sources: Faker::Lorem.sentence(word_count: 5),
     geographic_coverage: Faker::Address.country,
-    projection: [ "Mercator", "Lambert", "Orthographic", "Gnomonic" ].sample,
+    projection: Map.projection_values.sample,
     coordinate_system: [ "WGS84", "NAD83", "ETRS89" ].sample,
     is_public: [ true, false ].sample,
     created_at: Faker::Date.backward(days: 365 * 10)
