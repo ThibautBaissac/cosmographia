@@ -48,6 +48,7 @@ en:
     discover: Discover
     edit: Edit
     hello: Hello %{name}
+    welcome_to: Welcome to %{app_name}
   errors:
     attributes:
       title:
@@ -73,6 +74,8 @@ en:
       last_comments: "The %{count} last comments"
       last_maps: "The %{count} last maps"
       see_all_maps: Discover all maps!
+      post_map: Post your maps
+      dicover_maps: Discover maps
   navbar:
     about: About
     cartography: Cartography

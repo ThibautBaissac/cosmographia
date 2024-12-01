@@ -1,0 +1,18 @@
+<div class="border-top border-bottom my-5 py-5">
+  <div class="container">
+    <div class="text-center">
+      <h1 class="display-5 fw-bold text-body-emphasis">
+        <%= t("common.welcome_to", app_name: "Cosmographia") %>
+      </h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+          Plus de  <span class="fw-bold"><%= Map.count %> cartes partagées</span> par notre communauté vous attendent. Inspirez-vous, explorez, et ajoutez votre propre vision en publiant vos cartes dès aujourd'hui. Ensemble, dessinons le monde et l'univers ! ✨.
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <%= link_to(t("home.user_signed_in.post_map"), new_map_path, class: "btn btn-primary btn-lg px-4 gap-3 rounded-4") %>
+          <%= link_to("🌍 #{t("home.user_signed_in.dicover_maps")}", maps_path, class: "btn btn-outline-secondary btn-lg px-4 gap-3 rounded-4") %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
