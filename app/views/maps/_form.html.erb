@@ -1,45 +1,77 @@
 <%= form_with(model: map, local: true) do |form| %>
-  <div class="mb-3">
-    <%= form.label(:title, class: "form-label") %>
-    <%= form.text_field(:title, required: true, class: "form-control", placeholder: "Enter map title") %>
+  <div class="row">
+    <div class="col-3">
+      <h3>General information</h3>
+    </div>
+    <div class="col-9">
+      <div class="row row-cols-1 row-cols-md-2 mb-3">
+        <div class="col">
+          <%= form.label(:title, class: "form-label fs-5") %>
+          <%= form.text_field(:title, required: true, class: "form-control", placeholder: "Enter map title") %>
+        </div>
+        <div class="col">
+          <%= form.label(:creation_date, class: "form-label fs-5") %>
+          <%= form.date_field(:creation_date, class: "form-control") %>
+        </div>
+      </div>
+      <div class="mb-3">
+        <%= form.label(:description, class: "form-label fs-5") %>
+        <%= form.text_area(:description, class: "form-control", rows: 3, placeholder: "Enter a brief description") %>
+      </div>
+    </div>
   </div>
 
-  <div class="mb-3">
-    <%= form.label(:description, class: "form-label") %>
-    <%= form.text_area(:description, class: "form-control", rows: 3, placeholder: "Enter a brief description") %>
+  <div class="row mt-5">
+    <div class="col-3">
+      <h3>Map image</h3>
+    </div>
+    <div class="col-9">
+      <%= form.file_field(:image, class: "form-control") %>
+      <% if map.image.attached? %>
+        <p class="mt-2">
+          <strong>Current Image:</strong>
+        </p>
+        <%= image_tag map.image, class: "img-thumbnail", style: "max-height: 150px;" %>
+      <% end %>
+    </div>
   </div>
 
-  <div class="mb-3">
-    <%= form.label(:creation_date, class: "form-label") %>
-    <%= form.date_field(:creation_date, class: "form-control") %>
-  </div>
+  <div class="row mt-5">
+    <div class="col-3">
+      <h3>Details</h3>
+    </div>
+    <div class="col-9">
+      <div class="row row-cols-1 row-cols-md-3 mb-3">
+        <div class="col">
+          <%= form.label(:scale, class: "form-label fs-5") %>
+          <%= form.number_field(:scale, class: "form-control", placeholder: "Enter scale (e.g., 1000)") %>
+        </div>
+        <div class="col">
+          <%= form.label(:geographic_coverage, class: "form-label fs-5") %>
+          <%= form.text_field(:geographic_coverage, class: "form-control", placeholder: "Enter geographic coverage") %>
+        </div>
+        <div class="col">
+          <%= form.label(:projection, class: "form-label fs-5") %>
+          <%= form.select :projection,
+                Map.projection_keys.map { |key| [t("map_projections.#{key}"), key.to_s.upcase] },
+                { include_blank: "Select a projection" },
+                { class: "form-select" } %>
+        </div>
+      </div>
 
-  <div class="mb-3">
-    <%= form.label(:scale, class: "form-label") %>
-    <%= form.number_field(:scale, class: "form-control", placeholder: "Enter scale (e.g., 1:1000)") %>
-  </div>
+      <div class="mb-3">
+        <%= form.label(:sources, class: "form-label fs-5") %>
+        <%= form.text_area(:sources, class: "form-control", rows: 3, placeholder: "Enter sources used") %>
+      </div>
 
-  <div class="mb-3">
-    <%= form.label(:sources, class: "form-label") %>
-    <%= form.text_area(:sources, class: "form-control", rows: 3, placeholder: "Enter sources used") %>
-  </div>
+      <div class="mb-3">
+        <%= form.label(:coordinate_system, class: "form-label fs-5") %>
+        <%= form.text_field(:coordinate_system, class: "form-control", placeholder: "Enter coordinate system") %>
+      </div>
 
-  <div class="mb-3">
-    <%= form.label(:geographic_coverage, class: "form-label") %>
-    <%= form.text_field(:geographic_coverage, class: "form-control", placeholder: "Enter geographic coverage") %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label(:projection, class: "form-label") %>
-    <%= form.text_field(:projection, class: "form-control", placeholder: "Enter projection details") %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label(:coordinate_system, class: "form-label") %>
-    <%= form.text_field(:coordinate_system, class: "form-control", placeholder: "Enter coordinate system") %>
-  </div>
-
-  <div class="d-grid">
-    <%= form.submit("Save Map", class: "btn btn-primary btn-block") %>
+      <div class="d-grid">
+        <%= form.submit("Save Map", class: "btn btn-primary btn-block rounded-4") %>
+      </div>
+    </div>
   </div>
 <% end %>
