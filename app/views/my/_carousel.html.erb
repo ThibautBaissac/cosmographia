@@ -1,24 +1,27 @@
-<div class="container">
-  <h4><%= t("my.last_maps", count: maps.size) %></h4>
+<div class="container mt-5">
+  <h4 class="mb-4 text-primary fw-bold"><%= t("my.last_maps", count: maps.size) %></h4>
 
-  <div id="homepageCarousel" class="carousel slide homepage_carousel">
+  <div id="homepageCarousel" class="carousel slide homepage_carousel shadow-sm rounded-4 overflow-hidden">
+    <!-- Carousel Indicators -->
     <div class="carousel-indicators">
       <% maps.each_with_index do |_, index| %>
         <button type="button" data-bs-target="#homepageCarousel" data-bs-slide-to="<%= index %>" class="<%= "active" if index.zero? %>" aria-label="Slide <%= index + 1 %>"></button>
       <% end %>
     </div>
 
+    <!-- Carousel Items -->
     <div class="carousel-inner">
       <% maps.each_with_index do |map, index| %>
         <div class="carousel-item <%= "active" if index.zero? %>">
-          <%= image_tag(map.image, class: "d-block w-100 object-fit-cover", alt: "Placeholder image") %>
-          <div class="carousel-caption bg-dark bg-opacity-50 rounded-4">
-            <h5><%= link_to(map.title, map, class: "link-light text-decoration-none") %></h5>
+          <%= image_tag(map.image, class: "d-block w-100 object-fit-cover rounded-4", alt: "#{map.title} image") %>
+          <div class="carousel-caption bg-dark bg-opacity-75 rounded-4 p-3">
+            <h5 class="text-light fw-bold"><%= link_to(map.title, map, class: "link-light text-decoration-none") %></h5>
           </div>
         </div>
       <% end %>
     </div>
 
+    <!-- Carousel Controls -->
     <button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
