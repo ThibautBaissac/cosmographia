@@ -1,8 +1,10 @@
-<%= form_with(url: maps_path, method: :get, local: false) do |form| %>
-  <div class="small fw-light">Search maps by title, description, creation_date, scale, sources, geographic_coverage, projection, softwares name, softwares category, users email</div>
+<%= form_with(url: maps_path, method: :get, local: false, class: "shadow-sm border border-secondary-subttle p-3 mb-4 bg-light rounded-4") do |form| %>
+  <div class="form-text mb-2">Search maps by title, description, creation date, scale, sources, geographic coverage, projection, software name, software category, or user email</div>
   <div class="input-group">
     <%= form.text_field(:query, value: query, placeholder: "Search maps...", class: "form-control", aria: { label: "Search query" }) %>
-    <%= form.submit("Search", class: "btn btn-primary") %>
+    <button class="btn btn-primary" type="submit">
+      <i class="fa-solid fa-search"></i> Search
+    </button>
   </div>
-  <p class="small fw-light text-secondary"><%= map_count %> maps found</p>
+  <p class="small mt-2 text-muted"><%= map_count %> maps found</p>
 <% end %>
