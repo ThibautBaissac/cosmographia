@@ -17,6 +17,13 @@
       github: Faker::Internet.url(host: "github.com")
     }
   )
+
+  (1..rand(2..5)).each do
+    user.user_softwares.create!(
+      software_id: Software.pluck(:id).sample,
+    )
+  end
+
   puts("--(#{i + 1}/#{@nb_users}) #{user.email}")
 end
 puts("----#{@nb_users} users created!")
