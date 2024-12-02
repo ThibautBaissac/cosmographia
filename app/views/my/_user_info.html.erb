@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <div class="row g-4">
+    <!-- Profile Card -->
+    <div class="col-md-4">
+      <div class="card shadow-sm rounded-4">
+        <div class="card-body text-center">
+          <h4 class="card-title fw-bold"><%= @user.first_name %> <%= @user.last_name %></h4>
+          <p class="card-text text-muted fst-italic"><%= @user.bio || "No bio available." %></p>
+          <% if @user.personal_website.present? %>
+            <a href="<%= @user.personal_website %>" class="btn btn-outline-primary btn-sm rounded-pill mt-2" target="_blank">
+              Personal Website
+            </a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- User Details -->
+    <div class="col-md-8">
+      <div class="card shadow-sm rounded-4">
+        <div class="card-body">
+          <!-- About Me Section -->
+          <h5 class="card-title text-primary fw-bold">About Me</h5>
+          <p class="card-text text-secondary"><%= @user.bio || "No bio available." %></p>
+          <hr>
+
+          <!-- Contact Information Section -->
+          <h5 class="card-title text-primary fw-bold">Contact Information</h5>
+          <ul class="list-unstyled">
+            <li><strong>Email:</strong> <%= @user.email %></li>
+          </ul>
+          <hr>
+
+          <!-- Social Links Section -->
+          <h5 class="card-title text-primary fw-bold">Social Links</h5>
+          <% if @user.social_links.present? %>
+            <ul class="list-inline mt-2">
+              <% @user.social_links.each do |platform, link| %>
+                <li class="list-inline-item">
+                  <a href="<%= link %>" target="_blank" class="btn btn-outline-secondary btn-sm rounded-pill">
+                    <i class="bi bi-<%= platform %>"></i> <%= platform.capitalize %>
+                  </a>
+                </li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p class="text-muted fst-italic">No social links available.</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
