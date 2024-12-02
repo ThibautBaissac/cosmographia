@@ -1,8 +1,11 @@
 <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvaFeedback" aria-labelledby="offcanvaFeedbackLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvaFeedbackLabel"><%= t("feedbacks.title") %></h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <!-- Offcanvas Header -->
+  <div class="offcanvas-header bg-primary text-white">
+    <h5 class="offcanvas-title fw-bold" id="offcanvaFeedbackLabel"><%= t("feedbacks.title") %></h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
+
+  <!-- Offcanvas Body -->
   <div class="offcanvas-body">
     <%= render("feedbacks/new") %>
   </div>

@@ -1,17 +1,22 @@
+<p class="text-muted"><%= t("feedbacks.text") %></p>
+
+<!-- Feedback Form -->
 <% feedback = current_user.feedbacks.new %>
-
-<%= t("feedbacks.text") %>
-
 <%= form_with(model: feedback, local: true, class: "mt-4") do |form| %>
+  <!-- Subject Field -->
   <div class="mb-3">
-    <%= form.label(:subject, class: "form-label") %>
-    <%= form.text_field(:subject, class: "form-control rounded-4") %>
+    <%= form.label(:subject, class: "form-label fw-semibold") %>
+    <%= form.text_field(:subject, class: "form-control rounded-pill shadow-sm", placeholder: "Enter the subject") %>
   </div>
 
+  <!-- Message Field -->
   <div class="mb-3">
-    <%= form.label(:message, class: "form-label") %>
-    <%= form.text_area(:message, class: "form-control rounded-4", rows: 5) %>
+    <%= form.label(:message, class: "form-label fw-semibold") %>
+    <%= form.text_area(:message, class: "form-control rounded-4 shadow-sm", rows: 5, placeholder: "Write your feedback here...") %>
   </div>
 
-  <%= form.submit(t("feedbacks.submit"), class: "btn btn-primary rounded-4") %>
+  <!-- Submit Button -->
+  <div class="d-grid">
+    <%= form.submit(t("feedbacks.submit"), class: "btn btn-primary btn-lg rounded-pill shadow-sm") %>
+  </div>
 <% end %>
