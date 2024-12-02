@@ -13,5 +13,13 @@ class CreateMaps < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
+
+    add_index(:maps, :title)
+    add_index(:maps, :description)
+    add_index(:maps, :creation_date)
+    add_index(:maps, :scale)
+    add_index(:maps, :sources)
+    add_index(:maps, :geographic_coverage)
+    add_index(:maps, :projection)
   end
 end

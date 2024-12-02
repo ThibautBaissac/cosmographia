@@ -79,10 +79,16 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_29_092447) do
     t.text "sources"
     t.string "geographic_coverage"
     t.string "projection"
-    t.string "coordinate_system"
     t.boolean "is_public", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["creation_date"], name: "index_maps_on_creation_date"
+    t.index ["description"], name: "index_maps_on_description"
+    t.index ["geographic_coverage"], name: "index_maps_on_geographic_coverage"
+    t.index ["projection"], name: "index_maps_on_projection"
+    t.index ["scale"], name: "index_maps_on_scale"
+    t.index ["sources"], name: "index_maps_on_sources"
+    t.index ["title"], name: "index_maps_on_title"
     t.index ["user_id"], name: "index_maps_on_user_id"
   end
 
