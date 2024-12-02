@@ -26,7 +26,7 @@
 
   <body class="d-flex flex-column min-vh-100 bg-light">
     <%= render("layouts/navbar/main") %>
-    <div class="flex-grow-1 my-3">
+    <div class="flex-grow-1 mt-3">
       <%= yield %>
     </div>
     <%= render("feedbacks/main") if user_signed_in? %>

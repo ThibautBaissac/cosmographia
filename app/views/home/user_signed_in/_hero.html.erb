@@ -1,19 +1,17 @@
-<div class="border-top border-bottom my-5 py-5 bg-light">
-  <div class="container text-center">
-    <h1 class="display-4 fw-bold text-primary">
-      <%= t("common.welcome_to", app_name: "Cosmographia") %>
-    </h1>
-    <div class="col-lg-8 mx-auto">
-      <p class="lead text-secondary mb-4">
-        Plus de <span class="fw-bold text-dark"><%= Map.count %> cartes partagées</span> par notre communauté vous attendent.
-        Inspirez-vous, explorez, et ajoutez votre propre vision en publiant vos cartes dès aujourd'hui.
-        <br>
-        Ensemble, dessinons le monde et l'univers ! ✨.
-      </p>
-      <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-        <%= link_to(t("home.user_signed_in.post_map"), new_map_path, class: "btn btn-primary btn-lg px-4 gap-3 rounded-pill shadow-sm") %>
-        <%= link_to("🌍 #{t("home.user_signed_in.dicover_maps")}", maps_path, class: "btn btn-outline-secondary btn-lg px-4 gap-3 rounded-pill shadow-sm") %>
-      </div>
+<div class="container border-bottom bg-light text-center pb-4">
+  <h1 class="display-4 fw-bold text-primary">
+    <%= t("common.welcome_to", app_name: "Cosmographia") %>
+  </h1>
+  <div class="col-lg-8 mx-auto">
+    <p class="lead text-secondary mb-4">
+      Plus de <span class="fw-bold text-dark"><%= Map.count %> cartes partagées</span> par notre communauté vous attendent.
+      Inspirez-vous, explorez, et ajoutez votre propre vision en publiant vos cartes dès aujourd'hui.
+      <br>
+      Ensemble, dessinons le monde et l'univers ! ✨.
+    </p>
+    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+      <%= link_to(t("home.user_signed_in.post_map"), new_map_path, class: "btn btn-primary btn-lg px-4 gap-3 rounded-pill shadow-sm") %>
+      <%= link_to("🌍 #{t("home.user_signed_in.dicover_maps")}", maps_path, class: "btn btn-outline-secondary btn-lg px-4 gap-3 rounded-pill shadow-sm") %>
     </div>
   </div>
 </div>
