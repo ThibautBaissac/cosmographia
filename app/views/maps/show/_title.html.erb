@@ -1,8 +1,11 @@
-<div class="container d-flex justify-content-between align-items-center">
-  <h1 class="my-4"><%= map.title %></h1>
-  <% if current_user == map.user || current_user&.superadmin? %>
-    <%= link_to(edit_map_path(map)) do %>
-      <i class="fa-regular fa-pen-to-square fa-2x text-primary"></i>
+<div class="container py-4">
+  <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+    <h1 class="display-4 text-primary"><%= map.title %></h1>
+    <% if current_user == map.user || current_user&.superadmin? %>
+      <%= link_to(edit_map_path(map), class: "btn btn-outline-primary btn-sm rounded-pill shadow-sm d-flex align-items-center gap-2") do %>
+        <i class="fa-regular fa-pen-to-square"></i>
+        <span>Edit</span>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
