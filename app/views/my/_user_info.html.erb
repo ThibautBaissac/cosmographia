@@ -23,11 +23,6 @@
     <div class="col-md-8">
       <div class="card shadow-sm rounded-4">
         <div class="card-body">
-          <!-- About Me Section -->
-          <h5 class="card-title text-primary fw-bold">About Me</h5>
-          <p class="card-text text-secondary"><%= @user.bio || "No bio available." %></p>
-          <hr>
-
           <!-- Contact Information Section -->
           <h5 class="card-title text-primary fw-bold">Contact Information</h5>
           <ul class="list-unstyled">
@@ -50,6 +45,17 @@
           <% else %>
             <p class="text-muted fst-italic">No social links available.</p>
           <% end %>
+          <hr>
+
+          <!-- Softwares Section -->
+          <h5 class="card-title text-primary fw-bold">Softwares</h5>
+          <ul class="list-inline mt-2">
+            <% @user.softwares.each do |software| %>
+              <li class="list-inline-item mb-2">
+                <span class="text-secondary"><%= software.name %></span>
+              </li>
+            <% end %>
+          </ul>
         </div>
       </div>
     </div>

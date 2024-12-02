@@ -38,6 +38,6 @@ class MyController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:locale, :first_name, :last_name, :bio, :personal_website, social_links: {})
+    params.require(:user).permit(:locale, :first_name, :last_name, :bio, :personal_website, social_links: {}, software_ids: [])
   end
 end
