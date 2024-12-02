@@ -2,13 +2,10 @@
   <h2>Charts</h2>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <%= pie_chart @maps_by_projection, title: "Maps Distribution by Projection" %>
     </div>
-    <div class="col-md-4">
-      <%= pie_chart @maps_by_coordinate_system, title: "Maps Distribution by Coordinate System" %>
-    </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       <%= pie_chart @software_usage, title: "Most Used Software" %>
     </div>
   </div>

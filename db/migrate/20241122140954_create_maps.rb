@@ -9,7 +9,6 @@ class CreateMaps < ActiveRecord::Migration[8.0]
       t.text(:sources)
       t.string(:geographic_coverage)
       t.string(:projection)
-      t.string(:coordinate_system)
       t.boolean(:is_public, default: false)
 
       t.timestamps

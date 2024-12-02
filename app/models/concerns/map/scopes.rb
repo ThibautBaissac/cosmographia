@@ -16,7 +16,6 @@ module Map::Scopes
           maps.sources ILIKE :q OR
           maps.geographic_coverage ILIKE :q OR
           maps.projection ILIKE :q OR
-          maps.coordinate_system ILIKE :q OR
           softwares.name ILIKE :q OR
           softwares.category ILIKE :q OR
           users.email ILIKE :q",

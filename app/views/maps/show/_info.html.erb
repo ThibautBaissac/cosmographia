@@ -9,7 +9,6 @@
       <li class="list-group-item"><strong><%= t("activerecord.attributes.maps.source") %>:</strong> <%= map.sources %></li>
       <li class="list-group-item"><strong><%= t("activerecord.attributes.maps.geographic_coverage") %>:</strong> <%= map.geographic_coverage %></li>
       <li class="list-group-item"><strong><%= t("activerecord.attributes.maps.projection") %>:</strong> <%= t("map_projections.#{map.projection}") %></li>
-      <li class="list-group-item"><strong><%= t("activerecord.attributes.maps.coordinate_system") %>:</strong> <%= map.coordinate_system %></li>
     </ul>
 
     <%= render("maps/show/info_softwares", map:) %>

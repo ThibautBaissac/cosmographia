@@ -11,7 +11,6 @@ fr:
         category: Catégorie
         name: Nom
       maps:
-        coordinate_system: Système de coordonnées
         creation_date: Date de création
         description: Description
         geographic_coverage: Couverture géographique

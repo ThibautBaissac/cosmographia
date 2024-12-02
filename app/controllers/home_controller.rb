@@ -20,7 +20,6 @@ class HomeController < ApplicationController
   def set_charts
     @maps_over_time = Map.group_by_month(:creation_date).count
     @maps_by_projection = Map.group(:projection).count
-    @maps_by_coordinate_system = Map.group(:coordinate_system).count
     @software_usage = MapSoftware.joins(:software).group("softwares.name").count
   end
 end

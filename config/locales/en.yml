@@ -11,7 +11,6 @@ en:
         category: Category
         name: Name
       maps:
-        coordinate_system: Coordinate system
         creation_date: Creation date
         description: Description
         geographic_coverage: Geographic coverage

@@ -8,7 +8,6 @@
     sources: Faker::Lorem.sentence(word_count: 5),
     geographic_coverage: Faker::Address.country,
     projection: Map.projection_values.sample,
-    coordinate_system: [ "WGS84", "NAD83", "ETRS89" ].sample,
     is_public: [ true, false ].sample,
     created_at: Faker::Date.backward(days: 365 * 10)
   )
