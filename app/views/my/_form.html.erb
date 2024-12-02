@@ -1,47 +1,47 @@
 <%= form_with(model: @user, url: my_path, local: true, class: "needs-validation", novalidate: true) do |form| %>
-  <% if @user.errors.any? %>
-    <div class="alert alert-danger">
-      <h5><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h5>
-      <ul class="mb-0">
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <div class="row">
+    <div class="col-3">
+      <h3 class="text-primary">General Info</h3>
     </div>
-  <% end %>
-
-  <div class="mb-3">
-    <%= form.label :locale, class: "form-label fw-bold" %>
-    <%= form.select :locale, [['French', 'fr'], ['English', 'en']], {}, { class: 'form-control rounded-pill' } %>
+    <div class="col-9">
+      <div class="row row-cols-1 row-cols-md-2 g-4 mb-3">
+        <div class="col">
+          <%= form.label :first_name, class: "form-label fw-semibold" %>
+          <%= form.text_field :first_name, class: 'form-control rounded-pill shadow-sm', placeholder: "Enter your first name" %>
+        </div>
+        <div class="col">
+          <%= form.label :last_name, class: "form-label fw-semibold" %>
+          <%= form.text_field :last_name, class: 'form-control rounded-pill shadow-sm', placeholder: "Enter your last name" %>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 g-4 mb-3">
+        <div class="col">
+          <%= form.label :locale, class: "form-label fw-semibold" %>
+          <%= form.select :locale, [['French', 'fr'], ['English', 'en']], {}, { class: 'form-select rounded-pill shadow-sm' } %>
+        </div>
+        <div class="col">
+          <%= form.label :personal_website, class: "form-label fw-semibold" %>
+          <%= form.url_field :personal_website, class: 'form-control rounded-pill shadow-sm', placeholder: "https://yourwebsite.com" %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="mb-3">
-    <%= form.label :first_name, class: "form-label fw-bold" %>
-    <%= form.text_field :first_name, class: 'form-control rounded-pill', placeholder: "Enter your first name" %>
+  <div class="row">
+    <div class="col-3">
+      <h3 class="text-primary">Bio</h3>
+    </div>
+    <div class="col-9">
+      <div class="mb-3">
+        <%= form.text_area :bio, class: 'form-control rounded-4 shadow-sm', rows: 5, placeholder: "Write a short bio about yourself" %>
+      </div>
+    </div>
   </div>
 
-  <div class="mb-3">
-    <%= form.label :last_name, class: "form-label fw-bold" %>
-    <%= form.text_field :last_name, class: 'form-control rounded-pill', placeholder: "Enter your last name" %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :bio, class: "form-label fw-bold" %>
-    <%= form.text_area :bio, class: 'form-control rounded-4', rows: 5, placeholder: "Write a short bio about yourself" %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :personal_website, class: "form-label fw-bold" %>
-    <%= form.url_field :personal_website, class: 'form-control rounded-pill', placeholder: "https://yourwebsite.com" %>
-  </div>
-
-  <!--
-  <div class="mb-3">
-    <%= form.label :social_links, class: "form-label fw-bold" %>
-    <%= form.text_area :social_links, class: 'form-control rounded-4', rows: 3, placeholder: 'JSON format: {"twitter": "link", "linkedin": "link"}' %>
-  </div>
-  -->
-  <div class="d-grid mb-3">
-    <%= form.submit 'Save', class: 'btn btn-primary btn-lg rounded-pill shadow-sm' %>
+  <div class="row my-3">
+    <div class="col-3"></div>
+    <div class="col-9">
+      <%= form.submit "Save User", class: "btn btn-primary btn-lg w-100 rounded-pill shadow-sm" %>
+    </div>
   </div>
 <% end %>
