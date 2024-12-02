@@ -50,6 +50,6 @@ class MapsController < ApplicationController
   end
 
   def map_params
-    params.require(:map).permit(:title, :description, :creation_date, :scale, :sources, :geographic_coverage, :projection, :is_public)
+    params.require(:map).permit(:title, :description, :creation_date, :scale, :sources, :geographic_coverage, :projection, :is_public, software_ids: [])
   end
 end
