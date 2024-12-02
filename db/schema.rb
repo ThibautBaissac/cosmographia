@@ -97,6 +97,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_29_092447) do
     t.string "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category"], name: "index_softwares_on_category"
+    t.index ["name"], name: "index_softwares_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|

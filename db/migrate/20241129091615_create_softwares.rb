@@ -5,5 +5,8 @@ class CreateSoftwares < ActiveRecord::Migration[8.0]
       t.string(:category, null: false)
       t.timestamps
     end
+
+    add_index(:softwares, :name, unique: true)
+    add_index(:softwares, :category)
   end
 end
