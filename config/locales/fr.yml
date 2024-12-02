@@ -78,6 +78,7 @@ fr:
   navbar:
     about: À propos
     cartography: Cartographie
+    edit_password: Modifier le mot de passe
     edit_profile: Modifier le profil
     install_pwa: Ajouter à l'écran d'accueil
     search: Rechercher
