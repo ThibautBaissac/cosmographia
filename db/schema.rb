@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_02_120829) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_02_123428) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -101,6 +101,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_120829) do
     t.index ["name"], name: "index_softwares_on_name", unique: true
   end
 
+  create_table "user_softwares", force: :cascade do |t|
+    t.bigint "software_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["software_id"], name: "index_user_softwares_on_software_id"
+    t.index ["user_id"], name: "index_user_softwares_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -131,4 +140,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_120829) do
   add_foreign_key "map_softwares", "maps"
   add_foreign_key "map_softwares", "softwares"
   add_foreign_key "maps", "users"
+  add_foreign_key "user_softwares", "softwares"
+  add_foreign_key "user_softwares", "users"
 end
