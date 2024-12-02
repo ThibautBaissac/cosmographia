@@ -4,14 +4,9 @@
     <div class="col-md-4">
       <div class="card shadow-sm rounded-4">
         <div class="card-body text-center">
-          <div class="d-flex justify-content-between align-items-center">
-            <h4 class="card-title fw-bold mx-auto">
-              <%= @user.first_name %> <%= @user.last_name %>
-            </h4>
-            <%= link_to(edit_my_path, class: 'btn btn-outline-primary btn-sm rounded-pill') do %>
-              <i class="fa-regular fa-pen-to-square"></i>
-            <% end %>
-          </div>
+          <h4 class="card-title fw-bold mx-auto">
+            <%= @user.first_name %> <%= @user.last_name %>
+          </h4>
           <p class="card-text text-muted fst-italic"><%= @user.bio || "No bio available." %></p>
 
           <% if @user.personal_website.present? %>
