@@ -1,8 +1,8 @@
 <% maps.each do |map| %>
   <div class="col">
-    <div class="card h-100 rounded-4">
+    <div class="card h-100 shadow-sm rounded-4">
       <% if map.image.attached? %>
-      <div class="image-container rounded-4">
+      <div class="image-container rounded-top-4">
         <%= link_to(map) do %>
           <%= image_tag(map.image, class: "card-img-top disable_img", alt: "#{map.title} image") %>
           <div class="image-overlay text-center">
@@ -14,7 +14,7 @@
         <%= image_tag("default.png", class: "card-img-top", alt: "Placeholder image") %>
       <% end %>
       <div class="card-body">
-        <h5 class="card-title"><%= map.title %></h5>
+        <h5 class="card-title text-primary"><%= map.title %></h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= t("common.created_by", name: map.user.email) %></h6>
       </div>
     </div>
