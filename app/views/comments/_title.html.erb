@@ -1,1 +1,3 @@
-<h2><%= map.comments.size %> <%= t(:comments, count: map.comments.size) %> </h2>
+<h2 class="text-white mb-4">
+  <%= t("home.user_signed_in.last_comments", count: map.comments.size) %>
+</h2>

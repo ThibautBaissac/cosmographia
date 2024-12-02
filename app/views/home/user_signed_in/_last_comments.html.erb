@@ -1,6 +1,8 @@
-<div class="bg-primary bg-opacity-75 mt-5 p-4">
+<div class="bg-primary bg-opacity-75 mt-5 py-5">
   <div class="container">
-    <h2><%= t("home.user_signed_in.last_comments", count: comments.size) %></h2>
+    <h2 class="text-white mb-4">
+      <%= t("home.user_signed_in.last_comments", count: comments.size) %>
+    </h2>
     <% comments.each do |comment| %>
       <%= render("my/comment", comment:, user: comment.user) %>
     <% end %>

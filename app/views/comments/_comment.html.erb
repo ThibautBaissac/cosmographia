@@ -1,23 +1,26 @@
 <%= turbo_frame_tag(dom_id(comment)) do %>
-  <div class="bg-light rounded-4 p-3 my-2">
-    <div>
-      <div>
-        <span class="fw-bold"><%= comment.user.email %></span>
-        <span class="small fw-light"><%= time_ago_in_words(comment.updated_at) %></span>
-      </div>
-      <div class="my-2"><%= comment.content %></div>
+  <div class="bg-light rounded-4 p-4 my-3 shadow-sm">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <% if current_user == comment.user %>
+        <div class="d-flex gap-2">
+          <%= link_to(edit_map_comment_path(comment. map, comment), class: "btn btn-outline-secondary btn-sm rounded-4") do %>
+            <i class="fa-solid fa-pencil"></i>
+            <%= t("common.edit") %>
+          <% end %>
+          <%= button_to(map_comment_path(comment. map, comment), method: :delete, class: "btn btn-outline-danger btn-sm rounded-4") do %>
+            <i class="fa-solid fa-trash-can"></i>
+            <%= t("common.delete") %>
+          <% end %>
+        </div>
+      <% else %>
+        <span class="fw-bold text-primary">
+          <%= t("common.by", name: comment.user.email) %>
+        </span>
+      <% end %>
+      <span class="text-muted small">
+        <%= time_ago_in_words(comment.updated_at) %> ago
+      </span>
     </div>
-    <% if current_user == comment.user %>
-      <div class="d-flex gap-2">
-        <%= link_to(edit_map_comment_path(comment. map, comment), class: "btn btn-outline-secondary btn-sm rounded-4") do %>
-          <i class="fa-solid fa-pencil"></i>
-          <%= t("common.edit") %>
-        <% end %>
-        <%= button_to(map_comment_path(comment. map, comment), method: :delete, class: "btn btn-outline-danger btn-sm rounded-4") do %>
-          <i class="fa-solid fa-trash-can"></i>
-          <%= t("common.delete") %>
-        <% end %>
-      </div>
-    <% end %>
+    <p class="text-secondary"><%= comment.content %></p>
   </div>
 <% end %>
