@@ -1,5 +1,4 @@
 class Map < ApplicationRecord
-  include Map::Projections
   include Map::Scopes
 
   belongs_to :user
@@ -9,4 +8,6 @@ class Map < ApplicationRecord
   has_one_attached :image
 
   validates :title, presence: true
+
+  string_enum projection: Constants::Maps::PROJECTIONS
 end
