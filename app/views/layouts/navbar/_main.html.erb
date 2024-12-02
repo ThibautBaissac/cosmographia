@@ -1,21 +1,25 @@
-<nav class="navbar navbar-expand-lg bg-white container rounded-4 mt-2 px-3 border border-secondary-subtle">
-  <%= link_to(root_path, class: "navbar-brand") do %>
-    <%= image_tag("logo.png", alt: "Logo", width: "30", height: "30", class: "d-inline-block align-text-top") %>
-    Cosmographia
+<nav class="navbar navbar-expand-lg container bg-white shadow-sm rounded-4 mt-3 px-3 border border-secondary-subtle">
+  <%= link_to(root_path, class: "navbar-brand d-flex align-items-center") do %>
+    <%= image_tag("logo.png", alt: "Logo", width: "30", height: "30", class: "d-inline-block align-text-top me-2") %>
+    <span class="fw-bold text-primary">Cosmographia</span>
   <% end %>
+
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <!-- Navigation Links -->
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-        <%= link_to(t("navbar.cartography"), maps_path, class: "nav-link #{active_class(maps_path)}") %>
+        <%= link_to(t("navbar.cartography"), maps_path, class: "nav-link #{active_class(maps_path)} fw-semibold") %>
       </li>
       <li class="nav-item">
-        <%= link_to(t("navbar.about"), about_index_path, class: "nav-link #{active_class(about_index_path)}") %>
+        <%= link_to(t("navbar.about"), about_index_path, class: "nav-link #{active_class(about_index_path)} fw-semibold") %>
       </li>
     </ul>
-    <div class="d-sm-flex">
+
+    <div class="d-flex align-items-center gap-3">
       <%= render("layouts/navbar/search") %>
       <%= render("layouts/navbar/user_dropdown") %>
     </div>

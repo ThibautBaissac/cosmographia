@@ -1,6 +1,10 @@
 <% if user_signed_in? %>
   <form class="d-flex" role="search">
-    <input class="form-control me-2" type="search" placeholder="<%= t("navbar.search_placeholder") %>" aria-label="<%= t("navbar.search") %>">
-    <button class="btn btn-outline-success" type="submit"><%= t("navbar.search") %></button>
+    <div class="input-group">
+      <input class="form-control rounded-start-pill" type="search" placeholder="<%= t("navbar.search_placeholder") %>" aria-label="<%= t("navbar.search") %>">
+      <button class="btn btn-outline-success rounded-end-pill" type="submit">
+        <%= t("navbar.search") %>
+      </button>
+    </div>
   </form>
 <% end %>

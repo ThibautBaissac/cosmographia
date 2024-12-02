@@ -1,10 +1,10 @@
 <% if user_signed_in? %>
-  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  <ul class="navbar-nav">
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa-solid fa-circle-user fa-2x"></i>
+      <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-circle-user fa-2x text-primary"></i>
       </a>
-      <ul class="dropdown-menu dropdown-menu-end">
+      <ul class="dropdown-menu dropdown-menu-end shadow-sm">
         <li><%= link_to(t("navbar.profile"), my_path, class: "dropdown-item") %></li>
         <li><%= link_to(t("navbar.edit_profile"), edit_user_registration_path, class: "dropdown-item") %></li>
         <li><hr class="dropdown-divider"></li>
@@ -17,15 +17,15 @@
   </ul>
 <% else %>
   <ul class="list-group list-group-horizontal">
-    <li class="list-group-item border border-0">
-      <%= link_to(new_user_registration_path, class: "btn btn-primary") do %>
-        <i class="fa-solid fa-user-plus"></i>
+    <li class="list-group-item border-0">
+      <%= link_to(new_user_registration_path, class: "btn btn-primary rounded-pill") do %>
+        <i class="fa-solid fa-user-plus me-2"></i>
         <%= t("navbar.navbar.sign_up") %>
       <% end %>
     </li>
-    <li class="list-group-item border border-0">
-      <%= link_to(new_user_session_path, class: "btn btn-outline-primary") do %>
-      <i class="fa-solid fa-arrow-right-to-bracket"></i>
+    <li class="list-group-item border-0">
+      <%= link_to(new_user_session_path, class: "btn btn-outline-primary rounded-pill") do %>
+        <i class="fa-solid fa-arrow-right-to-bracket me-2"></i>
         <%= t("navbar.navbar.sign_in") %>
       <% end %>
     </li>
