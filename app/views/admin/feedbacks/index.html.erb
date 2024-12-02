@@ -1,25 +1,32 @@
-<h1>All Feedbacks</h1>
+<div class="mx-5">
+  <h1 class="my-0 display-5 text-primary">All Feedbacks</h1>
 
-<table class="table table-striped mt-4">
-  <thead>
-    <tr>
-      <th>Submitted By</th>
-      <th>Subject</th>
-      <th>Message</th>
-      <th>Submitted At</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @feedbacks.each do |feedback| %>
-      <tr>
-        <td><%= feedback.user.email %></td>
-        <td><%= feedback.subject %></td>
-        <td><%= feedback.message %></td>
-        <td><%= feedback.created_at.strftime("%m/%d/%Y - %H:%M") %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<div class="d-flex justify-content-center align-items-center mt-3">
-  <%== pagy_nav(@pagy) if @pagy.pages > 1  %>
+  <!-- Feedback Table -->
+  <div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+      <thead class="table-primary">
+        <tr>
+          <th scope="col">Submitted By</th>
+          <th scope="col">Subject</th>
+          <th scope="col">Message</th>
+          <th scope="col">Submitted At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @feedbacks.each do |feedback| %>
+          <tr>
+            <td><%= feedback.user.email %></td>
+            <td><%= feedback.subject %></td>
+            <td><%= feedback.message %></td>
+            <td><%= feedback.created_at.strftime("%d/%m/%Y - %H:%M") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  <div class="d-flex justify-content-center align-items-center mt-4">
+    <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+  </div>
 </div>
