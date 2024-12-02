@@ -1,38 +1,49 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <div class="card">
-        <div class="card-header">
-          <h4>Sign Up</h4>
+      <!-- Card Wrapper -->
+      <div class="card shadow-sm rounded-4">
+        <!-- Card Header -->
+        <div class="card-header bg-success text-white rounded-top-4">
+          <h4 class="mb-0 text-center">Sign Up</h4>
         </div>
+
+        <!-- Card Body -->
         <div class="card-body">
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
+          <!-- Error Messages -->
+          <%= render "devise/shared/error_messages", resource: resource %>
 
+          <!-- Sign-Up Form -->
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "needs-validation", novalidate: true}) do |f| %>
+            <!-- Email Field -->
             <div class="mb-3">
-              <%= f.label(:email, class: "form-label") %>
-              <%= f.email_field(:email, autofocus: true, class: "form-control", placeholder: "Enter your email") %>
+              <%= f.label(:email, class: "form-label fw-bold") %>
+              <%= f.email_field(:email, autofocus: true, class: "form-control rounded-pill", placeholder: "Enter your email") %>
             </div>
 
+            <!-- Password Field -->
             <div class="mb-3">
-              <%= f.label(:password, class: "form-label") %>
+              <%= f.label(:password, class: "form-label fw-bold") %>
               <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
-              <% end %><br />
-              <%= f.password_field(:password, class: "form-control", autocomplete: "new-password", placeholder: "Enter your password") %>
+                <small class="form-text text-muted">(<%= @minimum_password_length %> characters minimum)</small>
+              <% end %>
+              <%= f.password_field(:password, class: "form-control rounded-pill", autocomplete: "new-password", placeholder: "Enter your password") %>
             </div>
 
+            <!-- Password Confirmation Field -->
             <div class="mb-3">
-              <%= f.label(:password_confirmation, class: "form-label") %>
-              <%= f.password_field(:password_confirmation, class: "form-control", autocomplete: "new-password", placeholder: "Confirm your password") %>
+              <%= f.label(:password_confirmation, class: "form-label fw-bold") %>
+              <%= f.password_field(:password_confirmation, class: "form-control rounded-pill", autocomplete: "new-password", placeholder: "Confirm your password") %>
             </div>
 
+            <!-- Submit Button -->
             <div class="d-grid">
-              <%= f.submit("Sign up", class: "btn btn-success") %>
+              <%= f.submit("Sign up", class: "btn btn-success btn-lg rounded-pill shadow-sm") %>
             </div>
           <% end %>
 
-          <div class="mt-3">
+          <!-- Additional Links -->
+          <div class="mt-3 text-center">
             <%= render "devise/shared/links" %>
           </div>
         </div>
