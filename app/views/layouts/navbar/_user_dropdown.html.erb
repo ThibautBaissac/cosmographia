@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <ul class="navbar-nav">
+  <ul class="navbar-nav w-lg-auto">
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fa-solid fa-circle-user fa-2x text-primary"></i>
@@ -15,7 +15,7 @@
     </li>
   </ul>
 <% else %>
-  <ul class="list-group list-group-horizontal">
+  <ul class="list-group list-group-horizontal w-100 w-lg-auto">
     <li class="list-group-item border-0">
       <%= link_to(new_user_registration_path, class: "btn btn-primary rounded-pill") do %>
         <i class="fa-solid fa-user-plus me-2"></i>

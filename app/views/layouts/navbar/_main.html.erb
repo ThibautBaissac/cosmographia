@@ -1,27 +1,32 @@
-<nav class="navbar navbar-expand-lg container bg-white shadow-sm rounded-4 mt-3 px-3 border border-secondary-subtle">
+<nav class="navbar navbar-expand-lg container bg-white shadow-sm rounded-4 mt-3 px-3 border border-secondary-subtle" aria-label="Offcanvas navbar">
   <%= link_to(root_path, class: "navbar-brand d-flex align-items-center") do %>
     <%= image_tag("logo.png", alt: "Logo", width: "30", height: "30", class: "d-inline-block align-text-top me-2") %>
     <span class="fw-bold text-primary">Cosmographia</span>
   <% end %>
-
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+    aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <!-- Navigation Links -->
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-        <%= link_to(t("navbar.cartography"), maps_path, class: "nav-link #{active_class(maps_path)} fw-semibold") %>
-      </li>
-      <li class="nav-item">
-        <%= link_to(t("navbar.about"), about_index_path, class: "nav-link #{active_class(about_index_path)} fw-semibold") %>
-      </li>
-    </ul>
-
-    <div class="d-flex align-items-center gap-3">
-      <%= render("layouts/navbar/search") %>
-      <%= render("layouts/navbar/user_dropdown") %>
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+    aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+      <%= image_tag("logo.png", alt: "Logo", width: "30", height: "30", class: "d-inline-block align-text-top me-2") %>
+      <span class="fw-bold text-primary">Cosmographia</span>
+      <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav flex-grow-1 pe-3">
+        <li class="nav-item align-content-center">
+          <%= link_to(t("navbar.cartography"), maps_path, class: "nav-link #{active_class(maps_path)} fw-semibold") %>
+        </li>
+        <li class="nav-item align-content-center">
+          <%= link_to(t("navbar.about"), about_index_path, class: "nav-link #{active_class(about_index_path)} fw-semibold") %>
+        </li>
+      </ul>
+      <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3">
+        <%= render("layouts/navbar/search") %>
+        <%= render("layouts/navbar/user_dropdown") %>
+      </div>
     </div>
   </div>
 </nav>

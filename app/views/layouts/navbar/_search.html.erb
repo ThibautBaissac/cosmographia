@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <%= form_with(url: maps_path, method: :get, local: false, class: "d-flex") do |form| %>
+  <%= form_with(url: maps_path, method: :get, local: false, class: "d-flex w-100 w-lg-auto") do |form| %>
     <div class="input-group">
       <%= form.text_field(:query, value: @query, placeholder: "Search maps...", class: "form-control rounded-start-pill", aria: { label: "Search query" }) %>
       <button class="btn btn-outline-success rounded-end-pill" type="submit">
