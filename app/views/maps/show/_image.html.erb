@@ -3,7 +3,7 @@
     <div class="position-relative">
       <%= image_tag(map.image, class: "w-100 rounded-4 shadow-sm disable_img", alt: "#{map.title} image") %>
       <div class="w-100 bg-dark bg-opacity-25 d-flex justify-content-between align-items-center p-3 position-absolute bottom-0 start-0 rounded-bottom">
-        <div class="text-light small"><%= map.user.email %></div>
+        <div class="text-light small"><%= map.user.fullname %></div>
         <button type="button" class="btn btn-light btn-sm rounded-pill shadow-sm" data-action="click->expand-image#toggle" data-expand-image-target="expandButton">
           <i class="fa-solid fa-expand"></i>
         </button>

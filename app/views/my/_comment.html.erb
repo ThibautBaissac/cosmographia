@@ -2,7 +2,7 @@
   <div class="d-flex justify-content-between align-items-center mb-2">
     <% unless current_user == user %>
       <span class="fw-bold text-primary">
-        <%= t("common.by", name: user.email) %>
+        <%= t("common.by", name: user.fullname) %>
       </span>
     <% end %>
     <span class="text-muted small">

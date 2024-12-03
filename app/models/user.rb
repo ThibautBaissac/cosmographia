@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   validates :locale, presence: true, inclusion: {in: I18n.available_locales.map(&:to_s)}
 
+  def fullname
+    [ first_name, last_name ].compact.join(" ").presence
+  end
+
   def superadmin?
     superadmin
   end

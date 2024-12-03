@@ -2,7 +2,7 @@
   <div class="card shadow-sm rounded-4">
     <div class="card-body">
       <h5 class="card-title text-primary"><%= map.title %></h5>
-      <h6 class="card-subtitle mb-2 text-muted"><%= t("common.created_by", name: map.user.email) %></h6>
+      <h6 class="card-subtitle mb-2 text-muted"><%= t("common.created_by", name: map.user.fullname) %></h6>
       <p class="card-text text-secondary"><%= truncate(map.description, length: 100) %></p>
     </div>
     <ul class="list-group list-group-flush">

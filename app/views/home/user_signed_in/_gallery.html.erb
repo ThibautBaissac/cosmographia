@@ -6,7 +6,7 @@
           <%= link_to(map) do %>
             <%= image_tag(map.image, class: "w-100 card-img-top disable_img", alt: "#{map.title} image") %>
             <div class="image-overlay text-center">
-              <%= map.user.email %>
+              <%= map.user.fullname %>
             </div>
           <% end %>
         </div>
