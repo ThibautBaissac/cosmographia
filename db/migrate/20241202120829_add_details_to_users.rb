@@ -12,6 +12,6 @@ class AddDetailsToUsers < ActiveRecord::Migration[8.0]
 
     add_column(:users, :personal_website, :string)
 
-    add_column(:users, :social_links, :json)
+    add_column(:users, :social_links, :jsonb)
   end
 end
