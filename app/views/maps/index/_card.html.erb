@@ -1,20 +1,18 @@
-<div class="col">
-  <div class="card h-100 shadow-sm rounded-4">
-    <% if map.image.attached? %>
-    <div class="image-container rounded-top-4">
+<div data-masonry-target="item" class="border rounded-4">
+  <% if map.image.attached? %>
+    <div class="image-container">
       <%= link_to(map) do %>
-        <%= image_tag(map.image, class: "card-img-top disable_img", alt: "#{map.title} image") %>
+        <%= image_tag(map.image, class: "w-100 rounded-top-4", alt: "#{map.title} image") %>
         <div class="image-overlay text-center">
-          <%= map.description&.truncate(50) %>
+          <%= map.description %>
         </div>
-      <% end %>
-    </div>
-    <% else %>
-      <%= image_tag("default.png", class: "card-img-top", alt: "Placeholder image") %>
+      </div>
     <% end %>
-    <div class="card-body">
-      <h5 class="card-title text-primary"><%= map.title %></h5>
-      <h6 class="card-subtitle mb-2 text-muted"><%= t("common.created_by", name: map.user.fullname) %></h6>
-    </div>
+  <% else %>
+    <%= image_tag("default.png", alt: "Placeholder image") %>
+  <% end %>
+  <div class="card-body p-3">
+    <h5 class="card-title text-primary"><%= map.title %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= t("common.created_by", name: map.user.fullname) %></h6>
   </div>
 </div>
