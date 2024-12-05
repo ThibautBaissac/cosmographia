@@ -41,12 +41,14 @@ en:
     show_more: Show more comments
     write_comment: Write a comment
   common:
+    apply_filters: Apply filters
     by: By %{name}
     created_by: Created by %{name}
     delete: Delete
     discover: Discover
     edit: Edit
     hello: Hello %{name}
+    reset_filters: Reset filters
     welcome_to: Welcome to %{app_name}
   errors:
     attributes:

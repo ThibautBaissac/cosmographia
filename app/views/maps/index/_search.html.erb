@@ -10,42 +10,28 @@
     </button>
   </div>
 
-  <!-- Filters -->
-  <div class="row g-4">
-    <!-- Creation Date Filter -->
-    <div class="col-md-6">
-      <%= form.label :creation_date_start, "Creation Date From", class: "form-label fw-semibold" %>
-      <%= form.date_field :creation_date_start, value: params[:creation_date_start], class: "form-control rounded-pill shadow-sm" %>
-    </div>
-    <div class="col-md-6">
-      <%= form.label :creation_date_end, "Creation Date To", class: "form-label fw-semibold" %>
-      <%= form.date_field :creation_date_end, value: params[:creation_date_end], class: "form-control rounded-pill shadow-sm" %>
-    </div>
+  <!-- Apply Filters Button -->
+  <%= link_to("#collapseFilters",
+              class: "btn btn-outline-dark rounded-4",
+              data: { bs_toggle: "collapse" },
+              role: "button",
+              aria: { expanded: "false", controls: "collapseFilters" }) do %>
+    <i class="fa-solid fa-filter"></i>
+    <%= t("common.apply_filters") %>
+    <span class="small fw-light">(<%= @non_empty_params_count %>)</span>
+  <% end %>
 
-    <!-- Scale Filter -->
-    <div class="col-md-6">
-      <%= form.label :scale_min, "Scale Minimum", class: "form-label fw-semibold" %>
-      <%= form.number_field :scale_min, value: params[:scale_min], class: "form-control rounded-pill shadow-sm", step: 1, placeholder: "Enter minimum scale" %>
-    </div>
-    <div class="col-md-6">
-      <%= form.label :scale_max, "Scale Maximum", class: "form-label fw-semibold" %>
-      <%= form.number_field :scale_max, value: params[:scale_max], class: "form-control rounded-pill shadow-sm", step: 1, placeholder: "Enter maximum scale" %>
-    </div>
+  <!-- Reset Filters Link -->
+  <% unless @non_empty_params_count.zero? %>
+    <%= link_to(maps_path, class: "small text-secondary ms-3") do %>
+      <i class="fa-solid fa-filter-circle-xmark"></i>
+      <%= t("common.reset_filters") %>
+    <% end %>
+  <% end %>
 
-    <!-- Projection Filter -->
-    <div class="col-12">
-      <%= form.label :projections, "Projection", class: "form-label fw-semibold" %>
-      <%= form.select :projections,
-          options_for_select(Constants::Maps::PROJECTIONS.map { |proj| [proj, proj] }.unshift(["All", :all]),
-          selected: params[:projections]),
-          { include_blank: false },
-          { multiple: true, class: "form-select rounded-3 shadow-sm" } %>
-    </div>
-  </div>
-
-  <!-- Submit Button -->
-  <div class="d-grid mt-4">
-    <%= form.submit "Search", class: "btn btn-primary rounded-pill shadow-sm" %>
+  <!-- Collapsible Filters Section -->
+  <div class="collapse mt-3" id="collapseFilters">
+    <%= render("maps/index/filters", form: form, params: params) %>
   </div>
 
   <!-- Results Count -->

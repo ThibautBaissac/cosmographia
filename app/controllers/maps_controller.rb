@@ -6,6 +6,7 @@ class MapsController < ApplicationController
     maps = Map.includes(:user, :softwares, :image_attachment).references(:softwares, :user)
 
     filter = Maps::Filter.new(maps:, params: map_filter_params)
+    @non_empty_params_count = Filter::ParamList.new(params: map_filter_params).non_empty.size
     maps = filter.apply.order(created_at: :desc).distinct
 
     @pagy, @maps = pagy(maps)
