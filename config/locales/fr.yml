@@ -71,6 +71,7 @@ fr:
     submit:
       comment:
         create: Poster votre commentaire
+        update: Mettre à jour votre commentaire
   home:
     user_signed_in:
       last_comments: "Les %{count} derniers commentaires"

@@ -71,6 +71,7 @@ en:
     submit:
       comment:
         create: Post your comment
+        update: Update your comment
   home:
     user_signed_in:
       last_comments: "The %{count} last comments"

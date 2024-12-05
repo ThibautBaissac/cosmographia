@@ -15,7 +15,8 @@ class MapsController < ApplicationController
   def show
     @map = Map.find(params[:id])
     @maps = Map.order("RANDOM()").includes(:user, :image_attachment).limit(10)
-    @comment = Comment.new
+    @comments = @map.comments.order(created_at: :desc)
+    @new_comment = Comment.new
   end
 
 

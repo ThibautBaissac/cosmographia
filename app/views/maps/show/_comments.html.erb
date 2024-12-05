@@ -5,22 +5,22 @@
     <% end %>
 
     <%= turbo_frame_tag("map_comment_form") do %>
-      <%= render("comments/form", map:, comment:) %>
+      <%= render("comments/form", map:, comment: new_comment) %>
     <% end %>
 
-    <% if map.comments.any? %>
+    <% if comments.any? %>
       <!-- Render the first 5 comments -->
-      <%= render(partial: "comments/comment", collection: map.comments.limit(5).includes(:user)) %>
-      <% if map.comments.count > 5 %>
+      <%= turbo_frame_tag("map_#{map.id}_comments") do %>
+        <%= render(partial: "comments/comment", collection: comments.limit(5).includes(:user)) %>
+      <% end %>
+      <% if comments.count > 5 %>
         <!-- Show More button -->
         <a class="btn btn-outline-light" data-bs-toggle="collapse" href="#collapseComments" role="button" aria-expanded="false" aria-controls="collapseComments">
           <%= t("comments.show_more") %>
         </a>
         <!-- Collapsed section with the remaining comments -->
         <div class="collapse" id="collapseComments">
-          <%= turbo_frame_tag("map_#{map.id}_remaining_comments") do %>
-            <%= render(partial: "comments/comment", collection: map.comments.offset(5).includes(:user)) %>
-          <% end %>
+          <%= render(partial: "comments/comment", collection: comments.offset(5).includes(:user)) %>
         </div>
       <% end %>
     <% end %>
