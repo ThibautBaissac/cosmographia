@@ -49,6 +49,7 @@ en:
     edit: Edit
     hello: Hello %{name}
     reset_filters: Reset filters
+    save: Save
     welcome_to: Welcome to %{app_name}
   errors:
     attributes:
@@ -93,3 +94,7 @@ en:
     last_maps: My %{count} last maps
     my_last_comments: My last %{count} comments
     total_comment_count: (%{count} in total)
+  locale:
+    fr: Français
+    en: English
+    title: Switch language

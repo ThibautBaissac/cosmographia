@@ -29,7 +29,8 @@
     <div class="flex-grow-1 mt-3">
       <%= yield %>
     </div>
-    <%= render("feedbacks/main") if user_signed_in? %>
     <%= render("layouts/footer") %>
+    <%= render("users/locale/main") %>
+    <%= render("feedbacks/main") if user_signed_in? %>
   </body>
 </html>

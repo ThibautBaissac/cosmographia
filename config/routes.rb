@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     draw :maps
     draw :my
     draw :static_pages
+    draw :users
 
     root "home#index"
 

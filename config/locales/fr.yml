@@ -49,6 +49,7 @@ fr:
     edit: Modifier
     hello: Bonjour %{name}
     reset_filters: Réinitialiser les filtres
+    save: Sauvegarder
     welcome_to: Bienvenue sur %{app_name}
   errors:
     attributes:
@@ -93,3 +94,7 @@ fr:
     last_maps: Mes %{count} dernières cartes
     my_last_comments: Mes %{count} derniers commentaires
     total_comment_count: (%{count} au total)
+  locale:
+    fr: Français
+    en: English
+    title: Changer de langue
