@@ -14,7 +14,7 @@ class HomeController < ApplicationController
   private
 
   def last_comments
-    @last_comments = Comment.includes(:user, :map).order(created_at: :desc).limit(5)
+    @last_comments = Comment.includes(:user, map: :image_attachment).order(created_at: :desc).limit(5)
   end
 
   def set_charts

@@ -5,7 +5,7 @@ class MyController < ApplicationController
     @user = current_user
     @maps = current_user.maps.includes(:image_attachment).last(5)
     @total_comment_count = current_user.comments.count
-    @comments = current_user.comments.includes(:map).last(10)
+    @comments = current_user.comments.includes(map: :image_attachment).last(10)
     set_charts
   end
 

@@ -1,14 +1,21 @@
-<div class="bg-light rounded-4 p-4 my-3 shadow-sm">
-  <div class="d-flex justify-content-between align-items-center mb-2">
-    <% unless current_user == user %>
-      <span class="fw-bold text-primary">
-        <%= t("common.by", name: user.fullname) %>
+<div class="bg-light rounded-4 p-4 my-3 shadow-sm d-flex align-items-center">
+  <% if comment.map.image.attached? %>
+    <div class="me-3">
+      <%= image_tag(comment.map.image, width: 80, class: "rounded-circle img-thumbnail") %>
+    </div>
+  <% end %>
+  <div>
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <% unless current_user == user %>
+        <span class="fw-bold text-primary">
+          <%= t("common.by", name: user.fullname) %>
+        </span>
+      <% end %>
+      <span class="text-muted small">
+        <%= time_ago_in_words(comment.updated_at) %> ago
       </span>
-    <% end %>
-    <span class="text-muted small">
-      <%= time_ago_in_words(comment.updated_at) %> ago
-    </span>
+    </div>
+    <p class="mb-3 text-secondary"><%= comment.content %></p>
+    <%= link_to("Go to the map", comment.map, class: "btn btn-outline-primary btn-sm rounded-pill shadow-sm") %>
   </div>
-  <p class="mb-3 text-secondary"><%= comment.content %></p>
-  <%= link_to("Go to the map", comment.map, class: "btn btn-outline-primary btn-sm rounded-pill shadow-sm") %>
 </div>
