@@ -75,3 +75,4 @@ gem "pagy", "~> 9.3"
 
 gem "chartkick"
 gem "groupdate"
+gem "view_component"
