@@ -405,6 +405,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise (~> 4.9)
+  dotenv
   erb_lint
   faker (~> 3.5)
   groupdate
