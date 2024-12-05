@@ -3,9 +3,10 @@ class MapsController < ApplicationController
 
   def index
     @query = params[:query]&.strip
-    maps = Map.includes(:user, :image_attachment)
-    maps = maps.includes(:softwares) if @query.present?
-    maps = maps.search(@query).order(created_at: :desc)
+    maps = Map.includes(:user, :softwares, :image_attachment).references(:softwares, :user)
+
+    filter = Maps::Filter.new(maps:, params: map_filter_params)
+    maps = filter.apply.order(created_at: :desc).distinct
 
     @pagy, @maps = pagy(maps)
   end
@@ -51,5 +52,17 @@ class MapsController < ApplicationController
 
   def map_params
     params.require(:map).permit(:title, :description, :creation_date, :scale, :sources, :geographic_coverage, :projection, :is_public, software_ids: [])
+  end
+
+
+  def map_filter_params
+    params.permit(
+      :query,
+      :creation_date_start,
+      :creation_date_end,
+      :scale_min,
+      :scale_max,
+      projections: []
+    )
   end
 end
