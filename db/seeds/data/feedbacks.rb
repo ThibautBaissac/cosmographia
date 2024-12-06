@@ -1,5 +1,6 @@
+puts("---- Creating feedbasks...")
 nb_feedbacks = 20
-(0..20).each do |i|
+(0...20).each do |i|
   Feedback.create!(
     user_id: User.pluck(:id).sample,
     subject: Faker::Lorem.sentence,

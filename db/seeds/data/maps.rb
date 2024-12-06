@@ -1,4 +1,5 @@
-(0..@nb_maps).each do |i|
+puts("---- Creating maps...")
+(0...@nb_maps).each do |i|
   map = Map.create!(
     user_id: User.pluck(:id).sample,
     title: Faker::Lorem.sentence(word_count: 3),

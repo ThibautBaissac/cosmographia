@@ -1,4 +1,5 @@
-(0..@nb_users).each do |i|
+puts("---- Creating users...")
+(0...@nb_users).each do |i|
   user = User.create!(
     email: Faker::Internet.unique.email,
     password: 'Password123.',
@@ -11,6 +12,7 @@
     bio: Faker::Lorem.paragraph(sentence_count: 3),
     last_login_at: Faker::Time.backward(days: 365, period: :evening),
     personal_website: Faker::Internet.url,
+    guest: false,
     social_links: {
       twitter: Faker::Internet.url(host: "twitter.com"),
       linkedin: Faker::Internet.url(host: "linkedin.com/in"),
