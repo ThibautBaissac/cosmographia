@@ -50,10 +50,10 @@
         </div>
         <div class="col">
           <%= form.label(:projection, class: "form-label fw-semibold") %>
-          <%= form.select :projection,
-                Map.projection_keys.map { |key| [t("map_projections.#{key}"), key.to_s.upcase] },
-                { include_blank: "Select a projection" },
-                { class: "form-select rounded-pill shadow-sm" } %>
+          <%= form.select(:projection,
+                Map.projection_keys.map { |key| [ t("map_projections.#{key}"), key.to_s.upcase ] },
+                {include_blank: "Select a projection"},
+                {class: "form-select rounded-pill shadow-sm"}) %>
         </div>
       </div>
       <div class="mb-3">

@@ -4,7 +4,7 @@
   </div>
 
   <div class="input-group mb-4">
-    <%= form.text_field :query, value: params[:query], placeholder: t("common.search"), class: "form-control rounded-start-pill shadow-sm", aria: { label: "Search query" } %>
+    <%= form.text_field(:query, value: params[:query], placeholder: t("common.search"), class: "form-control rounded-start-pill shadow-sm", aria: {label: "Search query"}) %>
     <button class="btn btn-outline-success rounded-end-pill shadow-sm" type="submit">
       <i class="fa-solid fa-magnifying-glass"></i></i> <%= t("common.search_btn") %>
     </button>
@@ -13,9 +13,9 @@
   <!-- Apply Filters Button -->
   <%= link_to("#collapseFilters",
               class: "btn btn-outline-dark rounded-4",
-              data: { bs_toggle: "collapse" },
+              data: {bs_toggle: "collapse"},
               role: "button",
-              aria: { expanded: "false", controls: "collapseFilters" }) do %>
+              aria: {expanded: "false", controls: "collapseFilters"}) do %>
     <i class="fa-solid fa-filter"></i>
     <%= t("common.apply_filters") %>
     <span class="small fw-light">(<%= @non_empty_params_count %>)</span>

@@ -1,5 +1,5 @@
 <%= turbo_frame_tag("map_comment_form") do %>
-  <%= form_with(model: [map, comment], class: "mb-4") do |form| %>
+  <%= form_with(model: [ map, comment ], class: "mb-4") do |form| %>
     <%= form.label(t("comments.write_comment"), class: "fs-5 text-light") %>
     <%= form.text_area(:content, class: "form-control d-block w-100 mb-2 rounded-4 text-dark", rows: 3) %>
     <%= form.submit(class: "btn btn-primary border border-light-subttle rounded-4") %>
