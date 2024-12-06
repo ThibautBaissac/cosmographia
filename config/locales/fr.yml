@@ -159,3 +159,5 @@ fr:
       first_name_placeholder: Indiquer votre prénom
       general_info_section: Infos générales
       last_name_placeholder: Indiquer votre prénom
+  search:
+    query_placeholder: Rechercher par titre, description, sources, logiciel, catégorie de logiciel ou nom de famille d'une personne.

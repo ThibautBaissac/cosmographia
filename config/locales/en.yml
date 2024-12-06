@@ -158,3 +158,5 @@ en:
       first_name_placeholder: Enter your first name
       general_info_section: General information
       last_name_placeholder: Enter your last name
+  search:
+    query_placeholder: Search by title, description, sources, software, software category, or user last name.

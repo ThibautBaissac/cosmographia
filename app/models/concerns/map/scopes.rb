@@ -14,7 +14,7 @@ module Map::Scopes
         maps.sources ILIKE :q OR
         softwares.name ILIKE :q OR
         softwares.category ILIKE :q OR
-        users.email ILIKE :q",
+        users.last_name ILIKE :q",
         q: sanitized_query
         )
         .distinct
