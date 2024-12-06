@@ -1,4 +1,4 @@
-<% if current_user&.superadmin? %>
+<% if policy([ :admin, :feedback ]).index? %>
   <li><hr class="dropdown-divider"></li>
   <li><%= link_to("Feedbacks", admin_feedbacks_path, class: "dropdown-item") %></li>
 <% end %>
