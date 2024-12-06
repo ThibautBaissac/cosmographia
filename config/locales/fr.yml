@@ -47,7 +47,7 @@ fr:
     delete: Supprimer
     discover: Découvrir
     edit: Modifier
-    hello: Bonjour %{name}
+    hello: Bonjour %{name} !
     reset_filters: Réinitialiser les filtres
     save: Sauvegarder
     welcome_to: Bienvenue sur %{app_name}

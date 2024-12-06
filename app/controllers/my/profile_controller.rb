@@ -14,6 +14,7 @@ class My::ProfileController < ApplicationController
 
   def update
     if @user.update(user_params)
+       @user.update(guest: false) if current_user.profile_complete?
       redirect_to(my_profile_path, notice: "User was successfully updated.")
     else
       render(:edit, status: :unprocessable_entity)

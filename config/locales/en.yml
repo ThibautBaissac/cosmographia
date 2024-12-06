@@ -47,7 +47,7 @@ en:
     delete: Delete
     discover: Discover
     edit: Edit
-    hello: Hello %{name}
+    hello: Hello %{name}!
     reset_filters: Reset filters
     save: Save
     welcome_to: Welcome to %{app_name}
