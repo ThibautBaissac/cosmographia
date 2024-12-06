@@ -126,6 +126,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_123428) do
     t.datetime "last_login_at"
     t.string "personal_website"
     t.jsonb "social_links"
+    t.boolean "guest", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["first_name"], name: "index_users_on_first_name"
     t.index ["last_name"], name: "index_users_on_last_name"
