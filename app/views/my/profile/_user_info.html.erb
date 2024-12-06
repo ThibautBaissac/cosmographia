@@ -11,7 +11,7 @@
 
           <% if @user.personal_website.present? %>
             <a href="<%= @user.personal_website %>" class="btn btn-outline-primary btn-sm rounded-pill mt-2" target="_blank">
-              Personal Website
+              <%= t("activerecord.attributes.user.personal_website") %>
             </a>
           <% end %>
         </div>
@@ -24,14 +24,14 @@
       <div class="card shadow-sm rounded-4">
         <div class="card-body">
           <!-- Contact Information Section -->
-          <h5 class="card-title text-primary fw-bold">Contact Information</h5>
+          <h5 class="card-title text-primary fw-bold"><%= t("my.profile.contact_info") %></h5>
           <ul class="list-unstyled">
             <li><strong>Email:</strong> <%= @user.email %></li>
           </ul>
           <hr>
 
           <!-- Social Links Section -->
-          <h5 class="card-title text-primary fw-bold">Social Links</h5>
+          <h5 class="card-title text-primary fw-bold"><%= t("activerecord.attributes.user.social_links") %></h5>
           <% if @user.social_links.present? %>
             <ul class="list-inline mt-2">
               <% @user.social_links.each do |platform, link| %>
@@ -50,7 +50,7 @@
           <hr>
 
           <!-- Softwares Section -->
-          <h5 class="card-title text-primary fw-bold">Softwares</h5>
+          <h5 class="card-title text-primary fw-bold"><%= t("activerecord.models.software", count: 2) %></h5>
           <ul class="list-inline mt-2">
             <% @user.softwares.each do |software| %>
               <li class="list-inline-item mb-2">

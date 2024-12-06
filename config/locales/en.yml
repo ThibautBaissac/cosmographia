@@ -19,6 +19,12 @@ en:
       map_software:
         category: Category
         name: Name
+      user:
+        bio: Bio
+        first_name: Prénom
+        last_name: Nom
+        personal_website: Personal website
+        social_links: Social networks
     errors:
       messages:
         blank: This field can't be blank
@@ -71,6 +77,9 @@ en:
     text: Your thoughts and suggestions help us improve. Whether it’s comment, a suggestion,
       or something we can do better, we’d love to hear from you!
     title: We value your feedback!
+  guest:
+    alert_html: Your are a guest user. To start sharing your work, please fill in
+      your <a href=%{url} class="alert-link">profile information</a>.
   helpers:
     submit:
       comment:
@@ -108,8 +117,13 @@ en:
       sources_placeholder: Enter your sources
   my:
     profile:
+      charts_tab: Charts
+      comments_tab: Comments
+      contact_info: Contact information
       last_comments: My last comments
       last_maps: My last maps
+      maps_tab: Maps
+      profile_tab: Profile
       title: My profile
       total_comment_count: "(%{count} in total)"
   navbar:
@@ -136,3 +150,11 @@ en:
       edit?: You cannot edit this profile!
       show?: You cannot see this profile!
       update?: You cannot update users!
+  users:
+    form:
+      bio_placeholder: Tell us about yourself, your projects,...
+      bio_section: About me
+      edit_title: Edit profile
+      first_name_placeholder: Enter your first name
+      general_info_section: General information
+      last_name_placeholder: Enter your last name

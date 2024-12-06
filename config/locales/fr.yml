@@ -19,6 +19,12 @@ fr:
       map_software:
         category: Catégorie
         name: Nom
+      user:
+        bio: Bio
+        first_name: Prénom
+        last_name: Nom
+        personal_website: Site personnel
+        social_links: Réseaux sociaux
     errors:
       messages:
         blank: Ce champ ne peut pas être vide
@@ -71,6 +77,10 @@ fr:
     text: Vos commentaires nous aident à nous améliorer. Que ce soit une suggestion
       ou quelque chose que nous pouvons améliorer, dites le nous !
     title: À vos commentaires !
+  guest:
+    alert_html: Vous êtes un utilisateur invité. Pour commencer à partager votre travail,
+      veuillez remplir les <a href=%{url} class="alert-link">informations de votre
+      profil</a>.
   helpers:
     submit:
       comment:
@@ -101,15 +111,20 @@ fr:
       current_image: Image actuelle
       details_section: Détails
       edit_title: Modifier la carte
-      general_info_section: Informations générales
+      general_info_section: Infos générales
       geographic_coverage_placeholder: Sélectionner une couverture géographique
       image_section: Image
       scale_placeholder: Saisir une échelle (e.g., 1000)
       sources_placeholder: Renseigner vos sources
   my:
     profile:
+      charts_tab: Statistiques
+      comments_tab: Commentaires
+      contact_info: Informations de contact
       last_comments: Mes derniers commentaires
       last_maps: Mes dernières cartes
+      maps_tab: Cartes
+      profile_tab: Profil
       title: Mon profil
       total_comment_count: "(%{count} au total)"
   navbar:
@@ -136,3 +151,11 @@ fr:
       edit?: Vous ne pouvez pas éditer ce profil !
       show?: Vous ne pouvez pas voir ce profil !
       update?: Vous ne pouvez pas mettre à jour ce profil !
+  users:
+    form:
+      bio_placeholder: Parlons un peu de vous, de vos projets...
+      bio_section: A propos de moi
+      edit_title: Modifier le profil
+      first_name_placeholder: Indiquer votre prénom
+      general_info_section: Infos générales
+      last_name_placeholder: Indiquer votre prénom

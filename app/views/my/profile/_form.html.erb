@@ -1,17 +1,17 @@
 <%= form_with(model: @user, url: my_profile_path, local: true, class: "needs-validation", novalidate: true) do |form| %>
   <div class="row">
     <div class="col-3">
-      <h3 class="text-primary">General Info</h3>
+      <h3 class="text-primary"><%= t("users.form.general_info_section") %></h3>
     </div>
     <div class="col-9">
       <div class="row row-cols-1 row-cols-md-2 g-4 mb-3">
         <div class="col">
           <%= form.label(:first_name, class: "form-label fw-semibold required") %>
-          <%= form.text_field(:first_name, class: "form-control rounded-pill shadow-sm", placeholder: "Enter your first name") %>
+          <%= form.text_field(:first_name, class: "form-control rounded-pill shadow-sm", placeholder: t("users.form.first_name_placeholder")) %>
         </div>
         <div class="col">
           <%= form.label(:last_name, class: "form-label fw-semibold required") %>
-          <%= form.text_field(:last_name, class: "form-control rounded-pill shadow-sm", placeholder: "Enter your last name") %>
+          <%= form.text_field(:last_name, class: "form-control rounded-pill shadow-sm", placeholder: t("users.form.last_name_placeholder")) %>
         </div>
       </div>
       <div class="row row-cols-1 row-cols-md-2 g-4 mb-3">
@@ -29,18 +29,18 @@
 
   <div class="row">
     <div class="col-3">
-      <h3 class="text-primary">Bio</h3>
+      <h3 class="text-primary"><%= t("users.form.bio_section") %></h3>
     </div>
     <div class="col-9">
       <div class="mb-3">
-        <%= form.text_area(:bio, class: "form-control rounded-4 shadow-sm", rows: 5, placeholder: "Write a short bio about yourself") %>
+        <%= form.text_area(:bio, class: "form-control rounded-4 shadow-sm", rows: 5, placeholder: t("users.form.bio_placeholder")) %>
       </div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-3">
-      <h3 class="text-primary">Social links</h3>
+      <h3 class="text-primary"><%= t("activerecord.attributes.user.social_links") %></h3>
     </div>
     <div class="col-9">
       <%= render("my/profile/form/social_links", form:) %>
@@ -49,7 +49,7 @@
 
   <div class="row mt-5">
     <div class="col-3">
-      <h3 class="text-primary">Softwares</h3>
+      <h3 class="text-primary"><%= t("activerecord.models.software", count: 2) %></h3>
     </div>
     <div class="col-9">
       <div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
@@ -66,7 +66,7 @@
   <div class="row my-3">
     <div class="col-3"></div>
     <div class="col-9">
-      <%= form.submit("Save User", class: "btn btn-primary btn-lg w-100 rounded-pill shadow-sm") %>
+      <%= form.submit(t("common.save"), class: "btn btn-primary btn-lg w-100 rounded-pill shadow-sm") %>
     </div>
   </div>
 <% end %>
