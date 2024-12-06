@@ -1,0 +1,19 @@
+<% Constants::Users::SOCIAL_LINK_KEYS.each do |platform| %>
+  <div class="d-flex align-items-center mb-3">
+    <!-- Label with fixed width -->
+    <div class="me-3" style="width: 80px;">
+      <%= form.label platform.capitalize, class: "form-label fw-bold text-nowrap mb-0", for: "social_links_#{platform}" %>
+    </div>
+
+    <!-- Input field -->
+    <div class="flex-grow-1">
+      <%= form.text_field(
+        "social_links[#{platform}]",
+        value: @user.social_links&.dig(platform),
+        name: "user[social_links][#{platform}]",
+        id: "social_links_#{platform}",
+        class: "form-control rounded-pill shadow-sm"
+      ) %>
+    </div>
+  </div>
+<% end %>

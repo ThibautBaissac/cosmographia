@@ -35,11 +35,13 @@
           <% if @user.social_links.present? %>
             <ul class="list-inline mt-2">
               <% @user.social_links.each do |platform, link| %>
-                <li class="list-inline-item">
-                  <a href="<%= link %>" target="_blank" class="btn btn-outline-secondary btn-sm rounded-pill">
-                    <i class="bi bi-<%= platform %>"></i> <%= platform.capitalize %>
-                  </a>
-                </li>
+                <% unless link.blank? %>
+                  <li class="list-inline-item">
+                    <a href="<%= link %>" target="_blank" class="btn btn-outline-secondary btn-sm rounded-pill">
+                      <i class="fa-brands fa-<%= platform %>"></i> <%= platform.capitalize %>
+                    </a>
+                  </li>
+                <% end %>
               <% end %>
             </ul>
           <% else %>

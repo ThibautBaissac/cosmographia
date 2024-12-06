@@ -6,11 +6,11 @@
     <div class="col-9">
       <div class="row row-cols-1 row-cols-md-2 g-4 mb-3">
         <div class="col">
-          <%= form.label :first_name, class: "form-label fw-semibold" %>
+          <%= form.label :first_name, class: "form-label fw-semibold required" %>
           <%= form.text_field :first_name, class: 'form-control rounded-pill shadow-sm', placeholder: "Enter your first name" %>
         </div>
         <div class="col">
-          <%= form.label :last_name, class: "form-label fw-semibold" %>
+          <%= form.label :last_name, class: "form-label fw-semibold required" %>
           <%= form.text_field :last_name, class: 'form-control rounded-pill shadow-sm', placeholder: "Enter your last name" %>
         </div>
       </div>
@@ -35,6 +35,15 @@
       <div class="mb-3">
         <%= form.text_area :bio, class: 'form-control rounded-4 shadow-sm', rows: 5, placeholder: "Write a short bio about yourself" %>
       </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3">
+      <h3 class="text-primary">Social links</h3>
+    </div>
+    <div class="col-9">
+      <%= render("my/profile/form/social_links", form:) %>
     </div>
   </div>
 
