@@ -12,6 +12,7 @@
     <!-- Carousel Items -->
     <div class="carousel-inner">
       <% maps.each_with_index do |map, index| %>
+        <%= next unless map.image.attached? %>
         <div class="carousel-item <%= "active" if index.zero? %>">
           <%= image_tag(map.image, class: "d-block w-100 object-fit-cover rounded-4", alt: "#{map.title} image") %>
           <div class="carousel-caption bg-dark bg-opacity-75 rounded-4 p-3">
