@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @map.comments.new(comment_params)
+    set_authorize
 
     respond_to do |format|
       if @comment.save
@@ -17,9 +18,11 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    set_authorize
   end
 
   def update
+    set_authorize
     respond_to do |format|
       if @comment.update(comment_params)
         format.turbo_stream
@@ -32,6 +35,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    set_authorize
     @comment.destroy
   end
 
@@ -43,6 +47,10 @@ class CommentsController < ApplicationController
 
   def set_comment
     @comment = @map.comments.find(params[:id])
+  end
+
+  def set_authorize
+    authorize(@comment)
   end
 
   def comment_params

@@ -4,8 +4,10 @@
       <%= render("comments/title", map:) %>
     <% end %>
 
-    <%= turbo_frame_tag("map_comment_form") do %>
-      <%= render("comments/form", map:, comment: new_comment) %>
+    <% if policy(Comment).create? %>
+      <%= turbo_frame_tag("map_comment_form") do %>
+        <%= render("comments/form", map:, comment: new_comment) %>
+      <% end %>
     <% end %>
 
     <% if comments.any? %>
