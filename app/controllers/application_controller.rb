@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   include Pundit::Authorization
   include Pagy::Backend
 
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
   before_action :authenticate_user!
   before_action :set_locale
 
@@ -29,5 +31,12 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
+  end
+
+  def user_not_authorized(exception)
+    policy_name = exception.policy.class.to_s.underscore
+
+    flash[:alert] = t("#{policy_name}.#{exception.query}", scope: "pundit", default: :default)
+    redirect_back_or_to(root_path)
   end
 end

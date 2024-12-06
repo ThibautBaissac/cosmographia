@@ -102,3 +102,9 @@ fr:
     fr: Français
     en: English
     title: Changer de langue
+  pundit:
+    default: Vous ne pouvez pas effectuer cette action.
+    user_policy:
+      edit?: Vous ne pouvez pas éditer ce profil !
+      show?: Vous ne pouvez pas voir ce profil !
+      update?: Vous ne pouvez pas mettre à jour ce profil !
