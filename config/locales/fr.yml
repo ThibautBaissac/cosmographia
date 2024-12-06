@@ -7,9 +7,6 @@ fr:
       feedback:
         message: Message
         subject: Sujet
-      map_software:
-        category: Catégorie
-        name: Nom
       map:
         creation_date: Date de création
         description: Description
@@ -19,10 +16,13 @@ fr:
         scale: Échelle
         sources: Sources
         title: Titre
+      map_software:
+        category: Catégorie
+        name: Nom
     errors:
       messages:
         blank: Ce champ ne peut pas être vide
-        record_invalid: "Validation échouée : %{errors}"
+        record_invalid: 'Validation échouée : %{errors}'
       models:
         map:
           attributes:
@@ -38,9 +38,9 @@ fr:
   comments:
     one: commentaire
     other: commentaires
-    zero: commentaire
     show_more: Voir plus de commentaires
     write_comment: Écrire un commentaire
+    zero: commentaire
   common:
     apply_filters: Appliquer des filtres
     by: Par %{name}
@@ -78,40 +78,52 @@ fr:
         update: Mettre à jour votre commentaire
   home:
     user_signed_in:
-      last_comments: "Les derniers commentaires"
-      last_maps: "Les dernières cartes"
-      see_all_maps: Découvrez toutes les cartes !
-      post_map: Publier vos cartes
-      dicover_maps: Découvrir les cartes
       charts:
         maps_by_projection: Répartition des cartes par projection
         most_used_softawres: Logiciels les plus utilisés
+      dicover_maps: Découvrir les cartes
+      last_comments: Les derniers commentaires
+      last_maps: Les dernières cartes
+      post_map: Publier vos cartes
+      see_all_maps: Découvrez toutes les cartes !
+  locale:
+    en: English
+    fr: Français
+    title: Changer de langue
+  maps:
+    filtering:
+      creation_date_end: Date de création (fin)
+      creation_date_start: Date de création (début)
+      scale_maximum: Échelle maximum
+      scale_minimum: Échelle minimum
+    form:
+      create_title: Publier une carte
+      current_image: Image actuelle
+      details_section: Détails
+      edit_title: Modifier la carte
+      general_info_section: Informations générales
+      geographic_coverage_placeholder: Sélectionner une couverture géographique
+      image_section: Image
+      scale_placeholder: Saisir une échelle (e.g., 1000)
+      sources_placeholder: Renseigner vos sources
+  my:
+    profile:
+      last_comments: Mes derniers commentaires
+      last_maps: Mes dernières cartes
+      title: Mon profil
+      total_comment_count: "(%{count} au total)"
   navbar:
     about: À propos
     cartography: Cartographie
     edit_password: Modifier le mot de passe
     edit_profile: Modifier le profil
     install_pwa: Ajouter à l'écran d'accueil
+    profile: Mon profil
     sign_in: Se connecter
     sign_out: Se déconnecter
     sign_up: S'inscrire
-    profile: Mon profil
-  my:
-    profile:
-      last_maps: Mes dernières cartes
-      last_comments: Mes derniers commentaires
-      title: Mon profil
-      total_comment_count: (%{count} au total)
-  locale:
-    fr: Français
-    en: English
-    title: Changer de langue
   pundit:
     default: Vous ne pouvez pas effectuer cette action.
-    user_policy:
-      edit?: Vous ne pouvez pas éditer ce profil !
-      show?: Vous ne pouvez pas voir ce profil !
-      update?: Vous ne pouvez pas mettre à jour ce profil !
     map_policy:
       create?: Vous ne pouvez pas créer de carte !
       destroy?: Vous ne pouvez pas supprimer cette carte !
@@ -120,19 +132,7 @@ fr:
       new?: Vous ne pouvez pas créer de carte !
       show?: Vous ne pouvez pas voir cette carte !
       update?: Vous ne pouvez pas mettre à jour cette carte !
-  maps:
-    filtering:
-      creation_date_start: Date de création (début)
-      creation_date_end: Date de création (fin)
-      scale_maximum: Échelle maximum
-      scale_minimum: Échelle minimum
-    form:
-      general_info_section: Informations générales
-      image_section: Image
-      current_image: Image actuelle
-      details_section: Détails
-      scale_placeholder: Saisir une échelle (e.g., 1000)
-      geographic_coverage_placeholder: Sélectionner une couverture géographique
-      sources_placeholder: Renseigner vos sources
-      edit_title: Modifier la carte
-      create_title: Publier une carte
+    user_policy:
+      edit?: Vous ne pouvez pas éditer ce profil !
+      show?: Vous ne pouvez pas voir ce profil !
+      update?: Vous ne pouvez pas mettre à jour ce profil !

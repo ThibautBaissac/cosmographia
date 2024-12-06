@@ -15,13 +15,13 @@ en:
     cube: Cube
     cylindrical_equal_area: Cylindrical equal area
     double_stereographic: Double stereographic
+    eckert_greifendorff: Eckert-Greifendorff
     eckert_i: Eckert I
     eckert_ii: Eckert II
     eckert_iii: Eckert III
     eckert_iv: Eckert IV
     eckert_v: Eckert V
     eckert_vi: Eckert VI
-    eckert_greifendorff: Eckert-Greifendorff
     equal_earth: Equal Earth
     equidistant_conic: Equidistant conic
     equidistant_cylindrical: Equidistant cylindrical

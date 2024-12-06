@@ -7,9 +7,6 @@ en:
       feedback:
         message: Message
         subject: Subject
-      map_software:
-        category: Category
-        name: Name
       map:
         creation_date: Creation date
         description: Description
@@ -19,10 +16,13 @@ en:
         scale: Scale
         sources: Sources
         title: Title
+      map_software:
+        category: Category
+        name: Name
     errors:
       messages:
         blank: This field can't be blank
-        record_invalid: "Validation failed: %{errors}"
+        record_invalid: 'Validation failed: %{errors}'
       models:
         map:
           attributes:
@@ -38,9 +38,9 @@ en:
   comments:
     one: comment
     other: comments
-    zero: comment
     show_more: Show more comments
     write_comment: Write a comment
+    zero: comment
   common:
     apply_filters: Apply filters
     by: By %{name}
@@ -78,40 +78,52 @@ en:
         update: Update your comment
   home:
     user_signed_in:
-      last_comments: "The last comments"
-      last_maps: "The last maps"
-      see_all_maps: Discover all maps!
-      post_map: Post your maps
-      dicover_maps: Discover maps
       charts:
         maps_by_projection: Maps distribution by projection
         most_used_softawres: Most used softwares
+      dicover_maps: Discover maps
+      last_comments: The last comments
+      last_maps: The last maps
+      post_map: Post your maps
+      see_all_maps: Discover all maps!
+  locale:
+    en: English
+    fr: Français
+    title: Switch language
+  maps:
+    filtering:
+      creation_date_end: Creation date (end)
+      creation_date_start: Creation date (start)
+      scale_maximum: Scale maximum
+      scale_minimum: Scale minimum
+    form:
+      create_title: Publish a map
+      current_image: Current image
+      details_section: Details
+      edit_title: Edit map
+      general_info_section: General information
+      geographic_coverage_placeholder: Select a geographic coverage
+      image_section: Image
+      scale_placeholder: Enter the scale (e.g., 1000)
+      sources_placeholder: Enter your sources
+  my:
+    profile:
+      last_comments: My last comments
+      last_maps: My last maps
+      title: My profile
+      total_comment_count: "(%{count} in total)"
   navbar:
     about: About
     cartography: Cartography
     edit_password: Edit password
     edit_profile: Edit profile
     install_pwa: Add to Home Screen
+    profile: My profile
     sign_in: Sign in
     sign_out: Sign out
     sign_up: Sign up
-    profile: My profile
-  my:
-    profile:
-      last_maps: My last maps
-      last_comments: My last comments
-      title: My profile
-      total_comment_count: (%{count} in total)
-  locale:
-    fr: Français
-    en: English
-    title: Switch language
   pundit:
     default: You cannot perform this action.
-    user_policy:
-      edit?: You cannot edit this profile!
-      show?: You cannot see this profile!
-      update?: You cannot update users!
     map_policy:
       create?: You cannot create a map!
       destroy?: You cannot delete this map!
@@ -120,19 +132,7 @@ en:
       new?: You cannot create a map!
       show?: You cannot see this map!
       update?: You cannot update this map!
-  maps:
-    filtering:
-      creation_date_start: Creation date (start)
-      creation_date_end: Creation date (end)
-      scale_maximum: Scale maximum
-      scale_minimum: Scale minimum
-    form:
-      general_info_section: General information
-      image_section: Image
-      current_image: Current image
-      details_section: Details
-      scale_placeholder: Enter the scale (e.g., 1000)
-      geographic_coverage_placeholder: Select a geographic coverage
-      sources_placeholder: Enter your sources
-      edit_title: Edit map
-      create_title: Publish a map
+    user_policy:
+      edit?: You cannot edit this profile!
+      show?: You cannot see this profile!
+      update?: You cannot update users!
