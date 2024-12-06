@@ -75,8 +75,8 @@ en:
         update: Update your comment
   home:
     user_signed_in:
-      last_comments: "The %{count} last comments"
-      last_maps: "The %{count} last maps"
+      last_comments: "The last comments"
+      last_maps: "The last maps"
       see_all_maps: Discover all maps!
       post_map: Post your maps
       dicover_maps: Discover maps
@@ -94,8 +94,8 @@ en:
     profile: My profile
   my:
     profile:
-      last_maps: My %{count} last maps
-      last_comments: My last %{count} comments
+      last_maps: My last maps
+      last_comments: My last comments
       title: My profile
       total_comment_count: (%{count} in total)
   locale:
