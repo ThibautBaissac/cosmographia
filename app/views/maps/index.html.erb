@@ -4,7 +4,7 @@
     <% if policy(Map).new? %>
       <%= link_to(new_map_path, class: "btn btn-outline-primary btn-lg rounded-4 d-flex align-items-center gap-2") do %>
         <i class="fa-solid fa-circle-plus"></i>
-        <span>New Map</span>
+        <span><%= t("maps.form.create_title") %></span>
       <% end %>
     <% end %>
   </div>

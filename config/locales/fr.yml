@@ -2,15 +2,15 @@
 fr:
   activerecord:
     attributes:
-      comments:
+      comment:
         content: Contenu
-      feedbacks:
+      feedback:
         message: Message
         subject: Sujet
-      map_softwares:
+      map_software:
         category: Catégorie
         name: Nom
-      maps:
+      map:
         creation_date: Date de création
         description: Description
         geographic_coverage: Couverture géographique
@@ -51,6 +51,8 @@ fr:
     hello: Bonjour %{name} !
     reset_filters: Réinitialiser les filtres
     save: Sauvegarder
+    search: Rechercher...
+    search_btn: Rechercher
     welcome_to: Bienvenue sur %{app_name}
   errors:
     attributes:
@@ -64,6 +66,7 @@ fr:
       blank: Ce champ ne peut pas être vide
     oops: Oops !
   feedbacks:
+    feedback: Feedback
     submit: Envoyer le feedback
     text: Vos commentaires nous aident à nous améliorer. Que ce soit une suggestion
       ou quelque chose que nous pouvons améliorer, dites le nous !
@@ -89,8 +92,6 @@ fr:
     edit_password: Modifier le mot de passe
     edit_profile: Modifier le profil
     install_pwa: Ajouter à l'écran d'accueil
-    search: Rechercher
-    search_placeholder: Rechercher...
     sign_in: Se connecter
     sign_out: Se déconnecter
     sign_up: S'inscrire
@@ -119,3 +120,19 @@ fr:
       new?: Vous ne pouvez pas créer de carte !
       show?: Vous ne pouvez pas voir cette carte !
       update?: Vous ne pouvez pas mettre à jour cette carte !
+  maps:
+    filtering:
+      creation_date_start: Date de création (début)
+      creation_date_end: Date de création (fin)
+      scale_maximum: Échelle maximum
+      scale_minimum: Échelle minimum
+    form:
+      general_info_section: Informations générales
+      image_section: Image
+      current_image: Image actuelle
+      details_section: Détails
+      scale_placeholder: Saisir une échelle (e.g., 1000)
+      geographic_coverage_placeholder: Sélectionner une couverture géographique
+      sources_placeholder: Renseigner vos sources
+      edit_title: Modifier la carte
+      create_title: Publier une carte

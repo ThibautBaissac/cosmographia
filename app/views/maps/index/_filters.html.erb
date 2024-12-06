@@ -1,27 +1,27 @@
 <div class="row g-4">
   <!-- Creation Date Filter -->
   <div class="col-6">
-    <%= form.label :creation_date_start, "Creation Date From", class: "form-label fw-semibold" %>
+    <%= form.label :creation_date_start, t("maps.filtering.creation_date_start"), class: "form-label fw-semibold" %>
     <%= form.date_field :creation_date_start, value: params[:creation_date_start], class: "form-control rounded-pill shadow-sm" %>
   </div>
   <div class="col-6">
-    <%= form.label :creation_date_end, "Creation Date To", class: "form-label fw-semibold" %>
+    <%= form.label :creation_date_end, t("maps.filtering.creation_date_end"), class: "form-label fw-semibold" %>
     <%= form.date_field :creation_date_end, value: params[:creation_date_end], class: "form-control rounded-pill shadow-sm" %>
   </div>
 
   <!-- Scale Filter -->
   <div class="col-6">
-    <%= form.label :scale_min, "Scale Minimum", class: "form-label fw-semibold" %>
+    <%= form.label :scale_min, t("maps.filtering.scale_minimum"), class: "form-label fw-semibold" %>
     <%= form.number_field :scale_min, value: params[:scale_min], class: "form-control rounded-pill shadow-sm", step: 1, placeholder: "Enter minimum scale" %>
   </div>
   <div class="col-6">
-    <%= form.label :scale_max, "Scale Maximum", class: "form-label fw-semibold" %>
+    <%= form.label :scale_max, t("maps.filtering.scale_maximum"), class: "form-label fw-semibold" %>
     <%= form.number_field :scale_max, value: params[:scale_max], class: "form-control rounded-pill shadow-sm", step: 1, placeholder: "Enter maximum scale" %>
   </div>
 
   <!-- Projection Filter -->
   <div class="col-12">
-    <%= form.label :projections, "Projection", class: "form-label fw-semibold" %>
+    <%= form.label :projections, t("activerecord.attributes.map.filtering.projection"), class: "form-label fw-semibold" %>
     <%= form.select :projections,
         options_for_select(Constants::Maps::PROJECTIONS.map { |proj| [proj, proj] }.unshift(["All", :all]),
         selected: params[:projections]),
@@ -32,5 +32,5 @@
 
 <!-- Submit Button -->
 <div class="d-grid mt-4">
-  <%= form.submit "Search", class: "btn btn-primary rounded-pill shadow-sm" %>
+  <%= form.submit t("common.search_btn"), class: "btn btn-primary rounded-pill shadow-sm" %>
 </div>

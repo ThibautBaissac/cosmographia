@@ -4,9 +4,9 @@
   </div>
 
   <div class="input-group mb-4">
-    <%= form.text_field :query, value: params[:query], placeholder: "Search maps...", class: "form-control rounded-start-pill shadow-sm", aria: { label: "Search query" } %>
+    <%= form.text_field :query, value: params[:query], placeholder: t("common.search"), class: "form-control rounded-start-pill shadow-sm", aria: { label: "Search query" } %>
     <button class="btn btn-outline-success rounded-end-pill shadow-sm" type="submit">
-      <i class="fa-solid fa-magnifying-glass"></i></i> <%= t("navbar.search") %>
+      <i class="fa-solid fa-magnifying-glass"></i></i> <%= t("common.search_btn") %>
     </button>
   </div>
 

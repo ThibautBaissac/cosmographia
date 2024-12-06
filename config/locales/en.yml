@@ -2,15 +2,15 @@
 en:
   activerecord:
     attributes:
-      comments:
+      comment:
         content: Content
-      feedbacks:
+      feedback:
         message: Message
         subject: Subject
-      map_softwares:
+      map_software:
         category: Category
         name: Name
-      maps:
+      map:
         creation_date: Creation date
         description: Description
         geographic_coverage: Geographic coverage
@@ -51,6 +51,8 @@ en:
     hello: Hello %{name}!
     reset_filters: Reset filters
     save: Save
+    search: Search...
+    search_btn: Search
     welcome_to: Welcome to %{app_name}
   errors:
     attributes:
@@ -64,6 +66,7 @@ en:
       blank: This field can't be blank
     oops: Oops!
   feedbacks:
+    feedback: Feedback
     submit: Submit feedback
     text: Your thoughts and suggestions help us improve. Whether it’s comment, a suggestion,
       or something we can do better, we’d love to hear from you!
@@ -89,8 +92,6 @@ en:
     edit_password: Edit password
     edit_profile: Edit profile
     install_pwa: Add to Home Screen
-    search: Search
-    search_placeholder: Search...
     sign_in: Sign in
     sign_out: Sign out
     sign_up: Sign up
@@ -119,3 +120,19 @@ en:
       new?: You cannot create a map!
       show?: You cannot see this map!
       update?: You cannot update this map!
+  maps:
+    filtering:
+      creation_date_start: Creation date (start)
+      creation_date_end: Creation date (end)
+      scale_maximum: Scale maximum
+      scale_minimum: Scale minimum
+    form:
+      general_info_section: General information
+      image_section: Image
+      current_image: Current image
+      details_section: Details
+      scale_placeholder: Enter the scale (e.g., 1000)
+      geographic_coverage_placeholder: Select a geographic coverage
+      sources_placeholder: Enter your sources
+      edit_title: Edit map
+      create_title: Publish a map

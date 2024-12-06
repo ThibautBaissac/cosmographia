@@ -8,7 +8,7 @@
         <li><%= link_to(t("navbar.profile"), my_profile_path, class: "dropdown-item") %></li>
         <li><hr class="dropdown-divider"></li>
         <li><%= button_to(t("navbar.sign_out"), destroy_user_session_path, method: :delete, class: "dropdown-item") %></li>
-        <li><%= link_to "Feedback", "#offcanvaFeedback", class: "dropdown-item", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvasExample"} %></li>
+        <li><%= link_to(t("feedbacks.feedback"), "#offcanvaFeedback", class: "dropdown-item", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvaFeedback"}) %></li>
         <%= render("layouts/navbar/install_pwa") %>
         <%= render("layouts/navbar/superadmin_dropdown") %>
       </ul>
@@ -19,13 +19,13 @@
     <li class="list-group-item border-0">
       <%= link_to(new_user_registration_path, class: "btn btn-primary rounded-pill") do %>
         <i class="fa-solid fa-user-plus me-2"></i>
-        <%= t("navbar.navbar.sign_up") %>
+        <%= t("navbar.sign_up") %>
       <% end %>
     </li>
     <li class="list-group-item border-0">
       <%= link_to(new_user_session_path, class: "btn btn-outline-primary rounded-pill") do %>
         <i class="fa-solid fa-arrow-right-to-bracket me-2"></i>
-        <%= t("navbar.navbar.sign_in") %>
+        <%= t("navbar.sign_in") %>
       <% end %>
     </li>
   </ul>

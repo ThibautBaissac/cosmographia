@@ -12,7 +12,7 @@
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex gap-3">
       <% if user_signed_in? %>
         <li>
-          <%= link_to "Feedback", "#offcanvaFeedback", class: "btn btn-outline-light btn-sm", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvasExample"} %>
+          <%= link_to(t("feedbacks.feedback"), "#offcanvaFeedback", class: "btn btn-outline-light btn-sm", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvaFeedback"}) %>
         </li>
       <% end %>
       <li>
