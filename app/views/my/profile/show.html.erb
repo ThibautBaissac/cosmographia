@@ -1,8 +1,8 @@
 <div class="container d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
-  <h1 class="my-0 display-5 text-primary">My profile</h1>
-  <%= link_to(edit_my_path, class: "btn btn-outline-primary btn-lg rounded-4 d-flex align-items-center gap-2") do %>
+  <h1 class="my-0 display-5 text-primary"><%= t("my.profile.title") %></h1>
+  <%= link_to(edit_my_profile_path, class: "btn btn-outline-primary btn-lg rounded-4 d-flex align-items-center gap-2") do %>
       <i class="fa-regular fa-pen-to-square"></i>
-    <span>Edit</span>
+    <span><%= t("common.edit") %></span>
   <% end %>
 </div>
 

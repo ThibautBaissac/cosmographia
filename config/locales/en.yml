@@ -92,9 +92,11 @@ en:
     sign_up: Sign up
     profile: My profile
   my:
-    last_maps: My %{count} last maps
-    my_last_comments: My last %{count} comments
-    total_comment_count: (%{count} in total)
+    profile:
+      last_maps: My %{count} last maps
+      last_comments: My last %{count} comments
+      title: My profile
+      total_comment_count: (%{count} in total)
   locale:
     fr: Français
     en: English

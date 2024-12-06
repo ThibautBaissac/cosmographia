@@ -1,1 +1,3 @@
-resource :my, controller: :my, only: %i[show edit update]
+namespace :my do
+  resource :profile, controller: :profile, only: %i[show edit update]
+end

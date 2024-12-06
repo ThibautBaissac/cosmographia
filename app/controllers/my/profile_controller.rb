@@ -1,4 +1,4 @@
-class MyController < ApplicationController
+class My::ProfileController < ApplicationController
   before_action :set_user, only: [ :edit, :update, :show ]
 
   def show
@@ -14,7 +14,7 @@ class MyController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to(my_path, notice: "User was successfully updated.")
+      redirect_to(my_profile_path, notice: "User was successfully updated.")
     else
       render(:edit, status: :unprocessable_entity)
     end

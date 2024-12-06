@@ -4,7 +4,7 @@
       <%= t("home.user_signed_in.last_comments", count: comments.size) %>
     </h2>
     <% comments.each do |comment| %>
-      <%= render("my/comment", comment:, user: comment.user) %>
+      <%= render("my/profile/comment", comment:, user: comment.user) %>
     <% end %>
   </div>
 </div>
