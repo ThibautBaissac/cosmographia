@@ -9,7 +9,7 @@
     <div class="carousel-inner">
       <% maps.each_with_index do |map, index| %>
         <div class="carousel-item <%= "active" if index.zero? %>">
-          <%= image_tag(map.image, class: "d-block w-100 object-fit-cover", alt: "Placeholder image") %>
+          <%= image_tag(map.image, class: "d-block w-100 object-fit-cover") %>
           <div class="carousel-caption bg-dark bg-opacity-50 rounded-4">
             <h5><%= link_to(map.title, map, class: "link-light text-decoration-none") %></h5>
             <p><%= t("common.by", name: map.user.fullname) %></p>

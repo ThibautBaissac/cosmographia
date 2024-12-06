@@ -80,6 +80,9 @@ fr:
       see_all_maps: Découvrez toutes les cartes !
       post_map: Publier vos cartes
       dicover_maps: Découvrir les cartes
+      charts:
+        maps_by_projection: Répartition des cartes par projection
+        most_used_softawres: Logiciels les plus utilisés
   navbar:
     about: À propos
     cartography: Cartographie

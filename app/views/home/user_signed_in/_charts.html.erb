@@ -3,12 +3,12 @@
   <div class="row g-4">
     <div class="col-md-6">
       <div class="card shadow-sm p-3 rounded-4">
-        <%= pie_chart(@maps_by_projection, title: "Maps Distribution by Projection", legend: "bottom") %>
+        <%= pie_chart(@maps_by_projection, title: t("home.user_signed_in.charts.maps_by_projection"), legend: "bottom") %>
       </div>
     </div>
     <div class="col-md-6">
       <div class="card shadow-sm p-3 rounded-4">
-        <%= pie_chart(@software_usage, title: "Most Used Software", legend: "bottom") %>
+        <%= pie_chart(@software_usage, title: t("home.user_signed_in.charts.most_used_softawres"), legend: "bottom") %>
       </div>
     </div>
   </div>

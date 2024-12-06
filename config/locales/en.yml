@@ -80,6 +80,9 @@ en:
       see_all_maps: Discover all maps!
       post_map: Post your maps
       dicover_maps: Discover maps
+      charts:
+        maps_by_projection: Maps distribution by projection
+        most_used_softawres: Most used softwares
   navbar:
     about: About
     cartography: Cartography

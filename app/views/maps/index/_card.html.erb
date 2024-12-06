@@ -2,14 +2,14 @@
   <% if map.image.attached? %>
     <div class="image-container rounded-top-4">
       <%= link_to(map) do %>
-        <%= image_tag(map.image, class: "w-100", alt: "#{map.title} image") %>
+        <%= image_tag(map.image, class: "w-100", alt: map.title) %>
         <div class="image-overlay text-center">
           <%= map.description %>
         </div>
       </div>
     <% end %>
   <% else %>
-    <%= image_tag("default.png", alt: "Placeholder image") %>
+    <%= image_tag("default.png") %>
   <% end %>
   <div class="card-body p-3">
     <%= link_to(map, class: "text-decoration-none") do %>
