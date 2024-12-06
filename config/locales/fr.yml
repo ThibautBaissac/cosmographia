@@ -22,6 +22,7 @@ fr:
     errors:
       messages:
         blank: Ce champ ne peut pas être vide
+        record_invalid: "Validation échouée : %{errors}"
       models:
         map:
           attributes:
