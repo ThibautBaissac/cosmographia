@@ -1,5 +1,6 @@
 class FeedbacksController < ApplicationController
   def create
+    set_authorize
     @feedback = current_user.feedbacks.new(feedback_params)
     if @feedback.save
       redirect_to(root_path, notice: "Thank you for your feedback!")
@@ -9,6 +10,10 @@ class FeedbacksController < ApplicationController
   end
 
   private
+
+  def set_authorize
+    authorize(Feedback, :create?)
+  end
 
   def feedback_params
     params.require(:feedback).permit(:subject, :message)
