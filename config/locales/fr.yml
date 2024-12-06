@@ -108,3 +108,11 @@ fr:
       edit?: Vous ne pouvez pas éditer ce profil !
       show?: Vous ne pouvez pas voir ce profil !
       update?: Vous ne pouvez pas mettre à jour ce profil !
+    map_policy:
+      create?: Vous ne pouvez pas créer de carte !
+      destroy?: Vous ne pouvez pas supprimer cette carte !
+      edit?: Vous ne pouvez pas éditer cette carte !
+      index?: Vous ne pouvez pas voir la liste des cartes !
+      new?: Vous ne pouvez pas créer de carte !
+      show?: Vous ne pouvez pas voir cette carte !
+      update?: Vous ne pouvez pas mettre à jour cette carte !

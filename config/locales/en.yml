@@ -108,3 +108,11 @@ en:
       edit?: You cannot edit this profile!
       show?: You cannot see this profile!
       update?: You cannot update users!
+    map_policy:
+      create?: You cannot create a map!
+      destroy?: You cannot delete this map!
+      edit?: You cannot edit this map!
+      index?: You cannot see the list of maps!
+      new?: You cannot create a map!
+      show?: You cannot see this map!
+      update?: You cannot update this map!
