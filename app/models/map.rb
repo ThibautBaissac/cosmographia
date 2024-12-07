@@ -10,4 +10,5 @@ class Map < ApplicationRecord
   validates :title, presence: true
 
   string_enum projection: Constants::Maps::PROJECTIONS
+  string_enum geographic_coverage: Constants::Maps::GEOGRAPHIC_COVERAGE
 end

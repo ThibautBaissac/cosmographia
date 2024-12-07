@@ -46,7 +46,10 @@
         </div>
         <div class="col">
           <%= form.label(:geographic_coverage, class: "form-label fw-semibold") %>
-          <%= form.text_field(:geographic_coverage, class: "form-control rounded-pill shadow-sm", placeholder: t("maps.form.geographic_coverage_placeholder")) %>
+          <%= form.select(:geographic_coverage,
+                Map.geographic_coverage_keys.map { |key| [ t("maps.geographic_coverages.#{key}"), key.to_s.upcase ] },
+                {include_blank: t("maps.form.geographic_coverage_placeholder")},
+                {class: "form-select rounded-pill shadow-sm"}) %>
         </div>
         <div class="col">
           <%= form.label(:projection, class: "form-label fw-semibold") %>

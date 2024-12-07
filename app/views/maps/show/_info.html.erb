@@ -9,7 +9,7 @@
       <li class="list-group-item"><strong><%= t("activerecord.attributes.map.creation_date") %>:</strong> <%= map.creation_date %></li>
       <li class="list-group-item"><strong><%= t("activerecord.attributes.map.scale") %>:</strong> <%= map.scale %></li>
       <li class="list-group-item"><strong><%= t("activerecord.attributes.map.source") %>:</strong> <%= map.sources %></li>
-      <li class="list-group-item"><strong><%= t("activerecord.attributes.map.geographic_coverage") %>:</strong> <%= map.geographic_coverage %></li>
+      <li class="list-group-item"><strong><%= t("activerecord.attributes.map.geographic_coverage") %>:</strong> <%= t("maps.geographic_coverages.#{map.geographic_coverage&.downcase}") %></li>
       <li class="list-group-item"><strong><%= t("activerecord.attributes.map.projection") %>:</strong> <%= t("map_projections.#{map.projection}") %></li>
     </ul>
     <div class="card-body">

@@ -116,6 +116,13 @@ fr:
       image_section: Image
       scale_placeholder: Saisir une échelle (e.g., 1000)
       sources_placeholder: Renseigner vos sources
+    geographic_coverages:
+      local: Locale
+      municipal: Communale
+      regional: Régionale
+      national: Nationale
+      continental: Continentale
+      global: Mondiale
   my:
     profile:
       charts_tab: Statistiques

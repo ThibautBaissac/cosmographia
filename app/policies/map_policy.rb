@@ -20,6 +20,6 @@ class MapPolicy < ApplicationPolicy
   end
 
   def update?
-    edit
+    edit?
   end
 end

@@ -115,6 +115,13 @@ en:
       image_section: Image
       scale_placeholder: Enter the scale (e.g., 1000)
       sources_placeholder: Enter your sources
+    geographic_coverage:
+      local: Local
+      municipal: Municipal
+      regional:  Regional
+      national: National
+      continental: Continental
+      global: Global
   my:
     profile:
       charts_tab: Charts

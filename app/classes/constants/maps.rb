@@ -1,5 +1,7 @@
 module Constants
   module Maps
+    GEOGRAPHIC_COVERAGE = %i[ local municipal Regional national continental global ].freeze
+
     PROJECTIONS = %i[
       adams_square_ii
       aitoff
@@ -73,6 +75,6 @@ module Constants
       winkel_i
       winkel_ii
       winkel_tripel
-      ].freeze
+    ].freeze
   end
 end
