@@ -19,7 +19,7 @@
     <%= render("charts") %>
   </div>
   <div class="tab-pane fade" id="maps" role="tabpanel" aria-labelledby="maps-tab">
-    <%= render("carousel", maps: @maps) %>
+    <%= render("maps", maps: @maps) %>
   </div>
   <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">
     <%= render("comments", comments: @comments) if @comments.any? %>
