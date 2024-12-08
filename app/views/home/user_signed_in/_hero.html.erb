@@ -10,7 +10,13 @@
       Ensemble, dessinons le monde et l'univers ! ✨.
     </p>
     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-      <%= link_to(t("home.user_signed_in.post_visualization"), new_visualization_path, class: "btn btn-primary btn-lg px-4 gap-3 rounded-pill shadow-sm") %>
+      <% if current_user.guest? %>
+        <a tabindex="0" class="btn btn-primary btn-lg px-4 gap-3 rounded-pill shadow-sm" data-bs-placement="bottom" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="<%= t("guest.alert_01_html") %>" data-bs-content="<%= t("guest.alert_02_popover") %>">
+          <%= t("home.user_signed_in.post_visualization") %>
+        </a>
+      <% else %>
+        <%= link_to(t("home.user_signed_in.post_visualization"), new_visualization_path, class: "btn btn-primary btn-lg px-4 gap-3 rounded-pill shadow-sm") %>
+      <% end %>
       <%= link_to("🌍 #{t("home.user_signed_in.dicover_visualizations")}", visualizations_path, class: "btn btn-outline-secondary btn-lg px-4 gap-3 rounded-pill shadow-sm") %>
     </div>
   </div>

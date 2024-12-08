@@ -79,9 +79,9 @@ fr:
       ou quelque chose que nous pouvons améliorer, dites le nous !
     title: À vos commentaires !
   guest:
-    alert_html: Vous êtes un utilisateur invité. Pour commencer à partager votre travail,
-      veuillez remplir les <a href=%{url} class="alert-link">informations de votre
-      profil</a>.
+    alert_01_html: Vous êtes un utilisateur invité.
+    alert_02_html: Pour commencer à partager votre travail, veuillez remplir les <a href=%{url} class="alert-link">informations de votre profil</a>.
+    alert_02_popover: Pour commencer à partager votre travail, veuillez remplir les informations de votre profil.
   helpers:
     submit:
       comment:

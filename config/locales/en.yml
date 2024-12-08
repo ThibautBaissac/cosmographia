@@ -79,8 +79,9 @@ en:
       or something we can do better, we’d love to hear from you!
     title: We value your feedback!
   guest:
-    alert_html: Your are a guest user. To start sharing your work, please fill in
-      your <a href=%{url} class="alert-link">profile information</a>.
+    alert_01_html: Your are a guest user.
+    alert_02_html: To start sharing your work, please fill in your <a href=%{url} class="alert-link">profile information</a>.
+    alert_02_popover: To start sharing your work, please fill in your profile information.
   helpers:
     submit:
       comment:
