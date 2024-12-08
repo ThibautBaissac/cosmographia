@@ -134,6 +134,7 @@ fr:
       profile_tab: Profil
       title: Mon profil
       total_comment_count: "(%{count} au total)"
+      user_info_disclaimer_html: Vos informations personnelles ne seront <b>jamais partagées</b> avec des tiers extérieurs à la communauté Cosmographia !
   navbar:
     about: À propos
     cartography: Cartographie

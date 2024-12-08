@@ -1,5 +1,6 @@
 <%= form_with(model: @user, url: my_profile_path, local: true, class: "needs-validation", novalidate: true) do |form| %>
-  <div class="row">
+  <div class="text-secondary text-center"><%= t("my.profile.user_info_disclaimer_html") %></div>
+  <div class="row mt-5">
     <div class="col-3">
       <h3 class="text-primary"><%= t("users.form.general_info_section") %></h3>
     </div>
