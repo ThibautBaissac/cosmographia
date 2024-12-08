@@ -1,0 +1,35 @@
+<div class="container mb-5">
+  <h2 class="mb-4 text-secondary"><%= t("my.profile.last_visualizations", count: visualizations.size) %></h2>
+
+  <div id="homepageCarousel" class="carousel slide homepage_carousel shadow-sm rounded-4 overflow-hidden">
+    <!-- Carousel Indicators -->
+    <div class="carousel-indicators">
+      <% visualizations.each_with_index do |_, index| %>
+        <button type="button" data-bs-target="#homepageCarousel" data-bs-slide-to="<%= index %>" class="<%= "active" if index.zero? %>" aria-label="Slide <%= index + 1 %>"></button>
+      <% end %>
+    </div>
+
+    <!-- Carousel Items -->
+    <div class="carousel-inner">
+      <% visualizations.each_with_index do |visualization, index| %>
+        <%= next unless visualization.image.attached? %>
+        <div class="carousel-item <%= "active" if index.zero? %>">
+          <%= image_tag(visualization.image, class: "d-block w-100 object-fit-cover rounded-4", alt: visualization.title) %>
+          <div class="carousel-caption bg-dark bg-opacity-75 rounded-4 p-3">
+            <h5 class="text-light fw-bold"><%= link_to(visualization.title, visualization, class: "link-light text-decoration-none") %></h5>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#homepageCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>

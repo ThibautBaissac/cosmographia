@@ -1,5 +1,5 @@
 <%= turbo_stream.remove("comment_#{@comment.id}") %>
 
-<%= turbo_stream.update("map_#{@map.id}_comment_count") do %>
-  <%= render("comments/title", map: @map) %>
+<%= turbo_stream.update("visualization_#{@visualization.id}_comment_count") do %>
+  <%= render("comments/title", visualization: @visualization) %>
 <% end %>

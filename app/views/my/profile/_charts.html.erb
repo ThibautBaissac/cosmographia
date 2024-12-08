@@ -4,8 +4,8 @@
     <div class="col-md-6">
       <div class="card shadow-sm rounded-4">
         <div class="card-body">
-          <h6 class="text-center fw-semibold text-secondary">Maps Created Over Time</h6>
-          <%= column_chart @maps_over_time, height: "300px" %>
+          <h6 class="text-center fw-semibold text-secondary">Visualizations Created Over Time</h6>
+          <%= column_chart @visualizations_over_time, height: "300px" %>
         </div>
       </div>
     </div>
@@ -24,8 +24,8 @@
     <div class="col-md-12">
       <div class="card shadow-sm rounded-4">
         <div class="card-body">
-          <h6 class="text-center fw-semibold text-secondary">Comments Received Per Map</h6>
-          <%= bar_chart @comments_per_map, height: "300px" %>
+          <h6 class="text-center fw-semibold text-secondary">Comments Received Per Visualization</h6>
+          <%= bar_chart @comments_per_visualization, height: "300px" %>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
     <div class="col-md-6">
       <div class="card shadow-sm rounded-4">
         <div class="card-body">
-          <h6 class="text-center fw-semibold text-secondary">Software Distribution Across Maps</h6>
+          <h6 class="text-center fw-semibold text-secondary">Software Distribution Across Visualizations</h6>
           <%= pie_chart @software_usage, height: "300px" %>
         </div>
       </div>

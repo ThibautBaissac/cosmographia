@@ -44,12 +44,12 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_123428) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content", null: false
-    t.bigint "map_id", null: false
+    t.bigint "visualization_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["map_id"], name: "index_comments_on_map_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+    t.index ["visualization_id"], name: "index_comments_on_visualization_id"
   end
 
   create_table "feedbacks", force: :cascade do |t|
@@ -59,37 +59,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_123428) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_feedbacks_on_user_id"
-  end
-
-  create_table "map_softwares", force: :cascade do |t|
-    t.bigint "software_id", null: false
-    t.bigint "map_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["map_id"], name: "index_map_softwares_on_map_id"
-    t.index ["software_id"], name: "index_map_softwares_on_software_id"
-  end
-
-  create_table "maps", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "title", null: false
-    t.text "description"
-    t.date "creation_date"
-    t.integer "scale"
-    t.text "sources"
-    t.string "geographic_coverage"
-    t.string "projection"
-    t.boolean "is_public", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["creation_date"], name: "index_maps_on_creation_date"
-    t.index ["description"], name: "index_maps_on_description"
-    t.index ["geographic_coverage"], name: "index_maps_on_geographic_coverage"
-    t.index ["projection"], name: "index_maps_on_projection"
-    t.index ["scale"], name: "index_maps_on_scale"
-    t.index ["sources"], name: "index_maps_on_sources"
-    t.index ["title"], name: "index_maps_on_title"
-    t.index ["user_id"], name: "index_maps_on_user_id"
   end
 
   create_table "softwares", force: :cascade do |t|
@@ -133,14 +102,45 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_123428) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "visualization_softwares", force: :cascade do |t|
+    t.bigint "software_id", null: false
+    t.bigint "visualization_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["software_id"], name: "index_visualization_softwares_on_software_id"
+    t.index ["visualization_id"], name: "index_visualization_softwares_on_visualization_id"
+  end
+
+  create_table "visualizations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "title", null: false
+    t.text "description"
+    t.date "creation_date"
+    t.integer "scale"
+    t.text "sources"
+    t.string "geographic_coverage"
+    t.string "projection"
+    t.boolean "is_public", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creation_date"], name: "index_visualizations_on_creation_date"
+    t.index ["description"], name: "index_visualizations_on_description"
+    t.index ["geographic_coverage"], name: "index_visualizations_on_geographic_coverage"
+    t.index ["projection"], name: "index_visualizations_on_projection"
+    t.index ["scale"], name: "index_visualizations_on_scale"
+    t.index ["sources"], name: "index_visualizations_on_sources"
+    t.index ["title"], name: "index_visualizations_on_title"
+    t.index ["user_id"], name: "index_visualizations_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "comments", "maps"
   add_foreign_key "comments", "users"
+  add_foreign_key "comments", "visualizations"
   add_foreign_key "feedbacks", "users"
-  add_foreign_key "map_softwares", "maps"
-  add_foreign_key "map_softwares", "softwares"
-  add_foreign_key "maps", "users"
   add_foreign_key "user_softwares", "softwares"
   add_foreign_key "user_softwares", "users"
+  add_foreign_key "visualization_softwares", "softwares"
+  add_foreign_key "visualization_softwares", "visualizations"
+  add_foreign_key "visualizations", "users"
 end

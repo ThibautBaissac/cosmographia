@@ -1,0 +1,4 @@
+<%= render("visualizations/show/title", visualization: @visualization) %>
+<%= render("visualizations/show/image", visualization: @visualization) %>
+<%= render("visualizations/show/comments", visualization: @visualization, comments: @comments, new_comment: @new_comment) %>
+<%= render("visualizations/show/discover", visualizations: @visualizations) %>

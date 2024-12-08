@@ -7,11 +7,11 @@
         </span>
         <% if policy(comment).edit? %>
           <div class="d-flex gap-2">
-            <%= link_to(edit_map_comment_path(comment. map, comment), class: "btn btn-outline-secondary btn-sm rounded-4") do %>
+            <%= link_to(edit_visualization_comment_path(comment. visualization, comment), class: "btn btn-outline-secondary btn-sm rounded-4") do %>
               <i class="fa-solid fa-pencil"></i>
               <%= t("common.edit") %>
             <% end %>
-            <%= button_to(map_comment_path(comment. map, comment), method: :delete, class: "btn btn-outline-danger btn-sm rounded-4") do %>
+            <%= button_to(visualization_comment_path(comment. visualization, comment), method: :delete, class: "btn btn-outline-danger btn-sm rounded-4") do %>
               <i class="fa-solid fa-trash-can"></i>
               <%= t("common.delete") %>
             <% end %>

@@ -7,7 +7,7 @@ fr:
       feedback:
         message: Message
         subject: Sujet
-      map:
+      visualization:
         creation_date: Date de création
         description: Description
         geographic_coverage: Couverture géographique
@@ -16,7 +16,7 @@ fr:
         scale: Échelle
         sources: Sources
         title: Titre
-      map_software:
+      visualization_software:
         category: Catégorie
         name: Nom
       user:
@@ -30,17 +30,17 @@ fr:
         blank: Ce champ ne peut pas être vide
         record_invalid: 'Validation échouée : %{errors}'
       models:
-        map:
+        visualization:
           attributes:
             title:
               blank: Le titre ne peut pas être vide
-          blank: Les attributs du modèle Map ne peuvent pas être vides
+          blank: Les attributs du modèle Visualization ne peuvent pas être vides
     models:
       software:
         one: Logiciel
         other: Logiciels
-  cartography:
-    title: Cartographie
+  visualization:
+    title: Visualisation
   comments:
     one: commentaire
     other: commentaires
@@ -54,6 +54,7 @@ fr:
     delete: Supprimer
     discover: Découvrir
     edit: Modifier
+    go_to: Aller à %{name}
     hello: Bonjour %{name} !
     reset_filters: Réinitialiser les filtres
     save: Sauvegarder
@@ -89,28 +90,28 @@ fr:
   home:
     user_signed_in:
       charts:
-        maps_by_projection: Répartition des cartes par projection
+        visualizations_by_projection: Répartition des visualisations par projection
         most_used_softawres: Logiciels les plus utilisés
-      dicover_maps: Découvrir les cartes
+      dicover_visualizations: Découvrir les visualisations
       last_comments: Les derniers commentaires
-      last_maps: Les dernières cartes
-      post_map: Publier vos cartes
-      see_all_maps: Découvrez toutes les cartes !
+      last_visualizations: Les dernières visualisations
+      post_visualization: Publier vos visualisations
+      see_all_visualizations: Découvrez toutes les visualisations !
   locale:
     en: English
     fr: Français
     title: Changer de langue
-  maps:
+  visualizations:
     filtering:
       creation_date_end: Date de création (fin)
       creation_date_start: Date de création (début)
       scale_maximum: Échelle maximum
       scale_minimum: Échelle minimum
     form:
-      create_title: Publier une carte
+      create_title: Publier une visualisation
       current_image: Image actuelle
       details_section: Détails
-      edit_title: Modifier la carte
+      edit_title: Modifier la visualisation
       general_info_section: Infos générales
       geographic_coverage_placeholder: Sélectionner une couverture géographique
       image_section: Image
@@ -129,15 +130,15 @@ fr:
       comments_tab: Commentaires
       contact_info: Informations de contact
       last_comments: Mes derniers commentaires
-      last_maps: Mes dernières cartes
-      maps_tab: Cartes
+      last_visualizations: Mes dernières visualisations
+      visualizations_tab: visualisations
       profile_tab: Profil
       title: Mon profil
       total_comment_count: "(%{count} au total)"
       user_info_disclaimer_html: Vos informations personnelles ne seront <b>jamais partagées</b> avec des tiers extérieurs à la communauté Cosmographia !
   navbar:
     about: À propos
-    cartography: Cartographie
+    visualizations: Visualisations
     edit_password: Modifier le mot de passe
     edit_profile: Modifier le profil
     install_pwa: Ajouter à l'écran d'accueil
@@ -147,14 +148,14 @@ fr:
     sign_up: S'inscrire
   pundit:
     default: Vous ne pouvez pas effectuer cette action.
-    map_policy:
-      create?: Vous ne pouvez pas créer de carte !
-      destroy?: Vous ne pouvez pas supprimer cette carte !
-      edit?: Vous ne pouvez pas éditer cette carte !
-      index?: Vous ne pouvez pas voir la liste des cartes !
-      new?: Vous ne pouvez pas créer de carte !
-      show?: Vous ne pouvez pas voir cette carte !
-      update?: Vous ne pouvez pas mettre à jour cette carte !
+    visualization_policy:
+      create?: Vous ne pouvez pas créer de visualisation !
+      destroy?: Vous ne pouvez pas supprimer cette visualisation !
+      edit?: Vous ne pouvez pas éditer cette visualisation !
+      index?: Vous ne pouvez pas voir la liste des visualisations !
+      new?: Vous ne pouvez pas créer de visualisation !
+      show?: Vous ne pouvez pas voir cette visualisation !
+      update?: Vous ne pouvez pas mettre à jour cette visualisation !
     user_policy:
       edit?: Vous ne pouvez pas éditer ce profil !
       show?: Vous ne pouvez pas voir ce profil !

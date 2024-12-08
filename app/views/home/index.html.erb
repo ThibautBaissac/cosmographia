@@ -2,9 +2,9 @@
   <%= render("home/user_signed_in/header") %>
   <%= render("home/user_signed_in/hero") %>
   <%= render("home/user_signed_in/charts") %>
-  <%= render("home/user_signed_in/maps") %>
+  <%= render("home/user_signed_in/visualizations") %>
   <%= render("home/user_signed_in/last_comments", comments: @last_comments) %>
 <% else %>
-  <%= render("home/user_signed_out/carousel", maps: @maps) %>
+  <%= render("home/user_signed_out/carousel", visualizations: @visualizations) %>
   <%= render("home/user_signed_out/presentation") %>
 <% end %>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     devise_for :users
 
     draw :feedbacks
-    draw :maps
+    draw :visualizations
     draw :my
     draw :static_pages
     draw :users

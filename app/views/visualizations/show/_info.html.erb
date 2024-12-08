@@ -1,0 +1,17 @@
+<div class="card shadow-sm rounded-4">
+  <div class="card-body">
+    <h5 class="card-title text-primary"><%= visualization.title %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= t("common.created_by", name: visualization.user.fullname) %></h6>
+    <p class="card-text text-secondary"><%= truncate(visualization.description, length: 100) %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.creation_date") %>:</strong> <%= visualization.creation_date %></li>
+    <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.scale") %>:</strong> <%= visualization.scale %></li>
+    <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.source") %>:</strong> <%= visualization.sources %></li>
+    <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.geographic_coverage") %>:</strong> <%= t("visualizations.geographic_coverages.#{visualization.geographic_coverage&.downcase}") %></li>
+    <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.projection") %>:</strong> <%= t("visualization_projections.#{visualization.projection}") %></li>
+  </ul>
+  <div class="card-body">
+    <%= render("visualizations/show/info_softwares", visualization:) %>
+  </div>
+</div>

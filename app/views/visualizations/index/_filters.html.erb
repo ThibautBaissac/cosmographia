@@ -1,0 +1,50 @@
+<div class="row g-4">
+  <!-- Creation Date Filter -->
+  <div class="col-6">
+    <%= form.label(:creation_date_start, t("visualizations.filtering.creation_date_start"), class: "form-label fw-semibold") %>
+    <%= form.date_field(:creation_date_start, value: params[:creation_date_start], class: "form-control rounded-pill shadow-sm") %>
+  </div>
+  <div class="col-6">
+    <%= form.label(:creation_date_end, t("visualizations.filtering.creation_date_end"), class: "form-label fw-semibold") %>
+    <%= form.date_field(:creation_date_end, value: params[:creation_date_end], class: "form-control rounded-pill shadow-sm") %>
+  </div>
+
+  <!-- Wrapper to fix alignment -->
+  <div class="col-12">
+    <div class="row g-4">
+      <!-- Scale Filters -->
+      <div class="col-6 col-lg-4">
+        <%= form.label(:scale_min, t("visualizations.filtering.scale_minimum"), class: "form-label fw-semibold") %>
+        <%= form.number_field(:scale_min, value: params[:scale_min], class: "form-control rounded-pill shadow-sm", step: 1, placeholder: "Enter minimum scale") %>
+      </div>
+      <div class="col-6 col-lg-4">
+        <%= form.label(:scale_max, t("visualizations.filtering.scale_maximum"), class: "form-label fw-semibold") %>
+        <%= form.number_field(:scale_max, value: params[:scale_max], class: "form-control rounded-pill shadow-sm", step: 1, placeholder: "Enter maximum scale") %>
+      </div>
+
+      <!-- Geographic Coverage Filter -->
+      <div class="col-12 col-lg-4 mt-3">
+        <%= form.label(:geographic_coverage, class: "form-label fw-semibold") %>
+        <%= form.select(:geographic_coverage,
+              Visualization.geographic_coverage_keys.map { |key| [ t("visualizations.geographic_coverages.#{key}"), key.to_s.upcase ] },
+              {include_blank: t("visualizations.form.geographic_coverage_placeholder")},
+              {class: "form-select rounded-pill shadow-sm"}) %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projection Filter -->
+  <div class="col-12">
+    <%= form.label(:projections, t("activerecord.attributes.visualization.filtering.projection"), class: "form-label fw-semibold") %>
+    <%= form.select(:projections,
+        options_for_select(Constants::Visualizations::PROJECTIONS.map { |proj| [ proj, proj ] }.unshift([ "All", :all ]),
+        selected: params[:projections]),
+        {include_blank: false},
+        {multiple: true, class: "form-select rounded-3 shadow-sm"}) %>
+  </div>
+</div>
+
+<!-- Submit Button -->
+<div class="d-grid mt-4">
+  <%= form.submit(t("common.search_btn"), class: "btn btn-primary rounded-pill shadow-sm") %>
+</div>

@@ -7,7 +7,7 @@ en:
       feedback:
         message: Message
         subject: Subject
-      map:
+      visualization:
         creation_date: Creation date
         description: Description
         geographic_coverage: Geographic coverage
@@ -16,7 +16,7 @@ en:
         scale: Scale
         sources: Sources
         title: Title
-      map_software:
+      visualization_software:
         category: Category
         name: Name
       user:
@@ -30,17 +30,17 @@ en:
         blank: This field can't be blank
         record_invalid: 'Validation failed: %{errors}'
       models:
-        map:
+        visualization:
           attributes:
             title:
               blank: Title can't be blank
-          blank: Map model attributes can't be blank
+          blank: Visualization model attributes can't be blank
     models:
       software:
         one: Software
         other: Softwares
-  cartography:
-    title: Cartography
+  visualization:
+    title: Visualization
   comments:
     one: comment
     other: comments
@@ -54,6 +54,7 @@ en:
     delete: Delete
     discover: Discover
     edit: Edit
+    go_to: Go to %{name}
     hello: Hello %{name}!
     reset_filters: Reset filters
     save: Save
@@ -88,28 +89,28 @@ en:
   home:
     user_signed_in:
       charts:
-        maps_by_projection: Maps distribution by projection
+        visualizations_by_projection: Visualizations distribution by projection
         most_used_softawres: Most used softwares
-      dicover_maps: Discover maps
+      dicover_visualizations: Discover visualizations
       last_comments: The last comments
-      last_maps: The last maps
-      post_map: Post your maps
-      see_all_maps: Discover all maps!
+      last_visualizations: The last visualizations
+      post_visualization: Post your visualizations
+      see_all_visualizations: Discover all visualizations!
   locale:
     en: English
     fr: Français
     title: Switch language
-  maps:
+  visualizations:
     filtering:
       creation_date_end: Creation date (end)
       creation_date_start: Creation date (start)
       scale_maximum: Scale maximum
       scale_minimum: Scale minimum
     form:
-      create_title: Publish a map
+      create_title: Publish a visualization
       current_image: Current image
       details_section: Details
-      edit_title: Edit map
+      edit_title: Edit visualization
       general_info_section: General information
       geographic_coverage_placeholder: Select a geographic coverage
       image_section: Image
@@ -128,15 +129,15 @@ en:
       comments_tab: Comments
       contact_info: Contact information
       last_comments: My last comments
-      last_maps: My last maps
-      maps_tab: Maps
+      last_visualizations: My last visualizations
+      visualizations_tab: Visualizations
       profile_tab: Profile
       title: My profile
       total_comment_count: "(%{count} in total)"
       user_info_disclaimer_html: Your personal information will <b>never be shared</b> with third parties outside the Cosmographia community!
   navbar:
     about: About
-    cartography: Cartography
+    visualizations: Visualizations
     edit_password: Edit password
     edit_profile: Edit profile
     install_pwa: Add to Home Screen
@@ -146,14 +147,14 @@ en:
     sign_up: Sign up
   pundit:
     default: You cannot perform this action.
-    map_policy:
-      create?: You cannot create a map!
-      destroy?: You cannot delete this map!
-      edit?: You cannot edit this map!
-      index?: You cannot see the list of maps!
-      new?: You cannot create a map!
-      show?: You cannot see this map!
-      update?: You cannot update this map!
+    visualization_policy:
+      create?: You cannot create a visualization!
+      destroy?: You cannot delete this visualization!
+      edit?: You cannot edit this visualization!
+      index?: You cannot see the list of visualizations!
+      new?: You cannot create a visualization!
+      show?: You cannot see this visualization!
+      update?: You cannot update this visualization!
     user_policy:
       edit?: You cannot edit this profile!
       show?: You cannot see this profile!
