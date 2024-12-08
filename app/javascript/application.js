@@ -4,3 +4,4 @@ import "./controllers"
 import * as bootstrap from "bootstrap"
 import "@fortawesome/fontawesome-free/js/all";
 import "chartkick/chart.js"
+import "./popovers.js"
