@@ -1,15 +1,10 @@
-<ul class="list-group list-group-flush my-3">
-  <h5><%= t("activerecord.models.software", count: 0) %>:</h5>
-  <% map.softwares.group_by(&:category).each do |category, softwares| %>
-    <li class="list-group-item">
-      <strong><%= t("activerecord.attributes.map_software.category") %>: <%= category %></strong>
-      <ul>
-        <% softwares.each do |software| %>
-          <li>
-            <%= software.name %>
-          </li>
-        <% end %>
-      </ul>
+<div class="fw-bold mb-2"><%= t("activerecord.models.software", count: 0) %>:</div>
+<ul class="p-0">
+  <% map.softwares.each do |software| %>
+    <li class="list-inline-item">
+      <div class="text-secondary border border-secondary px-2 py-1 rounded-pill">
+        <%= software.name.capitalize %>
+      </div>
     </li>
   <% end %>
 </ul>
