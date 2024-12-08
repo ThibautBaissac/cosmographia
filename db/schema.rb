@@ -119,7 +119,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_123428) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "superadmin", default: false
-    t.string "locale", default: "fr", null: false
+    t.string "locale", default: "en", null: false
     t.string "first_name"
     t.string "last_name"
     t.text "bio"
