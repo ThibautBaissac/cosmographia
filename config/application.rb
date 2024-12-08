@@ -13,6 +13,8 @@ module Cosmographia
 
     I18n.available_locales = %i[fr en]
     config.i18n.default_locale = :fr
+    config.i18n.fallbacks = [ :en, :fr ]
+
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
