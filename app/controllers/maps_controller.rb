@@ -72,6 +72,7 @@ class MapsController < ApplicationController
       :creation_date_end,
       :scale_min,
       :scale_max,
+      :geographic_coverage,
       projections: []
     )
   end

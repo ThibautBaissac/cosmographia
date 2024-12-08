@@ -9,6 +9,7 @@ class Maps::Filter
     @maps = query.present? ? @maps.search(query) : @maps
     filter_by_creation_date
     filter_by_scale
+    filter_by_geographic_coverage
     filter_by_projection
     filter_by_software_names
     filter_by_software_categories
@@ -35,6 +36,12 @@ class Maps::Filter
 
     if @params[:scale_max].present?
       @maps = @maps.where("scale <= ?", @params[:scale_max])
+    end
+  end
+
+  def filter_by_geographic_coverage
+    if @params[:geographic_coverage].present?
+      @maps = @maps.where(geographic_coverage: @params[:geographic_coverage].upcase)
     end
   end
 

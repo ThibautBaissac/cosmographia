@@ -12,6 +12,7 @@ module Map::Scopes
         "maps.title ILIKE :q OR
         maps.description ILIKE :q OR
         maps.sources ILIKE :q OR
+        maps.geographic_coverage ILIKE :q OR
         softwares.name ILIKE :q OR
         softwares.category ILIKE :q OR
         users.last_name ILIKE :q",

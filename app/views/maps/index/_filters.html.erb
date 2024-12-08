@@ -9,14 +9,28 @@
     <%= form.date_field(:creation_date_end, value: params[:creation_date_end], class: "form-control rounded-pill shadow-sm") %>
   </div>
 
-  <!-- Scale Filter -->
-  <div class="col-6">
-    <%= form.label(:scale_min, t("maps.filtering.scale_minimum"), class: "form-label fw-semibold") %>
-    <%= form.number_field(:scale_min, value: params[:scale_min], class: "form-control rounded-pill shadow-sm", step: 1, placeholder: "Enter minimum scale") %>
-  </div>
-  <div class="col-6">
-    <%= form.label(:scale_max, t("maps.filtering.scale_maximum"), class: "form-label fw-semibold") %>
-    <%= form.number_field(:scale_max, value: params[:scale_max], class: "form-control rounded-pill shadow-sm", step: 1, placeholder: "Enter maximum scale") %>
+  <!-- Wrapper to fix alignment -->
+  <div class="col-12">
+    <div class="row g-4">
+      <!-- Scale Filters -->
+      <div class="col-6 col-lg-4">
+        <%= form.label(:scale_min, t("maps.filtering.scale_minimum"), class: "form-label fw-semibold") %>
+        <%= form.number_field(:scale_min, value: params[:scale_min], class: "form-control rounded-pill shadow-sm", step: 1, placeholder: "Enter minimum scale") %>
+      </div>
+      <div class="col-6 col-lg-4">
+        <%= form.label(:scale_max, t("maps.filtering.scale_maximum"), class: "form-label fw-semibold") %>
+        <%= form.number_field(:scale_max, value: params[:scale_max], class: "form-control rounded-pill shadow-sm", step: 1, placeholder: "Enter maximum scale") %>
+      </div>
+
+      <!-- Geographic Coverage Filter -->
+      <div class="col-12 col-lg-4 mt-3">
+        <%= form.label(:geographic_coverage, class: "form-label fw-semibold") %>
+        <%= form.select(:geographic_coverage,
+              Map.geographic_coverage_keys.map { |key| [ t("maps.geographic_coverages.#{key}"), key.to_s.upcase ] },
+              {include_blank: t("maps.form.geographic_coverage_placeholder")},
+              {class: "form-select rounded-pill shadow-sm"}) %>
+      </div>
+    </div>
   </div>
 
   <!-- Projection Filter -->
