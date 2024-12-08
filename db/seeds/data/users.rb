@@ -14,7 +14,6 @@ puts("---- Creating users...")
     personal_website: Faker::Internet.url,
     guest: false,
     social_links: {
-      twitter: Faker::Internet.url(host: "twitter.com"),
       linkedin: Faker::Internet.url(host: "linkedin.com/in"),
       github: Faker::Internet.url(host: "github.com")
     }
