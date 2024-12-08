@@ -7,7 +7,7 @@ puts("---- Creating maps...")
     creation_date: Faker::Date.backward(days: 365 * 10),
     scale: [ "1000", "5000", "10000", "25000", "50000", "100000", "250000", "500000", "1000000" ].sample,
     sources: Faker::Lorem.sentence(word_count: 5),
-    geographic_coverage: Constants::Maps::GEOGRAPHIC_COVERAGE.sample,
+    geographic_coverage: Map.geographic_coverage_values.sample,
     projection: Map.projection_values.sample,
     is_public: [ true, false ].sample,
     created_at: Faker::Date.backward(days: 365 * 10)
