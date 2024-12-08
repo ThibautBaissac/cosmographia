@@ -50,6 +50,7 @@ fr:
   common:
     apply_filters: Appliquer des filtres
     by: Par %{name}
+    confirm_delete: Êtes-vous sûr de vouloir supprimer ceci ?
     created_by: Créé par %{name}
     delete: Supprimer
     discover: Découvrir
