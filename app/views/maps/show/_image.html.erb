@@ -5,7 +5,7 @@
       <% if map.image.attached? %>
         <div class="position-relative">
           <%= image_tag(map.image, class: "w-100 rounded-4 shadow-sm", alt: map.title) %>
-          <button type="button" class="btn btn-light btn-sm rounded-pill shadow-sm position-absolute bottom-0 start-0 m-2 border border-primary d-none d-lg-block" data-action="click->expand-image#toggle" data-expand-image-target="expandButton">
+          <button type="button" class="btn btn-light btn-sm rounded-pill shadow-sm position-absolute bottom-0 end-0 m-2 border border-primary d-none d-lg-block" data-action="click->expand-image#toggle" data-expand-image-target="expandButton">
             <i class="fa-solid fa-expand"></i>
           </button>
         </div>
