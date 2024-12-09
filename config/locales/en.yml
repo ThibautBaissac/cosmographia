@@ -43,6 +43,7 @@ en:
     title: Switch language
   navbar:
     about: About
+    community: Community
     edit_password: Edit password
     edit_profile: Edit profile
     install_pwa: Add to Home Screen
@@ -65,6 +66,3 @@ en:
       new?: You cannot create a visualization!
       show?: You cannot see this visualization!
       update?: You cannot update this visualization!
-  search:
-    query_placeholder: Search by title, description, sources, software, software category,
-      or user last name.

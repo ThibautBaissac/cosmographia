@@ -49,6 +49,7 @@ class My::ProfileController < ApplicationController
       :last_name,
       :bio,
       :personal_website,
+      :optin_directory,
       social_links: Constants::Users::SOCIAL_LINK_KEYS,
       software_ids: [])
   end

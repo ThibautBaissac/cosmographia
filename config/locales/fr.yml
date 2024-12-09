@@ -43,6 +43,7 @@ fr:
     title: Changer de langue
   navbar:
     about: À propos
+    community: Communauté
     edit_password: Modifier le mot de passe
     edit_profile: Modifier le profil
     install_pwa: Ajouter à l'écran d'accueil
@@ -65,6 +66,3 @@ fr:
       new?: Vous ne pouvez pas créer de visualisation !
       show?: Vous ne pouvez pas voir cette visualisation !
       update?: Vous ne pouvez pas mettre à jour cette visualisation !
-  search:
-    query_placeholder: Rechercher par titre, description, sources, logiciel, catégorie
-      de logiciel ou nom de famille d'une personne.

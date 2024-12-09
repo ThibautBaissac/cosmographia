@@ -30,3 +30,6 @@ en:
       municipal: Municipal
       national: National
       regional: Regional
+    search:
+      query_placeholder: Search by title, description, sources, software, software category,
+        or user last name.

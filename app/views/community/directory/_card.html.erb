@@ -1,0 +1,38 @@
+<div class="col">
+  <div class="card shadow-sm rounded-4">
+    <div class="card-body">
+      <!-- Contact Information Section -->
+      <h5 class="card-title text-primary fw-bold"><%= user.fullname %></h5>
+      <hr>
+
+      <!-- Social Links Section -->
+      <h5 class="card-title text-primary fw-bold"><%= t("activerecord.attributes.user.social_links") %></h5>
+      <% if user.social_links.present? %>
+        <ul class="list-inline mt-2">
+          <% user.social_links.each do |platform, link| %>
+            <% unless link.blank? %>
+              <li class="list-inline-item">
+                <a href="<%= link %>" target="_blank" class="btn btn-outline-secondary btn-sm rounded-pill">
+                  <i class="fa-brands fa-<%= platform %>"></i> <%= platform.capitalize %>
+                </a>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="text-muted fst-italic">No social links available.</p>
+      <% end %>
+      <hr>
+
+      <!-- Softwares Section -->
+      <h5 class="card-title text-primary fw-bold"><%= t("activerecord.models.software", count: 2) %></h5>
+      <ul class="list-inline mt-2">
+        <% user.softwares.each do |software| %>
+          <li class="list-inline-item mb-2">
+            <span class="text-secondary"><%= software.name %></span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

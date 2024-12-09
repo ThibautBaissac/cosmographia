@@ -10,11 +10,25 @@
           </h4>
           <p class="card-text text-muted fst-italic"><%= @user.bio || "No bio available." %></p>
 
-          <% if @user.personal_website.present? %>
-            <a href="<%= @user.personal_website %>" class="btn btn-outline-primary btn-sm rounded-pill mt-2" target="_blank">
-              <%= t("activerecord.attributes.user.personal_website") %>
-            </a>
-          <% end %>
+          <div class="d-flex justify-content-around align-items-center">
+            <% if @user.personal_website.present? %>
+              <a href="<%= @user.personal_website %>" class="btn btn-outline-primary btn-sm rounded-pill mt-2" target="_blank">
+                <%= t("activerecord.attributes.user.personal_website") %>
+              </a>
+            <% end %>
+
+            <% if @user.opted_in_directory? %>
+              <%= link_to(community_directory_path, class: "btn btn-outline-primary btn-sm rounded-pill mt-2") do %>
+                <i class="fa-solid fa-users"></i>
+                <%= t("my.profile.in_directory") %>
+              <% end %>
+            <% else %>
+              <%= link_to(edit_my_profile_path, class: "btn btn-outline-primary btn-sm rounded-pill mt-2") do %>
+                <i class="fa-solid fa-users-slash"></i>
+                <%= t("my.profile.not_in_directory") %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

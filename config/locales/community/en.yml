@@ -1,0 +1,8 @@
+---
+en:
+  community:
+    directory:
+      not_opted_in_alert: You can search for members of the community once you join it.
+      title: Directory
+      search:
+        query_placeholder: Search by user first name, last name, email, software or software category.

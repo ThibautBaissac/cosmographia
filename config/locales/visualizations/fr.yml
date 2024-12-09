@@ -30,3 +30,6 @@ fr:
       municipal: Communale
       national: Nationale
       regional: Régionale
+    search:
+      query_placeholder: Rechercher par titre, description, sources, logiciel, catégorie
+        de logiciel ou nom de famille d'une personne.
