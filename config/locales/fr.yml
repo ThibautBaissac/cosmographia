@@ -35,7 +35,7 @@ fr:
           attributes:
             title:
               blank: Le titre ne peut pas être vide
-          blank: Les attributs du modèle Visualization ne peuvent pas être vides
+          blank: Ce attribut est obligatoire
     models:
       software:
         one: Logiciel
@@ -115,6 +115,7 @@ fr:
     form:
       create_title: Publier une visualisation
       current_image: Image actuelle
+      description_placeholder: Saisir une description
       details_section: Détails
       edit_title: Modifier la visualisation
       general_info_section: Infos générales
@@ -122,6 +123,7 @@ fr:
       image_section: Image
       scale_placeholder: Saisir une échelle (e.g., 1000)
       sources_placeholder: Renseigner vos sources
+      title_placeholder: Saisir un titre
     geographic_coverages:
       local: Locale
       municipal: Communale

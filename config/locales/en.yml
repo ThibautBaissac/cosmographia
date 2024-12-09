@@ -35,7 +35,7 @@ en:
           attributes:
             title:
               blank: Title can't be blank
-          blank: Visualization model attributes can't be blank
+          blank: This attribute is required
     models:
       software:
         one: Software
@@ -115,6 +115,7 @@ en:
     form:
       create_title: Publish a visualization
       current_image: Current image
+      description_placeholder: Enter a description
       details_section: Details
       edit_title: Edit visualization
       general_info_section: General information
@@ -122,6 +123,7 @@ en:
       image_section: Image
       scale_placeholder: Enter the scale (e.g., 1000)
       sources_placeholder: Enter your sources
+      title_placeholder: Enter a title
     geographic_coverage:
       local: Local
       municipal: Municipal
