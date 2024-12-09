@@ -62,7 +62,7 @@ class VisualizationsController < ApplicationController
   end
 
   def visualization_params
-    params.require(:visualization).permit(:category, :title, :description, :creation_date, :scale, :sources, :geographic_coverage, :projection, :is_public, software_ids: [])
+    params.require(:visualization).permit(:category, :image, :title, :description, :creation_date, :scale, :sources, :geographic_coverage, :projection, :is_public, software_ids: [])
   end
 
   def visualization_filter_params
