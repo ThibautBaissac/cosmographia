@@ -8,8 +8,11 @@ class Visualization < ApplicationRecord
   has_one_attached :image
 
   validates :title, presence: true
+  validates :image, presence: true
+  validates :category, presence: true
+  validates :description, presence: true
 
+  string_enum category: Constants::Visualizations::CATEGORY
   string_enum projection: Constants::Visualizations::PROJECTIONS
   string_enum geographic_coverage: Constants::Visualizations::GEOGRAPHIC_COVERAGE
-  string_enum category: Constants::Visualizations::CATEGORY
 end

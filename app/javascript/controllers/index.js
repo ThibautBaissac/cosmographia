@@ -12,3 +12,6 @@ application.register("masonry", MasonryController)
 
 import PwaInstallController from "./pwa_install_controller"
 application.register("pwa-install", PwaInstallController)
+
+import VisualizationCategorySwitchController from "./visualization_category_switch_controller"
+application.register("visualization-category-switch", VisualizationCategorySwitchController)

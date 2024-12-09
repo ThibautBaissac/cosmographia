@@ -5,14 +5,16 @@
       <h6 class="card-subtitle mb-2 text-muted"><%= t("common.created_by", name: visualization.user.fullname) %></h6>
       <p class="card-text text-secondary"><%= truncate(visualization.description, length: 100) %></p>
     </div>
-    <i class="fa-solid fa-2x text-primary fa-<%= visualization.category == Visualization::Map ? "map" : "database" %>"></i>
+    <i class="fa-solid fa-2x text-primary fa-<%= visualization.map? ? "map" : "database" %>"></i>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.creation_date") %>:</strong> <%= visualization.creation_date %></li>
-    <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.scale") %>:</strong> <%= visualization.scale %></li>
+    <% if visualization.map? %>
+      <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.scale") %>:</strong> <%= visualization.scale %></li>
+      <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.geographic_coverage") %>:</strong> <%= t("visualizations.geographic_coverages.#{visualization.geographic_coverage&.downcase}") %></li>
+      <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.projection") %>:</strong> <%= t("visualization_projections.#{visualization.projection}") %></li>
+    <% end %>
     <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.source") %>:</strong> <%= visualization.sources %></li>
-    <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.geographic_coverage") %>:</strong> <%= t("visualizations.geographic_coverages.#{visualization.geographic_coverage&.downcase}") %></li>
-    <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.projection") %>:</strong> <%= t("visualization_projections.#{visualization.projection}") %></li>
   </ul>
   <div class="card-body">
     <%= render("visualizations/show/info_softwares", visualization:) %>
