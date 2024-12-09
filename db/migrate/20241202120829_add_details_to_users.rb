@@ -15,5 +15,7 @@ class AddDetailsToUsers < ActiveRecord::Migration[8.0]
     add_column(:users, :social_links, :jsonb)
 
     add_column(:users, :guest, :boolean, default: true)
+
+    add_column(:users, :optin_directory, :boolean, default: false)
   end
 end

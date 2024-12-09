@@ -13,6 +13,7 @@ puts("---- Creating users...")
     last_presence_at: Faker::Time.backward(days: 365, period: :evening),
     personal_website: Faker::Internet.url,
     guest: false,
+    optin_directory: [ true, false ].sample,
     social_links: {
       linkedin: Faker::Internet.url(host: "linkedin.com/in"),
       github: Faker::Internet.url(host: "github.com")

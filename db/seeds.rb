@@ -1,6 +1,6 @@
 require 'faker'
 
-@nb_users = 10
+@nb_users = 30
 @nb_guest_users = 3
 @nb_visualizations = 300
 load(Rails.root.join("db", "seeds", "data", "softwares.rb"))
