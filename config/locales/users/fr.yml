@@ -1,0 +1,29 @@
+---
+fr:
+  guest:
+    alert_01_html: Vous êtes un utilisateur invité.
+    alert_02_html: Pour commencer à partager votre travail, veuillez remplir les <a
+      href=%{url} class="alert-link">informations de votre profil</a>.
+    alert_02_popover: Pour commencer à partager votre travail, veuillez remplir les
+      informations de votre profil.
+  my:
+    profile:
+      charts_tab: Statistiques
+      comments_tab: Commentaires
+      contact_info: Informations de contact
+      last_comments: Mes derniers commentaires
+      last_visualizations: Mes dernières visualisations
+      profile_tab: Profil
+      title: Mon profil
+      total_comment_count: "(%{count} au total)"
+      user_info_disclaimer_html: Vos informations personnelles ne seront <b>jamais
+        partagées</b> avec des tiers extérieurs à la communauté Cosmographia !
+      visualizations_tab: visualisations
+  users:
+    form:
+      bio_placeholder: Parlons un peu de vous, de vos projets...
+      bio_section: A propos de moi
+      edit_title: Modifier le profil
+      first_name_placeholder: Indiquer votre prénom
+      general_info_section: Infos générales
+      last_name_placeholder: Indiquer votre prénom

@@ -1,54 +1,5 @@
 ---
 en:
-  activerecord:
-    attributes:
-      comment:
-        content: Content
-      feedback:
-        message: Message
-        subject: Subject
-      visualization:
-        category: Category
-        creation_date: Creation date
-        description: Description
-        geographic_coverage: Geographic coverage
-        is_public: Public
-        projection: Projection
-        scale: Scale
-        sources: Sources
-        title: Title
-      visualization_software:
-        category: Category
-        name: Name
-      user:
-        bio: Bio
-        first_name: Prénom
-        last_name: Nom
-        personal_website: Personal website
-        social_links: Social networks
-    errors:
-      messages:
-        blank: This field can't be blank
-        record_invalid: 'Validation failed: %{errors}'
-      models:
-        visualization:
-          attributes:
-            title:
-              blank: Title can't be blank
-          blank: This attribute is required
-    models:
-      software:
-        one: Software
-        other: Softwares
-  visualization:
-    title: Visualization
-  comments:
-    disclaimer: "Share your thoughts with kindness: your constructive and respectful comments enrich our community!"
-    one: comment
-    other: comments
-    show_more: Show more comments
-    write_comment: Write a comment
-    zero: comment
   common:
     apply_filters: Apply filters
     by: By %{name}
@@ -81,72 +32,17 @@ en:
     text: Your thoughts and suggestions help us improve. Whether it’s comment, a suggestion,
       or something we can do better, we’d love to hear from you!
     title: We value your feedback!
-  guest:
-    alert_01_html: Your are a guest user.
-    alert_02_html: To start sharing your work, please fill in your <a href=%{url} class="alert-link">profile information</a>.
-    alert_02_popover: To start sharing your work, please fill in your profile information.
   helpers:
     submit:
       comment:
         create: Post your comment
         update: Update your comment
-  home:
-    user_signed_in:
-      charts:
-        visualizations_by_projection: Visualizations distribution by projection
-        most_used_softawres: Most used softwares
-      dicover_visualizations: Discover visualizations
-      last_comments: The last comments
-      last_visualizations: The last visualizations
-      post_visualization: Post your visualizations
-      see_all_visualizations: Discover all visualizations!
   locale:
     en: English
     fr: Français
     title: Switch language
-  visualizations:
-    category:
-      data: Data visualization
-      map: Map
-    filtering:
-      creation_date_end: Creation date (end)
-      creation_date_start: Creation date (start)
-      scale_maximum: Scale maximum
-      scale_minimum: Scale minimum
-    form:
-      create_title: Publish a visualization
-      current_image: Current image
-      description_placeholder: Enter a description
-      details_section: Details
-      edit_title: Edit visualization
-      general_info_section: General information
-      geographic_coverage_placeholder: Select a geographic coverage
-      image_section: Image
-      scale_placeholder: Enter the scale (e.g., 1000)
-      sources_placeholder: Enter your sources
-      title_placeholder: Enter a title
-    geographic_coverage:
-      local: Local
-      municipal: Municipal
-      regional:  Regional
-      national: National
-      continental: Continental
-      global: Global
-  my:
-    profile:
-      charts_tab: Charts
-      comments_tab: Comments
-      contact_info: Contact information
-      last_comments: My last comments
-      last_visualizations: My last visualizations
-      visualizations_tab: Visualizations
-      profile_tab: Profile
-      title: My profile
-      total_comment_count: "(%{count} in total)"
-      user_info_disclaimer_html: Your personal information will <b>never be shared</b> with third parties outside the Cosmographia community!
   navbar:
     about: About
-    visualizations: Visualizations
     edit_password: Edit password
     edit_profile: Edit profile
     install_pwa: Add to Home Screen
@@ -154,8 +50,13 @@ en:
     sign_in: Sign in
     sign_out: Sign out
     sign_up: Sign up
+    visualizations: Visualizations
   pundit:
     default: You cannot perform this action.
+    user_policy:
+      edit?: You cannot edit this profile!
+      show?: You cannot see this profile!
+      update?: You cannot update users!
     visualization_policy:
       create?: You cannot create a visualization!
       destroy?: You cannot delete this visualization!
@@ -164,17 +65,6 @@ en:
       new?: You cannot create a visualization!
       show?: You cannot see this visualization!
       update?: You cannot update this visualization!
-    user_policy:
-      edit?: You cannot edit this profile!
-      show?: You cannot see this profile!
-      update?: You cannot update users!
-  users:
-    form:
-      bio_placeholder: Tell us about yourself, your projects,...
-      bio_section: About me
-      edit_title: Edit profile
-      first_name_placeholder: Enter your first name
-      general_info_section: General information
-      last_name_placeholder: Enter your last name
   search:
-    query_placeholder: Search by title, description, sources, software, software category, or user last name.
+    query_placeholder: Search by title, description, sources, software, software category,
+      or user last name.

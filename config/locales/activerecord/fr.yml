@@ -1,0 +1,42 @@
+---
+fr:
+  activerecord:
+    attributes:
+      comment:
+        content: Contenu
+      feedback:
+        message: Message
+        subject: Sujet
+      user:
+        bio: Bio
+        first_name: Prénom
+        last_name: Nom
+        personal_website: Site personnel
+        social_links: Réseaux sociaux
+      visualization:
+        category: Catégorie
+        creation_date: Date de création
+        description: Description
+        geographic_coverage: Couverture géographique
+        is_public: Publique
+        projection: Projection
+        scale: Échelle
+        sources: Sources
+        title: Titre
+      visualization_software:
+        category: Catégorie
+        name: Nom
+    errors:
+      messages:
+        blank: Ce champ ne peut pas être vide
+        record_invalid: 'Validation échouée : %{errors}'
+      models:
+        visualization:
+          attributes:
+            title:
+              blank: Le titre ne peut pas être vide
+          blank: Ce attribut est obligatoire
+    models:
+      software:
+        one: Logiciel
+        other: Logiciels

@@ -1,0 +1,12 @@
+---
+fr:
+  home:
+    user_signed_in:
+      charts:
+        most_used_softawres: Logiciels les plus utilisés
+        visualizations_by_projection: Répartition des visualisations par projection
+      dicover_visualizations: Découvrir les visualisations
+      last_comments: Les derniers commentaires
+      last_visualizations: Les dernières visualisations
+      post_visualization: Publier vos visualisations
+      see_all_visualizations: Découvrez toutes les visualisations !

@@ -1,0 +1,12 @@
+---
+en:
+  home:
+    user_signed_in:
+      charts:
+        most_used_softawres: Most used softwares
+        visualizations_by_projection: Visualizations distribution by projection
+      dicover_visualizations: Discover visualizations
+      last_comments: The last comments
+      last_visualizations: The last visualizations
+      post_visualization: Post your visualizations
+      see_all_visualizations: Discover all visualizations!

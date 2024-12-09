@@ -1,54 +1,5 @@
 ---
 fr:
-  activerecord:
-    attributes:
-      comment:
-        content: Contenu
-      feedback:
-        message: Message
-        subject: Sujet
-      visualization:
-        category: Catégorie
-        creation_date: Date de création
-        description: Description
-        geographic_coverage: Couverture géographique
-        is_public: Publique
-        projection: Projection
-        scale: Échelle
-        sources: Sources
-        title: Titre
-      visualization_software:
-        category: Catégorie
-        name: Nom
-      user:
-        bio: Bio
-        first_name: Prénom
-        last_name: Nom
-        personal_website: Site personnel
-        social_links: Réseaux sociaux
-    errors:
-      messages:
-        blank: Ce champ ne peut pas être vide
-        record_invalid: 'Validation échouée : %{errors}'
-      models:
-        visualization:
-          attributes:
-            title:
-              blank: Le titre ne peut pas être vide
-          blank: Ce attribut est obligatoire
-    models:
-      software:
-        one: Logiciel
-        other: Logiciels
-  visualization:
-    title: Visualisation
-  comments:
-    disclaimer: "Partagez vos idées avec bienveillance : vos commentaires constructifs et respectueux enrichissent notre communauté !"
-    one: commentaire
-    other: commentaires
-    show_more: Voir plus de commentaires
-    write_comment: Écrire un commentaire
-    zero: commentaire
   common:
     apply_filters: Appliquer des filtres
     by: Par %{name}
@@ -81,72 +32,17 @@ fr:
     text: Vos commentaires nous aident à nous améliorer. Que ce soit une suggestion
       ou quelque chose que nous pouvons améliorer, dites le nous !
     title: À vos commentaires !
-  guest:
-    alert_01_html: Vous êtes un utilisateur invité.
-    alert_02_html: Pour commencer à partager votre travail, veuillez remplir les <a href=%{url} class="alert-link">informations de votre profil</a>.
-    alert_02_popover: Pour commencer à partager votre travail, veuillez remplir les informations de votre profil.
   helpers:
     submit:
       comment:
         create: Poster votre commentaire
         update: Mettre à jour votre commentaire
-  home:
-    user_signed_in:
-      charts:
-        visualizations_by_projection: Répartition des visualisations par projection
-        most_used_softawres: Logiciels les plus utilisés
-      dicover_visualizations: Découvrir les visualisations
-      last_comments: Les derniers commentaires
-      last_visualizations: Les dernières visualisations
-      post_visualization: Publier vos visualisations
-      see_all_visualizations: Découvrez toutes les visualisations !
   locale:
     en: English
     fr: Français
     title: Changer de langue
-  visualizations:
-    category:
-      data: Visualisation de données
-      map: Carte
-    filtering:
-      creation_date_end: Date de création (fin)
-      creation_date_start: Date de création (début)
-      scale_maximum: Échelle maximum
-      scale_minimum: Échelle minimum
-    form:
-      create_title: Publier une visualisation
-      current_image: Image actuelle
-      description_placeholder: Saisir une description
-      details_section: Détails
-      edit_title: Modifier la visualisation
-      general_info_section: Infos générales
-      geographic_coverage_placeholder: Sélectionner une couverture géographique
-      image_section: Image
-      scale_placeholder: Saisir une échelle (e.g., 1000)
-      sources_placeholder: Renseigner vos sources
-      title_placeholder: Saisir un titre
-    geographic_coverages:
-      local: Locale
-      municipal: Communale
-      regional: Régionale
-      national: Nationale
-      continental: Continentale
-      global: Mondiale
-  my:
-    profile:
-      charts_tab: Statistiques
-      comments_tab: Commentaires
-      contact_info: Informations de contact
-      last_comments: Mes derniers commentaires
-      last_visualizations: Mes dernières visualisations
-      visualizations_tab: visualisations
-      profile_tab: Profil
-      title: Mon profil
-      total_comment_count: "(%{count} au total)"
-      user_info_disclaimer_html: Vos informations personnelles ne seront <b>jamais partagées</b> avec des tiers extérieurs à la communauté Cosmographia !
   navbar:
     about: À propos
-    visualizations: Visualisations
     edit_password: Modifier le mot de passe
     edit_profile: Modifier le profil
     install_pwa: Ajouter à l'écran d'accueil
@@ -154,8 +50,13 @@ fr:
     sign_in: Se connecter
     sign_out: Se déconnecter
     sign_up: S'inscrire
+    visualizations: Visualisations
   pundit:
     default: Vous ne pouvez pas effectuer cette action.
+    user_policy:
+      edit?: Vous ne pouvez pas éditer ce profil !
+      show?: Vous ne pouvez pas voir ce profil !
+      update?: Vous ne pouvez pas mettre à jour ce profil !
     visualization_policy:
       create?: Vous ne pouvez pas créer de visualisation !
       destroy?: Vous ne pouvez pas supprimer cette visualisation !
@@ -164,17 +65,6 @@ fr:
       new?: Vous ne pouvez pas créer de visualisation !
       show?: Vous ne pouvez pas voir cette visualisation !
       update?: Vous ne pouvez pas mettre à jour cette visualisation !
-    user_policy:
-      edit?: Vous ne pouvez pas éditer ce profil !
-      show?: Vous ne pouvez pas voir ce profil !
-      update?: Vous ne pouvez pas mettre à jour ce profil !
-  users:
-    form:
-      bio_placeholder: Parlons un peu de vous, de vos projets...
-      bio_section: A propos de moi
-      edit_title: Modifier le profil
-      first_name_placeholder: Indiquer votre prénom
-      general_info_section: Infos générales
-      last_name_placeholder: Indiquer votre prénom
   search:
-    query_placeholder: Rechercher par titre, description, sources, logiciel, catégorie de logiciel ou nom de famille d'une personne.
+    query_placeholder: Rechercher par titre, description, sources, logiciel, catégorie
+      de logiciel ou nom de famille d'une personne.

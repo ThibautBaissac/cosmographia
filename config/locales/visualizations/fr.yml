@@ -1,0 +1,32 @@
+---
+fr:
+  visualization:
+    title: Visualisation
+  visualizations:
+    category:
+      data: Visualisation de données
+      map: Carte
+    filtering:
+      creation_date_end: Date de création (fin)
+      creation_date_start: Date de création (début)
+      scale_maximum: Échelle maximum
+      scale_minimum: Échelle minimum
+    form:
+      create_title: Publier une visualisation
+      current_image: Image actuelle
+      description_placeholder: Saisir une description
+      details_section: Détails
+      edit_title: Modifier la visualisation
+      general_info_section: Infos générales
+      geographic_coverage_placeholder: Sélectionner une couverture géographique
+      image_section: Image
+      scale_placeholder: Saisir une échelle (e.g., 1000)
+      sources_placeholder: Renseigner vos sources
+      title_placeholder: Saisir un titre
+    geographic_coverages:
+      continental: Continentale
+      global: Mondiale
+      local: Locale
+      municipal: Communale
+      national: Nationale
+      regional: Régionale
