@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  include Users::Scopes
+
   has_many :visualizations, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -38,5 +40,9 @@ class User < ApplicationRecord
     if invalid_keys.any?
       errors.add(:social_links, "contains invalid keys: #{invalid_keys.join(', ')}")
     end
+  end
+
+  def opted_in_directory?
+    optin_directory
   end
 end
