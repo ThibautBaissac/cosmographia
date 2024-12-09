@@ -1,6 +1,7 @@
 puts("---- Creating visualizations...")
 (0...@nb_visualizations).each do |i|
   visualization = Visualization.create!(
+    category: Visualization.category_values.sample,
     user_id: User.pluck(:id).sample,
     title: Faker::Lorem.sentence(word_count: 3),
     description: Faker::Lorem.paragraph(sentence_count: 2),

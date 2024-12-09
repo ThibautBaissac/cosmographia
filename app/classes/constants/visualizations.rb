@@ -1,5 +1,6 @@
 module Constants
   module Visualizations
+    CATEGORY = %i[ map data ].freeze
     GEOGRAPHIC_COVERAGE = %i[ local municipal Regional national continental global ].freeze
 
     PROJECTIONS = %i[

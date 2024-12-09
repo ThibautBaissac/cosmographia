@@ -11,4 +11,5 @@ class Visualization < ApplicationRecord
 
   string_enum projection: Constants::Visualizations::PROJECTIONS
   string_enum geographic_coverage: Constants::Visualizations::GEOGRAPHIC_COVERAGE
+  string_enum category: Constants::Visualizations::CATEGORY
 end
