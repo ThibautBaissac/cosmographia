@@ -10,7 +10,7 @@ puts("---- Creating users...")
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     bio: Faker::Lorem.paragraph(sentence_count: 3),
-    last_login_at: Faker::Time.backward(days: 365, period: :evening),
+    last_presence_at: Faker::Time.backward(days: 365, period: :evening),
     personal_website: Faker::Internet.url,
     guest: false,
     social_links: {

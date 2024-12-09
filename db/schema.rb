@@ -92,7 +92,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_123428) do
     t.string "first_name"
     t.string "last_name"
     t.text "bio"
-    t.datetime "last_login_at"
+    t.date "last_presence_at"
     t.string "personal_website"
     t.jsonb "social_links"
     t.boolean "guest", default: true

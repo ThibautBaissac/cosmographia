@@ -8,7 +8,7 @@ class AddDetailsToUsers < ActiveRecord::Migration[8.0]
 
     add_column(:users, :bio, :text)
 
-    add_column(:users, :last_login_at, :datetime)
+    add_column(:users, :last_presence_at, :date)
 
     add_column(:users, :personal_website, :string)
 

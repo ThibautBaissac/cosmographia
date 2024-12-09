@@ -1,6 +1,6 @@
 puts("---- Creating visualizations...")
 (0...@nb_visualizations).each do |i|
-  visualization = Visualization.create!(
+  visualization = Visualization.new(
     category: Visualization.category_values.sample,
     user_id: User.pluck(:id).sample,
     title: Faker::Lorem.sentence(word_count: 3),
@@ -20,6 +20,7 @@ puts("---- Creating visualizations...")
     filename: "sample#{rand(1..5)}.png",
     content_type: 'image/png'
   )
+  visualization.save!
 
   (0..rand(0..20)).each do
     comment = visualization.comments.new(
