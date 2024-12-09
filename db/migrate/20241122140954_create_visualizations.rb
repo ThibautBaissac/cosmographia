@@ -10,6 +10,7 @@ class CreateVisualizations < ActiveRecord::Migration[8.0]
       t.string(:geographic_coverage)
       t.string(:projection)
       t.boolean(:is_public, default: false)
+      t.string(:category, null: false)
 
       t.timestamps
     end
@@ -21,5 +22,6 @@ class CreateVisualizations < ActiveRecord::Migration[8.0]
     add_index(:visualizations, :sources)
     add_index(:visualizations, :geographic_coverage)
     add_index(:visualizations, :projection)
+    add_index(:visualizations, :category)
   end
 end

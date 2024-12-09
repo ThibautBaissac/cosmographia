@@ -121,8 +121,10 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_123428) do
     t.string "geographic_coverage"
     t.string "projection"
     t.boolean "is_public", default: false
+    t.string "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category"], name: "index_visualizations_on_category"
     t.index ["creation_date"], name: "index_visualizations_on_creation_date"
     t.index ["description"], name: "index_visualizations_on_description"
     t.index ["geographic_coverage"], name: "index_visualizations_on_geographic_coverage"
