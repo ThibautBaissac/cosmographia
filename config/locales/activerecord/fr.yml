@@ -35,6 +35,9 @@ fr:
           attributes:
             title:
               blank: Le titre ne peut pas être vide
+            image:
+              blank: L'image ne peut pas être vide
+              invalid_format: Le fichier doit être une image
           blank: Ce attribut est obligatoire
     models:
       software:
