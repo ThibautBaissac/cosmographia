@@ -8,6 +8,7 @@ fr:
         message: Message
         subject: Sujet
       visualization:
+        category: Catégorie
         creation_date: Date de création
         description: Description
         geographic_coverage: Couverture géographique
@@ -103,6 +104,9 @@ fr:
     fr: Français
     title: Changer de langue
   visualizations:
+    category:
+      data: Visualisation de données
+      map: Carte
     filtering:
       creation_date_end: Date de création (fin)
       creation_date_start: Date de création (début)

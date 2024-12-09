@@ -8,6 +8,7 @@ en:
         message: Message
         subject: Subject
       visualization:
+        category: Category
         creation_date: Creation date
         description: Description
         geographic_coverage: Geographic coverage
@@ -103,6 +104,9 @@ en:
     fr: Français
     title: Switch language
   visualizations:
+    category:
+      data: Data visualization
+      map: Map
     filtering:
       creation_date_end: Creation date (end)
       creation_date_start: Creation date (start)
