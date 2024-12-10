@@ -7,7 +7,7 @@
         <h1 class="my-0 display-5 text-primary"><%= visualization.title %></h1>
     </div>
     <% if policy(visualization).edit? %>
-      <%= link_to(edit_visualization_path(visualization), class: "btn btn-outline-primary btn-lg rounded-4 d-flex align-items-center gap-2") do %>
+      <%= link_to(edit_visualization_path(visualization), class: "btn btn-outline-primary btn rounded-4 d-flex align-items-center gap-2") do %>
         <i class="fa-regular fa-pen-to-square"></i>
         <span><%= t("common.edit") %></span>
       <% end %>
