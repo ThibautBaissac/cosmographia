@@ -1,18 +1,9 @@
-<% columns.each do |column| %>
-  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-    <% column.each do |visualization| %>
-      <% if visualization.image.attached? %>
-        <div class=" mb-4 image-container rounded-4">
-          <%= link_to(visualization) do %>
-            <%= image_tag(visualization.image, class: "w-100 disable_img", alt: visualization.title) %>
-            <div class="image-overlay text-center">
-              <%= visualization.user.fullname %>
-            </div>
-          <% end %>
+  <div class="col">
+    <div class="card rounded-4">
+      <%= link_to(visualization) do %>
+        <div class="ratio ratio-1x1 rounded-4">
+          <%= image_tag(visualization.image, alt: visualization.title) %>
         </div>
-      <% else %>
-        <%= image_tag("default.png", class: "mb-4") %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-<% end %>

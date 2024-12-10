@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     if user_signed_in?
-      @columns = Visualizations::ColumnDistributed.new(column_count: 3, visualization_count: 9).call
+      @visualizations = Visualization.includes(:image_attachment).order(created_at: :desc).limit(9)
       last_comments
       set_charts
     else

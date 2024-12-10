@@ -1,10 +1,12 @@
 <div class="container">
-  <h2 class="mb-4 text-secondary"><%= t("home.user_signed_in.last_visualizations", count: @columns.flatten.length) %></h2>
-  <div class="row w-75 mx-auto">
-    <%= render("home/user_signed_in/gallery", columns: @columns) %>
-    <%= link_to(visualizations_path, class: "w-100 btn btn-outline-primary rounded-3") do %>
-      <i class="fa-solid fa-earth-africa"></i>
-      <%= t("home.user_signed_in.see_all_visualizations") %>
-    <% end %>
+  <h2 class="mb-4 text-secondary"><%= t("home.user_signed_in.last_visualizations") %></h2>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-4">
+    <%= render(partial: "home/user_signed_in/gallery", collection: @visualizations, as: :visualization) %>
   </div>
+
+  <%= link_to(visualizations_path, class: "w-100 btn btn-outline-primary rounded-4") do %>
+    <i class="fa-solid fa-earth-africa"></i>
+    <%= t("home.user_signed_in.see_all_visualizations") %>
+  <% end %>
 </div>
