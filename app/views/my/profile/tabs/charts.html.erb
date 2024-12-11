@@ -1,0 +1,59 @@
+<%= render("my/profile/show/header") %>
+
+<%= turbo_frame_tag("profile_tab_content") do %>
+  <%= render("my/profile/tabs_nav") %>
+
+  <div class="container mb-5">
+    <!-- Row 1 -->
+    <div class="row mb-4 g-4">
+      <div class="col-md-6">
+        <div class="card shadow-sm rounded-4">
+          <div class="card-body">
+            <h6 class="text-center fw-semibold text-secondary">Visualizations Created Over Time</h6>
+            <%= column_chart @visualizations_over_time, height: "300px" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm rounded-4">
+          <div class="card-body">
+            <h6 class="text-center fw-semibold text-secondary">Comments Made Over Time</h6>
+            <%= line_chart @comments_over_time, height: "300px" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row mb-4 g-4">
+      <div class="col-md-12">
+        <div class="card shadow-sm rounded-4">
+          <div class="card-body">
+            <h6 class="text-center fw-semibold text-secondary">Comments Received Per Visualization</h6>
+            <%= bar_chart @comments_per_visualization, height: "300px" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="row mb-4 g-4">
+      <div class="col-md-6">
+        <div class="card shadow-sm rounded-4">
+          <div class="card-body">
+            <h6 class="text-center fw-semibold text-secondary">Software Distribution Across Visualizations</h6>
+            <%= pie_chart @software_usage, height: "300px" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm rounded-4">
+          <div class="card-body">
+            <h6 class="text-center fw-semibold text-secondary">Scale Distribution</h6>
+            <%= bar_chart @scale_distribution, height: "300px" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
