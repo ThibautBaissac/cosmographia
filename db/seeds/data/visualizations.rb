@@ -2,7 +2,7 @@ puts("---- Creating visualizations...")
 (0...@nb_visualizations).each do |i|
   visualization = Visualization.new(
     category: Visualization.category_values.sample,
-    user_id: User.pluck(:id).sample,
+    user_id: User.where(guest: false).pluck(:id).sample,
     title: Faker::Lorem.sentence(word_count: 3),
     description: Faker::Lorem.paragraph(sentence_count: 2),
     creation_date: Faker::Date.backward(days: 365 * 10),
@@ -24,7 +24,8 @@ puts("---- Creating visualizations...")
   (0..rand(0..20)).each do
     comment = visualization.comments.new(
       content: Faker::Lorem.sentence(word_count: 10),
-      user_id: User.pluck(:id).sample,
+      user_id: User.where(guest: false).pluck(:id).sample,
+      created_at: Faker::Date.backward(days: 365 * 10)
     )
     comment.created_at = Faker::Date.between(from: visualization.created_at, to: Date.today)
     comment.save!
