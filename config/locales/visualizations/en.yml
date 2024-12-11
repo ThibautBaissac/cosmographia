@@ -1,6 +1,7 @@
 ---
 en:
   visualization:
+    go_to: View visualization
     title: Visualization
   visualizations:
     category:

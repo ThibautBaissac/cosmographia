@@ -8,7 +8,6 @@ en:
     delete: Delete
     discover: Discover
     edit: Edit
-    go_to: Go to %{name}
     hello: Hello %{name}!
     reset_filters: Reset filters
     save: Save

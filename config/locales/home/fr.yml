@@ -4,6 +4,7 @@ fr:
     user_signed_in:
       charts:
         most_used_softawres: Logiciels les plus utilisés
+        title: Statistiques
         visualizations_by_projection: Répartition des visualisations par projection
       dicover_visualizations: Découvrir les visualisations
       last_comments: Les derniers commentaires

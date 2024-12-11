@@ -8,7 +8,6 @@ fr:
     delete: Supprimer
     discover: Découvrir
     edit: Modifier
-    go_to: Aller à %{name}
     hello: Bonjour %{name} !
     reset_filters: Réinitialiser les filtres
     save: Sauvegarder

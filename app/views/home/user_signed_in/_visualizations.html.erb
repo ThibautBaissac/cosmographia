@@ -1,7 +1,7 @@
-<div class="container">
+<div>
   <h2 class="mb-4 text-secondary"><%= t("home.user_signed_in.last_visualizations") %></h2>
 
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-4">
+  <div class="row row-cols-2 row-cols-lg-3 g-4 mb-4">
     <%= render(partial: "home/user_signed_in/gallery", collection: @visualizations, as: :visualization) %>
   </div>
 
