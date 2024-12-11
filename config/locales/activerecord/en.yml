@@ -18,7 +18,6 @@ en:
         creation_date: Creation date
         description: Description
         geographic_coverage: Geographic coverage
-        is_public: Public
         projection: Projection
         scale: Scale
         sources: Sources

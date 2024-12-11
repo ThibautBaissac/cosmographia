@@ -10,7 +10,6 @@ puts("---- Creating visualizations...")
     sources: Faker::Lorem.sentence(word_count: 5),
     geographic_coverage: Visualization.geographic_coverage_values.sample,
     projection: Visualization.projection_values.sample,
-    is_public: [ true, false ].sample,
     created_at: Faker::Date.backward(days: 365 * 10)
   )
 

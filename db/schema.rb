@@ -121,7 +121,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_123428) do
     t.text "sources"
     t.string "geographic_coverage"
     t.string "projection"
-    t.boolean "is_public", default: false
     t.string "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
