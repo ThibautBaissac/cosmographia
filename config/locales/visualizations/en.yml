@@ -19,6 +19,7 @@ en:
       edit_title: Edit visualization
       general_info_section: General information
       geographic_coverage_placeholder: Select a geographic coverage
+      image_placeholder: The accepted image formats are WebP, PNG, JPEG, JPG, and GIF.
       image_section: Image
       scale_placeholder: Enter the scale (e.g., 1000)
       sources_placeholder: Enter your sources

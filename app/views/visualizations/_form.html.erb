@@ -41,7 +41,8 @@
       <h3 class="text-primary"><%= t("visualizations.form.image_section") %></h3>
     </div>
     <div class="col-9">
-      <%= form.file_field(:image, class: "form-control rounded-pill shadow-sm", accept: "image/webp, image/png, image/jpeg, image/jpg, image/gif") %>
+      <div class="form-text text-secondary"><%= t("visualizations.form.image_placeholder") %></span>
+      <%= form.file_field(:image, class: "form-control rounded-pill shadow-sm mt-2", accept: "image/webp, image/png, image/jpeg, image/jpg, image/gif") %>
       <% if visualization.image.attached? %>
         <p class="mt-3 fw-semibold"><%= t("visualizations.form.current_image") %></p>
         <%= image_tag visualization.image, class: "img-thumbnail shadow-sm", style: "max-height: 150px;" %>
