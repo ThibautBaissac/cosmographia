@@ -1,7 +1,7 @@
 <div class="bg-light rounded-4 p-4 my-3 shadow-sm d-flex align-items-center">
   <% if comment.visualization.image.attached? %>
     <div class="me-3">
-      <%= image_tag(comment.visualization.image, width: 80, class: "rounded-circle img-thumbnail") %>
+      <%= image_tag(comment.visualization.image, width: 80, class: "rounded-circle img-thumbnail disable_img") %>
     </div>
   <% end %>
   <div class="w-100">

@@ -2,7 +2,7 @@
     <div class="card rounded-4">
       <%= link_to(visualization) do %>
         <div class="ratio ratio-1x1 rounded-4">
-          <%= image_tag(visualization.image, alt: visualization.title) %>
+          <%= image_tag(visualization.image, class: "disable_img", alt: visualization.title) %>
         </div>
       <% end %>
     </div>

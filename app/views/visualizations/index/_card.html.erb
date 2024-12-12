@@ -3,7 +3,7 @@
     <% if visualization.image.attached? %>
       <%= link_to(visualization) do %>
         <div class="ratio ratio-1x1 rounded-4">
-          <%= image_tag(visualization.image, class: "card-img-top", alt: visualization.title) %>
+          <%= image_tag(visualization.image, class: "card-img-top disable_img", alt: visualization.title) %>
           <div class="image-overlay text-center">
             <%= visualization.description %>
           </div>
