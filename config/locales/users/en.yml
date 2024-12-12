@@ -18,8 +18,8 @@ en:
       user_info_disclaimer_html: Your personal information will <b>never be shared</b>
         with third parties outside the Cosmographia community!
       visualizations_tab: Visualizations
-      in_directory: You joined the directory
       not_in_directory: Join the directory
+      my_page: My personal page
   users:
     form:
       bio_placeholder: Tell us about yourself, your projects,...

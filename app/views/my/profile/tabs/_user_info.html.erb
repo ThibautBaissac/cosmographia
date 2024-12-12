@@ -13,19 +13,13 @@
           <p class="card-text text-muted fst-italic"><%= @user.bio || "No bio available." %></p>
 
           <div class="d-flex justify-content-around align-items-center">
-            <% if @user.personal_website.present? %>
-              <a href="<%= @user.personal_website %>" class="btn btn-outline-primary btn-sm rounded-pill mt-2" target="_blank">
-                <%= t("activerecord.attributes.user.personal_website") %>
-              </a>
-            <% end %>
-
             <% if @user.opted_in_directory? %>
-              <%= link_to(community_directory_path, class: "btn btn-outline-primary btn-sm rounded-pill mt-2") do %>
-                <i class="fa-solid fa-users"></i>
-                <%= t("my.profile.in_directory") %>
+              <%= link_to(user_profile_path(@user.slug), data: { turbo: :false }, class: "btn btn-outline-primary btn-sm rounded-pill mt-2") do %>
+                <i class="fa-solid fa-eye"></i>
+                <%= t("my.profile.my_page") %>
               <% end %>
             <% else %>
-              <%= link_to(edit_my_profile_path, class: "btn btn-outline-primary btn-sm rounded-pill mt-2") do %>
+              <%= link_to(edit_my_profile_path, data: { turbo: :false }, class: "btn btn-outline-primary btn-sm rounded-pill mt-2") do %>
                 <i class="fa-solid fa-users-slash"></i>
                 <%= t("my.profile.not_in_directory") %>
               <% end %>
@@ -47,10 +41,17 @@
           </ul>
           <hr>
 
-          <!-- Social Links Section -->
+          <!-- Personal website and Social Links Section -->
           <h5 class="card-title text-primary fw-bold"><%= t("activerecord.attributes.user.social_links") %></h5>
-          <% if @user.social_links.present? %>
             <ul class="list-inline mt-2">
+              <li class="list-inline-item">
+                <% if @user.personal_website.present? %>
+                  <a href="<%= @user.personal_website %>" class="btn btn-outline-secondary btn-sm rounded-pill" target="_blank">
+                    <%= t("activerecord.attributes.user.personal_website") %>
+                  </a>
+                <% end %>
+              </li>
+            <% if @user.social_links.present? %>
               <% @user.social_links.each do |platform, link| %>
                 <% unless link.blank? %>
                   <li class="list-inline-item">
@@ -60,10 +61,8 @@
                   </li>
                 <% end %>
               <% end %>
-            </ul>
-          <% else %>
-            <p class="text-muted fst-italic">No social links available.</p>
-          <% end %>
+            <% end %>
+          </ul>
           <hr>
 
           <!-- Softwares Section -->

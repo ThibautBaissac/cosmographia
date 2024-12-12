@@ -25,7 +25,7 @@ class My::Profile::TabsController < ApplicationController
   end
 
   def set_authorize
-    authorize(@user)
+    authorize(@user, policy_class: My::Profile::TabsPolicy)
   end
 
   def set_charts

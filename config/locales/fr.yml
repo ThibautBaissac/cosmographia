@@ -4,7 +4,7 @@ fr:
     apply_filters: Appliquer des filtres
     by: Par %{name}
     confirm_delete: Êtes-vous sûr de vouloir supprimer ceci ?
-    created_by: Créé par %{name}
+    created_by: "Créé par : "
     delete: Supprimer
     discover: Découvrir
     edit: Modifier
@@ -43,8 +43,8 @@ fr:
   navbar:
     about: À propos
     community: Communauté
-    edit_password: Modifier le mot de passe
-    edit_profile: Modifier le profil
+    edit_password: Modifier mon mot de passe
+    edit_profile: Modifier mon profil
     install_pwa: Ajouter à l'écran d'accueil
     profile: Mon profil
     sign_in: Se connecter

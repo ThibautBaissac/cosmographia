@@ -19,14 +19,14 @@ fr:
       user_info_disclaimer_html: Vos informations personnelles ne seront <b>jamais
         partagées</b> avec des tiers extérieurs à la communauté Cosmographia !
       visualizations_tab: visualisations
-      in_directory: Vous avez rejoint l'annuaire
       not_in_directory: Rejoindre l'annuaire
+      my_page: Ma page personnelle
   users:
     form:
       bio_placeholder: Parlons un peu de vous, de vos projets...
       bio_section: A propos de moi
       community_section: Communauté
-      edit_title: Modifier le profil
+      edit_title: Modifier mon profil
       first_name_placeholder: Indiquer votre prénom
       general_info_section: Infos générales
       last_name_placeholder: Indiquer votre prénom

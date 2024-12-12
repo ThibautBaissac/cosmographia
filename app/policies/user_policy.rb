@@ -1,12 +1,10 @@
 class UserPolicy < ApplicationPolicy
   def show?
-    user.present? && user == record
+    return false if user.blank?
+    return true if record.public_profile? || user.not_guest? || user == record
+    false
   end
 
   alias_method(:edit?, :show?)
   alias_method(:update?, :show?)
-  alias_method(:user_info?, :show?)
-  alias_method(:charts?, :show?)
-  alias_method(:visualizations?, :show?)
-  alias_method(:comments?, :show?)
 end

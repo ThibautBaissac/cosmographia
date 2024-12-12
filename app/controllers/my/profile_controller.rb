@@ -3,6 +3,7 @@ class My::ProfileController < ApplicationController
   before_action :set_authorize
 
   def show
+    authorize(@user)
   end
 
   def edit
@@ -32,6 +33,7 @@ class My::ProfileController < ApplicationController
       :locale,
       :first_name,
       :last_name,
+      :slug,
       :bio,
       :personal_website,
       :optin_directory,

@@ -12,6 +12,7 @@ fr:
         first_name: Prénom
         last_name: Nom
         personal_website: Site personnel
+        slug: Nom d'utilisateur
         social_links: Réseaux sociaux
       visualization:
         category: Catégorie
@@ -30,6 +31,10 @@ fr:
         blank: Ce champ ne peut pas être vide
         record_invalid: 'Validation échouée : %{errors}'
       models:
+        user:
+          attributes:
+            slug:
+              format: ne peut contenir que des lettres, des chiffres et des tirets
         visualization:
           attributes:
             title:

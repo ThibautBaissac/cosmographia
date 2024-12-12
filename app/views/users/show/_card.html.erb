@@ -1,8 +1,9 @@
-<div class="col">
+<div class="container">
   <div class="card shadow-sm rounded-4">
     <div class="card-body">
       <!-- Contact Information Section -->
-      <%= link_to(user.fullname, user_profile_path(user.slug), class: "h2 card-title text-primary fw-bold") %>
+      <h5 class="card-title text-primary fw-bold"><%= user.fullname %></h5>
+      <%= link_to(user.slug, user_profile_path(user.slug)) %>
       <hr>
 
       <!-- Social Links Section -->
