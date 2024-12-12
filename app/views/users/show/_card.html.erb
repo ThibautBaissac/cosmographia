@@ -3,7 +3,7 @@
     <div class="card-body">
       <!-- Contact Information Section -->
       <h5 class="card-title text-primary fw-bold"><%= user.fullname %></h5>
-      <%= link_to(user.slug, user_profile_path(user.slug)) %>
+      <%= link_to(user.slug, user_profile_path(locale, user.slug)) %>
       <hr>
 
       <!-- Social Links Section -->
