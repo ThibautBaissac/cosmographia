@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_02_123428) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_11_134537) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -97,10 +97,13 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_123428) do
     t.jsonb "social_links"
     t.boolean "guest", default: true
     t.boolean "optin_directory", default: false
+    t.string "slug", null: false
+    t.boolean "public_profile", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["first_name"], name: "index_users_on_first_name"
     t.index ["last_name"], name: "index_users_on_last_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
   create_table "visualization_softwares", force: :cascade do |t|
