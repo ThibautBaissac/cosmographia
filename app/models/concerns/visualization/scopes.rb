@@ -7,15 +7,14 @@ module Visualization::Scopes
 
       sanitized_query = "%#{sanitize_sql_like(query)}%"
 
-      joins(:softwares, :user)
+      joins(:softwares)
       .where(
         "visualizations.title ILIKE :q OR
         visualizations.description ILIKE :q OR
         visualizations.sources ILIKE :q OR
         visualizations.geographic_coverage ILIKE :q OR
         softwares.name ILIKE :q OR
-        softwares.category ILIKE :q OR
-        users.last_name ILIKE :q",
+        softwares.category ILIKE :q",
         q: sanitized_query
         )
         .distinct
