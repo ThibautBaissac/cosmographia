@@ -16,6 +16,6 @@
       </span>
     </div>
     <p class="mb-3 text-secondary"><%= comment.content %></p>
-    <%= link_to(t("visualization.go_to"), comment.visualization, class: "btn btn-outline-primary btn-sm rounded-pill shadow-sm") %>
+    <%= link_to(t("visualization.go_to"), comment.visualization, data: { turbo: :false }, class: "btn btn-outline-primary btn-sm rounded-pill shadow-sm") %>
   </div>
 </div>

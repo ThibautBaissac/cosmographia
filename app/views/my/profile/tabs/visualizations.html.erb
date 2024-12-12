@@ -21,7 +21,7 @@
           <div class="carousel-item <%= "active" if index.zero? %>">
             <%= image_tag(visualization.image, class: "d-block w-100 object-fit-cover rounded-4", alt: visualization.title) %>
             <div class="carousel-caption bg-dark bg-opacity-75 rounded-4 p-3">
-              <h5 class="text-light fw-bold"><%= link_to(visualization.title, visualization, class: "link-light text-decoration-none") %></h5>
+              <h5 class="text-light fw-bold"><%= link_to(visualization.title, visualization, class: "link-light text-decoration-none", data: { turbo: :false }) %></h5>
             </div>
           </div>
         <% end %>
