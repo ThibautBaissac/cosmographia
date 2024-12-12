@@ -73,6 +73,7 @@ class VisualizationsController < ApplicationController
       :scale_min,
       :scale_max,
       :geographic_coverage,
+      categories: [],
       projections: []
     )
   end

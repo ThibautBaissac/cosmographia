@@ -7,6 +7,7 @@ class Visualizations::Filter
   def apply
     query = @params[:query]
     @visualizations = query.present? ? @visualizations.search(query) : @visualizations
+    filter_by_categories
     filter_by_creation_date
     filter_by_scale
     filter_by_geographic_coverage
@@ -18,6 +19,15 @@ class Visualizations::Filter
   end
 
   private
+
+  def filter_by_categories
+    return unless @params[:categories].present?
+
+    categories = @params[:categories].reject(&:blank?)
+    return @visualizations if categories.empty?
+
+    @visualizations = @visualizations.where(category: categories.map(&:upcase))
+  end
 
   def filter_by_creation_date
     if @params[:creation_date_start].present?

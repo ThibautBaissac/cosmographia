@@ -8,6 +8,7 @@ fr:
       data: Visualisation de données
       map: Carte
     filtering:
+      categories: "Catégories :"
       creation_date_end: Date de création (fin)
       creation_date_start: Date de création (début)
       scale_maximum: Échelle maximum
