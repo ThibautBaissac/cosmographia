@@ -4,7 +4,7 @@
       <h5 class="card-title text-primary"><%= visualization.title %></h5>
       <h6 class="card-subtitle mb-2 text-muted">
         <%= t("common.created_by") %>
-        <% if visualization.user.opted_in_directory? %>
+        <% if current_user.opted_in_directory? %>
           <%= link_to(visualization.user.fullname, user_profile_path(visualization.user.slug)) %>
         <% else %>
           <%= visualization.user.fullname %>
