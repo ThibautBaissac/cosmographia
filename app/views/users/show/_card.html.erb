@@ -1,15 +1,20 @@
 <div class="container">
   <div class="card shadow-sm rounded-4">
     <div class="card-body">
-      <!-- Contact Information Section -->
-      <h5 class="card-title text-primary fw-bold"><%= user.fullname %></h5>
-      <%= link_to(user.slug, user_profile_path(locale, user.slug)) %>
-      <hr>
+      <!-- Bio -->
+      <p class="card-text text-muted"><%= @user.bio %></p>
 
       <!-- Social Links Section -->
       <h5 class="card-title text-primary fw-bold"><%= t("activerecord.attributes.user.social_links") %></h5>
       <% if user.social_links.present? %>
         <ul class="list-inline mt-2">
+          <li class="list-inline-item">
+            <% if @user.personal_website.present? %>
+              <a href="<%= @user.personal_website %>" class="btn btn-outline-secondary btn-sm rounded-pill" target="_blank">
+                <%= t("activerecord.attributes.user.personal_website") %>
+              </a>
+            <% end %>
+          </li>
           <% user.social_links.each do |platform, link| %>
             <% unless link.blank? %>
               <li class="list-inline-item">
@@ -20,8 +25,6 @@
             <% end %>
           <% end %>
         </ul>
-      <% else %>
-        <p class="text-muted fst-italic">No social links available.</p>
       <% end %>
       <hr>
 

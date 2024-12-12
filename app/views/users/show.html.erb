@@ -1,2 +1,10 @@
+<%= render("users/show/header", user: @user) %>
 <%= render("users/show/card", user: @user) %>
-<%= render("users/show/visualizations", visualizations: @visualizations) %>
+<div class="container my-4">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <%= render(partial: "users/show/visualizations", collection: @visualizations, as: :visualization) %>
+  </div>
+</div>
+<div class="d-flex justify-content-center align-items-center mt-3 mb-3">
+  <%== pagy_nav(@pagy) if @pagy.pages > 1  %>
+</div>
