@@ -4,6 +4,5 @@ class My::Profile::TabsPolicy < ApplicationPolicy
   end
 
   alias_method(:charts?, :user_info?)
-  alias_method(:visualizations?, :user_info?)
   alias_method(:comments?, :user_info?)
 end

@@ -9,10 +9,6 @@ class My::Profile::TabsController < ApplicationController
     set_charts
   end
 
-  def visualizations
-    @visualizations = @user.visualizations.includes(:image_attachment).last(5)
-  end
-
   def comments
     @total_comment_count = @user.comments.count
     @comments = @user.comments.includes(visualization: :image_attachment).last(10)
