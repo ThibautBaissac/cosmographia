@@ -6,6 +6,11 @@ class User < ApplicationRecord
 
   include Users::Scopes
 
+  normalizes :slug, with: ->(slug) { slug.strip.downcase }
+  normalizes :email, with: ->(email) { email.strip.downcase }
+
+  before_validation :generate_slug, on: [ :create ]
+
   has_many :visualizations, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -15,6 +20,8 @@ class User < ApplicationRecord
   validates :locale, presence: true, inclusion: {in: I18n.available_locales.map(&:to_s)}
   validates :email, presence: true
   validates :first_name, :last_name, :bio, presence: true, if: :not_guest?
+  validates :slug, presence: true, uniqueness: true, exclusion: {in: I18n.available_locales.map(&:to_s)}
+  validates :slug, length: {minimum: 4, maximum: 50}, format: {with: /\A[a-z0-9\-_]+\z/, message: :format}
   validate :allowed_social_links_keys
 
   def fullname
@@ -44,5 +51,18 @@ class User < ApplicationRecord
 
   def opted_in_directory?
     optin_directory
+  end
+
+  def generate_slug
+    base_slug = fullname.present? ? fullname.downcase.parameterize : email.split("@").first.parameterize
+    self.slug = base_slug
+
+    if User.exists?(slug: base_slug)
+      counter = 1
+      while User.exists?(slug: "#{base_slug}-#{counter}")
+        counter += 1
+      end
+      self.slug = "#{base_slug}-#{counter}"
+    end
   end
 end
