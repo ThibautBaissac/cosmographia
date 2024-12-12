@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row g-0">
+      <% visualizations.each do |visualization| %>
+        <div class="col-4">
+          <div class="ratio ratio-16x9">
+            <%= image_tag(visualization.image, class: "object-fit-cover disable_img", alt: visualization.title) %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>

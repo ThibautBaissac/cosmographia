@@ -9,6 +9,6 @@
   </div>
   <%= render("home/user_signed_in/charts") %>
 <% else %>
-  <%= render("home/user_signed_out/carousel", visualizations: @visualizations) %>
+  <%= render("home/user_signed_out/image_grid", visualizations: @visualizations) %>
   <%= render("home/user_signed_out/presentation") %>
 <% end %>
