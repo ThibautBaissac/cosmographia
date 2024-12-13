@@ -1,0 +1,32 @@
+en:
+  about:
+    header:
+      title: "About <span class=\"text-primary\">Cosmographia</span>"
+      subtitle: "Bringing modern cosmographers together with an inclusive and inspiring vision."
+    mission:
+      title: "Our Mission"
+      text: >
+        Cosmographia is a platform designed to unite the community of modern cosmographers. At the crossroads of knowledge, cosmography is more than just a scientific discipline: it is an art, a reflection on our place in the universe, and a way to understand the world in all its complexity.
+        Cosmographia aims to be an inclusive and welcoming space, where knowledge, visions, and values intersect to enrich our understanding of the cosmos and Earth.
+    values:
+      title: "Our Values"
+      list:
+        - title: "Sharing"
+          description: "Sharing and exchanging knowledge to broaden horizons."
+        - title: "Respect"
+          description: "Including all perspectives in a harmonious and welcoming environment."
+        - title: "Transmission"
+          description: "Preserving and disseminating knowledge for an enlightened future."
+    why_cosmography:
+      title: "Why Cosmography?"
+      text: >
+        Cosmography, as a global study of our environment, invites us to explore the connections between science, philosophy, history, and culture. With Cosmographia, we encourage everyone to contribute to this endeavor by sharing creations, reflections, or discoveries that enhance our understanding of the world and the universe.
+    commitments:
+      title: "Our Commitments"
+      list:
+        - title: "Respect and Inclusion"
+          text: >
+            The richness of perspectives—from diverse cultures, traditions, and sensitivities is essential to understanding a topic as vast as cosmography.
+        - title: "Preservation of Our Planet"
+          text: >
+            By exploring the interactions between Earth and the cosmos, we become aware of the fragility and beauty of our world.

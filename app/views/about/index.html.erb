@@ -1,69 +1,50 @@
 <div class="container text-center border-bottom py-5">
   <h1 class="display-4 fw-bold">
-    À propos de <span class="text-primary">Cosmographia</span>
+    <%= t('about.header.title').html_safe %>
   </h1>
   <p class="lead text-muted">
-    Fédérer les cosmographes modernes autour d’une vision inclusive et inspirante.
+    <%= t('about.header.subtitle') %>
   </p>
 </div>
 
 <main class="container my-5">
   <!-- Mission Section -->
   <section class="mb-5">
-    <h2 class="text-center mb-4 fw-semibold text-primary">Notre mission</h2>
-    <p class="fs-5 text-secondary text-justify">
-      Cosmographia est une plateforme conçue pour fédérer la communauté des cosmographes modernes. À la croisée des savoirs, la cosmographie est bien plus qu’une discipline scientifique : c’est un art, une réflexion sur notre place dans l’univers et une manière de lire le monde dans toute sa complexité.
-      Notre application se veut un espace inclusif et bienveillant, où les connaissances, les visions et les valeurs se croisent pour enrichir notre compréhension du cosmos et de la Terre.
-    </p>
+    <h2 class="text-center mb-4 fw-semibold text-primary"><%= t('about.mission.title') %></h2>
+    <p class="fs-5 text-secondary text-justify"><%= t('about.mission.text') %></p>
   </section>
 
   <!-- Values Section -->
   <section class="bg-primary bg-gradient text-white rounded-4 p-5 mb-5 shadow-sm">
-    <h3 class="text-center mb-4">Nos valeurs</h3>
+    <h3 class="text-center mb-4"><%= t('about.values.title') %></h3>
     <ul class="list-unstyled fs-5">
-      <li class="mb-3">
-        <i class="bi bi-check-circle-fill me-2"></i>
-        <strong>Partage :</strong> transmettre et échanger des connaissances pour élargir les horizons.
-      </li>
-      <li class="mb-3">
-        <i class="bi bi-check-circle-fill me-2"></i>
-        <strong>Respect :</strong> inclure toutes les perspectives dans un cadre harmonieux et bienveillant.
-      </li>
-      <li>
-        <i class="bi bi-check-circle-fill me-2"></i>
-        <strong>Transmission :</strong> préserver et diffuser des savoirs pour un avenir éclairé.
-      </li>
+      <% t('about.values.list').each do |value| %>
+        <li class="mb-3">
+          <i class="bi bi-check-circle-fill me-2"></i>
+          <strong><%= value[:title] %>:</strong> <%= value[:description] %>
+        </li>
+      <% end %>
     </ul>
   </section>
 
   <!-- Why Cosmography Section -->
   <section class="mb-5">
-    <h3 class="text-center mb-4 fw-semibold text-primary">Pourquoi la cosmographie ?</h3>
-    <p class="fs-5 text-secondary">
-      La cosmographie, en tant qu’étude globale de notre environnement, invite à explorer les liens entre les sciences, la philosophie, l’histoire et la culture. Avec Cosmographia, nous encourageons chacun et chacune à contribuer à cette démarche, en partageant des créations, des réflexions ou des découvertes qui participent à une meilleure compréhension du monde et de l’univers.
-    </p>
+    <h3 class="text-center mb-4 fw-semibold text-primary"><%= t('about.why_cosmography.title') %></h3>
+    <p class="fs-5 text-secondary"><%= t('about.why_cosmography.text') %></p>
   </section>
 
   <!-- Commitments Section -->
-  <section class="bg-light rounded-4 p-5 shadow-sm border border-secondary-subttle">
-    <h3 class="text-center text-primary mb-4">Nos engagements</h3>
+  <section class="mb-5">
+    <h3 class="text-center text-primary mb-4"><%= t('about.commitments.title') %></h3>
     <div class="row gy-4">
-      <div class="col-md-6">
-        <div class="p-4 bg-white rounded shadow-sm">
-          <h5 class="fw-bold text-primary">Respect et inclusion</h5>
-          <p class="text-secondary">
-            La richesse des points de vue – issus de différentes cultures, traditions et sensibilités – est essentielle pour appréhender un sujet aussi vaste que la cosmographie.
-          </p>
+      <% t('about.commitments.list').each do |commitment| %>
+        <div class="col-md-6">
+          <div class="p-4 bg-white rounded-4 shadow-sm border border-secondary-subtle">
+            <h5 class="fw-bold text-primary"><%= commitment[:title] %></h5>
+            <p class="text-secondary"><%= commitment[:text] %></p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="p-4 bg-white rounded shadow-sm">
-          <h5 class="fw-bold text-primary">Préservation de notre planète</h5>
-          <p class="text-secondary">
-            En explorant les interactions entre la Terre et le cosmos, nous prenons conscience de la fragilité et de la beauté de notre monde.
-          </p>
-        </div>
-      </div>
+      <% end %>
     </div>
   </section>
 </main>
