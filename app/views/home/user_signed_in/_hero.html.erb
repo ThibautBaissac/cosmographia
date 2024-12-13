@@ -4,10 +4,9 @@
   </h1>
   <div class="col-lg-8 mx-auto">
     <p class="lead text-secondary mb-4">
-      Plus de <span class="fw-bold text-dark"><%= Visualization.count %> cartes partagées</span> par notre communauté vous attendent.
-      Inspirez-vous, explorez, et ajoutez votre propre vision en publiant vos cartes dès aujourd'hui.
+      <%= t("home.user_signed_in.visualizations_count", count: Visualization.count) %>
       <br>
-      Ensemble, dessinons le monde et l'univers ! ✨.
+      <%= t("home.user_signed_in.explore_and_publish") %>
     </p>
     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
       <% if current_user.guest? %>
@@ -17,7 +16,7 @@
       <% else %>
         <%= link_to(t("home.user_signed_in.post_visualization"), new_visualization_path, class: "btn btn-primary btn-lg px-4 gap-3 rounded-pill shadow-sm") %>
       <% end %>
-      <%= link_to("🌍 #{t("home.user_signed_in.dicover_visualizations")}", visualizations_path, class: "btn btn-outline-secondary btn-lg px-4 gap-3 rounded-pill shadow-sm") %>
+      <%= link_to("🌍 #{t("home.user_signed_in.discover_visualizations")}", visualizations_path, class: "btn btn-outline-secondary btn-lg px-4 gap-3 rounded-pill shadow-sm") %>
     </div>
   </div>
 </div>

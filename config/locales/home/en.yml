@@ -11,6 +11,9 @@ en:
       last_visualizations: The last visualizations
       post_visualization: Post your visualizations
       see_all_visualizations: Discover all visualizations!
+      discover_visualizations: "Discover visualizations"
+      visualizations_count: "More than %{count} visualizations shared by our community are waiting for you."
+      explore_and_publish: "Get inspired, explore, and add your own vision by publishing your visualizations today. Together, let's map the world and the universe! ✨."
     user_signed_out:
       main_title: "A space for your creations"
       main_description: "Cosmographia allows you to share your maps with a community that values diverse approaches and styles."

@@ -10,7 +10,10 @@ fr:
       last_comments: Les derniers commentaires
       last_visualizations: Les dernières visualisations
       post_visualization: Publier vos visualisations
+      discover_visualizations: "Découvrir les visualisations"
       see_all_visualizations: Découvrez toutes les visualisations !
+      visualizations_count: "Plus de %{count} visualisations partagées par notre communauté vous attendent."
+      explore_and_publish: "Inspirez-vous, explorez, et ajoutez votre propre vision en publiant vos cartes dès aujourd'hui. Ensemble, dessinons le monde et l'univers ! ✨."
     user_signed_out:
       main_title: "Un espace pour vos créations"
       main_description: "Cosmographia vous permet de partager vos cartes avec une communauté qui valorise la diversité des approches et des styles."
