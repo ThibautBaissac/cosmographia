@@ -26,6 +26,8 @@ class User < ApplicationRecord
   validates :slug, length: {minimum: 4, maximum: 50}, format: {with: /\A[a-z0-9\-_]+\z/, message: :format}
   validate :allowed_social_links_keys
 
+  accepts_nested_attributes_for :user_softwares, allow_destroy: true
+
   def fullname
     [ first_name, last_name ].compact.join(" ").presence
   end
