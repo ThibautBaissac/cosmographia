@@ -8,11 +8,13 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        @toast_message = t("comments.flash.actions.create.success")
         format.turbo_stream
-        format.html { redirect_to(@visualization, notice: "Comment created") }
+        format.html { redirect_to(@visualization) }
       else
+        @toast_message = t("comments.flash.actions.create.failure")
         format.turbo_stream
-        format.html { redirect_to(@visualization, alert: "Comment not created") }
+        format.html { redirect_to(@visualization) }
       end
     end
   end
@@ -25,17 +27,20 @@ class CommentsController < ApplicationController
     set_authorize
     respond_to do |format|
       if @comment.update(comment_params)
+        @toast_message = t("comments.flash.actions.update.success")
         format.turbo_stream
-        format.html { redirect_to(@visualization, notice: "Comment created") }
+        format.html { redirect_to(@visualization) }
       else
+        @toast_message = t("comments.flash.actions.update.failure")
         format.turbo_stream
-        format.html { redirect_to(@visualization, alert: "Comment not created") }
+        format.html { redirect_to(@visualization) }
       end
     end
   end
 
   def destroy
     set_authorize
+    @toast_message = t("comments.flash.actions.destroy.success")
     @comment.destroy
   end
 

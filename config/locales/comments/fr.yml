@@ -8,3 +8,14 @@ fr:
     show_more: Voir plus de commentaires
     write_comment: Écrire un commentaire
     zero: commentaire
+    flash:
+      actions:
+        create:
+          success: Votre commentaire a été créé avec succès
+          failure: Échec de la création de votre commentaire
+        update:
+          success: Votre commentaire a été mis à jour avec succès
+          failure: Échec de la mise à jour de votre commentaire
+        destroy:
+          success: Votre commentaire a été supprimé avec succès
+          failure: Échec de la suppression de votre commentaire

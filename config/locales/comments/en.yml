@@ -8,3 +8,11 @@ en:
     show_more: Show more comments
     write_comment: Write a comment
     zero: comment
+    flash:
+      actions:
+        create:
+          success: Your comment was created successfully
+          failure: Comment creation failed
+        update:
+          success: Your comment was updated successfully
+          failure: Comment update failed
