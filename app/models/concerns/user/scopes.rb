@@ -1,4 +1,4 @@
-module Users::Scopes
+module User::Scopes
   extend ActiveSupport::Concern
 
   included do

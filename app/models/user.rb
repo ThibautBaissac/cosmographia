@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  include Users::Scopes
+  include User::Scopes
+  include User::CustomValidations
+  include User::Callbacks
 
   normalizes :slug, with: ->(slug) { slug.strip.downcase }
   normalizes :email, with: ->(email) { email.strip.downcase }
@@ -40,29 +42,7 @@ class User < ApplicationRecord
     first_name.present? && last_name.present? && bio.present?
   end
 
-  def allowed_social_links_keys
-    return if social_links.blank?
-
-    invalid_keys = social_links.keys.map(&:to_s) - Constants::Users::SOCIAL_LINK_KEYS
-    if invalid_keys.any?
-      errors.add(:social_links, "contains invalid keys: #{invalid_keys.join(', ')}")
-    end
-  end
-
   def opted_in_directory?
     optin_directory
-  end
-
-  def generate_slug
-    base_slug = fullname.present? ? fullname.downcase.parameterize : email.split("@").first.parameterize
-    self.slug = base_slug
-
-    if User.exists?(slug: base_slug)
-      counter = 1
-      while User.exists?(slug: "#{base_slug}-#{counter}")
-        counter += 1
-      end
-      self.slug = "#{base_slug}-#{counter}"
-    end
   end
 end
