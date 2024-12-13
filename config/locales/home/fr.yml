@@ -11,3 +11,17 @@ fr:
       last_visualizations: Les dernières visualisations
       post_visualization: Publier vos visualisations
       see_all_visualizations: Découvrez toutes les visualisations !
+    user_signed_out:
+      main_title: "Un espace pour vos créations"
+      main_description: "Cosmographia vous permet de partager vos cartes avec une communauté qui valorise la diversité des approches et des styles."
+      main_sub_description: "Que vous réalisiez des cartes ou de la visualisation de données, chaque création trouve ici sa place et son public."
+      exchange_section_title: "Un lieu d’échange et d’inspiration"
+      exchange_section_text: "Recevez des retours constructifs, partagez vos idées et connectez-vous avec des passionnés dans un esprit de respect et de bienveillance."
+      library_section_title: "Bibliothèque communautaire"
+      library_section_text: "Explorez des créations variées, découvrez des techniques innovantes et laissez-vous inspirer par d’autres cartographes."
+      join_us_title: "Pourquoi rejoindre Cosmographia ?"
+      join_us_reasons:
+        - "Partager dans un environnement respectueux et encourageant."
+        - "Apprendre et progresser grâce aux retours d’une communauté expérimentée."
+        - "Echanger avec des experts et des amateurs de visualisation du monde entier."
+      join_us_button: "Rejoignez-nous dès maintenant"
