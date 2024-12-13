@@ -14,6 +14,9 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find_by(slug: params[:slug])
+    if @user.nil?
+      redirect_back(fallback_location: root_path, alert: "This user does not exist") and return
+    end
   end
 
   def user_public_profile?
