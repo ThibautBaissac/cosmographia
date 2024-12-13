@@ -7,6 +7,9 @@ class My::ProfileController < ApplicationController
   end
 
   def edit
+    Software.order(:name).each do |software|
+      @user.user_softwares.find_or_initialize_by(software:)
+    end
   end
 
   def update
@@ -38,6 +41,7 @@ class My::ProfileController < ApplicationController
       :personal_website,
       :optin_directory,
       social_links: Constants::Users::SOCIAL_LINK_KEYS,
-      software_ids: [])
+      user_softwares_attributes: [ :id, :software_id, :level, :_destroy ]
+    )
   end
 end

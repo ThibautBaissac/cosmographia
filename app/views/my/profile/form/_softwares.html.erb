@@ -1,0 +1,21 @@
+<div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
+  <%= form.fields_for(:user_softwares) do |us_form| %>
+    <% software = us_form.object.software %>
+    <div class="col">
+      <div class="card shadow-sm rounded-4">
+        <div class="card-body">
+          <div class="form-check form-switch">
+            <%= us_form.hidden_field(:software_id) %>
+            <%= us_form.check_box(:_destroy, {class: "form-check-input", checked: us_form.object.persisted?}, false, true) %>
+            <%= form.label(:software_ids, software.name, value: software.id, class: "form-check-label") %>
+          </div>
+          <div class="mt-3">
+            <%= us_form.label(:level, t("activerecord.attributes.user_software.level"), class: "form-label fw-light") %>
+            <output class="text-end"><%= us_form.object.level %></output>/<%= Constants::UserSoftwares::MAX_LEVEL %>
+            <%= us_form.range_field(:level, min: 1, max: Constants::UserSoftwares::MAX_LEVEL, class: "form-range", oninput: "this.previousElementSibling.value = this.value") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -14,6 +14,8 @@ fr:
         personal_website: Site personnel
         slug: Nom d'utilisateur
         social_links: Réseaux sociaux
+      user_software:
+        level: Niveau d'expertise
       visualization:
         category: Catégorie
         creation_date: Date de création
@@ -23,7 +25,7 @@ fr:
         scale: Échelle
         sources: Sources
         title: Titre
-      visualization_software:
+      software:
         category: Catégorie
         name: Nom
     errors:
