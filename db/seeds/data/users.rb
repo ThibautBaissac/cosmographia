@@ -24,6 +24,7 @@ puts("---- Creating users...")
   (1..rand(2..5)).each do
     user.user_softwares.create!(
       software_id: Software.pluck(:id).sample,
+      level: rand(1..Constants::UserSoftwares::MAX_LEVEL)
     )
   end
 
