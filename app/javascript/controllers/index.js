@@ -10,5 +10,8 @@ application.register("expand-image", ExpandImageController)
 import PwaInstallController from "./pwa_install_controller"
 application.register("pwa-install", PwaInstallController)
 
+import ToastController from "./toast_controller"
+application.register("toast", ToastController)
+
 import VisualizationCategorySwitchController from "./visualization_category_switch_controller"
 application.register("visualization-category-switch", VisualizationCategorySwitchController)
