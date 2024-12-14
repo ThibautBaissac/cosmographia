@@ -1,12 +1,12 @@
+<div class="container d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+  <h1 class="my-0 display-5 text-primary"><%= t("auth.sign_up") %></h1>
+</div>
+
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
       <!-- Card Wrapper -->
       <div class="card shadow-sm rounded-4">
-        <!-- Card Header -->
-        <div class="card-header bg-success text-white rounded-top-4">
-          <h4 class="mb-0 text-center">Sign Up</h4>
-        </div>
 
         <!-- Card Body -->
         <div class="card-body">
@@ -17,28 +17,28 @@
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "needs-validation", novalidate: true}) do |f| %>
             <!-- Email Field -->
             <div class="mb-3">
-              <%= f.label(:email, class: "form-label fw-bold") %>
-              <%= f.email_field(:email, autofocus: true, class: "form-control rounded-pill", placeholder: "Enter your email") %>
+              <%= f.label(t("auth.email"), class: "form-label fw-bold") %>
+              <%= f.email_field(:email, autofocus: true, class: "form-control rounded-pill", placeholder: t("auth.email_placeholder")) %>
             </div>
 
             <!-- Password Field -->
             <div class="mb-3">
-              <%= f.label(:password, class: "form-label fw-bold") %>
+              <%= f.label(t("auth.password"), class: "form-label fw-bold") %>
               <% if @minimum_password_length %>
                 <small class="form-text text-muted">(<%= @minimum_password_length %> characters minimum)</small>
               <% end %>
-              <%= f.password_field(:password, class: "form-control rounded-pill", autocomplete: "new-password", placeholder: "Enter your password") %>
+              <%= f.password_field(:password, class: "form-control rounded-pill", autocomplete: "new-password", placeholder: t("auth.password_placeholder")) %>
             </div>
 
             <!-- Password Confirmation Field -->
             <div class="mb-3">
-              <%= f.label(:password_confirmation, class: "form-label fw-bold") %>
-              <%= f.password_field(:password_confirmation, class: "form-control rounded-pill", autocomplete: "new-password", placeholder: "Confirm your password") %>
+              <%= f.label(t("auth.password_confirmation"), class: "form-label fw-bold") %>
+              <%= f.password_field(:password_confirmation, class: "form-control rounded-pill", autocomplete: "new-password", placeholder: t("auth.password_confirmation_placeholder")) %>
             </div>
 
             <!-- Submit Button -->
             <div class="d-grid">
-              <%= f.submit("Sign up", class: "btn btn-success btn-lg rounded-pill shadow-sm") %>
+              <%= f.submit(t("auth.sign_up"), class: "btn btn-success btn-lg rounded-pill shadow-sm") %>
             </div>
           <% end %>
 

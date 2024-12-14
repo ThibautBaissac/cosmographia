@@ -1,0 +1,26 @@
+---
+en:
+  auth:
+    back: Back
+    cancel_account: Cancel my account
+    cancel_account_unhappy: Unhappy? You can cancel your account below.
+    confirmation_instruction_not_received: Didn't receive confirmation instructions?
+    current_password: Current password
+    current_password_placeholder: Enter your current password
+    current_password_text: "(We need your current password to confirm your changes)"
+    edit: Edit
+    email: Email
+    email_placeholder: Enter your email
+    forgot_your_password: Forgot your password?
+    leave_password_blank: "(Leave this field blank if you don't want to change your
+      password)"
+    new_password_placeholder: Enter your new password
+    password: Password
+    password_confirmation: Password confirmation
+    password_confirmation_placeholder: Confirm your password
+    password_placeholder: Enter your password
+    remember_me: Remember me
+    sign_in: Sign in
+    sign_out: Sign out
+    sign_up: Sign up
+    update: Update

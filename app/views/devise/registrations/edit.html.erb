@@ -1,12 +1,13 @@
+<div class="container d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+  <h1 class="my-0 display-5 text-primary"><%= t("auth.edit") %></h1>
+</div>
+
+
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <!-- Card Wrapper -->
       <div class="card shadow-sm rounded-4">
-        <!-- Card Header -->
-        <div class="card-header bg-primary text-white rounded-top-4">
-          <h3 class="mb-0">Edit <%= resource_name.to_s.humanize %></h3>
-        </div>
 
         <!-- Card Body -->
         <div class="card-body">
@@ -17,8 +18,8 @@
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put, class: "needs-validation", novalidate: true}) do |f| %>
             <!-- Email Field -->
             <div class="mb-3">
-              <%= f.label(:email, class: "form-label fw-bold") %>
-              <%= f.email_field(:email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter your email") %>
+              <%= f.label(t("auth.email"), class: "form-label fw-bold") %>
+              <%= f.email_field(:email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: t("auth.email")) %>
             </div>
 
             <!-- Pending Confirmation Notice -->
@@ -30,9 +31,9 @@
 
             <!-- Password Field -->
             <div class="mb-3">
-              <%= f.label(:password, class: "form-label fw-bold") %>
-              <small class="form-text text-muted">(Leave blank if you don't want to change it)</small>
-              <%= f.password_field(:password, autocomplete: "new-password", class: "form-control", placeholder: "Enter a new password") %>
+              <%= f.label(t("auth.password"), class: "form-label fw-bold") %>
+              <small class="form-text text-muted"><%= t("auth.leave_password_blank") %></small>
+              <%= f.password_field(:password, autocomplete: "new-password", class: "form-control", placeholder: t("auth.password")) %>
               <% if @minimum_password_length %>
                 <small class="form-text text-muted"><%= @minimum_password_length %> characters minimum</small>
               <% end %>
@@ -40,35 +41,35 @@
 
             <!-- Password Confirmation Field -->
             <div class="mb-3">
-              <%= f.label(:password_confirmation, class: "form-label fw-bold") %>
-              <%= f.password_field(:password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Confirm your new password") %>
+              <%= f.label(t("auth.password_confirmation"), class: "form-label fw-bold") %>
+              <%= f.password_field(:password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: t("auth.new_password_placeholder")) %>
             </div>
 
             <!-- Current Password Field -->
             <div class="mb-4">
-              <%= f.label(:current_password, class: "form-label fw-bold") %>
-              <small class="form-text text-muted">(We need your current password to confirm your changes)</small>
-              <%= f.password_field(:current_password, autocomplete: "current-password", class: "form-control", placeholder: "Enter your current password") %>
+              <%= f.label(t("auth.current_password"), class: "form-label fw-bold") %>
+              <small class="form-text text-muted"><%= t("auth.current_password_text") %></small>
+              <%= f.password_field(:current_password, autocomplete: "current-password", class: "form-control", placeholder: t("auth.current_password_placeholder")) %>
             </div>
 
             <!-- Submit Button -->
             <div class="d-grid mb-3">
-              <%= f.submit("Update", class: "btn btn-primary btn-lg rounded-pill shadow-sm") %>
+              <%= f.submit(t("auth.update"), class: "btn btn-primary btn-lg rounded-pill shadow-sm") %>
             </div>
           <% end %>
 
           <!-- Cancel Account Section -->
           <hr class="my-4">
-          <h4 class="mt-4 text-danger">Cancel My Account</h4>
-          <p>Unhappy? You can cancel your account below.</p>
-          <%= button_to "Cancel my account", registration_path(resource_name),
+          <h4 class="mt-4 text-danger"><%= t("auth.cancel_account") %></h4>
+          <p><%= t("auth.cancel_account_unhappy") %></p>
+          <%= button_to t("auth.cancel_account"), registration_path(resource_name),
                 data: {confirm: "Are you sure you want to cancel your account? This action cannot be undone."},
                 method: :delete,
                 class: "btn btn-danger rounded-pill shadow-sm" %>
 
           <!-- Back Link -->
           <div class="mt-3">
-            <%= link_to "Back", :back, class: "btn btn-outline-secondary rounded-pill" %>
+            <%= link_to t("auth.back"), :back, class: "btn btn-outline-secondary rounded-pill" %>
           </div>
         </div>
       </div>

@@ -47,9 +47,6 @@ en:
     edit_profile: Edit profile
     install_pwa: Add to Home Screen
     profile: My profile
-    sign_in: Sign in
-    sign_out: Sign out
-    sign_up: Sign up
     visualizations: Visualizations
   pundit:
     default: You cannot perform this action.

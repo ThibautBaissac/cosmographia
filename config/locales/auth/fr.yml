@@ -1,0 +1,28 @@
+---
+fr:
+  auth:
+    back: Retour
+    cancel_account: Supprimer mon compte
+    cancel_account_unhappy: Pas satisfait ? Vous pouvez supprimer votre compte ci-dessous.
+    confirmation_instruction_not_received: Vous n'avez pas reçu les instructions de
+      confirmation ?
+    current_password: Mot de passe actuel
+    current_password_placeholder: Entrez votre mot de passe actuel
+    current_password_text: "(Nous avons besoin de votre mot de passe actuel pour confirmer
+      vos modifications)"
+    edit: Modifier
+    email: Adresse e-mail
+    email_placeholder: Entrez votre adresse e-mail
+    forgot_your_password: Mot de passe oublié ?
+    leave_password_blank: "(Laissez ce champ vide si vous ne souhaitez pas modifier
+      votre mot de passe)"
+    new_password_placeholder: Entrez votre nouveau mot de passe
+    password: Mot de passe
+    password_confirmation: Confirmation du mot de passe
+    password_confirmation_placeholder: Confirmez votre mot de passe
+    password_placeholder: Entrez votre mot de passe
+    remember_me: Se souvenir de moi
+    sign_in: Se connecter
+    sign_out: Se déconnecter
+    sign_up: S'inscrire
+    update: Mettre à jour
