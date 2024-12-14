@@ -14,7 +14,7 @@
             <%= button_to(visualization_comment_path(locale, comment.visualization, comment),
                           method: :delete,
                           class: "btn btn-outline-danger btn-sm rounded-4",
-                          form: { data: { turbo_confirm: t("common.confirm_delete") } } ) do %>
+                          form: {data: {turbo_confirm: t("common.confirm_delete")}}) do %>
               <i class="fa-solid fa-trash-can"></i>
               <%= t("common.delete") %>
             <% end %>

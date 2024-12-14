@@ -14,12 +14,12 @@
 
           <div class="d-flex justify-content-around align-items-center">
             <% if @user.opted_in_directory? %>
-              <%= link_to(user_profile_path(locale, @user.slug), data: { turbo: :false }, class: "btn btn-outline-primary btn-sm rounded-pill mt-2") do %>
+              <%= link_to(user_profile_path(locale, @user.slug), data: {turbo: :false}, class: "btn btn-outline-primary btn-sm rounded-pill mt-2") do %>
                 <i class="fa-solid fa-eye"></i>
                 <%= t("my.profile.my_page") %>
               <% end %>
             <% else %>
-              <%= link_to(edit_my_profile_path, data: { turbo: :false }, class: "btn btn-outline-primary btn-sm rounded-pill mt-2") do %>
+              <%= link_to(edit_my_profile_path, data: {turbo: :false}, class: "btn btn-outline-primary btn-sm rounded-pill mt-2") do %>
                 <i class="fa-solid fa-users-slash"></i>
                 <%= t("my.profile.not_in_directory") %>
               <% end %>

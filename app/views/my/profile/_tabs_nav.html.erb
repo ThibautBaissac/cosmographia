@@ -2,21 +2,21 @@
   <ul class="nav nav-tabs d-flex justify-content-between border-bottom-0 bg-white" id="myTab" role="tablist">
     <!-- Profile Tab -->
     <li class="nav-item flex-grow-1 text-center" role="presentation">
-      <%= link_to(my_profile_tabs_user_info_path, class: "nav-link w-100 border-top border-start rounded-top py-4 px-3 d-flex flex-column align-items-center transition #{"active bg-light border-bottom-0 border-primary" if current_page?(my_profile_tabs_user_info_path) || current_page?(my_profile_path)}", data: { turbo_frame: "profile_tab_content", turbo_action: :advance }) do %>
+      <%= link_to(my_profile_tabs_user_info_path, class: "nav-link w-100 border-top border-start rounded-top py-4 px-3 d-flex flex-column align-items-center transition #{"active bg-light border-bottom-0 border-primary" if current_page?(my_profile_tabs_user_info_path) || current_page?(my_profile_path)}", data: {turbo_frame: "profile_tab_content", turbo_action: :advance}) do %>
         <i class="fa-solid fa-address-card fa-2x text-primary mb-2"></i>
         <div class="fw-bold text-secondary"><%= t("my.profile.profile_tab") %></div>
       <% end %>
     </li>
     <!-- Charts Tab -->
     <li class="nav-item flex-grow-1 text-center" role="presentation">
-      <%= link_to(my_profile_tabs_charts_path, class: "nav-link w-100 border-top border-start rounded-top py-4 px-3 d-flex flex-column align-items-center transition #{"active bg-light border-bottom-0 border-primary" if current_page?(my_profile_tabs_charts_path)}", data: { turbo_frame: "profile_tab_content", turbo_action: :advance }) do %>
+      <%= link_to(my_profile_tabs_charts_path, class: "nav-link w-100 border-top border-start rounded-top py-4 px-3 d-flex flex-column align-items-center transition #{"active bg-light border-bottom-0 border-primary" if current_page?(my_profile_tabs_charts_path)}", data: {turbo_frame: "profile_tab_content", turbo_action: :advance}) do %>
         <i class="fa-solid fa-chart-pie fa-2x text-primary mb-2"></i>
         <div class="fw-bold text-secondary"><%= t("my.profile.charts_tab") %></div>
       <% end %>
     </li>
     <!-- Comments Tab -->
     <li class="nav-item flex-grow-1 text-center" role="presentation">
-      <%= link_to(my_profile_tabs_comments_path, class: "nav-link w-100 border-top border-start border-end rounded-top py-4 px-3 d-flex flex-column align-items-center transition #{"active bg-light border-bottom-0 border-primary" if current_page?(my_profile_tabs_comments_path)}", data: { turbo_frame: "profile_tab_content", turbo_action: :advance }) do %>
+      <%= link_to(my_profile_tabs_comments_path, class: "nav-link w-100 border-top border-start border-end rounded-top py-4 px-3 d-flex flex-column align-items-center transition #{"active bg-light border-bottom-0 border-primary" if current_page?(my_profile_tabs_comments_path)}", data: {turbo_frame: "profile_tab_content", turbo_action: :advance}) do %>
         <i class="fa-solid fa-comment fa-2x text-primary mb-2"></i>
         <div class="fw-bold text-secondary"><%= t("my.profile.comments_tab") %></div>
       <% end %>
