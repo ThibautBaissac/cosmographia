@@ -7,6 +7,9 @@ en:
       feedback:
         message: Message
         subject: Subject
+      software:
+        category: Category
+        name: Name
       user:
         bio: Bio
         first_name: Prénom
@@ -25,9 +28,6 @@ en:
         scale: Scale
         sources: Sources
         title: Title
-      software:
-        category: Category
-        name: Name
     errors:
       messages:
         blank: This field can't be blank
@@ -39,11 +39,11 @@ en:
               format: can only contain letters, numbers, and underscores
         visualization:
           attributes:
-            title:
-              blank: Title can't be blank
             image:
               blank: Image can't be blank
               invalid_format: File must be an image
+            title:
+              blank: Title can't be blank
           blank: This attribute is required
     models:
       software:

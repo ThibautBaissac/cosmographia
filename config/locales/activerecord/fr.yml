@@ -7,6 +7,9 @@ fr:
       feedback:
         message: Message
         subject: Sujet
+      software:
+        category: Catégorie
+        name: Nom
       user:
         bio: Bio
         first_name: Prénom
@@ -25,9 +28,6 @@ fr:
         scale: Échelle
         sources: Sources
         title: Titre
-      software:
-        category: Catégorie
-        name: Nom
     errors:
       messages:
         blank: Ce champ ne peut pas être vide
@@ -39,11 +39,11 @@ fr:
               format: ne peut contenir que des lettres, des chiffres et des tirets
         visualization:
           attributes:
-            title:
-              blank: Le titre ne peut pas être vide
             image:
               blank: L'image ne peut pas être vide
               invalid_format: Le fichier doit être une image
+            title:
+              blank: Le titre ne peut pas être vide
           blank: Ce attribut est obligatoire
     models:
       software:

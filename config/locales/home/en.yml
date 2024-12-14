@@ -7,24 +7,31 @@ en:
         title: Statistics
         visualizations_by_projection: Visualizations distribution by projection
       dicover_visualizations: Discover visualizations
+      discover_visualizations: Discover visualizations
+      explore_and_publish: Get inspired, explore, and add your own vision by publishing
+        your visualizations today. Together, let's map the world and the universe!
+        ✨.
       last_comments: The last comments
       last_visualizations: The last visualizations
       post_visualization: Post your visualizations
       see_all_visualizations: Discover all visualizations!
-      discover_visualizations: "Discover visualizations"
-      visualizations_count: "More than %{count} visualizations shared by our community are waiting for you."
-      explore_and_publish: "Get inspired, explore, and add your own vision by publishing your visualizations today. Together, let's map the world and the universe! ✨."
+      visualizations_count: More than %{count} visualizations shared by our community
+        are waiting for you.
     user_signed_out:
-      main_title: "A space for your creations"
-      main_description: "Cosmographia allows you to share your maps with a community that values diverse approaches and styles."
-      main_sub_description: "Whether you create maps or data visualizations, every creation finds its place and audience here."
-      exchange_section_title: "A place for exchange and inspiration"
-      exchange_section_text: "Receive constructive feedback, share your ideas, and connect with enthusiasts in a spirit of respect and kindness."
-      library_section_title: "Community library"
-      library_section_text: "Explore diverse creations, discover innovative techniques, and be inspired by other cartographers."
-      join_us_title: "Why join Cosmographia?"
+      exchange_section_text: Receive constructive feedback, share your ideas, and
+        connect with enthusiasts in a spirit of respect and kindness.
+      exchange_section_title: A place for exchange and inspiration
+      join_us_button: Join us now
       join_us_reasons:
-        - "Share in a respectful and encouraging environment."
-        - "Learn and improve through feedback from an experienced community."
-        - "Connect with experts and enthusiasts of visualization from around the world."
-      join_us_button: "Join us now"
+      - Share in a respectful and encouraging environment.
+      - Learn and improve through feedback from an experienced community.
+      - Connect with experts and enthusiasts of visualization from around the world.
+      join_us_title: Why join Cosmographia?
+      library_section_text: Explore diverse creations, discover innovative techniques,
+        and be inspired by other cartographers.
+      library_section_title: Community library
+      main_description: Cosmographia allows you to share your maps with a community
+        that values diverse approaches and styles.
+      main_sub_description: Whether you create maps or data visualizations, every
+        creation finds its place and audience here.
+      main_title: A space for your creations

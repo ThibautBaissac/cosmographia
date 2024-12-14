@@ -3,16 +3,16 @@ en:
   comments:
     disclaimer: 'Share your thoughts with kindness: your constructive and respectful
       comments enrich our community!'
+    flash:
+      actions:
+        create:
+          failure: Comment creation failed
+          success: Your comment was created successfully
+        update:
+          failure: Comment update failed
+          success: Your comment was updated successfully
     one: comment
     other: comments
     show_more: Show more comments
     write_comment: Write a comment
     zero: comment
-    flash:
-      actions:
-        create:
-          success: Your comment was created successfully
-          failure: Comment creation failed
-        update:
-          success: Your comment was updated successfully
-          failure: Comment update failed

@@ -8,7 +8,7 @@ en:
       data: Data visualization
       map: Map
     filtering:
-      categories: "Categories:"
+      categories: 'Categories:'
       creation_date_end: Creation date (end)
       creation_date_start: Creation date (start)
       scale_maximum: Scale maximum
@@ -21,7 +21,8 @@ en:
       edit_title: Edit visualization
       general_info_section: General information
       geographic_coverage_placeholder: Select a geographic coverage
-      image_placeholder: The accepted image formats are WebP, PNG, JPEG, JPG, and GIF.
+      image_placeholder: The accepted image formats are WebP, PNG, JPEG, JPG, and
+        GIF.
       image_section: Image
       scale_placeholder: Enter the scale (e.g., 1000)
       sources_placeholder: Enter your sources
@@ -34,4 +35,5 @@ en:
       national: National
       regional: Regional
     search:
-      query_placeholder: Search by title, description, sources, software name or software category.
+      query_placeholder: Search by title, description, sources, software name or software
+        category.
