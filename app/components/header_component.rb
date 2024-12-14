@@ -1,12 +1,7 @@
 class HeaderComponent < ViewComponent::Base
-  attr_reader :title, :button
+  attr_reader :title
 
-  def initialize(title:, button: nil)
+  def initialize(title:)
     @title = title
-    @button = button
-  end
-
-  def button?
-    button.present?
   end
 end
