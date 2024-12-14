@@ -1,5 +1,7 @@
 <%= render("my/profile/show/header") %>
 
+<%= render("my/profile/show/guest_alert") %>
+
 <%= turbo_frame_tag("profile_tab_content") do %>
   <%= render("my/profile/tabs/user_info") %>
 <% end %>

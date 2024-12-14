@@ -1,8 +1,5 @@
-<div class="container border-bottom pb-3 mb-4">
-  <div class="d-flex justify-content-between align-items-center">
-    <h1 class="my-0 fs-4 fw-light text-primary"><%= t("common.hello", name: current_user.first_name) %></h1>
+<div class="container">
+  <%= render(HeaderComponent.new(title: t("common.hello", name: current_user.first_name))) do %>
     <%= render("home/user_signed_in/install_pwa") %>
-  </div>
-
-  <%= render("my/profile/show/guest_alert") %>
+  <% end %>
 </div>

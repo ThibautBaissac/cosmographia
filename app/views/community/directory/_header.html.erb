@@ -1,0 +1,8 @@
+<%= render(HeaderComponent.new(title: t("community.directory.title"))) do %>
+    <% unless current_user.opted_in_directory? %>
+      <%= link_to(edit_my_profile_path, class: "btn btn-outline-primary btn rounded-4 d-flex align-items-center gap-2") do %>
+        <i class="fa-solid fa-users"></i>
+        <%= t("my.profile.not_in_directory") %>
+      <% end %>
+    <% end %>
+<% end %>
