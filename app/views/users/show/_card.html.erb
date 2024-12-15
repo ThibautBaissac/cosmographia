@@ -10,17 +10,17 @@
         <ul class="list-inline mt-2">
           <li class="list-inline-item">
             <% if @user.personal_website.present? %>
-              <a href="<%= @user.personal_website %>" class="btn btn-outline-secondary btn-sm rounded-pill" target="_blank">
-                <%= t("activerecord.attributes.user.personal_website") %>
-              </a>
+              <%= link_to(@user.personal_website, target: :_blank) do %>
+                <%= render(ButtonComponent.new(text: t("activerecord.attributes.user.personal_website"), color: :secondary, size: :sm, outline: :true, rounded: :pill)) %>
+              <% end %>
             <% end %>
           </li>
           <% user.social_links.each do |platform, link| %>
             <% unless link.blank? %>
               <li class="list-inline-item">
-                <a href="<%= link %>" target="_blank" class="btn btn-outline-secondary btn-sm rounded-pill">
-                  <i class="fa-brands fa-<%= platform %>"></i> <%= platform.capitalize %>
-                </a>
+                <%= link_to(link, target: :_blank) do %>
+                  <%= render(ButtonComponent.new(text: platform.capitalize, color: :secondary, size: :sm, outline: :true, rounded: :pill, icon: "fa-brands fa-#{platform}")) %>
+                <% end %>
               </li>
             <% end %>
           <% end %>

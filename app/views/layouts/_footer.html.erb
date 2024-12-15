@@ -12,11 +12,15 @@
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex gap-3">
       <% if user_signed_in? %>
         <li>
-          <%= link_to(t("feedbacks.feedback"), "#offcanvaFeedback", class: "btn btn-outline-light btn-sm", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvaFeedback"}) %>
+          <%= link_to("#offcanvaFeedback", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvaFeedback"}) do %>
+            <%= render(ButtonComponent.new(text: t("feedbacks.feedback"), color: :light, size: :sm, outline: :true, rounded: 3)) %>
+          <% end %>
         </li>
       <% end %>
       <li>
-        <%= link_to("GitHub", Constants::Links::GITHUB_REPO, class: "btn btn-outline-light btn-sm", target: :_blank) %>
+        <%= link_to(Constants::Links::GITHUB_REPO, target: :_blank) do %>
+          <%= render(ButtonComponent.new(text: "GitHub", color: :light, size: :sm, outline: :true, rounded: 3)) %>
+        <% end %>
       </li>
     </ul>
   </div>

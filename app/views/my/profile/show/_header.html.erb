@@ -1,8 +1,7 @@
 <div class="container">
   <%= render(HeaderComponent.new(title: t("my.profile.title"))) do %>
-    <%= link_to(edit_my_profile_path, class: "btn btn-outline-primary btn rounded-4 d-flex align-items-center gap-2") do %>
-        <i class="fa-regular fa-pen-to-square"></i>
-      <span><%= t("common.edit") %></span>
+    <%= link_to(edit_my_profile_path) do %>
+      <%= render(ButtonComponent.new(text: t("common.edit"), outline: :true, icon: "fa-regular fa-pen-to-square")) %>
     <% end %>
   <% end %>
 </div>

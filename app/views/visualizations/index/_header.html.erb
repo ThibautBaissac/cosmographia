@@ -1,9 +1,8 @@
 <div class="container">
   <%= render(HeaderComponent.new(title: t("visualization.title"))) do %>
     <% if policy(Visualization).new? %>
-      <%= link_to(new_visualization_path, class: "btn btn-outline-primary btn rounded-4 d-flex align-items-center gap-2") do %>
-        <i class="fa-solid fa-circle-plus"></i>
-        <span><%= t("visualizations.form.create_title") %></span>
+      <%= link_to(new_visualization_path) do %>
+        <%= render(ButtonComponent.new(text: t("visualizations.form.create_title"), outline: :true, icon: "fa-solid fa-circle-plus")) %>
       <% end %>
     <% end %>
   <% end %>

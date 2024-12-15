@@ -14,9 +14,13 @@
           <%= t("home.user_signed_in.post_visualization") %>
         </a>
       <% else %>
-        <%= link_to(t("home.user_signed_in.post_visualization"), new_visualization_path, class: "btn btn-primary btn-lg px-4 gap-3 rounded-pill shadow-sm") %>
+        <%= link_to(new_visualization_path) do %>
+          <%= render(ButtonComponent.new(text: t("home.user_signed_in.post_visualization"), size: :lg, rounded: :pill)) %>
+        <% end %>
       <% end %>
-      <%= link_to("🌍 #{t("home.user_signed_in.discover_visualizations")}", visualizations_path, class: "btn btn-outline-secondary btn-lg px-4 gap-3 rounded-pill shadow-sm") %>
+      <%= link_to(visualizations_path) do %>
+        <%= render(ButtonComponent.new(text: "🌍 #{t("home.user_signed_in.discover_visualizations")}", color: :secondary, outline: :true, size: :lg, rounded: :pill)) %>
+      <% end %>
     </div>
   </div>
 </div>

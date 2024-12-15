@@ -12,13 +12,15 @@
 
   <!-- Apply Filters Button -->
   <%= link_to("#collapseFilters",
-              class: "btn btn-outline-dark rounded-4",
+              class: "text-decoration-none",
               data: {bs_toggle: "collapse"},
               role: "button",
               aria: {expanded: "false", controls: "collapseFilters"}) do %>
-    <i class="fa-solid fa-filter"></i>
-    <%= t("common.apply_filters") %>
-    <span class="small fw-light">(<%= @non_empty_params_count %>)</span>
+    <%= render(ButtonComponent.new(color: :dark, outline: :true)) do %>
+      <i class="fa-solid fa-filter"></i>
+      <%= t("common.apply_filters") %>
+      <span class="small fw-light">(<%= @non_empty_params_count %>)</span>
+    <% end %>
   <% end %>
 
   <!-- Reset Filters Link -->

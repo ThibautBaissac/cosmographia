@@ -17,15 +17,13 @@
 <% else %>
   <ul class="list-group list-group-horizontal w-100 w-lg-auto">
     <li class="list-group-item border-0">
-      <%= link_to(new_user_registration_path, class: "btn btn-primary rounded-pill") do %>
-        <i class="fa-solid fa-user-plus me-2"></i>
-        <%= t("auth.sign_up") %>
+      <%= link_to(new_user_registration_path) do %>
+        <%= render(ButtonComponent.new(text: t("auth.sign_up"), rounded: :pill, icon: "fa-solid fa-user-plus me-2")) %>
       <% end %>
     </li>
     <li class="list-group-item border-0">
-      <%= link_to(new_user_session_path, class: "btn btn-outline-primary rounded-pill") do %>
-        <i class="fa-solid fa-arrow-right-to-bracket me-2"></i>
-        <%= t("auth.sign_in") %>
+      <%= link_to(new_user_session_path) do %>
+        <%= render(ButtonComponent.new(text: t("auth.sign_in"), outline: :true, rounded: :pill, icon: "fa-solid fa-arrow-right-to-bracket me-2")) %>
       <% end %>
     </li>
   </ul>

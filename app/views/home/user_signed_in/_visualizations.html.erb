@@ -5,8 +5,12 @@
     <%= render(partial: "home/user_signed_in/gallery", collection: @visualizations, as: :visualization) %>
   </div>
 
-  <%= link_to(visualizations_path, class: "w-100 btn btn-outline-primary rounded-4") do %>
-    <i class="fa-solid fa-earth-africa"></i>
-    <%= t("home.user_signed_in.see_all_visualizations") %>
+  <%= link_to(visualizations_path) do %>
+    <%= render(ButtonComponent.new(
+      text: t("home.user_signed_in.see_all_visualizations"),
+      outline: :true,
+      icon: "fa-solid fa-earth-africa",
+      extra_classes: "w-100"
+    )) %>
   <% end %>
 </div>
