@@ -1,6 +1,5 @@
 class Community::DirectoryController < ApplicationController
   def show
-    # authorize(...)
     @user_query = params[:user_query]&.strip
     users = User.opted_in_directory.includes(:softwares)
 

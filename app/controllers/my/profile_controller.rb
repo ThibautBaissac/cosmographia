@@ -3,20 +3,19 @@ class My::ProfileController < ApplicationController
   before_action :set_authorize
 
   def show
-    authorize(@user)
   end
 
   def edit
-    Software.order(:name).each do |software|
-      @user.user_softwares.find_or_initialize_by(software:)
-    end
+    User::InitializeUserSoftwaresService.new(@user).call
   end
 
   def update
-    if @user.update(user_params)
-       @user.update(guest: false) if @user.profile_complete?
-      redirect_to(my_profile_path, notice: "User was successfully updated.")
+    update_service = User::UpdateUserProfileService.new(@user, user_params)
+
+    if update_service.call
+      redirect_to(my_profile_path, notice: t("my.profile.flash.actions.update.success"))
     else
+      flash[:alert] = t("my.profile.flash.actions.update.failure")
       render(:edit, status: :unprocessable_entity)
     end
   end
