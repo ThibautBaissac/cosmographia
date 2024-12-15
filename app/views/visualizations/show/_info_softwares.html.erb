@@ -2,9 +2,9 @@
 <ul class="p-0">
   <% visualization.softwares.each do |software| %>
     <li class="list-inline-item">
-      <div class="text-secondary border border-secondary px-2 py-1 rounded-pill">
+      <%= render(StaticTagComponent.new(color: :primary)) do %>
         <%= software.name.capitalize %>
-      </div>
+      <% end %>
     </li>
   <% end %>
 </ul>

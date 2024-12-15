@@ -68,7 +68,9 @@
           <ul class="list-inline mt-2">
             <% @user.softwares.each do |software| %>
               <li class="list-inline-item mb-2">
-                <span class="text-secondary"><%= software.name %></span>
+                <%= render(StaticTagComponent.new(color: :primary)) do %>
+                  <%= software.name.capitalize %>
+                <% end %>
               </li>
             <% end %>
           </ul>

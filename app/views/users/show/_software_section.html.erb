@@ -19,9 +19,9 @@
             </div>
           </div>
           <div class="text-center mt-2">
-            <span class="badge bg-success text-white">
+            <%= render(StaticTagComponent.new(color: :success)) do %>
               <%= t("activerecord.attributes.user_software.level") %> <%= user_software.level %>
-            </span>
+            <% end %>
           </div>
         </div>
       </div>
