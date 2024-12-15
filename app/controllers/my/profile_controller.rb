@@ -24,7 +24,7 @@ class My::ProfileController < ApplicationController
   private
 
   def set_user
-    @user = current_user
+    @user = User.includes(user_softwares: :software).find(current_user.id)
   end
 
   def set_authorize
