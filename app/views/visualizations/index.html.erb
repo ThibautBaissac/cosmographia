@@ -8,7 +8,5 @@
       <%= render(partial: "visualizations/index/card", collection: @visualizations, as: :visualization) %>
     </div>
   </div>
-  <div class="d-flex justify-content-center align-items-center mt-3">
-    <%== pagy_nav(@pagy) if @pagy.pages > 1  %>
-  </div>
+  <%= render(PaginationComponent.new(pagy: @pagy)) %>
 </div>
