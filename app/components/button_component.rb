@@ -5,7 +5,7 @@ class ButtonComponent < ViewComponent::Base
   SIZES = %i[sm lg].freeze
   ICON_POSITIONS = %i[left right].freeze
 
-  attr_reader :text, :size, :color, :outline, :rounded, :icon, :icon_position, :html_attributes
+  attr_reader :text, :size, :color, :outline, :rounded, :icon, :icon_position, :extra_classes, :html_attributes
 
   def initialize(
     text: nil,
@@ -15,6 +15,7 @@ class ButtonComponent < ViewComponent::Base
     rounded: 4,
     icon: nil,
     icon_position: :left,
+    extra_classes: nil,
     **html_attributes
   )
     @text = text
@@ -24,7 +25,8 @@ class ButtonComponent < ViewComponent::Base
     @rounded = fetch_rounded(rounded)
     @icon = icon
     @icon_position = fetch_icon_position(icon_position)
-    @html_attributes = html_attributes
+    @extra_classes = extra_classes
+    @html_attributes = html_attributes[:html_attributes] || html_attributes
   end
 
   def call
@@ -62,13 +64,13 @@ class ButtonComponent < ViewComponent::Base
   end
 
   def button_classes
-    classes = [ "btn" ]
+    classes = [ "btn d-flex justify-content-center" ]
     classes << "btn-outline-#{color}" if outline
     classes << "btn-#{color}" unless outline
     classes << "btn-#{size}" if size
     classes << "rounded-#{rounded}"
     classes << "d-flex align-items-center gap-2"
-    classes << html_attributes[:class] if html_attributes[:class].present?
+    classes << extra_classes if extra_classes.present?
     classes.join(" ")
   end
 
