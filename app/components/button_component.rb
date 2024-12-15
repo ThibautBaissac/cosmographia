@@ -52,6 +52,8 @@ class ButtonComponent < ViewComponent::Base
   end
 
   def fetch_rounded(rounded)
+    return :pill if rounded == :pill
+
     rounded.is_a?(Integer) ? rounded : 4
   end
 
