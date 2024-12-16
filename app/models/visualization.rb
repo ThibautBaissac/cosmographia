@@ -6,6 +6,7 @@ class Visualization < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :visualization_softwares, dependent: :destroy
   has_many :softwares, through: :visualization_softwares
+  belongs_to :challenge, optional: true
   has_one_attached :image
 
   validates :title, presence: true
