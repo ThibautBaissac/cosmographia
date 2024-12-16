@@ -43,6 +43,7 @@ group :development do
   gem "erb_lint", require: false
   gem "faker", "~> 3.5"
   gem "letter_opener_web"
+  gem "rack-mini-profiler"
   gem "web-console"
 end
 
