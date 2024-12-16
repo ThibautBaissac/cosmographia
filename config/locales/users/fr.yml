@@ -25,7 +25,6 @@ fr:
       total_comment_count: "(%{count} au total)"
       user_info_disclaimer_html: Vos informations personnelles ne seront <b>jamais
         partagées</b> avec des tiers extérieurs à la communauté Cosmographia !
-      visualizations_tab: visualisations
   users:
     form:
       bio_placeholder: Parlons un peu de vous, de vos projets...
