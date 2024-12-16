@@ -1,0 +1,18 @@
+---
+en:
+  feedbacks:
+    feedback: Feedback
+    form:
+      message_placeholder: Your message...
+      subject_placeholder: Select a subject
+    subjects:
+      account_management: Account management
+      bug_report: Bug report
+      feature_request: Feature request
+      general_feedback: General feedback
+      other: Autre
+      usability_issues: Usability issues
+    submit: Submit feedback
+    text: Your thoughts and suggestions help us improve. Whether it’s comment, a suggestion,
+      or something we can do better, we’d love to hear from you!
+    title: We value your feedback!

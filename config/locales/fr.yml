@@ -25,12 +25,6 @@ fr:
     messages:
       blank: Ce champ ne peut pas être vide
     oops: Oops !
-  feedbacks:
-    feedback: Feedback
-    submit: Envoyer le feedback
-    text: Vos commentaires nous aident à nous améliorer. Que ce soit une suggestion
-      ou quelque chose que nous pouvons améliorer, dites le nous !
-    title: À vos commentaires !
   helpers:
     submit:
       comment:

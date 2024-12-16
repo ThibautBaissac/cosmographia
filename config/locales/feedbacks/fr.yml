@@ -1,0 +1,18 @@
+---
+fr:
+  feedbacks:
+    feedback: Feedback
+    form:
+      message_placeholder: Votre message...
+      subject_placeholder: Sélectionnez un sujet
+    subjects:
+      account_management: Gestion de compte
+      bug_report: Signaler un bug
+      feature_request: Demande de fonctionnalité
+      general_feedback: Commentaire général
+      other: Autre
+      usability_issues: Problèmes d'utilisation
+    submit: Envoyer le feedback
+    text: Vos commentaires nous aident à nous améliorer. Que ce soit une suggestion
+      ou quelque chose que nous pouvons améliorer, dites le nous !
+    title: À vos commentaires !
