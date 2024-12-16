@@ -47,7 +47,7 @@ class ChallengesController < ApplicationController
   end
 
   def join
-    set_authorize
+    # set_authorize # TODO: implement this
     service = Challenge::JoinService.new(current_user, @challenge)
     if service.call.persisted?
       redirect_to(@challenge, notice: "Successfully joined the challenge.")
@@ -57,7 +57,7 @@ class ChallengesController < ApplicationController
   end
 
   def leave
-    set_authorize
+    # set_authorize # TODO: implement this
     service = Challenge::LeaveService.new(current_user, @challenge)
     service.call
     redirect_to(@challenge, notice: "Successfully left the challenge.")
