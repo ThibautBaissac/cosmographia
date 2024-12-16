@@ -1,5 +1,5 @@
 class FeedbackPolicy < ApplicationPolicy
-  def create
+  def create?
     user&.present?
   end
 end
