@@ -1,0 +1,10 @@
+<%= render("challenges/show/header", challenge: @challenge) %>
+
+<div class="container mt-5">
+  <%= render("challenges/show/infos", challenge: @challenge) %>
+
+  <h3>Submissions</h3>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <%= render(partial: "visualizations/index/card", collection: @visualizations, as: :visualization) %>
+  </div>
+</div>

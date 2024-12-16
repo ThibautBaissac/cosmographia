@@ -22,6 +22,9 @@
       <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.projection") %>:</strong> <%= t("visualization_projections.#{visualization.projection}") %></li>
     <% end %>
     <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.source") %>:</strong> <%= visualization.sources %></li>
+    <% if visualization.challenge.present? %>
+      <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.challenge") %>:</strong> <%= link_to(visualization.challenge.title, challenge_path(locale, visualization.challenge)) %></li>
+    <% end %>
   </ul>
   <div class="card-body">
     <%= render("visualizations/show/info_softwares", visualization:) %>

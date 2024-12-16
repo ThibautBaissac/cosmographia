@@ -1,0 +1,54 @@
+<%# app/views/challenges/_form.html.erb %>
+<%= form_with(model: challenge, data: { turbo: false}) do |form| %>
+  <% if challenge.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(challenge.errors.count, "error") %> prohibited this challenge from being saved:</h4>
+      <ul>
+        <% challenge.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group mb-3">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control', required: true %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'form-control', rows: 5, required: true %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :difficulty %>
+    <%= form.select(:difficulty,
+      Challenge.difficulty_keys.map { |key| [ t("challenge.difficulty.#{key}"), key.to_s.upcase ] },
+      {include_blank: "Select a difficulty"},
+      {class: "form-select rounded-pill shadow-sm", required: true}) %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :category %>
+    <%= form.select(:category,
+      Challenge.category_keys.map { |key| [ t("challenge.category.#{key}"), key.to_s.upcase ] },
+      {include_blank: "Select a category"},
+      {class: "form-select rounded-pill shadow-sm", required: true}) %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :start_date %>
+    <%= form.date_field(:start_date, value: params[:start_date], class: "form-control rounded-pill shadow-sm") %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :end_date %>
+    <%= form.date_field(:end_date, value: params[:end_date], class: "form-control rounded-pill shadow-sm", required: true) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', challenges_path, class: 'btn btn-secondary' %>
+  </div>
+<% end %>

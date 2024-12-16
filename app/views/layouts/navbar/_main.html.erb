@@ -23,6 +23,9 @@
           <%= link_to(t("navbar.community"), community_directory_path(locale), class: "nav-link #{active_class(community_directory_path)} fw-semibold") %>
         </li>
         <li class="nav-item align-content-center">
+          <%= link_to(t("navbar.challenges"), challenges_path(locale), class: "nav-link #{active_class(challenges_path)} fw-semibold") %>
+        </li>
+        <li class="nav-item align-content-center">
           <%= link_to(t("navbar.about"), about_index_path(locale), class: "nav-link #{active_class(about_index_path)} fw-semibold") %>
         </li>
       </ul>

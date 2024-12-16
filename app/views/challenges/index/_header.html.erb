@@ -1,0 +1,9 @@
+<div class="container">
+  <%= render(HeaderComponent.new(title: t("challenges.challenges"))) do %>
+    <% if policy(Challenge).new? %>
+      <%= link_to(edit_challenge_path(locale)) do %>
+        <%= render(ButtonComponent.new(text: t("challenges.form.edit_title"), outline: :true, icon: "fa-regular fa-pen-to-square")) %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

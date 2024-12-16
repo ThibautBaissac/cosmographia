@@ -1,0 +1,21 @@
+<%= render("challenges/index/header") %>
+
+<div class="container mt-5">
+  <div class="row">
+    <% @challenges.each do |challenge| %>
+      <div class="col-md-4">
+        <div class="card mb-4 rounded-4 border-secondary-subttle hover-card">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-primary"><%= challenge.title %></h5>
+            <p class="card-text text-muted"><%= truncate(challenge.description, length: 100) %></p>
+            <div class="mb-3">
+              <span class="badge text-bg-primary me-2">Category: <%= challenge.category.capitalize %></span>
+              <span class="badge text-bg-success">Difficulty: <%= challenge.difficulty.capitalize %></span>
+            </div>
+            <%= link_to('View Challenge', challenge_path(challenge), class: 'btn btn-outline-primary') %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
