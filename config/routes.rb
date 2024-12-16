@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "user_challenges/index"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   mount MissionControl::Jobs::Engine, at: "/jobs"
   scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/ do
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
 
     devise_for :users
 
+    draw :challenges
     draw :community
     draw :feedbacks
     draw :visualizations
