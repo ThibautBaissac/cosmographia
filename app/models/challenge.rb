@@ -1,4 +1,6 @@
 class Challenge < ApplicationRecord
+  include Challenge::Status
+
   has_many :user_challenges, dependent: :destroy
   has_many :users, through: :user_challenges
   has_many :visualizations, dependent: :nullify # We don't want to delete the visualizations when we delete a challenge
