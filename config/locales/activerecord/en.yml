@@ -2,6 +2,13 @@
 en:
   activerecord:
     attributes:
+      challenge:
+        category: Category
+        description: Description
+        difficulty: Difficulty
+        end_date: End date
+        start_date: Start date
+        title: Title
       comment:
         content: Content
       feedback:

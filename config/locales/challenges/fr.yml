@@ -1,0 +1,15 @@
+---
+fr:
+  challenge:
+    category:
+      data: Visualisation de données
+      map: Carte
+    difficulty:
+      easy: Facile
+      hard: Difficile
+      intermediate: Intermédiaire
+  challenges:
+    form:
+      create_title: Créer un nouveau challenge
+      edit_title: Modifier le challenge
+    title: Challenges

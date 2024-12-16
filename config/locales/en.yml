@@ -36,6 +36,7 @@ en:
     title: Switch language
   navbar:
     about: About
+    challenges: Challenges
     community: Community
     edit_password: Edit password
     install_pwa: Add to Home Screen
