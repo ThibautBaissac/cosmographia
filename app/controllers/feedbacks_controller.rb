@@ -3,9 +3,9 @@ class FeedbacksController < ApplicationController
     set_authorize
     @feedback = current_user.feedbacks.new(feedback_params)
     if @feedback.save
-      redirect_to(root_path, notice: "Thank you for your feedback!")
+      redirect_to(root_path(locale), notice: "Thank you for your feedback!")
     else
-      redirect_to(root_path, alert: "Something went wrong. Please try again.")
+      redirect_to(root_path(locale), alert: "Something went wrong. Please try again.")
     end
   end
 

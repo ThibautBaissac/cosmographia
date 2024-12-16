@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg container bg-white shadow-sm rounded-4 mt-3 px-3 border border-secondary-subtle" aria-label="Offcanvas navbar">
-  <%= link_to(root_path, class: "navbar-brand d-flex align-items-center") do %>
+  <%= link_to(root_path(locale), class: "navbar-brand d-flex align-items-center") do %>
     <%= image_tag("logo.png", alt: "Logo", width: "30", height: "30", class: "d-inline-block align-text-top me-2") %>
     <span class="fw-bold text-primary">Cosmographia</span>
   <% end %>
@@ -17,13 +17,13 @@
     <div class="offcanvas-body">
       <ul class="navbar-nav flex-grow-1 pe-3">
         <li class="nav-item align-content-center">
-          <%= link_to(t("navbar.visualizations"), visualizations_path, class: "nav-link #{active_class(visualizations_path)} fw-semibold") %>
+          <%= link_to(t("navbar.visualizations"), visualizations_path(locale), class: "nav-link #{active_class(visualizations_path)} fw-semibold") %>
         </li>
         <li class="nav-item align-content-center">
-          <%= link_to(t("navbar.community"), community_directory_path, class: "nav-link #{active_class(community_directory_path)} fw-semibold") %>
+          <%= link_to(t("navbar.community"), community_directory_path(locale), class: "nav-link #{active_class(community_directory_path)} fw-semibold") %>
         </li>
         <li class="nav-item align-content-center">
-          <%= link_to(t("navbar.about"), about_index_path, class: "nav-link #{active_class(about_index_path)} fw-semibold") %>
+          <%= link_to(t("navbar.about"), about_index_path(locale), class: "nav-link #{active_class(about_index_path)} fw-semibold") %>
         </li>
       </ul>
       <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3">

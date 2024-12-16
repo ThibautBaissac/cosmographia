@@ -1,6 +1,6 @@
 <div class="container">
   <%= render(HeaderComponent.new(title: t("users.form.edit_title"))) do %>
-    <%= link_to(edit_user_registration_path) do %>
+    <%= link_to(edit_user_registration_path(locale)) do %>
       <%= render(ButtonComponent.new(text: t("navbar.edit_password"), size: :sm, outline: :true, icon: "fa-regular fa-pen-to-square")) %>
     <% end %>
   <% end %>

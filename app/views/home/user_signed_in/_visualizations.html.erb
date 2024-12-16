@@ -5,7 +5,7 @@
     <%= render(partial: "home/user_signed_in/gallery", collection: @visualizations, as: :visualization) %>
   </div>
 
-  <%= link_to(visualizations_path) do %>
+  <%= link_to(visualizations_path(locale)) do %>
     <%= render(ButtonComponent.new(
       text: t("home.user_signed_in.see_all_visualizations"),
       outline: :true,

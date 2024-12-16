@@ -1,7 +1,7 @@
 <div class="container">
   <%= render(HeaderComponent.new(title: t("visualization.title"))) do %>
     <% if policy(Visualization).new? %>
-      <%= link_to(new_visualization_path) do %>
+      <%= link_to(new_visualization_path(locale)) do %>
         <%= render(ButtonComponent.new(text: t("visualizations.form.create_title"), outline: :true, icon: "fa-solid fa-circle-plus")) %>
       <% end %>
     <% end %>

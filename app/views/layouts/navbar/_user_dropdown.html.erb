@@ -5,9 +5,9 @@
         <i class="fa-solid fa-circle-user fa-2x text-primary"></i>
       </a>
       <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-        <li><%= link_to(t("navbar.profile"), my_profile_path, class: "dropdown-item") %></li>
+        <li><%= link_to(t("navbar.profile"), my_profile_path(locale), class: "dropdown-item") %></li>
         <li><hr class="dropdown-divider"></li>
-        <li><%= button_to(t("auth.sign_out"), destroy_user_session_path, method: :delete, class: "dropdown-item") %></li>
+        <li><%= button_to(t("auth.sign_out"), destroy_user_session_path(locale), method: :delete, class: "dropdown-item") %></li>
         <li><%= link_to(t("feedbacks.feedback"), "#offcanvaFeedback", class: "dropdown-item", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvaFeedback"}) %></li>
         <%= render("layouts/navbar/install_pwa") %>
         <%= render("layouts/navbar/superadmin_dropdown") %>
@@ -17,12 +17,12 @@
 <% else %>
   <ul class="list-group list-group-horizontal w-100 w-lg-auto">
     <li class="list-group-item border-0">
-      <%= link_to(new_user_registration_path) do %>
+      <%= link_to(new_user_registration_path(locale)) do %>
         <%= render(ButtonComponent.new(text: t("auth.sign_up"), rounded: :pill, icon: "fa-solid fa-user-plus me-2")) %>
       <% end %>
     </li>
     <li class="list-group-item border-0">
-      <%= link_to(new_user_session_path) do %>
+      <%= link_to(new_user_session_path(locale)) do %>
         <%= render(ButtonComponent.new(text: t("auth.sign_in"), outline: :true, rounded: :pill, icon: "fa-solid fa-arrow-right-to-bracket me-2")) %>
       <% end %>
     </li>

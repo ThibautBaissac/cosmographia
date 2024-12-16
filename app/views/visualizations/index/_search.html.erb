@@ -1,4 +1,4 @@
-<%= form_with(url: visualizations_path, method: :get, local: true, class: "bg-white shadow-sm border border-secondary-subtle p-4 mb-4 bg-light rounded-4") do |form| %>
+<%= form_with(url: visualizations_path(locale), method: :get, local: true, class: "bg-white shadow-sm border border-secondary-subtle p-4 mb-4 bg-light rounded-4") do |form| %>
   <div class="form-text mb-3 text-secondary">
     <%= t("visualizations.search.query_placeholder") %>
   </div>
@@ -25,7 +25,7 @@
 
   <!-- Reset Filters Link -->
   <% unless @non_empty_params_count.zero? %>
-    <%= link_to(visualizations_path, class: "small text-secondary ms-3") do %>
+    <%= link_to(visualizations_path(locale), class: "small text-secondary ms-3") do %>
       <i class="fa-solid fa-filter-circle-xmark"></i>
       <%= t("common.reset_filters") %>
     <% end %>

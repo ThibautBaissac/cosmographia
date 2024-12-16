@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
     policy_name = exception.policy.class.to_s.underscore
 
     flash[:alert] = t("#{policy_name}.#{exception.query}", scope: "pundit", default: :default)
-    redirect_back_or_to(root_path)
+    redirect_back_or_to(root_path(locale))
   end
 
   def update_last_presence_at

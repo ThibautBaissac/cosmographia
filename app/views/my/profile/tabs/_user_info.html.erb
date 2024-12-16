@@ -18,7 +18,7 @@
                 <%= render(ButtonComponent.new(text: t("my.profile.my_page"), size: :sm, outline: :true, rounded: :pill, icon: "fa-solid fa-eye")) %>
               <% end %>
             <% else %>
-              <%= link_to(edit_my_profile_path, data: {turbo: :false}) do %>
+              <%= link_to(edit_my_profile_path(locale), data: {turbo: :false}) do %>
                 <%= render(ButtonComponent.new(text: t("my.profile.not_in_directory"), size: :sm, outline: :true, rounded: :pill, icon: "fa-solid fa-users-slash")) %>
               <% end %>
             <% end %>

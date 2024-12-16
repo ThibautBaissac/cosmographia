@@ -31,7 +31,7 @@
     </ul>
   </section>
   <div class="d-flex justify-content-center">
-    <%= link_to(new_user_session_path) do %>
+    <%= link_to(new_user_session_path(locale)) do %>
       <%= render(ButtonComponent.new(text: t("home.user_signed_out.join_us_button"), color: :success, size: :lg)) %>
     <% end %>
   </div>
