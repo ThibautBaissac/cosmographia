@@ -65,7 +65,7 @@ en:
         other: about %{count} hours ago
       about_x_months:
         one: about 1 month ago
-        other: about %{count} months ago ago
+        other: about %{count} months ago
       about_x_years:
         one: about 1 year
         other: about %{count} years ago
