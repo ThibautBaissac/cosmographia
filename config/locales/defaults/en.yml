@@ -76,9 +76,11 @@ en:
       less_than_x_minutes:
         one: less than a minute ago
         other: less than %{count} minutes ago
+        zero: less than a minute ago
       less_than_x_seconds:
         one: less than 1 second ago
         other: less than %{count} seconds ago
+        zero: less than 1 second ago
       over_x_years:
         one: over 1 year ago
         other: over %{count} years ago

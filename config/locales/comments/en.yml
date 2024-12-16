@@ -8,6 +8,9 @@ en:
         create:
           failure: Comment creation failed
           success: Your comment was created successfully
+        destroy:
+          failure: Comment deletion failed
+          success: Your comment was deleted successfully
         update:
           failure: Comment update failed
           success: Your comment was updated successfully

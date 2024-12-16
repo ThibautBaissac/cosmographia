@@ -27,7 +27,7 @@ en:
       scale_placeholder: Enter the scale (e.g., 1000)
       sources_placeholder: Enter your sources
       title_placeholder: Enter a title
-    geographic_coverage:
+    geographic_coverages:
       continental: Continental
       global: Global
       local: Local
