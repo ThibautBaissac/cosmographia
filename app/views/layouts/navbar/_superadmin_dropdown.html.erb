@@ -1,4 +1,5 @@
 <% if policy([ :admin, :feedback ]).index? %>
   <li><hr class="dropdown-divider"></li>
   <li><%= link_to("Feedbacks", admin_feedbacks_path, class: "dropdown-item") %></li>
+  <li><%= link_to("Mission Control", "/jobs", class: "dropdown-item") %></li>
 <% end %>
