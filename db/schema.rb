@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_16_075634) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_16_124925) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -40,6 +40,21 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_16_075634) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description", null: false
+    t.date "start_date"
+    t.date "end_date", null: false
+    t.string "difficulty", null: false
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category"], name: "index_challenges_on_category"
+    t.index ["difficulty"], name: "index_challenges_on_difficulty"
+    t.index ["end_date"], name: "index_challenges_on_end_date"
+    t.index ["start_date"], name: "index_challenges_on_start_date"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -191,6 +206,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_16_075634) do
     t.index ["key"], name: "index_solid_queue_semaphores_on_key", unique: true
   end
 
+  create_table "user_challenges", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "challenge_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_user_challenges_on_challenge_id"
+    t.index ["user_id"], name: "index_user_challenges_on_user_id"
+  end
+
   create_table "user_softwares", force: :cascade do |t|
     t.bigint "software_id", null: false
     t.bigint "user_id", null: false
@@ -249,7 +273,9 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_16_075634) do
     t.string "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "challenge_id"
     t.index ["category"], name: "index_visualizations_on_category"
+    t.index ["challenge_id"], name: "index_visualizations_on_challenge_id"
     t.index ["creation_date"], name: "index_visualizations_on_creation_date"
     t.index ["description"], name: "index_visualizations_on_description"
     t.index ["geographic_coverage"], name: "index_visualizations_on_geographic_coverage"
@@ -271,9 +297,12 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_16_075634) do
   add_foreign_key "solid_queue_ready_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_recurring_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_scheduled_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
+  add_foreign_key "user_challenges", "challenges"
+  add_foreign_key "user_challenges", "users"
   add_foreign_key "user_softwares", "softwares"
   add_foreign_key "user_softwares", "users"
   add_foreign_key "visualization_softwares", "softwares"
   add_foreign_key "visualization_softwares", "visualizations"
+  add_foreign_key "visualizations", "challenges"
   add_foreign_key "visualizations", "users"
 end
