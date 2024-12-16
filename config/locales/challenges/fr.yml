@@ -1,6 +1,9 @@
 ---
 fr:
   challenge:
+    join: Rejoindre le challenge
+    leave: Quitter le challenge
+    submit_visualization: Soumettre une visualisation
     category:
       data: Visualisation de données
       map: Carte
