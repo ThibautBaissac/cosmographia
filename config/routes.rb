@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  mount MissionControl::Jobs::Engine, at: "/jobs"
   scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/ do
     # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
     get "manifest" => "rails/pwa#manifest", as: :pwa_manifest # keep this route above the users routes to avoid conflicts between /user#slug and /manifest

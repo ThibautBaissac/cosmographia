@@ -8,6 +8,7 @@ gem "groupdate"
 gem "jbuilder"
 gem "jsbundling-rails"
 gem "kamal", require: false
+gem "mission_control-jobs"
 gem "pagy", "~> 9.3"
 gem "pg", "~> 1.1"
 gem "propshaft"
