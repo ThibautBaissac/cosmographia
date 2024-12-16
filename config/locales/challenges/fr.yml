@@ -3,6 +3,7 @@ fr:
   challenge:
     join: Rejoindre le challenge
     leave: Quitter le challenge
+    submissions: Participations
     submit_visualization: Soumettre une visualisation
     category:
       data: Visualisation de données
