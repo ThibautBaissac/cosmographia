@@ -11,8 +11,7 @@ class ChallengePolicy < ApplicationPolicy
     user&.superadmin?
   end
 
-  alias_method(:new?, :create?)
-  alias_method(:edit?, :create?)
-  alias_method(:update?, :create?)
-  alias_method(:detroy?, :create?)
+  alias_method(:edit?, :new?)
+  alias_method(:update?, :new?)
+  alias_method(:detroy?, :new?)
 end
