@@ -44,9 +44,8 @@ class ApplicationController < ActionController::Base
   def update_last_presence_at
     return unless current_user
 
-    # TODO: move the following code to a background job
     if current_user.last_presence_at != Date.current
-      current_user.update(last_presence_at: Date.current)
+      User::UpdateLastPresenceAtJob.perform_later(user_id: current_user.id)
     end
   end
 end
