@@ -3,7 +3,8 @@ class ChallengesController < ApplicationController
 
   def index
     authorize(Challenge)
-    @challenges = Challenge.all.order(start_date: :desc)
+    challenges = Challenge.all.order(start_date: :desc)
+    @pagy, @challenges = pagy(challenges)
   end
 
   def show
