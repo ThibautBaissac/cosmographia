@@ -7,7 +7,7 @@ class Challenge::LeaveService
   def call
     ActiveRecord::Base.transaction do
       visualization = Visualization.find_by(user: @user, challenge: @challenge)
-      visualization.destroy!
+      visualization.update!(challenge_id: nil) if visualization.present?
       user_challenge = UserChallenge.find_by(user: @user, challenge: @challenge)
       user_challenge.destroy!
     end
