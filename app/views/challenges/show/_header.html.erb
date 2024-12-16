@@ -1,9 +1,17 @@
 <div class="container">
   <%= render(HeaderComponent.new(title: challenge.title)) do %>
-    <% if policy(Challenge).new? %>
-      <%= link_to(new_challenge_path(locale)) do %>
-        <%= render(ButtonComponent.new(text: t("challenges.form.create_title"), outline: :true, icon: "fa-solid fa-circle-plus")) %>
+    <div class="d-flex gap-2">
+      <% if policy(Challenge).edit? %>
+        <%= link_to(edit_challenge_path(locale, challenge)) do %>
+            <%= render(ButtonComponent.new(text: t("challenges.form.edit_title"), outline: :true, icon: "fa-solid fa-circle-plus")) %>
+        <% end %>
       <% end %>
-    <% end %>
+
+      <% if current_user.challenges.include?(challenge) %>
+        <%= button_to(t("challenge.leave"), leave_challenge_path(locale, challenge), method: :delete, class: 'btn btn-outline-danger rounded-pill btn-sm') %>
+      <% else %>
+        <%= button_to(t("challenge.join"), join_challenge_path(locale, challenge), method: :post, class: 'btn btn-success rounded-pill') %>
+      <% end %>
+    </div>
   <% end %>
 </div>

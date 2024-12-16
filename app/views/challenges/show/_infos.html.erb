@@ -3,29 +3,30 @@
     <p class="card-text text-muted"><%= challenge.description %></p>
 
     <div class="mb-3">
-      <span class="badge bg-info text-dark me-2">Category: <%= challenge.category.capitalize %></span>
-      <span class="badge bg-warning text-dark me-2">Difficulty: <%= challenge.difficulty.capitalize %></span>
+      <span class="badge text-bg-primary">
+        <%= t("activerecord.attributes.challenge.category") %>: <%= t("challenge.category.#{challenge.category.downcase}") %>
+      </span>
+      <span class="badge text-bg-success">
+        <%= t("activerecord.attributes.challenge.difficulty") %>: <%= t("challenge.difficulty.#{challenge.difficulty.downcase}") %>
+      </span>
     </div>
 
     <ul class="list-group list-group-flush mb-3">
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        <strong>Start Date:</strong>
+        <strong><%= t("activerecord.attributes.challenge.start_date") %>:</strong>
         <span><%= challenge.start_date&.strftime("%B %d, %Y") %></span>
       </li>
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        <strong>End Date:</strong>
+        <strong><%= t("activerecord.attributes.challenge.end_date") %>:</strong>
         <span><%= challenge.end_date.strftime("%B %d, %Y") %></span>
       </li>
     </ul>
 
-    <% if user_signed_in? %>
+    <% if current_user.challenges.include?(challenge) %>
       <div class="d-flex gap-2 mb-3">
-        <% if current_user.challenges.include?(challenge) %>
-          <%= button_to 'Leave Challenge', leave_challenge_path(challenge), method: :delete, class: 'btn btn-danger flex-grow-1' %>
-        <% else %>
-          <%= button_to 'Join Challenge', join_challenge_path(challenge), method: :post, class: 'btn btn-success flex-grow-1' %>
+        <%= link_to(new_challenge_visualization_path(locale, challenge)) do %>
+          <%= render(ButtonComponent.new(text: t("challenge.submit_visualization"), outline: :true, icon: "fa-solid fa-circle-plus")) %>
         <% end %>
-        <%= link_to 'Submit Visualization', new_challenge_visualization_path(challenge), class: 'btn btn-primary flex-grow-1' %>
       </div>
     <% end %>
   </div>
