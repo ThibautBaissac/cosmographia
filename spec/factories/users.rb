@@ -11,10 +11,9 @@ FactoryBot.define do
     bio { Faker::Lorem.paragraph }
     last_presence_at { Faker::Date.backward(days: 30) }
     personal_website { Faker::Internet.url }
-    social_links { {twitter: Faker::Internet.url, linkedin: Faker::Internet.url} }
+    social_links { {github: Faker::Internet.url, linkedin: Faker::Internet.url} }
     guest { false }
     optin_directory { false }
-    slug { "#{first_name}-#{last_name}-#{SecureRandom.hex(2)}" }
     public_profile { false }
 
     trait :superadmin do
