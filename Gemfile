@@ -34,6 +34,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "dotenv"
   gem "factory_bot_rails"
+  gem "faker", "~> 3.5"
   gem "rspec-rails", "~> 7.0.0"
   gem "rubocop-rails-omakase", require: false
 end
@@ -41,7 +42,6 @@ end
 group :development do
   gem "bullet", "~> 8.0"
   gem "erb_lint", require: false
-  gem "faker", "~> 3.5"
   gem "letter_opener_web"
   gem "rack-mini-profiler"
   gem "web-console"
