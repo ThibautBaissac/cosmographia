@@ -1,10 +1,5 @@
-<%= form_with(
-      model: visualization,
-      url: @challenge.present? ? challenge_visualizations_path(locale, @challenge) : visualizations_path(locale),
-      local: true,
-      class: "container needs-validation",
-      data: {controller: "visualization-category-switch"}
-    ) do |form| %>
+<%= form_with(model: visualization, local: true, class: "container needs-validation", data: {controller: "visualization-category-switch"}) do |form| %>
+  <%= hidden_field_tag :challenge_id, @challenge.id if @challenge.present? %>
   <div class="row mt-5">
     <div class="col-3">
       <h3 class="text-primary"><%= t("activerecord.attributes.visualization.category") %></h3>
