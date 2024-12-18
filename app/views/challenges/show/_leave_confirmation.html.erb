@@ -12,7 +12,7 @@
       </div>
       <div class="modal-footer">
         <%= render(ButtonComponent.new(text: t("common.close"), color: :secondary, rounded: :pill, data: {bs_dismiss: "modal"})) %>
-        <%= button_to(t("challenge.leave"), leave_challenge_path(locale, challenge), method: :delete, class: 'btn btn-outline-danger rounded-pill') %>
+        <%= button_to(t("challenge.leave"), challenge_user_participation_path(locale, challenge), method: :delete, class: 'btn btn-outline-danger rounded-pill') %>
       </div>
     </div>
   </div>

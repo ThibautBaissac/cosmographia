@@ -18,7 +18,7 @@
         )) %>
         <%= render("challenges/show/leave_confirmation", challenge:) %>
       <% else %>
-        <%= button_to(t("challenge.join"), join_challenge_path(locale, challenge), method: :post, class: 'btn btn-success rounded-pill') %>
+        <%= button_to(t("challenge.join"), challenge_user_participation_path(locale, challenge), method: :post, class: 'btn btn-success rounded-pill') %>
       <% end %>
     </div>
   <% end %>

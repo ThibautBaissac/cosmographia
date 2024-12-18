@@ -1,8 +1,5 @@
 resources :challenges do
-  member do
-    post "join"
-    delete "leave"
-  end
+  resource :user_participation, only: [ :create, :destroy ], module: :challenges, controller: :user_participation
 
   resources :visualizations, only: [ :new, :create ]
 end

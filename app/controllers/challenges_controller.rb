@@ -1,5 +1,5 @@
 class ChallengesController < ApplicationController
-  before_action :set_challenge, only: [ :show, :edit, :update, :destroy, :join, :leave ]
+  before_action :set_challenge, only: [ :show, :edit, :update, :destroy ]
 
   def index
     authorize(Challenge)
@@ -44,23 +44,6 @@ class ChallengesController < ApplicationController
     set_authorize
     @challenge.destroy
     redirect_to(challenges_url, notice: "Challenge was successfully destroyed.")
-  end
-
-  def join
-    # set_authorize # TODO: implement this
-    service = Challenge::JoinService.new(current_user, @challenge)
-    if service.call.persisted?
-      redirect_to(@challenge, notice: "Successfully joined the challenge.")
-    else
-      redirect_to(@challenge, alert: "Unable to join the challenge.")
-    end
-  end
-
-  def leave
-    # set_authorize # TODO: implement this
-    service = Challenge::LeaveService.new(current_user, @challenge)
-    service.call
-    redirect_to(@challenge, notice: "Successfully left the challenge.")
   end
 
   private
