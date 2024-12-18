@@ -5,6 +5,10 @@ fr:
     leave: Quitter le challenge
     submissions: Participations
     submit_visualization: Soumettre une visualisation
+    participant_list:
+      one: 1 participant
+      other: "%{count} participants"
+      zero: Aucun participant pour le moment
     category:
       data: Visualisation de données
       map: Carte

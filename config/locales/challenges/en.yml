@@ -4,7 +4,11 @@ en:
     join: Join the challenge
     leave: Leave the challenge
     submissions: Submissions
-    submit_visualization: Submit a
+    submit_visualization: Submit a visualization
+    participant_list:
+      one: 1 participant
+      other: "%{count} participants"
+      zero: No participant yet
     category:
       data: Data visualization
       map: Map

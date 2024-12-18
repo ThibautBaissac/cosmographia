@@ -1,0 +1,16 @@
+<div class="col-lg-4">
+  <div class="card p-4 border-secondary-subtle rounded-4 mb-4">
+    <h5 class="card-title">
+      <i class="fa-solid fa-users-rectangle"></i>
+      <%= t("challenge.participant_list", count: challenge.users&.count) %>
+    </h5>
+    <div class="card-body overflow-scroll" style="min-height: 100px; max-height: 250px;">
+      <ul class="list-group list-group-flush">
+        <% challenge.users.each do |user| %>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <%= user.fullname %>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+</div>

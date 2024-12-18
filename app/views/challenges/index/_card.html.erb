@@ -13,13 +13,19 @@
           <span class="ms-2"><%= challenge.title %></span>
         </h5>
         <p class="card-text text-muted"><%= truncate(challenge.description, length: 100) %></p>
-        <div class="d-flex flex-column gap-2">
-          <span class="badge text-bg-primary align-self-start">
-            <%= t("activerecord.attributes.challenge.category") %>: <%= t("challenge.category.#{challenge.category.downcase}") %>
-          </span>
-          <span class="badge text-bg-success align-self-start">
-            <%= t("activerecord.attributes.challenge.difficulty") %>: <%= t("challenge.difficulty.#{challenge.difficulty.downcase}") %>
-          </span>
+        <hr>
+        <div class="d-flex justify-content-between gap-2">
+          <div>
+            <span class="badge text-bg-primary">
+              <%= t("challenge.category.#{challenge.category.downcase}") %>
+            </span>
+            <span class="badge text-bg-success">
+              <%= t("challenge.difficulty.#{challenge.difficulty.downcase}") %>
+            </span>
+          </div>
+          <div class="d-flex align-items-center gap-1">
+            <%= challenge.users&.count %><i class="fa-solid fa-users-rectangle"></i>
+          </div>
         </div>
       </div>
     </div>

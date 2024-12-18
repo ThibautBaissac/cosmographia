@@ -1,33 +1,30 @@
-<div class="card p-4 border-secondary-subttle rounded-4 mb-4">
-  <div class="card-body">
-    <p class="card-text text-muted"><%= challenge.description %></p>
+<div class="col-lg-8">
+  <div class="card p-4 border-secondary-subtle rounded-4 mb-4">
+    <div class="card-body">
+      <div class="mb-3 d-flex justify-content-between align-items-center">
+        <div>
+          <span class="badge text-bg-primary">
+            <%= t("challenge.category.#{challenge.category.downcase}") %>
+          </span>
+          <span class="badge text-bg-success">
+            <%= t("challenge.difficulty.#{challenge.difficulty.downcase}") %>
+          </span>
+        </div>
 
-    <div class="mb-3">
-      <span class="badge text-bg-primary">
-        <%= t("activerecord.attributes.challenge.category") %>: <%= t("challenge.category.#{challenge.category.downcase}") %>
-      </span>
-      <span class="badge text-bg-success">
-        <%= t("activerecord.attributes.challenge.difficulty") %>: <%= t("challenge.difficulty.#{challenge.difficulty.downcase}") %>
-      </span>
-    </div>
-
-    <ul class="list-group list-group-flush mb-3">
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <strong><%= t("activerecord.attributes.challenge.start_date") %>:</strong>
-        <span><%= challenge.start_date&.strftime("%B %d, %Y") %></span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <strong><%= t("activerecord.attributes.challenge.end_date") %>:</strong>
-        <span><%= challenge.end_date.strftime("%B %d, %Y") %></span>
-      </li>
-    </ul>
-
-    <% if current_user.challenges.include?(challenge) %>
-      <div class="d-flex gap-2 mb-3">
-        <%= link_to(new_challenge_visualization_path(locale, challenge)) do %>
-          <%= render(ButtonComponent.new(text: t("challenge.submit_visualization"), outline: :true, icon: "fa-solid fa-circle-plus")) %>
-        <% end %>
+        <div>
+          <%= t("common.from_to_date", from: l(challenge.start_date, format: :short), to: l(challenge.end_date, format: :short) ) %>
+        </div>
       </div>
-    <% end %>
+
+      <p class="card-text text-muted"><%= challenge.description %></p>
+
+      <% if current_user.challenges.include?(challenge) %>
+        <div class="d-flex gap-2 mb-3">
+          <%= link_to(new_challenge_visualization_path(locale, challenge)) do %>
+            <%= render(ButtonComponent.new(text: t("challenge.submit_visualization"), outline: :true, icon: "fa-solid fa-circle-plus")) %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
