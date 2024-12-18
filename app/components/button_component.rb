@@ -26,20 +26,20 @@ class ButtonComponent < ViewComponent::Base
     @icon = icon
     @icon_position = fetch_icon_position(icon_position)
     @extra_classes = extra_classes
-    @html_attributes = html_attributes[:html_attributes] || html_attributes
+    @html_attributes = html_attributes
   end
 
   def call
     tag.button(class: button_classes, **html_attributes) do
-    if content.present?
-      content
-    else
-      content_array = []
-      content_array << icon_tag if icon && icon_position == :left
-      content_array << tag.span(text)
-      content_array << icon_tag if icon && icon_position == :right
-      safe_join(content_array, " ")
-    end
+      if content.present?
+        content
+      else
+        content_array = []
+        content_array << icon_tag if icon && icon_position == :left
+        content_array << tag.span(text)
+        content_array << icon_tag if icon && icon_position == :right
+        safe_join(content_array, " ")
+      end
     end
   end
 

@@ -8,7 +8,15 @@
       <% end %>
 
       <% if current_user.challenges.include?(challenge) %>
-        <%= button_to(t("challenge.leave"), leave_challenge_path(locale, challenge), method: :delete, class: 'btn btn-outline-danger rounded-pill btn-sm') %>
+        <%= render(ButtonComponent.new(
+          text: t("challenge.leave"),
+          outline: :true,
+          color: :danger,
+          size: :sm,
+          icon: "fa-solid fa-person-walking-arrow-right",
+          data: {bs_toggle: "modal", bs_target: "#leaveConfirmation"}
+        )) %>
+        <%= render("challenges/show/leave_confirmation", challenge:) %>
       <% else %>
         <%= button_to(t("challenge.join"), join_challenge_path(locale, challenge), method: :post, class: 'btn btn-success rounded-pill') %>
       <% end %>

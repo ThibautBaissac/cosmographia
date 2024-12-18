@@ -3,6 +3,8 @@ en:
   challenge:
     join: Join the challenge
     leave: Leave the challenge
+    leave_confirmation_text_html: Are you sure you want to leave the challenge <b>%{title}</b>?
+    leave_confirmation_title: Leave this challenge
     submissions: Submissions
     submit_existing_visualization: Submit an existing visualization
     submit_new_visualization: Submit a new visualization
