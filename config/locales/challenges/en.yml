@@ -4,7 +4,8 @@ en:
     join: Join the challenge
     leave: Leave the challenge
     submissions: Submissions
-    submit_visualization: Submit a visualization
+    submit_existing_visualization: Submit an existing visualization
+    submit_new_visualization: Submit a new visualization
     participant_list:
       one: 1 participant
       other: "%{count} participants"

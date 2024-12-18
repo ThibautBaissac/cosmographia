@@ -1,0 +1,7 @@
+<% if current_user.challenges.include?(challenge) %>
+  <div class="d-flex gap-2 mb-3">
+    <%= link_to(new_challenge_visualization_path(locale, challenge)) do %>
+      <%= render(ButtonComponent.new(text: t("challenge.submit_new_visualization"), outline: :true, icon: "fa-solid fa-circle-plus")) %>
+    <% end %>
+  </div>
+<% end %>
