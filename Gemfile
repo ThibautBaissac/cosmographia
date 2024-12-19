@@ -42,6 +42,7 @@ end
 group :development do
   gem "bullet", "~> 8.0"
   gem "erb_lint", require: false
+  gem "hotwire-spark"
   gem "letter_opener_web"
   gem "rack-mini-profiler"
   gem "web-console"
