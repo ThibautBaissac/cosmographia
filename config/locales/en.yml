@@ -3,6 +3,7 @@ en:
   common:
     apply_filters: Apply filters
     by: By %{name}
+    close: Close
     confirm_delete: Are you sure you want to delete this?
     created_by: 'Created by: '
     delete: Delete
