@@ -16,7 +16,7 @@
           icon: "fa-solid fa-person-walking-arrow-right",
           data: {bs_toggle: "modal", bs_target: "#leaveConfirmation"}
         )) %>
-        <%= render("challenges/show/leave_confirmation", challenge:) %>
+        <%= render("challenges/show/leave_confirmation_modal", challenge:) %>
       <% else %>
         <%= button_to(t("challenge.join"), challenge_user_participation_path(locale, challenge), method: :post, class: 'btn btn-success rounded-pill') %>
       <% end %>
