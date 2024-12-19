@@ -29,6 +29,7 @@
     </div>
     <%= render("layouts/footer") %>
     <%= render("users/locale/main") %>
+    <%= turbo_frame_tag(:modal) %>
     <%= render("feedbacks/main") if user_signed_in? %>
   </body>
 </html>

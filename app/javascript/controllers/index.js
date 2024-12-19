@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import DialogController from "./dialog_controller"
+application.register("dialog", DialogController)
+
 import ExpandImageController from "./expand_image_controller"
 application.register("expand-image", ExpandImageController)
 
