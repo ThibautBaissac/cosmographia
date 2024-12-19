@@ -1,5 +1,24 @@
 <%= render("shared/turbo_dialog", title: t("challenge.submit_existing_visualization")) do %>
   <div data-action="turbo:submit-end->dialog#submitEnd">
-dfsg
+    <%= form_with(url: challenge_attach_visualization_path(locale, @challenge), class: "my-form") do |form| %>
+      <div class="row row-cols-2 row-cols-md-4 g-4">
+        <% @visualizations.each do |visualization| %>
+          <div class="col">
+            <%= form.radio_button(:visualization_id, visualization.id, id: "visualization_#{visualization.id}", class: "btn-check") %>
+            <%= form.label(:visualization_id, for: "visualization_#{visualization.id}", class: "btn btn-outline-primary w-100 p-0 position-relative") do %>
+              <div class="ratio ratio-1x1">
+                <%= image_tag(visualization.image, class: "object-fit-cover rounded-top", alt: visualization.title) %>
+              </div>
+              <div class="text-center p-2 bg-light rounded-bottom">
+                <strong><%= visualization.title %></strong>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="mt-3">
+        <%= form.submit "Submit", class: "btn btn-primary" %>
+      </div>
+    <% end %>
   </div>
 <% end %>
