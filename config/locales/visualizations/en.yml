@@ -4,6 +4,10 @@ en:
     go_to: View visualization
     title: Visualization
   visualizations:
+    count:
+      one: "%{count} visualization"
+      other: "%{count} visualizations"
+      zero: No visualizations found
     category:
       data: Data visualization
       map: Map

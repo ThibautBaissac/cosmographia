@@ -25,6 +25,10 @@ en:
       user_info_disclaimer_html: Your personal information will <b>never be shared</b>
         with third parties outside the Cosmographia community!
   users:
+    count:
+      one: "%{count} user"
+      other: "%{count} users"
+      zero: No users found
     form:
       bio_placeholder: Tell us about yourself, your projects,...
       bio_section: About me

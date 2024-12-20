@@ -26,6 +26,10 @@ fr:
       user_info_disclaimer_html: Vos informations personnelles ne seront <b>jamais
         partagées</b> avec des tiers extérieurs à la communauté Cosmographia !
   users:
+    count:
+      one: "%{count} utilisateur"
+      other: "%{count} utilisateurs"
+      zero: Aucun utilisateur trouvé
     form:
       bio_placeholder: Parlons un peu de vous, de vos projets...
       bio_section: A propos de moi
