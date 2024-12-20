@@ -1,0 +1,22 @@
+<div class="card h-100 rounded-4">
+  <% if @visualization.image.attached? %>
+    <%= link_to(@visualization) do %>
+      <div class="ratio ratio-1x1 rounded-4">
+        <%= image_tag(@visualization.image, class: "card-img-top disable_img", alt: @visualization.title) %>
+        <div class="image-overlay text-center">
+          <%= @visualization.description %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="ratio ratio-1x1">
+      <%= image_tag("default.png") %>
+    </div>
+  <% end %>
+  <div class="card-body p-3">
+    <%= link_to(@visualization) do %>
+      <h5 class="card-title text-primary"><%= @visualization.title %></h5>
+    <% end %>
+    <h6 class="card-subtitle mb-2 text-muted"><%= t("common.created_by") %><%= @visualization.user.fullname %></h6>
+  </div>
+</div>
