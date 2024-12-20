@@ -1,0 +1,17 @@
+<%= render(ButtonComponent.new(
+  text: t("challenge.leave"),
+  outline: :true,
+  color: :danger,
+  size: :sm,
+  icon: "fa-solid fa-person-walking-arrow-right",
+  data: {bs_toggle: "modal", bs_target: "#leaveConfirmation"}
+)) %>
+
+<%= render(ModalComponent.new(id: "leaveConfirmation", title: challenge.title)) do %>
+  <div class="modal-body">
+    <%= t("challenge.leave_confirmation_text_html", title: challenge.title) %>
+  </div>
+  <div class="modal-footer">
+    <%= button_to(t("challenge.leave"), challenge_user_participation_path(locale, challenge), method: :delete, class: 'btn btn-outline-danger rounded-pill') %>
+  </div>
+<% end %>
