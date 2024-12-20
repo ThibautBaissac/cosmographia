@@ -1,10 +1,19 @@
 <div>
-  <div class="d-flex justify-content-between align-items-center">
-    <h2 class="mb-4 text-secondary"><%= t("home.user_signed_in.last_comments") %></h2>
-    <%= link_to(root_path(locale), data: { turbo_frame: :last_comments }, class: "btn btn-outline-primary rounded-pill") do %>
-      <i class="fa-solid fa-rotate-right"></i>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <span class="h2 text-secondary">
+      <%= t("home.user_signed_in.last_comments") %>
+    </span>
+    <%= link_to(root_path(locale), data: { turbo_frame: :last_comments }) do %>
+      <%= render(ButtonComponent.new(
+        text: t("common.refresh"),
+        size: :sm,
+        rounded: :pill,
+        outline: :true,
+        icon: "fa-solid fa-rotate-right"
+      )) %>
     <% end %>
   </div>
+
   <div class="bg-primary bg-gradient rounded-4 p-3">
     <%= turbo_frame_tag("last_comments") do %>
       <% comments.each do |comment| %>
