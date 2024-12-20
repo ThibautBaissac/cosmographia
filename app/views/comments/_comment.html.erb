@@ -16,7 +16,7 @@
         <% end %>
       </div>
       <span class="text-muted small">
-        <%= time_ago_in_words(comment.updated_at) %>
+        <%= humanized_time_ago(comment.created_at) %>
       </span>
     </div>
     <p class="text-secondary"><%= comment.content %></p>

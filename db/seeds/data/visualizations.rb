@@ -22,10 +22,12 @@ puts("---- Creating visualizations...")
   visualization.save!
 
   (0..rand(0..20)).each do
+    creation_date = Faker::Date.backward(days: 365 * 10)
     comment = visualization.comments.new(
       content: Faker::Lorem.sentence(word_count: 10),
       user_id: User.where(guest: false).pluck(:id).sample,
-      created_at: Faker::Date.backward(days: 365 * 10)
+      created_at: creation_date,
+      updated_at: creation_date
     )
     comment.created_at = Faker::Date.between(from: visualization.created_at, to: Date.today)
     comment.save!
