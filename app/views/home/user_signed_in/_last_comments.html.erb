@@ -1,6 +1,6 @@
 <div>
   <h2 class="mb-4 text-secondary"><%= t("home.user_signed_in.last_comments") %></h2>
-  <div class="bg-primary bg-opacity-75 rounded-4 p-3">
+  <div class="bg-primary bg-gradient rounded-4 p-3">
     <% comments.each do |comment| %>
       <%= render("my/profile/comment", comment:, user: comment.user) %>
     <% end %>

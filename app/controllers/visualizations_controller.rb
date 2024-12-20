@@ -17,7 +17,7 @@ class VisualizationsController < ApplicationController
   def show
     @visualization = Visualization.find(params[:id])
     set_authorize
-    @visualizations = Visualization.order("RANDOM()").includes(:user, :image_attachment).limit(10)
+    @visualizations = Visualization.order("RANDOM()").includes(:user, :image_attachment).limit(6)
     @comments = @visualization.comments.order(created_at: :desc)
     @new_comment = Comment.new
   end
