@@ -16,8 +16,7 @@ fr:
           update:
             failure: Votre profil n'a pas pu être mis à jour
             success: Votre profil a été mis à jour
-      last_comments: Mes derniers commentaires
-      last_visualizations: Mes dernières visualisations
+      last_comments: Mes commentaires
       my_page: Ma page personnelle
       not_in_directory: Rejoindre l'annuaire
       profile_tab: Profil

@@ -11,7 +11,8 @@ class My::Profile::TabsController < ApplicationController
 
   def comments
     @total_comment_count = @user.comments.count
-    @comments = @user.comments.includes(visualization: :image_attachment).last(10)
+    @comments = @user.comments.includes(visualization: :image_attachment)
+    @pagy, @comments = pagy(@comments, limit: 5)
   end
 
   private

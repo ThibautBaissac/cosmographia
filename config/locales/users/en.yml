@@ -15,8 +15,7 @@ en:
           update:
             failure: Your profile could not be updated
             success: Your profile has been updated
-      last_comments: My last comments
-      last_visualizations: My last visualizations
+      last_comments: My comments
       my_page: My personal page
       not_in_directory: Join the directory
       profile_tab: Profile
