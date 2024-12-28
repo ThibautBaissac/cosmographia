@@ -1,18 +1,15 @@
-<div class="container mb-5">
-  <ul class="nav nav-tabs d-flex justify-content-between bg-white rounded-4 border" id="myTab" role="tablist">
-    <!-- Participations Tab -->
-    <li class="nav-item flex-grow-1 text-center" role="presentation">
-      <%= link_to(participations_challenge_path(locale, challenge), class: "nav-link w-100 px-3 d-flex flex-column align-items-center rounded-4 transition #{"active border border-primary" if current_page?(participations_challenge_path(locale, challenge)) || current_page?(participations_challenge_path(locale, challenge))}", data: {turbo_frame: "challenge_tab_content", turbo_action: :advance}) do %>
-        <i class="fa-solid fa-images fa-2x <%= current_page?(participations_challenge_path(locale, challenge)) || current_page?(participations_challenge_path(locale, challenge)) ?  "text-primary" : "text-secondary" %>"></i>
-        <div class="fw-bold text-<%= current_page?(participations_challenge_path(locale, challenge)) || current_page?(participations_challenge_path(locale, challenge)) ?  "primary" : "secondary" %>"><%= t("challenge.tabs.participations") %></div>
-      <% end %>
-    </li>
-    <!-- Discussion Tab -->
-    <li class="nav-item flex-grow-1 text-center" role="presentation">
-      <%= link_to(discussion_challenge_path(locale, challenge), class: "nav-link w-100 px-3 d-flex flex-column align-items-center rounded-4 transition #{"active border border-primary" if current_page?(discussion_challenge_path(locale, challenge))}", data: {turbo_frame: "challenge_tab_content", turbo_action: :advance}) do %>
-        <i class="fa-regular fa-comments fa-2x text-<%= current_page?(discussion_challenge_path(locale, challenge)) ?  "primary" : "secondary" %>"></i>
-        <div class="fw-bold text-<%= current_page?(discussion_challenge_path(locale, challenge)) ?  "primary" : "secondary" %>"><%= t("challenge.tabs.discussion") %></div>
-      <% end %>
-    </li>
-  </ul>
-</div>
+<%= render(TabsNavComponent.new(
+  tabs: [
+    TabsNavComponent::Tab.new(
+      path: participations_challenge_path(locale, challenge),
+      icon_class: "fa-solid fa-images",
+      translation_key: "challenge.tabs.participations"
+    ),
+    TabsNavComponent::Tab.new(
+      path: discussion_challenge_path(locale, challenge),
+      icon_class: "fa-regular fa-comments",
+      translation_key: "challenge.tabs.discussion"
+    )
+  ],
+  turbo_frame: "challenge_tab_content"
+)) %>

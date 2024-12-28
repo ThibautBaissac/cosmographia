@@ -1,25 +1,20 @@
-<div class="container mb-5">
-  <ul class="nav nav-tabs d-flex justify-content-between bg-white rounded-4 border" id="myTab" role="tablist">
-    <!-- Profile Tab -->
-    <li class="nav-item flex-grow-1 text-center" role="presentation">
-      <%= link_to(my_profile_info_path(locale), class: "nav-link w-100 px-3 d-flex flex-column align-items-center rounded-4 transition #{"active border border-primary" if current_page?(my_profile_info_path(locale))}", data: {turbo_frame: "profile_tab_content", turbo_action: :advance}) do %>
-        <i class="fa-solid fa-address-card fa-2x <%= current_page?(my_profile_info_path(locale)) ?  "text-primary" : "text-secondary" %>"></i>
-        <div class="fw-bold text-<%= current_page?(my_profile_info_path(locale)) ?  "primary" : "secondary" %>"><%= t("my.profile.profile_tab") %></div>
-      <% end %>
-    </li>
-    <!-- Charts Tab -->
-    <li class="nav-item flex-grow-1 text-center" role="presentation">
-      <%= link_to(my_profile_charts_path(locale), class: "nav-link w-100 px-3 d-flex flex-column align-items-center rounded-4 transition #{"active border border-primary" if current_page?(my_profile_charts_path(locale))}", data: {turbo_frame: "profile_tab_content", turbo_action: :advance}) do %>
-        <i class="fa-solid fa-chart-pie fa-2x text-<%= current_page?(my_profile_charts_path(locale)) ?  "primary" : "secondary" %>"></i>
-        <div class="fw-bold text-<%= current_page?(my_profile_charts_path(locale)) ?  "primary" : "secondary" %>"><%= t("my.profile.charts_tab") %></div>
-      <% end %>
-    </li>
-    <!-- Comments Tab -->
-    <li class="nav-item flex-grow-1 text-center rounded-end-4" role="presentation">
-      <%= link_to(my_profile_comments_path(locale), class: "nav-link w-100 px-3 d-flex flex-column align-items-center rounded-4 transition #{"active border border-primary" if current_page?(my_profile_comments_path(locale))}", data: {turbo_frame: "profile_tab_content", turbo_action: :advance}) do %>
-        <i class="fa-solid fa-comment fa-2x text-<%= current_page?(my_profile_comments_path(locale)) ?  "primary" : "secondary" %>"></i>
-        <div class="fw-bold text-<%= current_page?(my_profile_comments_path(locale)) ?  "primary" : "secondary" %>"><%= t("my.profile.comments_tab") %></div>
-      <% end %>
-    </li>
-  </ul>
-</div>
+<%= render(TabsNavComponent.new(
+  tabs: [
+    TabsNavComponent::Tab.new(
+      path: my_profile_info_path(locale),
+      icon_class: "fa-solid fa-address-card",
+      translation_key: "my.profile.profile_tab"
+    ),
+    TabsNavComponent::Tab.new(
+      path: my_profile_charts_path(locale),
+      icon_class: "fa-solid fa-chart-pie",
+      translation_key: "my.profile.charts_tab"
+    ),
+    TabsNavComponent::Tab.new(
+      path: my_profile_comments_path(locale),
+      icon_class: "fa-solid fa-comment",
+      translation_key: "my.profile.comments_tab"
+    )
+  ],
+  turbo_frame: "profile_tab_content"
+)) %>
