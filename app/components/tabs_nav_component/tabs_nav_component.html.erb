@@ -1,0 +1,12 @@
+<div class="container mb-5">
+  <ul class="nav nav-tabs d-flex justify-content-between bg-white rounded-4 border" role="tablist">
+    <% @tabs.each do |tab| %>
+      <li class="nav-item flex-grow-1 text-center" role="presentation">
+        <%= link_to(tab.path, class: "nav-link w-100 px-3 d-flex flex-column align-items-center rounded-4 transition #{'active border border-primary' if active?(tab.path)}", data: { turbo_frame: @turbo_frame, turbo_action: :advance }) do %>
+          <i class="<%= tab.icon_class %> fa-2x <%= active?(tab.path) ?  "text-primary" : "text-secondary" %>"></i>
+          <div class="fw-bold text-<%= active?(tab.path) ? 'primary' : 'secondary' %>"><%= t(tab.translation_key) %></div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
