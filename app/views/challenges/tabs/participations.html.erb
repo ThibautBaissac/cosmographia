@@ -1,0 +1,9 @@
+<%= render("challenges/show/header", challenge: @challenge) %>
+
+<div class="container mt-5">
+  <%= render("challenges/show/sub_header", challenge: @challenge) %>
+
+  <%= turbo_frame_tag("challenge_tab_content") do %>
+      <%= render("challenges/tabs/participations", challenge: @challenge, visualizations: @visualizations) %>
+  <% end %>
+</div>

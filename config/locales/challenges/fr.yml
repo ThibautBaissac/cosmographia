@@ -22,6 +22,9 @@ fr:
       easy: Facile
       hard: Difficile
       intermediate: Intermédiaire
+    tabs:
+      discussion: Discussion
+      participations: Participations
   challenges:
     form:
       create_title: Créer un nouveau challenge

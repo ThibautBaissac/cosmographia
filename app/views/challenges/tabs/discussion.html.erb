@@ -1,0 +1,11 @@
+<%= render("challenges/show/header", challenge: @challenge) %>
+
+<div class="container mt-5">
+  <%= render("challenges/show/sub_header", challenge: @challenge) %>
+
+  <%= turbo_frame_tag("challenge_tab_content") do %>
+    <%= render("challenges/tabs/tabs_nav", challenge: @challenge) %>
+
+    <h3 class="border-bottom pb-2">DICUSSION</h3>
+  <% end %>
+</div>

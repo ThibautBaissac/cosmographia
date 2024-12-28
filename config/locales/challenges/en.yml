@@ -22,6 +22,9 @@ en:
       easy: Easy
       hard: Hard
       intermediate: Intermediate
+    tabs:
+      discussion: Discussion
+      participations: Participations
   challenges:
     form:
       create_title: Create a new challenge

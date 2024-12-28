@@ -7,8 +7,10 @@ class ChallengePolicy < ApplicationPolicy
     user&.superadmin?
   end
 
-  alias_method(:show?, :index?)
   alias_method(:edit?, :new?)
   alias_method(:update?, :new?)
   alias_method(:detroy?, :new?)
+
+  alias_method(:participations?, :index?)
+  alias_method(:discussion?, :index?)
 end

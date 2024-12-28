@@ -1,15 +1,10 @@
 class ChallengesController < ApplicationController
-  before_action :set_challenge, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_challenge, only: [ :edit, :update, :destroy ]
 
   def index
     authorize(Challenge)
     challenges = Challenge.all.order(start_date: :desc)
     @pagy, @challenges = pagy(challenges)
-  end
-
-  def show
-    @visualizations = @challenge.visualizations.includes(:user, :image_attachment)
-    set_authorize
   end
 
   def new

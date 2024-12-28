@@ -23,7 +23,7 @@
     <% end %>
     <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.source") %>:</strong> <%= visualization.sources %></li>
     <% if visualization.challenge.present? %>
-      <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.challenge") %>:</strong> <%= link_to(visualization.challenge.title, challenge_path(locale, visualization.challenge)) %></li>
+      <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.challenge") %>:</strong> <%= link_to(visualization.challenge.title, participations_challenge_path(locale, visualization.challenge)) %></li>
     <% end %>
   </ul>
   <div class="card-body">
