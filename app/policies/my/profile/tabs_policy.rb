@@ -1,8 +1,8 @@
 class My::Profile::TabsPolicy < ApplicationPolicy
-  def user_info?
+  def info?
     user.present? && user == record
   end
 
-  alias_method(:charts?, :user_info?)
-  alias_method(:comments?, :user_info?)
+  alias_method(:charts?, :info?)
+  alias_method(:comments?, :info?)
 end

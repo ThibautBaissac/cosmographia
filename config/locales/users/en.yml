@@ -21,7 +21,7 @@ en:
       profile_tab: Profile
       title: My profile
       total_comment_count: "(%{count} in total)"
-      user_info_disclaimer_html: Your personal information will <b>never be shared</b>
+      info_disclaimer_html: Your personal information will <b>never be shared</b>
         with third parties outside the Cosmographia community!
   users:
     count:

@@ -2,7 +2,7 @@ class My::Profile::TabsController < ApplicationController
   before_action :set_user
   before_action :set_authorize
 
-  def user_info
+  def info
   end
 
   def charts

@@ -10,7 +10,7 @@ class My::ProfileController < ApplicationController
     update_service = User::UpdateUserProfileService.new(@user, user_params)
 
     if update_service.call
-      redirect_to(my_profile_user_info_path(locale), notice: t("my.profile.flash.actions.update.success"))
+      redirect_to(my_profile_info_path(locale), notice: t("my.profile.flash.actions.update.success"))
     else
       flash[:alert] = t("my.profile.flash.actions.update.failure")
       render(:edit, status: :unprocessable_entity)
