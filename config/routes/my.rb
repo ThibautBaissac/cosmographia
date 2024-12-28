@@ -1,5 +1,5 @@
 namespace :my do
-  resource :profile, controller: :profile, only: %i[show edit update]
+  resource :profile, controller: :profile, only: %i[edit update]
   namespace :profile do
     get "user_info", to: "tabs#user_info"
     get "charts", to: "tabs#charts"
