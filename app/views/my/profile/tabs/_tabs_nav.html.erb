@@ -2,23 +2,23 @@
   <ul class="nav nav-tabs d-flex justify-content-between bg-white rounded-4 border" id="myTab" role="tablist">
     <!-- Profile Tab -->
     <li class="nav-item flex-grow-1 text-center" role="presentation">
-      <%= link_to(my_profile_tabs_user_info_path, class: "nav-link w-100 px-3 d-flex flex-column align-items-center rounded-4 transition #{"active border border-primary" if current_page?(my_profile_tabs_user_info_path) || current_page?(my_profile_path)}", data: {turbo_frame: "profile_tab_content", turbo_action: :advance}) do %>
-        <i class="fa-solid fa-address-card fa-2x <%= current_page?(my_profile_tabs_user_info_path) || current_page?(my_profile_path) ?  "text-primary" : "text-secondary" %>"></i>
-        <div class="fw-bold text-<%= current_page?(my_profile_tabs_user_info_path) || current_page?(my_profile_path) ?  "primary" : "secondary" %>"><%= t("my.profile.profile_tab") %></div>
+      <%= link_to(my_profile_user_info_path, class: "nav-link w-100 px-3 d-flex flex-column align-items-center rounded-4 transition #{"active border border-primary" if current_page?(my_profile_user_info_path) || current_page?(my_profile_path)}", data: {turbo_frame: "profile_tab_content", turbo_action: :advance}) do %>
+        <i class="fa-solid fa-address-card fa-2x <%= current_page?(my_profile_user_info_path) || current_page?(my_profile_path) ?  "text-primary" : "text-secondary" %>"></i>
+        <div class="fw-bold text-<%= current_page?(my_profile_user_info_path) || current_page?(my_profile_path) ?  "primary" : "secondary" %>"><%= t("my.profile.profile_tab") %></div>
       <% end %>
     </li>
     <!-- Charts Tab -->
     <li class="nav-item flex-grow-1 text-center" role="presentation">
-      <%= link_to(my_profile_tabs_charts_path, class: "nav-link w-100 px-3 d-flex flex-column align-items-center rounded-4 transition #{"active border border-primary" if current_page?(my_profile_tabs_charts_path)}", data: {turbo_frame: "profile_tab_content", turbo_action: :advance}) do %>
-        <i class="fa-solid fa-chart-pie fa-2x text-<%= current_page?(my_profile_tabs_charts_path) ?  "primary" : "secondary" %>"></i>
-        <div class="fw-bold text-<%= current_page?(my_profile_tabs_charts_path) ?  "primary" : "secondary" %>"><%= t("my.profile.charts_tab") %></div>
+      <%= link_to(my_profile_charts_path, class: "nav-link w-100 px-3 d-flex flex-column align-items-center rounded-4 transition #{"active border border-primary" if current_page?(my_profile_charts_path)}", data: {turbo_frame: "profile_tab_content", turbo_action: :advance}) do %>
+        <i class="fa-solid fa-chart-pie fa-2x text-<%= current_page?(my_profile_charts_path) ?  "primary" : "secondary" %>"></i>
+        <div class="fw-bold text-<%= current_page?(my_profile_charts_path) ?  "primary" : "secondary" %>"><%= t("my.profile.charts_tab") %></div>
       <% end %>
     </li>
     <!-- Comments Tab -->
     <li class="nav-item flex-grow-1 text-center rounded-end-4" role="presentation">
-      <%= link_to(my_profile_tabs_comments_path, class: "nav-link w-100 px-3 d-flex flex-column align-items-center rounded-4 transition #{"active border border-primary" if current_page?(my_profile_tabs_comments_path)}", data: {turbo_frame: "profile_tab_content", turbo_action: :advance}) do %>
-        <i class="fa-solid fa-comment fa-2x text-<%= current_page?(my_profile_tabs_comments_path) ?  "primary" : "secondary" %>"></i>
-        <div class="fw-bold text-<%= current_page?(my_profile_tabs_comments_path) ?  "primary" : "secondary" %>"><%= t("my.profile.comments_tab") %></div>
+      <%= link_to(my_profile_comments_path, class: "nav-link w-100 px-3 d-flex flex-column align-items-center rounded-4 transition #{"active border border-primary" if current_page?(my_profile_comments_path)}", data: {turbo_frame: "profile_tab_content", turbo_action: :advance}) do %>
+        <i class="fa-solid fa-comment fa-2x text-<%= current_page?(my_profile_comments_path) ?  "primary" : "secondary" %>"></i>
+        <div class="fw-bold text-<%= current_page?(my_profile_comments_path) ?  "primary" : "secondary" %>"><%= t("my.profile.comments_tab") %></div>
       <% end %>
     </li>
   </ul>

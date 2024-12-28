@@ -1,8 +1,8 @@
 namespace :my do
   resource :profile, controller: :profile, only: %i[show edit update]
   namespace :profile do
-    get "tabs/user_info", to: "tabs#user_info"
-    get "tabs/charts", to: "tabs#charts"
-    get "tabs/comments", to: "tabs#comments"
+    get "user_info", to: "tabs#user_info"
+    get "charts", to: "tabs#charts"
+    get "comments", to: "tabs#comments"
   end
 end
