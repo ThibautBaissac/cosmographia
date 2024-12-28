@@ -1,6 +1,6 @@
 class Challenges::UserParticipationController < ApplicationController
   before_action :set_challenge
-  # before_action :set_authorize # TODO: implement this
+  before_action :set_authorize
 
   def create
     service = Challenge::JoinService.new(current_user, @challenge)
@@ -24,6 +24,6 @@ class Challenges::UserParticipationController < ApplicationController
   end
 
   def set_authorize
-    authorize(@challenge)
+    authorize(@challenge, policy_class: Challenges::UserParticipationPolicy)
   end
 end

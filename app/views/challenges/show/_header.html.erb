@@ -7,10 +7,11 @@
         <% end %>
       <% end %>
 
-      <% if current_user.challenges.include?(challenge) %>
-        <%= render("challenges/show/leave", challenge:) %>
-      <% else %>
+      <% if Challenges::UserParticipationPolicy.new(current_user, challenge).create? %>
         <%= button_to(t("challenge.join"), challenge_user_participation_path(locale, challenge), method: :post, class: 'btn btn-success rounded-pill') %>
+      <% end %>
+      <% if Challenges::UserParticipationPolicy.new(current_user, challenge).destroy? %>
+        <%= render("challenges/show/leave", challenge:) %>
       <% end %>
     </div>
   <% end %>
