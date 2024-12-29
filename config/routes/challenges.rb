@@ -6,4 +6,5 @@ resources :challenges, except: [ :show ] do
     get 'participations', to: 'challenges/tabs#participations'
     get 'discussion', to: 'challenges/tabs#discussion'
   end
+  resources :discussions, only: [ :create, :edit, :update, :destroy ], module: :challenges
 end
