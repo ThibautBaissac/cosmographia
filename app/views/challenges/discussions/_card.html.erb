@@ -5,6 +5,9 @@
         <span class="fw-bold text-primary me-2">
           <%= t("common.by", name: discussion.user.fullname) %>
         </span>
+        <span class="small text-secondary me-2">
+          (@<%= discussion.user.slug %>)
+        </span>
         <% if policy(discussion).edit? %>
           <div class="d-flex gap-2">
             <%= link_to(edit_challenge_discussion_path(locale, discussion.challenge, discussion), class: "btn btn-outline-secondary btn-sm rounded-4") do %>
