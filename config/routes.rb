@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     draw :community
     draw :feedbacks
     draw :visualizations
+    draw :mentions
     draw :my
     draw :static_pages
     draw :users
