@@ -4,10 +4,10 @@
   color: :danger,
   size: :sm,
   icon: "fa-solid fa-trash-can",
-  data: {bs_toggle: "modal", bs_target: "#destroyDiscussion"}
+  data: {bs_toggle: "modal", bs_target: "#destroyDiscussion_#{discussion.id}"}
 )) %>
 
-<%= render(ModalComponent.new(id: "destroyDiscussion", title: t("challenge.discussion.destroy"))) do %>
+<%= render(ModalComponent.new(id: "destroyDiscussion_#{discussion.id}", title: t("challenge.discussion.destroy"))) do %>
   <div class="modal-body">
     <%= t("challenge.discussion.destroy_confirmation") %>
   </div>

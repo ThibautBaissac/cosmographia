@@ -4,10 +4,10 @@
   color: :danger,
   size: :sm,
   icon: "fa-solid fa-trash-can",
-  data: {bs_toggle: "modal", bs_target: "#destroyComment"}
+  data: {bs_toggle: "modal", bs_target: "#destroyComment_#{comment.id}"}
 )) %>
 
-<%= render(ModalComponent.new(id: "destroyComment", title: t("comment.destroy"))) do %>
+<%= render(ModalComponent.new(id: "destroyComment_#{comment.id}", title: t("comment.destroy"))) do %>
   <div class="modal-body">
     <%= t("comment.destroy_confirmation") %>
   </div>
