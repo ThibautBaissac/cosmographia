@@ -21,6 +21,9 @@ fr:
     tabs:
       discussion: Discussion
       participations: Participations
+    discussion:
+      form:
+        submit: Soumettre le message
   challenges:
     form:
       create_title: Créer un nouveau challenge

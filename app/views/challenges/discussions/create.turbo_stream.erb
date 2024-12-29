@@ -1,0 +1,11 @@
+<%= turbo_stream.replace("challenge_discussion_form") do %>
+  <%= render(partial: "challenges/discussions/form", locals: {discussion: @challenge.discussions.new}) %>
+<% end %>
+
+<%= turbo_stream.prepend("challenge_#{@challenge.id}") do %>
+  <%= render(partial: "challenges/discussions/card", locals: {discussion: @discussion}) %>
+<% end %>
+
+<%= turbo_stream.append("toast-container") do %>
+  <%= render(partial: "shared/toast", locals: {message: @toast_message}) %>
+<% end %>

@@ -5,6 +5,15 @@
 
   <%= turbo_frame_tag("challenge_tab_content") do %>
     <%= render("challenges/tabs/tabs_nav", challenge: @challenge) %>
-    <%= render(partial: "challenges/discussions/card", collection: @discussions, as: :discussion) %>
+
+    <% if policy(@new_discussion).create? %>
+      <%= turbo_frame_tag("challenge_discussion_form") do %>
+        <%= render("challenges/discussions/form", discussion: @new_discussion) %>
+      <% end %>
+    <% end %>
+
+    <%= turbo_frame_tag("challenge_#{@challenge.id}") do %>
+      <%= render(partial: "challenges/discussions/card", collection: @discussions, as: :discussion) %>
+    <% end %>
   <% end %>
 </div>

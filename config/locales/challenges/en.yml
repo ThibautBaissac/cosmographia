@@ -21,6 +21,9 @@ en:
     tabs:
       discussion: Discussion
       participations: Participations
+    discussion:
+      form:
+        submit: Post the message
   challenges:
     form:
       create_title: Create a new challenge

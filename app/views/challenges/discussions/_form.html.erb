@@ -1,0 +1,7 @@
+<%= turbo_frame_tag("challenge_discussion_form") do %>
+  <% url = discussion.persisted? ? challenge_discussion_path(discussion.challenge, discussion) : challenge_discussions_path(discussion.challenge) %>
+  <%= form_with(model: discussion, url: , class: "mb-4") do |form| %>
+    <%= form.text_area(:content, class: "form-control d-block w-100 mb-2 rounded-4 text-dark", rows: 3, required: true) %>
+    <%= form.submit(t("challenge.discussion.form.submit"), class: "btn btn-primary border border-light-subttle rounded-4") %>
+  <% end %>
+<% end %>
