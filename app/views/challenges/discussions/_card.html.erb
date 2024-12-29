@@ -6,7 +6,7 @@
           <%= t("common.by", name: discussion.user.fullname) %>
         </span>
         <span class="small text-secondary me-2">
-          (@<%= discussion.user.slug %>)
+          (@<%= render(ClipboardComponent.new(text: discussion.user.slug)) %>)
         </span>
         <% if policy(discussion).edit? %>
           <div class="d-flex gap-2">
