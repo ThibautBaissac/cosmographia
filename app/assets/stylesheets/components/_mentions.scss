@@ -1,0 +1,18 @@
+.mention-dropdown {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.mention-dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.mention-dropdown-item.highlighted,
+.mention-dropdown-item:hover {
+  background-color: #f0f0f0;
+}

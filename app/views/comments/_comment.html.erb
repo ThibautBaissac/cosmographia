@@ -5,6 +5,9 @@
         <span class="fw-bold text-primary me-2">
           <%= t("common.by", name: comment.user.fullname) %>
         </span>
+        <span class="small text-secondary me-2">
+          (@<%= comment.user.slug %>)
+        </span>
         <% if policy(comment).edit? %>
           <div class="d-flex gap-2">
             <%= link_to(edit_visualization_comment_path(locale, comment.visualization, comment), class: "btn btn-outline-secondary btn-sm rounded-4") do %>
@@ -19,6 +22,6 @@
         <%= humanized_time_ago(comment.created_at) %>
       </span>
     </div>
-    <p class="text-secondary"><%= comment.content %></p>
+    <%= ContentPresenter.new(comment.content, current_user).with_mentions %>
   </div>
 <% end %>
