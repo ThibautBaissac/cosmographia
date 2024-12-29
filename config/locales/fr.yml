@@ -33,6 +33,9 @@ fr:
       comment:
         create: Poster votre commentaire
         update: Mettre à jour votre commentaire
+      challenge_discussion:
+        create: Poster votre message
+        update: Mettre à jour votre message
   locale:
     en: English
     fr: Français
