@@ -18,6 +18,17 @@ puts("---- Creating challenges...")
     )
     user.visualizations.sample.update!(challenge:) if user.visualizations.present?
   end
+
+  (0..rand(0..10)).each do
+    creation_date = Faker::Date.between(from: challenge.start_date, to: Date.today)
+    challenge.discussions.create!(
+      user_id: challenge.users.sample.id,
+      content: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4),
+      created_at: creation_date,
+      updated_at: creation_date
+    )
+  end
+
   puts("--#{i + 1}/#{@nb_challenges} challenge created!")
 end
 puts("----#{@nb_challenges} challenges created!")
