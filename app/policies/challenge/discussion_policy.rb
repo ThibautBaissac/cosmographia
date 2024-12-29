@@ -4,6 +4,9 @@ class Challenge::DiscussionPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
+    record.user == user || user.superadmin?
   end
+
+  alias_method(:update?, :edit?)
+  alias_method(:destroy, :edit?)
 end

@@ -24,6 +24,17 @@ en:
     discussion:
       form:
         submit: Post the message
+      flash:
+        actions:
+          create:
+            failure: Message creation failed
+            success: Your message was created successfully
+          destroy:
+            failure: Message deletion failed
+            success: Your message was deleted successfully
+          update:
+            failure: Message update failed
+            success: Your message was updated successfully
   challenges:
     form:
       create_title: Create a new challenge

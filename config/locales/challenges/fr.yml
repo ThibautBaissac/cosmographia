@@ -24,6 +24,17 @@ fr:
     discussion:
       form:
         submit: Soumettre le message
+      flash:
+        actions:
+          create:
+            failure: Échec de la création de votre message
+            success: Votre message a été créé avec succès
+          destroy:
+            failure: Échec de la suppression de votre message
+            success: Votre message a été supprimé avec succès
+          update:
+            failure: Échec de la mise à jour de votre message
+            success: Votre message a été mis à jour avec succès
   challenges:
     form:
       create_title: Créer un nouveau challenge
