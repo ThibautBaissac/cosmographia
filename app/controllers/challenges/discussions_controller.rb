@@ -1,6 +1,6 @@
 class Challenges::DiscussionsController < ApplicationController
   before_action :set_challenge
-  before_action :set_discussion, only: [:edit, :update]
+  before_action :set_discussion, only: [:edit, :update, :destroy]
 
   def create
     @discussion = @challenge.discussions.new(discussion_params)
@@ -37,6 +37,12 @@ class Challenges::DiscussionsController < ApplicationController
         format.html { redirect_to(discussion_challenge_path(@challenge)) }
       end
     end
+  end
+
+  def destroy
+    set_authorize
+    @toast_message = t("challenge.discussion.flash.actions.destroy.success")
+    @discussion.destroy
   end
 
   private

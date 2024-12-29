@@ -1,0 +1,21 @@
+<%= render(ButtonComponent.new(
+  text: t("common.delete"),
+  outline: :true,
+  color: :danger,
+  size: :sm,
+  icon: "fa-solid fa-trash-can",
+  data: {bs_toggle: "modal", bs_target: "#destroyDiscussion"}
+)) %>
+
+<%= render(ModalComponent.new(id: "destroyDiscussion", title: t("challenge.discussion.destroy"))) do %>
+  <div class="modal-body">
+    <%= t("challenge.discussion.destroy_confirmation") %>
+  </div>
+  <div class="modal-footer">
+    <%= button_to(t("common.delete"),
+                  challenge_discussion_path(locale, discussion.challenge, discussion),
+                  method: :delete,
+                  class: "btn btn-outline-danger btn-sm rounded-4",
+                  data: {bs_dismiss: "modal"}) %>
+  </div>
+<% end %>

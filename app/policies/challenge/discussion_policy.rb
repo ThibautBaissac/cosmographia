@@ -8,5 +8,5 @@ class Challenge::DiscussionPolicy < ApplicationPolicy
   end
 
   alias_method(:update?, :edit?)
-  alias_method(:destroy, :edit?)
+  alias_method(:destroy?, :edit?)
 end

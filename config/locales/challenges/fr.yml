@@ -22,6 +22,8 @@ fr:
       discussion: Discussion
       participations: Participations
     discussion:
+      destroy: Supprimer
+      destroy_confirmation: Êtes-vous sûr de vouloir supprimer ce message ?
       form:
         submit: Soumettre le message
       flash:
