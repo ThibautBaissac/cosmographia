@@ -36,4 +36,5 @@ en:
       first_name_placeholder: Enter your first name
       general_info_section: General information
       last_name_placeholder: Enter your last name
+      missing_softwares: Missing softwares?
       option_directory: Join the directory

@@ -68,7 +68,8 @@
 
   <div class="row mt-5">
     <div class="col-3">
-      <h3 class="text-primary"><%= t("activerecord.attributes.user.social_links") %></h3>
+      <h3 class="text-primary"><%= t("activerecord.models.software", count: 2) %></h3>
+      <%= link_to(t("users.form.missing_softwares"), "#offcanvaFeedback", class: "link-secondary small", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvaFeedback"}) %>
     </div>
     <div class="col-9">
       <%= render("my/profile/form/softwares", form:) %>
