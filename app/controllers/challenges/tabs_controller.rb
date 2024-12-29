@@ -7,6 +7,7 @@ class Challenges::TabsController < ApplicationController
   end
 
   def discussion
+    @discussions = @challenge.discussions.order(created_at: :asc).includes(:user)
   end
 
   private

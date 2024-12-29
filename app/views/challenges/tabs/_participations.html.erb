@@ -2,7 +2,6 @@
 
 <div class="container mt-5">
   <%= turbo_frame_tag("challenge_tab_content") do %>
-    <h3 class="border-bottom pb-2"><%= t("challenge.submissions", count: visualizations.count) %></h3>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
       <% visualizations.each do |visualization| %>
         <div class="col">

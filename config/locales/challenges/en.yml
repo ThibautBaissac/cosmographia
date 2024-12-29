@@ -5,10 +5,6 @@ en:
     leave: Leave the challenge
     leave_confirmation_text_html: Are you sure you want to leave the challenge <b>%{title}</b>?
     leave_confirmation_title: Leave this challenge
-    submissions:
-      one: 1 submission
-      other: "%{count} submissions"
-      zero: No submission yet
     submit_existing_visualization: Submit an existing visualization
     submit_new_visualization: Submit a new visualization
     participant_list:

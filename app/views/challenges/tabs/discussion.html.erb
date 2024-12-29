@@ -5,7 +5,6 @@
 
   <%= turbo_frame_tag("challenge_tab_content") do %>
     <%= render("challenges/tabs/tabs_nav", challenge: @challenge) %>
-
-    <h3 class="border-bottom pb-2">DICUSSION</h3>
+    <%= render(partial: "challenges/discussions/card", collection: @discussions, as: :discussion) %>
   <% end %>
 </div>

@@ -1,0 +1,24 @@
+<%= turbo_frame_tag(dom_id(discussion)) do %>
+  <div class="bg-light border border-secondary-subtle rounded-4 p-4 my-3 shadow-sm">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <div class="d-flex align-items-center">
+        <span class="fw-bold text-primary me-2">
+          <%= t("common.by", name: discussion.user.fullname) %>
+        </span>
+        <% if policy(discussion).edit? %>
+          <div class="d-flex gap-2">
+            <%= link_to(edit_challenge_discussion_path(locale, discussion.challenge, discussion), class: "btn btn-outline-secondary btn-sm rounded-4") do %>
+              <i class="fa-solid fa-pencil"></i>
+              <%= t("common.edit") %>
+            <% end %>
+            <%= render("challenges/discussions/destroy", discussion:) %>
+          </div>
+        <% end %>
+      </div>
+      <span class="text-muted small">
+        <%= humanized_time_ago(discussion.created_at) %>
+      </span>
+    </div>
+    <p class="text-secondary"><%= discussion.content %></p>
+  </div>
+<% end %>

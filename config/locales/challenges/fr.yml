@@ -5,10 +5,6 @@ fr:
     leave: Quitter le challenge
     leave_confirmation_text_html: Êtes-vous sûr de vouloir quitter le challenge <b>%{title}</b> ?
     leave_confirmation_title: Quitter ce challenge
-    submissions:
-      one: 1 participation
-      other: "%{count} participations"
-      zero: Aucune participation pour le moment
     submit_existing_visualization: Soumettre une visualisation existante
     submit_new_visualization: Soumettre une nouvelle visualisation
     participant_list:
