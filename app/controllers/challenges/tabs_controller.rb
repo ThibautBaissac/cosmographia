@@ -8,7 +8,7 @@ class Challenges::TabsController < ApplicationController
 
   def discussion
     @new_discussion = @challenge.discussions.new
-    @discussions = @challenge.discussions.order(created_at: :asc).includes(:user)
+    @discussions = @challenge.discussions.order(created_at: :desc).includes(:user)
   end
 
   private
