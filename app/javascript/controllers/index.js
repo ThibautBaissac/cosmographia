@@ -10,6 +10,9 @@ application.register("dialog", DialogController)
 import ExpandImageController from "./expand_image_controller"
 application.register("expand-image", ExpandImageController)
 
+import MentionController from "./mention_controller"
+application.register("mention", MentionController)
+
 import PwaInstallController from "./pwa_install_controller"
 application.register("pwa-install", PwaInstallController)
 

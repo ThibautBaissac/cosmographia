@@ -1,7 +1,19 @@
 <%= turbo_frame_tag("visualization_comment_form") do %>
-  <%= form_with(model: [ visualization, comment ], class: "mb-4") do |form| %>
-    <%= form.label(t("comments.write_comment"), class: "fs-5 text-light") %>
-    <%= form.text_area(:content, class: "form-control d-block w-100 mb-2 rounded-4 text-dark", rows: 3, required: true) %>
-    <%= form.submit(class: "btn btn-primary border border-light-subttle rounded-4") %>
+  <%= form_with(model: [visualization, comment], class: "mb-4") do |form| %>
+    <div data-controller="mention"
+        data-mention-url-value="<%= mentions_path(locale) %>">
+      <%= form.label(t("comments.write_comment"), class: "fs-5 text-light") %>
+      <%= form.text_area :content,
+            class: "form-control d-block w-100 mb-2 rounded-4 text-dark",
+            rows: 3,
+            required: true,
+            data: { action: "input->mention#onInput keydown->mention#onKeyDown", mention_target: "textarea" } %>
+
+      <!-- Dropdown target for suggestions -->
+      <div data-mention-target="dropdown" class="mention-dropdown d-none"></div>
+      <div data-mention-target="loading" class="d-none text-light">Loading...</div>
+    </div>
+
+    <%= form.submit(class: "btn btn-primary border border-light-subtle rounded-4") %>
   <% end %>
 <% end %>
