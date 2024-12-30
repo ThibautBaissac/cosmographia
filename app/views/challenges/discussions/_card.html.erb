@@ -22,6 +22,6 @@
         <%= humanized_time_ago(discussion.created_at) %>
       </span>
     </div>
-    <%= ContentPresenter.new(discussion.content, current_user).with_mentions %>
+    <%= simple_format(ContentPresenter.new(discussion.content, current_user).with_mentions) %>
   </div>
 <% end %>
