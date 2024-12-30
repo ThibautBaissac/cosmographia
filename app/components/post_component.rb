@@ -3,7 +3,7 @@ class PostComponent < ViewComponent::Base
 
   attr_reader :post, :edit_path, :destroy_partial, :locale, :current_user
 
-  def initialize(post:, edit_path:, destroy_partial:, locale:, current_user:)
+  def initialize(post:, edit_path: nil, destroy_partial: nil, locale:, current_user:)
     @post = post
     @edit_path = edit_path
     @destroy_partial = destroy_partial
@@ -12,7 +12,7 @@ class PostComponent < ViewComponent::Base
   end
 
   def editable?
-    policy(post).edit?
+    policy(post).edit? && edit_path.present?
   end
 
   def user_fullname
