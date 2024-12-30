@@ -5,4 +5,5 @@ namespace :my do
     get "charts", to: "tabs#charts"
     get "comments", to: "tabs#comments"
   end
+  resources :mentions, only: %i[index]
 end
