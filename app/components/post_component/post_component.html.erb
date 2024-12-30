@@ -1,0 +1,27 @@
+<%= turbo_frame_tag(dom_id(post)) do %>
+  <div class="bg-light border border-secondary-subtle rounded-4 p-4 my-3 shadow-sm">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <div class="d-flex align-items-center">
+        <span class="fw-bold text-primary me-2">
+          <%= t("common.by", name: user_fullname) %>
+        </span>
+        <span class="small text-secondary me-2">
+          (@<%= render(ClipboardComponent.new(text: user_slug)) %>)
+        </span>
+        <% if editable? %>
+          <div class="d-flex gap-2">
+            <%= link_to(edit_path, class: "btn btn-outline-secondary btn-sm rounded-4") do %>
+              <i class="fa-solid fa-pencil"></i>
+              <%= t("common.edit") %>
+            <% end %>
+            <%= render(destroy_partial, post:) %>
+          </div>
+        <% end %>
+      </div>
+      <span class="text-muted small">
+        <%= timestamp %>
+      </span>
+    </div>
+    <%= post_content %>
+  </div>
+<% end %>
