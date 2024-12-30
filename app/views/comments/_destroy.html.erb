@@ -4,16 +4,16 @@
   color: :danger,
   size: :sm,
   icon: "fa-solid fa-trash-can",
-  data: {bs_toggle: "modal", bs_target: "#destroyComment_#{comment.id}"}
+  data: {bs_toggle: "modal", bs_target: "#destroyComment_#{post.id}"}
 )) %>
 
-<%= render(ModalComponent.new(id: "destroyComment_#{comment.id}", title: t("comment.destroy"))) do %>
+<%= render(ModalComponent.new(id: "destroyComment_#{post.id}", title: t("comment.destroy"))) do %>
   <div class="modal-body">
     <%= t("comment.destroy_confirmation") %>
   </div>
   <div class="modal-footer">
     <%= button_to(t("common.delete"),
-                  visualization_comment_path(locale, comment.visualization, comment),
+                  visualization_comment_path(locale, post.visualization, post),
                   method: :delete,
                   class: "btn btn-outline-danger btn-sm rounded-4",
                   data: {bs_dismiss: "modal"}) %>
