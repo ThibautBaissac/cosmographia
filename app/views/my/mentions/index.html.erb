@@ -1,6 +1,4 @@
-<div class="container">
-  <%= render(HeaderComponent.new(title: t("my.mentions.title"))) %>
-</div>
+<%= render("my/mentions/header") %>
 
 <div class="container">
   <% @posts.each do |post| %>

@@ -1,0 +1,13 @@
+<div class="container">
+  <%= render(HeaderComponent.new(title: t("my.mentions.title"))) do %>
+    <%= link_to(my_mentions_path(locale)) do %>
+      <%= render(ButtonComponent.new(
+        text: t("common.refresh"),
+        size: :sm,
+        rounded: :pill,
+        outline: :true,
+        icon: "fa-solid fa-rotate-right"
+      )) %>
+    <% end %>
+  <% end %>
+</div>
