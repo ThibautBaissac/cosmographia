@@ -1,19 +1,19 @@
 <%= render(TabsNavComponent.new(
   tabs: [
     TabsNavComponent::Tab.new(
-      path: my_profile_info_path(locale),
+      path: my_info_path(locale),
       icon_class: "fa-solid fa-address-card",
-      translation_key: "my.profile.profile_tab"
+      translation_key: "my.info.tab"
     ),
     TabsNavComponent::Tab.new(
-      path: my_profile_charts_path(locale),
+      path: my_charts_path(locale),
       icon_class: "fa-solid fa-chart-pie",
-      translation_key: "my.profile.charts_tab"
+      translation_key: "my.charts.tab"
     ),
     TabsNavComponent::Tab.new(
-      path: my_profile_comments_path(locale),
+      path: my_comments_path(locale),
       icon_class: "fa-solid fa-comment",
-      translation_key: "my.profile.comments_tab"
+      translation_key: "my.comments.tab"
     )
   ],
   turbo_frame: "profile_tab_content"

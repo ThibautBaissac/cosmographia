@@ -1,5 +1,5 @@
 <div class="container">
-  <%= render(HeaderComponent.new(title: t("my.profile.title"))) do %>
+  <%= render(HeaderComponent.new(title: t("my.info.title"))) do %>
     <%= link_to(edit_my_profile_path(locale)) do %>
       <%= render(ButtonComponent.new(text: t("common.edit"), outline: :true, icon: "fa-regular fa-pen-to-square")) %>
     <% end %>

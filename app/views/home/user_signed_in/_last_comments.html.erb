@@ -17,7 +17,7 @@
   <div class="bg-primary bg-gradient rounded-4 p-3">
     <%= turbo_frame_tag("last_comments") do %>
       <% comments.each do |comment| %>
-        <%= render("my/profile/comment", comment:, user: comment.user) %>
+        <%= render("my/comments/comment", comment:, user: comment.user) %>
       <% end %>
     <% end %>
   </div>

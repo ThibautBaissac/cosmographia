@@ -1,18 +1,9 @@
-class My::Profile::TabsController < ApplicationController
+class My::ChartsController < ApplicationController
   before_action :set_user
   before_action :set_authorize
 
-  def info
-  end
-
-  def charts
+  def show
     set_charts
-  end
-
-  def comments
-    @total_comment_count = @user.comments.count
-    @comments = @user.comments.includes(visualization: :image_attachment)
-    @pagy, @comments = pagy(@comments, limit: 5)
   end
 
   private
@@ -22,7 +13,7 @@ class My::Profile::TabsController < ApplicationController
   end
 
   def set_authorize
-    authorize(@user, policy_class: My::Profile::TabsPolicy)
+    authorize(@user, policy_class: My::ChartsPolicy)
   end
 
   def set_charts
