@@ -1,5 +1,5 @@
 <%= turbo_stream.update("comment_#{@comment.id}") do %>
-  <%= render(partial: "comments/comment", locals: {comment: @comment}) %>
+  <%= render(partial: "comments/card", locals: {comment: @comment}) %>
 <% end %>
 
 <%= turbo_stream.append("toast-container") do %>

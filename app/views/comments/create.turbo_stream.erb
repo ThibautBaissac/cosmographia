@@ -7,7 +7,7 @@
 <% end %>
 
 <%= turbo_stream.prepend("visualization_#{@visualization.id}_comments") do %>
-  <%= render(partial: "comments/comment", locals: {comment: @comment}) %>
+  <%= render(partial: "comments/card", locals: {comment: @comment}) %>
 <% end %>
 
 <%= turbo_stream.append("toast-container") do %>

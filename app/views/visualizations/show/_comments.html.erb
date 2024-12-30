@@ -13,7 +13,7 @@
     <% if comments.any? %>
       <!-- Render the first 5 comments -->
       <%= turbo_frame_tag("visualization_#{visualization.id}_comments") do %>
-        <%= render(partial: "comments/comment", collection: comments.limit(5).includes(:user)) %>
+        <%= render(partial: "comments/card", collection: comments.limit(5).includes(:user), as: :comment) %>
       <% end %>
       <% if comments.count > 5 %>
         <!-- Show More button -->
@@ -22,7 +22,7 @@
         </a>
         <!-- Collapsed section with the remaining comments -->
         <div class="collapse" id="collapseComments">
-          <%= render(partial: "comments/comment", collection: comments.offset(5).includes(:user)) %>
+          <%= render(partial: "comments/card", collection: comments.offset(5).includes(:user), as: :comment) %>
         </div>
       <% end %>
     <% end %>
