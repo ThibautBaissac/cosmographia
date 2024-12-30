@@ -1,0 +1,14 @@
+<div class="container">
+  <%= render(HeaderComponent.new(title: t("my.mentions.title"))) %>
+</div>
+
+<div class="container">
+  <% @posts.each do |post| %>
+    <%= render("my/mentions/goto", post:)%>
+    <%= render(PostComponent.new(
+      post:,
+      locale: locale,
+      current_user: current_user
+    )) %>
+  <% end %>
+</div>

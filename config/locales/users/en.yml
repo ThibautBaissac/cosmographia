@@ -6,6 +6,8 @@ en:
       class="alert-link">profile information</a>.
     alert_02_popover: To start sharing your work, please fill in your profile information.
   my:
+    mentions:
+      title: My mentions
     profile:
       charts_tab: Charts
       comments_tab: Comments

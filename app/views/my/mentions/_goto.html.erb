@@ -1,0 +1,9 @@
+<% if post.is_a?(Comment) %>
+  <%= link_to(visualization_path(post.visualization)) do %>
+    <%= render(ButtonComponent.new(text: t("visualization.go_to"), size: :sm, color: :secondary, outline: :true, icon: "fa-solid fa-circle-arrow-right")) %>
+  <% end %>
+<% elsif post.is_a?(Challenge::Discussion) %>
+  <%= link_to(discussion_challenge_path(post.challenge)) do %>
+    <%= render(ButtonComponent.new(text: t("challenge.go_to"), size: :sm, color: :secondary, outline: :true, icon: "fa-solid fa-circle-arrow-right")) %>
+  <% end %>
+<% end %>

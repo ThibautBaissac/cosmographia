@@ -7,6 +7,8 @@ fr:
     alert_02_popover: Pour commencer à partager votre travail, veuillez remplir les
       informations de votre profil.
   my:
+    mentions:
+      title: Mes mentions
     profile:
       charts_tab: Statistiques
       comments_tab: Commentaires

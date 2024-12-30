@@ -1,6 +1,7 @@
 ---
 fr:
   challenge:
+    go_to: Voir le challenge
     join: Rejoindre le challenge
     leave: Quitter le challenge
     leave_confirmation_text_html: Êtes-vous sûr de vouloir quitter le challenge <b>%{title}</b> ?
