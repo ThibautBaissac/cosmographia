@@ -50,6 +50,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_29_151025) do
     t.datetime "updated_at", null: false
     t.jsonb "mentioned_user_ids", default: []
     t.index ["challenge_id"], name: "index_challenge_discussions_on_challenge_id"
+    t.index ["mentioned_user_ids"], name: "index_challenge_discussions_on_mentioned_user_ids", using: :gin
     t.index ["user_id"], name: "index_challenge_discussions_on_user_id"
   end
 
@@ -75,6 +76,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_29_151025) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.jsonb "mentioned_user_ids", default: []
+    t.index ["mentioned_user_ids"], name: "index_comments_on_mentioned_user_ids", using: :gin
     t.index ["user_id"], name: "index_comments_on_user_id"
     t.index ["visualization_id"], name: "index_comments_on_visualization_id"
   end
