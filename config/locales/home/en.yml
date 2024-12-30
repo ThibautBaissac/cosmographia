@@ -10,8 +10,8 @@ en:
       explore_and_publish: Get inspired, explore, and add your own vision by publishing
         your visualizations today. Together, let's map the world and the universe!
         ✨.
-      last_comments: The last comments
-      last_visualizations: The last visualizations
+      last_comments: Last comments
+      last_visualizations: Last visualizations
       post_visualization: Post your visualizations
       see_all_visualizations: Discover all visualizations!
       visualizations_count: More than %{count} visualizations shared by our community
