@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_29_151025) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_31_150837) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -51,6 +51,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_29_151025) do
     t.jsonb "mentioned_user_ids", default: []
     t.index ["challenge_id"], name: "index_challenge_discussions_on_challenge_id"
     t.index ["mentioned_user_ids"], name: "index_challenge_discussions_on_mentioned_user_ids", using: :gin
+    t.index ["user_id", "created_at"], name: "index_challenge_discussions_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_challenge_discussions_on_user_id"
   end
 
@@ -262,6 +263,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_29_151025) do
     t.datetime "updated_at", null: false
     t.jsonb "mentioned_user_ids", default: []
     t.index ["mentioned_user_ids"], name: "index_visualization_comments_on_mentioned_user_ids", using: :gin
+    t.index ["user_id", "created_at"], name: "index_visualization_comments_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_visualization_comments_on_user_id"
     t.index ["visualization_id"], name: "index_visualization_comments_on_visualization_id"
   end
@@ -297,6 +299,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_29_151025) do
     t.index ["scale"], name: "index_visualizations_on_scale"
     t.index ["sources"], name: "index_visualizations_on_sources"
     t.index ["title"], name: "index_visualizations_on_title"
+    t.index ["user_id", "created_at"], name: "index_visualizations_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_visualizations_on_user_id"
   end
 
