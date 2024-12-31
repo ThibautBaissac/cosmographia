@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   def index
     if user_signed_in?
       @visualizations = Visualization.includes(:image_attachment).order(created_at: :desc).limit(12)
+      set_contributions
       last_comments
       set_charts
     else
@@ -21,5 +22,11 @@ class HomeController < ApplicationController
     @visualizations_over_time = Visualization.group_by_month(:creation_date).count
     @visualizations_by_projection = Visualization.group(:projection).count
     @software_usage = VisualizationSoftware.joins(:software).group("softwares.name").count
+  end
+
+  def set_contributions
+    contribution_service = User::ContributionsService.new(current_user)
+    @contributions_by_day = contribution_service.contributions_by_day
+    @weeks = contribution_service.weeks
   end
 end

@@ -1,0 +1,19 @@
+<div class="container pb-4 my-3 border-bottom">
+  <span class="h2 text-secondary">
+    <%= t("home.user_signed_in.my_contributions") %>
+  </span>
+  <div class="d-flex justify-content-center">
+    <div class="contribution-grid">
+      <% @weeks.each do |week| %>
+        <div class="week">
+          <% week.each do |date| %>
+            <% count = @contributions_by_day[date] || 0 %>
+            <% level = contribution_level(count) %>
+            <div class="contribution-cell <%= level %>" title="<%= l(date, format: :ymd) %>: <%= count %> contributions">
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
