@@ -36,6 +36,9 @@ en:
       challenge_discussion:
         create: Post your message
         update: Update your message
+      visualization_comment:
+        create: Post your comment
+        update: Update your comment
   locale:
     en: English
     fr: Français

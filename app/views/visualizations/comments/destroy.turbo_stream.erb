@@ -1,7 +1,7 @@
-<%= turbo_stream.remove("comment_#{@comment.id}") %>
+<%= turbo_stream.remove("visualization_comment_#{@comment.id}") %>
 
 <%= turbo_stream.update("visualization_#{@visualization.id}_comment_count") do %>
-  <%= render("comments/title", visualization: @visualization) %>
+  <%= render("visualizations/comments/title", visualization: @visualization) %>
 <% end %>
 
 <%= turbo_stream.append("toast-container") do %>

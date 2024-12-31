@@ -1,13 +1,13 @@
 <%= turbo_stream.replace("visualization_comment_form") do %>
-  <%= render(partial: "comments/form", locals: {comment: Comment.new, visualization: @visualization}) %>
+  <%= render(partial: "visualizations/comments/form", locals: {comment: @visualization.comments.new, visualization: @visualization}) %>
 <% end %>
 
 <%= turbo_stream.update("visualization_#{@visualization.id}_comment_count") do %>
-  <%= render("comments/title", visualization: @visualization) %>
+  <%= render("visualizations/comments/title", visualization: @visualization) %>
 <% end %>
 
 <%= turbo_stream.prepend("visualization_#{@visualization.id}_comments") do %>
-  <%= render(partial: "comments/card", locals: {comment: @comment}) %>
+  <%= render(partial: "visualizations/comments/card", locals: {comment: @comment}) %>
 <% end %>
 
 <%= turbo_stream.append("toast-container") do %>

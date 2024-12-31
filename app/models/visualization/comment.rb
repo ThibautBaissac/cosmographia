@@ -1,4 +1,4 @@
-class Comment < ApplicationRecord
+class Visualization::Comment < ApplicationRecord
   include Mention::Mentionable
 
   belongs_to :visualization

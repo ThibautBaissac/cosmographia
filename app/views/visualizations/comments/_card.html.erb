@@ -1,7 +1,7 @@
 <%= render(PostComponent.new(
   post: comment,
   edit_path: edit_visualization_comment_path(locale, comment.visualization, comment),
-  destroy_partial: "comments/destroy",
+  destroy_partial: "visualizations/comments/destroy",
   locale: locale,
   current_user: current_user
 )) %>

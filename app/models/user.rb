@@ -15,12 +15,11 @@ class User < ApplicationRecord
 
   has_many :visualizations, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :comments, class_name: 'Visualization::Comment', dependent: :destroy
   has_many :user_softwares, dependent: :destroy
   has_many :softwares, through: :user_softwares
   has_many :user_challenges, dependent: :destroy
   has_many :challenges, through: :user_challenges
-  has_many :discussions, class_name: 'Challenge::Discussion', dependent: :destroy
 
   validates :locale, presence: true, inclusion: {in: I18n.available_locales.map(&:to_s)}
   validates :email, presence: true

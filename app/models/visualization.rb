@@ -3,7 +3,7 @@ class Visualization < ApplicationRecord
   include Visualization::CustomValidations
 
   belongs_to :user
-  has_many :comments, dependent: :destroy
+  has_many :comments, class_name: 'Visualization::Comment', dependent: :destroy
   has_many :visualization_softwares, dependent: :destroy
   has_many :softwares, through: :visualization_softwares
   belongs_to :challenge, optional: true

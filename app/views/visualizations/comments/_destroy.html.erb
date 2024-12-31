@@ -7,9 +7,9 @@
   data: {bs_toggle: "modal", bs_target: "#destroyComment_#{post.id}"}
 )) %>
 
-<%= render(ModalComponent.new(id: "destroyComment_#{post.id}", title: t("comment.destroy"))) do %>
+<%= render(ModalComponent.new(id: "destroyComment_#{post.id}", title: t("visualization.comment.destroy"))) do %>
   <div class="modal-body">
-    <%= t("comment.destroy_confirmation") %>
+    <%= t("visualization.comment.destroy_confirmation") %>
   </div>
   <div class="modal-footer">
     <%= button_to(t("common.delete"),

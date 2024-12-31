@@ -19,7 +19,7 @@ class VisualizationsController < ApplicationController
     set_authorize
     @visualizations = Visualization.order("RANDOM()").includes(:user, :image_attachment).limit(6)
     @comments = @visualization.comments.order(created_at: :desc)
-    @new_comment = Comment.new
+    @new_comment =  @visualization.comments.new
   end
 
 

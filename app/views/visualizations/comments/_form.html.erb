@@ -1,8 +1,9 @@
 <%= turbo_frame_tag("visualization_comment_form") do %>
-  <%= form_with(model: [visualization, comment], class: "mb-4") do |form| %>
+  <% url = comment.persisted? ? visualization_comment_path(comment.visualization, comment) : visualization_comments_path(comment.visualization) %>
+  <%= form_with(model: comment, url: , class: "mb-4") do |form| %>
     <div data-controller="mention"
         data-mention-url-value="<%= mentions_path(locale) %>">
-      <%= form.label(t("comments.write_comment"), class: "fs-5 text-light") %>
+      <%= form.label(t("visualization.comments.write_comment"), class: "fs-5 text-light") %>
       <%= form.text_area :content,
             class: "form-control d-block w-100 mb-2 rounded-4 text-dark",
             rows: 3,

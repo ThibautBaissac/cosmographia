@@ -3,6 +3,28 @@ en:
   visualization:
     go_to: View visualization
     title: Visualization
+    comment:
+      destroy: Delete your comment
+      destroy_confirmation: Are you sure you want to delete your comment?
+    comments:
+      disclaimer: 'Share your thoughts with kindness: your constructive and respectful
+        comments enrich our community!'
+      flash:
+        actions:
+          create:
+            failure: Comment creation failed
+            success: Your comment was created successfully
+          destroy:
+            failure: Comment deletion failed
+            success: Your comment was deleted successfully
+          update:
+            failure: Comment update failed
+            success: Your comment was updated successfully
+      one: comment
+      other: comments
+      show_more: Show more comments
+      write_comment: Write a comment
+      zero: comment
   visualizations:
     count:
       one: "%{count} visualization"

@@ -1,28 +1,28 @@
 <div class="bg-primary bg-gradient mt-5 p-4">
   <div class="container">
     <%= turbo_frame_tag("visualization_#{visualization.id}_comment_count") do %>
-      <%= render("comments/title", visualization:) %>
+      <%= render("visualizations/comments/title", visualization:) %>
     <% end %>
 
-    <% if policy(Comment).create? %>
+    <% if policy(Visualization::Comment).create? %>
       <%= turbo_frame_tag("visualization_comment_form") do %>
-        <%= render("comments/form", visualization:, comment: new_comment) %>
+        <%= render("visualizations/comments/form", visualization:, comment: new_comment) %>
       <% end %>
     <% end %>
 
     <% if comments.any? %>
       <!-- Render the first 5 comments -->
       <%= turbo_frame_tag("visualization_#{visualization.id}_comments") do %>
-        <%= render(partial: "comments/card", collection: comments.limit(5).includes(:user), as: :comment) %>
+        <%= render(partial: "visualizations/comments/card", collection: comments.limit(5).includes(:user), as: :comment) %>
       <% end %>
       <% if comments.count > 5 %>
         <!-- Show More button -->
         <a class="btn btn-outline-light" data-bs-toggle="collapse" href="#collapseComments" role="button" aria-expanded="false" aria-controls="collapseComments">
-          <%= t("comments.show_more") %>
+          <%= t("visualization.comments.show_more") %>
         </a>
         <!-- Collapsed section with the remaining comments -->
         <div class="collapse" id="collapseComments">
-          <%= render(partial: "comments/card", collection: comments.offset(5).includes(:user), as: :comment) %>
+          <%= render(partial: "visualizations/comments/card", collection: comments.offset(5).includes(:user), as: :comment) %>
         </div>
       <% end %>
     <% end %>

@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class Visualizations::CommentsController < ApplicationController
   before_action :set_visualization
   before_action :set_comment, only: %i[edit update destroy]
 
@@ -8,11 +8,11 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        @toast_message = t("comments.flash.actions.create.success")
+        @toast_message = t("visualization.comments.flash.actions.create.success")
         format.turbo_stream
         format.html { redirect_to(@visualization) }
       else
-        @toast_message = t("comments.flash.actions.create.failure")
+        @toast_message = t("visualization.comments.flash.actions.create.failure")
         format.turbo_stream
         format.html { redirect_to(@visualization) }
       end
@@ -27,11 +27,11 @@ class CommentsController < ApplicationController
     set_authorize
     respond_to do |format|
       if @comment.update(comment_params)
-        @toast_message = t("comments.flash.actions.update.success")
+        @toast_message = t("visualization.comments.flash.actions.update.success")
         format.turbo_stream
         format.html { redirect_to(@visualization) }
       else
-        @toast_message = t("comments.flash.actions.update.failure")
+        @toast_message = t("visualization.comments.flash.actions.update.failure")
         format.turbo_stream
         format.html { redirect_to(@visualization) }
       end
@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
 
   def destroy
     set_authorize
-    @toast_message = t("comments.flash.actions.destroy.success")
+    @toast_message = t("visualization.comments.flash.actions.destroy.success")
     @comment.destroy
   end
 
@@ -59,6 +59,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:content).merge(user: current_user)
+    params.require(:visualization_comment).permit(:content).merge(user: current_user)
   end
 end

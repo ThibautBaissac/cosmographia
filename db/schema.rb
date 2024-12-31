@@ -69,18 +69,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_29_151025) do
     t.index ["start_date"], name: "index_challenges_on_start_date"
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.text "content", null: false
-    t.bigint "visualization_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.jsonb "mentioned_user_ids", default: []
-    t.index ["mentioned_user_ids"], name: "index_comments_on_mentioned_user_ids", using: :gin
-    t.index ["user_id"], name: "index_comments_on_user_id"
-    t.index ["visualization_id"], name: "index_comments_on_visualization_id"
-  end
-
   create_table "feedbacks", force: :cascade do |t|
     t.string "subject"
     t.text "message"
@@ -266,6 +254,18 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_29_151025) do
     t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
+  create_table "visualization_comments", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "visualization_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.jsonb "mentioned_user_ids", default: []
+    t.index ["mentioned_user_ids"], name: "index_visualization_comments_on_mentioned_user_ids", using: :gin
+    t.index ["user_id"], name: "index_visualization_comments_on_user_id"
+    t.index ["visualization_id"], name: "index_visualization_comments_on_visualization_id"
+  end
+
   create_table "visualization_softwares", force: :cascade do |t|
     t.bigint "software_id", null: false
     t.bigint "visualization_id", null: false
@@ -304,8 +304,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_29_151025) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "challenge_discussions", "challenges"
   add_foreign_key "challenge_discussions", "users"
-  add_foreign_key "comments", "users"
-  add_foreign_key "comments", "visualizations"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "solid_queue_blocked_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_claimed_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
@@ -317,6 +315,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_29_151025) do
   add_foreign_key "user_challenges", "users"
   add_foreign_key "user_softwares", "softwares"
   add_foreign_key "user_softwares", "users"
+  add_foreign_key "visualization_comments", "users"
+  add_foreign_key "visualization_comments", "visualizations"
   add_foreign_key "visualization_softwares", "softwares"
   add_foreign_key "visualization_softwares", "visualizations"
   add_foreign_key "visualizations", "challenges"
