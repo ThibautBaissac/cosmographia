@@ -49,7 +49,11 @@ fr:
     community: Communauté
     edit_password: Modifier mon mot de passe
     install_pwa: Ajouter à l'écran d'accueil
-    profile: Mon profil
+    my_info: Mon profil
+    my_charts: Mes statistiques
+    my_comments: Mes commentaires
+    my_contributions: Mes contributions
+    my_mentions: Mes mentions
     visualizations: Visualisations
   pundit:
     default: Vous ne pouvez pas effectuer cette action.

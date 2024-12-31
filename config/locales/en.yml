@@ -49,7 +49,11 @@ en:
     community: Community
     edit_password: Edit password
     install_pwa: Add to Home Screen
-    profile: My profile
+    my_info: My profile
+    my_charts: My charts
+    my_comments: My comments
+    my_contributions: My contributions
+    my_mentions: My mentions
     visualizations: Visualizations
   pundit:
     default: You cannot perform this action.

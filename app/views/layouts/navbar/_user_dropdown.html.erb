@@ -5,8 +5,11 @@
         <i class="fa-solid fa-circle-user fa-2x text-primary"></i>
       </a>
       <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-        <li><%= link_to(t("navbar.profile"), my_info_path(locale), class: "dropdown-item") %></li>
-        <li><%= link_to(t("my.mentions.title"), my_mentions_path(locale), class: "dropdown-item") %></li>
+        <li><%= link_to(t("navbar.my_info"), my_info_path(locale), class: "dropdown-item") %></li>
+        <li><%= link_to(t("navbar.my_mentions"), my_mentions_path(locale), class: "dropdown-item") %></li>
+        <li><%= link_to(t("navbar.my_contributions"), my_contributions_path(locale), class: "dropdown-item") %></li>
+        <li><%= link_to(t("navbar.my_comments"), my_comments_path(locale), class: "dropdown-item") %></li>
+        <li><%= link_to(t("navbar.my_charts"), my_charts_path(locale), class: "dropdown-item") %></li>
         <li><hr class="dropdown-divider"></li>
         <li><%= button_to(t("auth.sign_out"), destroy_user_session_path(locale), method: :delete, class: "dropdown-item") %></li>
         <li><%= link_to(t("feedbacks.feedback"), "#offcanvaFeedback", class: "dropdown-item", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvaFeedback"}) %></li>
