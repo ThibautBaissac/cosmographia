@@ -5,9 +5,9 @@
     <% @weeks.each do |week| %>
       <div class="week">
         <% week.each do |date| %>
-          <% count = @contributions_by_day[date.strftime("%y%m%d")] || 0 %>
+          <% count = @contributions_by_day[date] || 0 %>
           <% level = contribution_level(count) %>
-          <div class="contribution-cell <%= level %>" title="<%= l(date.to_date, format: :ymd) %>: <%= count %> contributions">
+          <div class="contribution-cell <%= level %>" title="<%= l(date, format: :ymd) %>: <%= count %> contributions">
           </div>
         <% end %>
       </div>
