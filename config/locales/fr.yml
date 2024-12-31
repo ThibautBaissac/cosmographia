@@ -52,7 +52,6 @@ fr:
     my_info: Mon profil
     my_charts: Mes statistiques
     my_comments: Mes commentaires
-    my_contributions: Mes contributions
     my_mentions: Mes mentions
     visualizations: Visualisations
   pundit:
