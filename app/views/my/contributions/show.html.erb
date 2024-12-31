@@ -1,0 +1,16 @@
+<div class="container my-5">
+  <h2 class="mb-4"><%= @user.fullname %>'s Contribution Graph</h2>
+
+  <div class="contribution-grid">
+    <% @weeks.each do |week| %>
+      <div class="week">
+        <% week.each do |date| %>
+          <% count = @contributions_by_day[date.strftime("%y%m%d")] || 0 %>
+          <% level = contribution_level(count) %>
+          <div class="contribution-cell <%= level %>" title="<%= l(date.to_date, format: :ymd) %>: <%= count %> contributions">
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

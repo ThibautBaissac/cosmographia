@@ -1,0 +1,43 @@
+.contribution-grid {
+  display: flex;
+}
+
+.week {
+  display: flex;
+  flex-direction: column;
+}
+
+.contribution-cell {
+  width: 12px;
+  height: 12px;
+  margin: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &:hover {
+    stroke: #000;
+    stroke-width: 1px;
+  }
+
+&.level-0 { background-color: #ebedf0; }
+&.level-1 { background-color: #88d17b; }
+&.level-2 { background-color: #2c9145; }
+&.level-3 { background-color: #1e4f2d; }
+&.level-4 { background-color: #6c112b; }
+}
+
+@media (max-width: 768px) {
+  .contribution-cell {
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+  }
+}
+@media (max-width: 576px) {
+  .contribution-cell {
+    width: 6px;
+    height: 6px;
+    margin: 0px;
+    border-radius: 0px;
+  }
+}
