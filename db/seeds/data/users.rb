@@ -6,7 +6,7 @@ puts("---- Creating users...")
     password_confirmation: 'Password123.',
     superadmin: i == 0,
     locale: I18n.available_locales.sample.to_s,
-    created_at: Faker::Date.backward(days: 365 * 10),
+    created_at: Faker::Date.backward(days: 365),
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     public_profile: [ true, false ].sample,

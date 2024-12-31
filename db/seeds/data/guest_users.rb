@@ -5,7 +5,7 @@ puts("---- Creating guest users...")
     password: 'Password123.',
     password_confirmation: 'Password123.',
     locale: I18n.available_locales.sample.to_s,
-    created_at: Faker::Date.backward(days: 365 * 10),
+    created_at: Faker::Date.backward(days: 365),
     guest: true
   )
 
