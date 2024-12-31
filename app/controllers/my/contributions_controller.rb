@@ -16,7 +16,7 @@ class My::ContributionsController < ApplicationController
   end
 
   def fetch_contributions(start_date, end_date)
-    cache_key = "user_contributions/#{@user.id}/#{start_date.to_date}/#{end_date.to_date}"
+    cache_key = "user_contributions/#{@user.id}"
     Rails.cache.fetch(cache_key, expires_in: 4.hours) do
       aggregate_contributions(start_date, end_date)
     end
