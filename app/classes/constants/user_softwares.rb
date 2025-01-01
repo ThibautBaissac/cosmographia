@@ -1,5 +1,5 @@
 module Constants
   module UserSoftwares
-    MAX_LEVEL = 10.freeze
+    EXPERTISES = %w[no_experience beginner intermediate advanced expert].freeze
   end
 end

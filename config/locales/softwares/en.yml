@@ -1,0 +1,9 @@
+---
+en:
+  softwares:
+    expertises:
+      no_experience: No experience
+      beginner: Beginner
+      intermediate: Intermediate
+      advanced: Advanced
+      expert: Expert

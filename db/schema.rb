@@ -221,7 +221,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_31_150837) do
   create_table "user_softwares", force: :cascade do |t|
     t.bigint "software_id", null: false
     t.bigint "user_id", null: false
-    t.integer "level", default: 1
+    t.string "expertise", default: "NO_EXPERIENCE"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["software_id"], name: "index_user_softwares_on_software_id"

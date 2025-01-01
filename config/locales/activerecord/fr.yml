@@ -25,7 +25,7 @@ fr:
         slug: Nom d'utilisateur
         social_links: Réseaux sociaux
       user_software:
-        level: Niveau d'expertise
+        expertise: Niveau d'expertise
       visualization:
         category: Catégorie
         creation_date: Date de création

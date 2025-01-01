@@ -25,7 +25,7 @@ en:
         slug: Username
         social_links: Social networks
       user_software:
-        level: Expertise level
+        expertise: Expertise level
       visualization:
         category: Category
         creation_date: Creation date
