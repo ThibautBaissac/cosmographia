@@ -19,15 +19,9 @@
           <%= form.text_field(:slug, class: "form-control rounded-pill shadow-sm text-lowercase") %>
         </div>
       </div>
-      <div class="row row-cols-1 row-cols-md-2 g-4 mb-3">
-        <div class="col">
-          <%= form.label(:locale, class: "form-label fw-semibold") %>
-          <%= form.select(:locale, [ [ "French", "fr" ], [ "English", "en" ] ], {}, {class: "form-select rounded-pill shadow-sm"}) %>
-        </div>
-        <div class="col">
-          <%= form.label(:personal_website, class: "form-label fw-semibold") %>
-          <%= form.url_field(:personal_website, class: "form-control rounded-pill shadow-sm", placeholder: "https://yourwebsite.com") %>
-        </div>
+      <div class="col">
+        <%= form.label(:personal_website, class: "form-label fw-semibold") %>
+        <%= form.url_field(:personal_website, class: "form-control rounded-pill shadow-sm", placeholder: "https://yourwebsite.com") %>
       </div>
     </div>
   </div>

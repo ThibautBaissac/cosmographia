@@ -29,7 +29,6 @@ class My::ProfileController < ApplicationController
 
   def user_params
     params.require(:user).permit(
-      :locale,
       :first_name,
       :last_name,
       :slug,
