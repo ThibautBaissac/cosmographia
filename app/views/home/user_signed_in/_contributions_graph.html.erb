@@ -1,19 +1,15 @@
-<div class="container pb-4 my-3 border-bottom">
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <div class="h2 text-secondary">
-      <%= t("home.user_signed_in.my_contributions") %>
-    </div>
-    <% if current_user.guest? %>
-      <a tabindex="0" class="btn btn-primary btn-lg px-4 gap-3 rounded-pill shadow-sm" data-bs-placement="bottom" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="<%= t("guest.alert_01_html") %>" data-bs-content="<%= t("guest.alert_02_popover") %>">
-        <%= t("home.user_signed_in.post_visualization") %>
-      </a>
-    <% else %>
+<% unless current_user.guest? %>
+  <div class="container pb-4 my-3 border-bottom">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="h2 text-secondary">
+        <%= t("home.user_signed_in.my_contributions") %>
+      </div>
       <%= link_to(new_visualization_path(locale)) do %>
         <%= render(ButtonComponent.new(text: t("home.user_signed_in.post_visualization"), size: :sm, rounded: :pill)) %>
       <% end %>
-    <% end %>
+    </div>
+    <div class="d-flex justify-content-center">
+      <%= render(ContributionsGraphComponent.new(weeks: @weeks, contributions_by_day: @contributions_by_day)) %>
+    </div>
   </div>
-  <div class="d-flex justify-content-center">
-    <%= render(ContributionsGraphComponent.new(weeks: @weeks, contributions_by_day: @contributions_by_day)) %>
-  </div>
-</div>
+<% end %>
