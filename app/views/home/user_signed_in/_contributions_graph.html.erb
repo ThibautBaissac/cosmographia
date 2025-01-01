@@ -1,8 +1,8 @@
 <div class="container pb-4 my-3 border-bottom">
   <div class="d-flex justify-content-between align-items-center mb-3">
-    <span class="h2 text-secondary">
+    <div class="h2 text-secondary">
       <%= t("home.user_signed_in.my_contributions") %>
-    </span>
+    </div>
     <% if current_user.guest? %>
       <a tabindex="0" class="btn btn-primary btn-lg px-4 gap-3 rounded-pill shadow-sm" data-bs-placement="bottom" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="<%= t("guest.alert_01_html") %>" data-bs-content="<%= t("guest.alert_02_popover") %>">
         <%= t("home.user_signed_in.post_visualization") %>
