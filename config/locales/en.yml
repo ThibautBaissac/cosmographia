@@ -47,6 +47,7 @@ en:
   navbar:
     about: About
     challenges: Challenges
+    charts: Charts
     community: Community
     edit_password: Edit password
     install_pwa: Add to Home Screen

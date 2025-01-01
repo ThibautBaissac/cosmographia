@@ -47,6 +47,7 @@ fr:
   navbar:
     about: À propos
     challenges: Challenges
+    charts: Statistiques
     community: Communauté
     edit_password: Modifier mon mot de passe
     install_pwa: Ajouter à l'écran d'accueil
