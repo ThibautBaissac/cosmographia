@@ -30,12 +30,12 @@ fr:
     oops: Oops !
   helpers:
     submit:
-      comment:
-        create: Poster votre commentaire
-        update: Mettre à jour votre commentaire
       challenge_discussion:
         create: Poster votre message
         update: Mettre à jour votre message
+      comment:
+        create: Poster votre commentaire
+        update: Mettre à jour votre commentaire
       visualization_comment:
         create: Poster votre commentaire
         update: Mettre à jour votre commentaire
@@ -49,9 +49,9 @@ fr:
     community: Communauté
     edit_password: Modifier mon mot de passe
     install_pwa: Ajouter à l'écran d'accueil
-    my_info: Mon profil
     my_charts: Mes statistiques
     my_comments: Mes commentaires
+    my_info: Mon profil
     my_mentions: Mes mentions
     visualizations: Visualisations
   pundit:

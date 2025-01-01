@@ -1,8 +1,6 @@
 ---
 fr:
   visualization:
-    go_to: Voir la visualisation
-    title: Visualisation
     comment:
       destroy: Supprimer votre commentaire
       destroy_confirmation: Êtes-vous sûr de vouloir supprimer votre commentaire ?
@@ -25,14 +23,16 @@ fr:
       show_more: Voir plus de commentaires
       write_comment: Écrire un commentaire
       zero: commentaire
+    go_to: Voir la visualisation
+    title: Visualisation
   visualizations:
+    category:
+      data: Visualisation de données
+      map: Carte
     count:
       one: "%{count} visualisation"
       other: "%{count} visualisations"
       zero: Aucune visualisation trouvée
-    category:
-      data: Visualisation de données
-      map: Carte
     filtering:
       categories: 'Catégories :'
       creation_date_end: Date de création (fin)

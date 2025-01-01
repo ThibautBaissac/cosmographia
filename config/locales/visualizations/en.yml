@@ -1,8 +1,6 @@
 ---
 en:
   visualization:
-    go_to: View visualization
-    title: Visualization
     comment:
       destroy: Delete your comment
       destroy_confirmation: Are you sure you want to delete your comment?
@@ -25,14 +23,16 @@ en:
       show_more: Show more comments
       write_comment: Write a comment
       zero: comment
+    go_to: View visualization
+    title: Visualization
   visualizations:
+    category:
+      data: Data visualization
+      map: Map
     count:
       one: "%{count} visualization"
       other: "%{count} visualizations"
       zero: No visualizations found
-    category:
-      data: Data visualization
-      map: Map
     filtering:
       categories: 'Categories:'
       creation_date_end: Creation date (end)

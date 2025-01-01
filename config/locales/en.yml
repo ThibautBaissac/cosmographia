@@ -30,12 +30,12 @@ en:
     oops: Oops!
   helpers:
     submit:
-      comment:
-        create: Post your comment
-        update: Update your comment
       challenge_discussion:
         create: Post your message
         update: Update your message
+      comment:
+        create: Post your comment
+        update: Update your comment
       visualization_comment:
         create: Post your comment
         update: Update your comment
@@ -49,9 +49,9 @@ en:
     community: Community
     edit_password: Edit password
     install_pwa: Add to Home Screen
-    my_info: My profile
     my_charts: My charts
     my_comments: My comments
+    my_info: My profile
     my_mentions: My mentions
     visualizations: Visualizations
   pundit:

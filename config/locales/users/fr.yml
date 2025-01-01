@@ -7,14 +7,14 @@ fr:
     alert_02_popover: Pour commencer à partager votre travail, veuillez remplir les
       informations de votre profil.
   my:
-    info:
-      tab: Profil
-      title: Mon profil
     charts:
       tab: Statistiques
     comments:
-      tab: Commentaires
       comments: Mes commentaires
+      tab: Commentaires
+    info:
+      tab: Profil
+      title: Mon profil
     mentions:
       title: Mes mentions
     profile:
@@ -24,11 +24,11 @@ fr:
           update:
             failure: Votre profil n'a pas pu être mis à jour
             success: Votre profil a été mis à jour
+      info_disclaimer_html: Vos informations personnelles ne seront <b>jamais partagées</b>
+        avec des tiers extérieurs à la communauté Cosmographia !
       my_page: Ma page personnelle
       not_in_directory: Rejoindre l'annuaire
       total_comment_count: "(%{count} au total)"
-      info_disclaimer_html: Vos informations personnelles ne seront <b>jamais
-        partagées</b> avec des tiers extérieurs à la communauté Cosmographia !
   user:
     contributions: Contributions
     visualizations: Visualisations

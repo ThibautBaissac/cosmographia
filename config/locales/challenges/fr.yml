@@ -1,17 +1,6 @@
 ---
 fr:
   challenge:
-    go_to: Voir le challenge
-    join: Rejoindre le challenge
-    leave: Quitter le challenge
-    leave_confirmation_text_html: Êtes-vous sûr de vouloir quitter le challenge <b>%{title}</b> ?
-    leave_confirmation_title: Quitter ce challenge
-    submit_existing_visualization: Soumettre une visualisation existante
-    submit_new_visualization: Soumettre une nouvelle visualisation
-    participant_list:
-      one: 1 participant
-      other: "%{count} participants"
-      zero: Aucun participant pour le moment
     category:
       data: Visualisation de données
       map: Carte
@@ -19,14 +8,9 @@ fr:
       easy: Facile
       hard: Difficile
       intermediate: Intermédiaire
-    tabs:
-      discussion: Discussion
-      participations: Participations
     discussion:
       destroy: Supprimer
       destroy_confirmation: Êtes-vous sûr de vouloir supprimer ce message ?
-      form:
-        submit: Soumettre le message
       flash:
         actions:
           create:
@@ -38,6 +22,23 @@ fr:
           update:
             failure: Échec de la mise à jour de votre message
             success: Votre message a été mis à jour avec succès
+      form:
+        submit: Soumettre le message
+    go_to: Voir le challenge
+    join: Rejoindre le challenge
+    leave: Quitter le challenge
+    leave_confirmation_text_html: Êtes-vous sûr de vouloir quitter le challenge <b>%{title}</b>
+      ?
+    leave_confirmation_title: Quitter ce challenge
+    participant_list:
+      one: 1 participant
+      other: "%{count} participants"
+      zero: Aucun participant pour le moment
+    submit_existing_visualization: Soumettre une visualisation existante
+    submit_new_visualization: Soumettre une nouvelle visualisation
+    tabs:
+      discussion: Discussion
+      participations: Participations
   challenges:
     form:
       create_title: Créer un nouveau challenge

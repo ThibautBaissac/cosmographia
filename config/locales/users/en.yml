@@ -6,14 +6,14 @@ en:
       class="alert-link">profile information</a>.
     alert_02_popover: To start sharing your work, please fill in your profile information.
   my:
-    info:
-      tab: Profile
-      title: My profile
     charts:
       tab: Charts
     comments:
-      tab: Comments
       comments: My comments
+      tab: Comments
+    info:
+      tab: Profile
+      title: My profile
     mentions:
       title: My mentions
     profile:
@@ -23,11 +23,11 @@ en:
           update:
             failure: Your profile could not be updated
             success: Your profile has been updated
+      info_disclaimer_html: Your personal information will <b>never be shared</b>
+        with third parties outside the Cosmographia community!
       my_page: My personal page
       not_in_directory: Join the directory
       total_comment_count: "(%{count} in total)"
-      info_disclaimer_html: Your personal information will <b>never be shared</b>
-        with third parties outside the Cosmographia community!
   user:
     contributions: Contributions
     visualizations: Visualizations
