@@ -1,6 +1,6 @@
 class Challenges::DiscussionsController < ApplicationController
   before_action :set_challenge
-  before_action :set_discussion, only: [:edit, :update, :destroy]
+  before_action :set_discussion, only: [ :edit, :update, :destroy ]
 
   def create
     @discussion = @challenge.discussions.new(discussion_params)

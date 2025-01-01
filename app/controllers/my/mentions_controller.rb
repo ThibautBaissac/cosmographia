@@ -8,14 +8,14 @@ class My::MentionsController < ApplicationController
   private
 
   def comments
-    Visualization::Comment.where("mentioned_user_ids @> ?", [current_user.id].to_json)
+    Visualization::Comment.where("mentioned_user_ids @> ?", [ current_user.id ].to_json)
            .includes(:user, :visualization)
            .order(created_at: :desc)
            .limit(10)
   end
 
   def discussions
-    Challenge::Discussion.where("mentioned_user_ids @> ?", [current_user.id].to_json)
+    Challenge::Discussion.where("mentioned_user_ids @> ?", [ current_user.id ].to_json)
                          .includes(:user, :challenge)
                          .order(created_at: :desc)
                          .limit(10)

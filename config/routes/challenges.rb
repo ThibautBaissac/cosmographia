@@ -3,8 +3,8 @@ resources :challenges, except: [ :show ] do
   resource :user_participation, only: [ :create, :destroy ], module: :challenges, controller: :user_participation
   resource :attach_visualization, only: [ :new, :create ], module: :challenges, controller: :attach_visualization
   member do
-    get 'participations', to: 'challenges/tabs#participations'
-    get 'discussion', to: 'challenges/tabs#discussion'
+    get "participations", to: "challenges/tabs#participations"
+    get "discussion", to: "challenges/tabs#discussion"
   end
   resources :discussions, only: [ :create, :edit, :update, :destroy ], module: :challenges
 end

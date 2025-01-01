@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   has_many :visualizations, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
-  has_many :comments, class_name: 'Visualization::Comment', dependent: :destroy
+  has_many :comments, class_name: "Visualization::Comment", dependent: :destroy
   has_many :user_softwares, dependent: :destroy
   has_many :softwares, through: :user_softwares
   has_many :user_challenges, dependent: :destroy

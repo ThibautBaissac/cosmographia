@@ -1,1 +1,1 @@
-resources :mentions, only: [:index]
+resources :mentions, only: [ :index ]

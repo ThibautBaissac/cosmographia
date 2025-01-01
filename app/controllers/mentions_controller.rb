@@ -7,6 +7,6 @@ class MentionsController < ApplicationController
       @users = User.none
     end
 
-    render json: @users.select(:id, :slug)
+    render(json: @users.select(:id, :slug))
   end
 end
