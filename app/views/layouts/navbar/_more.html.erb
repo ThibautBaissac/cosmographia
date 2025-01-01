@@ -1,0 +1,8 @@
+<div class="dropdown">
+  <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <%= t("common.more")%>
+  </a>
+  <ul class="dropdown-menu shadow-sm">
+    <li><%= link_to(t("navbar.about"), about_index_path(locale), class: "dropdown-item") %></li>
+  </ul>
+</div>

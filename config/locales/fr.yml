@@ -11,6 +11,7 @@ fr:
     edit: Modifier
     from_to_date: Du %{from} au %{to}
     hello: Bonjour %{name} !
+    more: Plus
     refresh: Rafraîchir
     reset_filters: Réinitialiser les filtres
     save: Sauvegarder
