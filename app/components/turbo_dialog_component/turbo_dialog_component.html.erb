@@ -3,7 +3,7 @@
           class="position-relative rounded-4 border mt-5">
       <div class="d-flex justify-content-between align-items-center mb-2 pb-3 border-bottom">
         <h2 class="fs-4 fw-bold me-4"><%= @title %></h2>
-        <%= render(ButtonComponent.new(text: t("common.close"), color: :secondary, outline: :true, rounded: :pill, size: :sm, icon: "fa-solid fa-xmark", data: { action: "dialog#close" })) %>
+        <%= render(ButtonComponent.new(text: t("common.close"), color: :secondary, outline: :true, rounded: :pill, size: :sm, icon: "fa-solid fa-xmark", data: {action: "dialog#close"})) %>
       </div>
       <div class="p-4">
         <div data-action="turbo:submit-end->dialog#submitEnd">

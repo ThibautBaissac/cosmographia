@@ -3,7 +3,7 @@
     <span class="h2 text-secondary">
       <%= t("home.user_signed_in.last_comments") %>
     </span>
-    <%= link_to(root_path(locale), data: { turbo_frame: :last_comments }) do %>
+    <%= link_to(root_path(locale), data: {turbo_frame: :last_comments}) do %>
       <%= render(ButtonComponent.new(
         text: t("common.refresh"),
         size: :sm,

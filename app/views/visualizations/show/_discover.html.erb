@@ -3,7 +3,7 @@
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <% @visualizations.each do |visualization| %>
       <div class="col">
-        <%= render(Visualization::CardComponent.new(visualization: )) %>
+        <%= render(Visualization::CardComponent.new(visualization:)) %>
       </div>
     <% end %>
   </div>
