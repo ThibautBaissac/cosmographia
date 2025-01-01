@@ -9,15 +9,6 @@
       <%= t("home.user_signed_in.explore_and_publish") %>
     </p>
     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-      <% if current_user.guest? %>
-        <a tabindex="0" class="btn btn-primary btn-lg px-4 gap-3 rounded-pill shadow-sm" data-bs-placement="bottom" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="<%= t("guest.alert_01_html") %>" data-bs-content="<%= t("guest.alert_02_popover") %>">
-          <%= t("home.user_signed_in.post_visualization") %>
-        </a>
-      <% else %>
-        <%= link_to(new_visualization_path(locale)) do %>
-          <%= render(ButtonComponent.new(text: t("home.user_signed_in.post_visualization"), size: :lg, rounded: :pill)) %>
-        <% end %>
-      <% end %>
       <%= link_to(visualizations_path(locale)) do %>
         <%= render(ButtonComponent.new(text: "🌍 #{t("home.user_signed_in.discover_visualizations")}", color: :secondary, outline: :true, size: :lg, rounded: :pill)) %>
       <% end %>
