@@ -1,0 +1,3 @@
+<% if current_user.opted_in_directory? %>
+  <li><%= link_to(t("navbar.my_public_page"), user_profile_path(locale, current_user.slug), class: "dropdown-item") %></li>
+<% end %>

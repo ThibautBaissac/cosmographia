@@ -55,6 +55,7 @@ en:
     my_comments: My comments
     my_info: My profile
     my_mentions: My mentions
+    my_public_page: My public page
     visualizations: Visualizations
   pundit:
     default: You cannot perform this action.
