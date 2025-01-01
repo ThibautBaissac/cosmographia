@@ -5,7 +5,7 @@
   <%= render("home/user_signed_in/contributions_graph") %>
   <div class="container mt-5">
     <div class="row row-cols-1 row-cols-lg-2 mb-3 g-4">
-      <%= render("home/user_signed_in/visualizations") %>
+      <%= render("home/user_signed_in/last_visualizations", visualizations: @visualizations) %>
       <%= render("home/user_signed_in/last_comments", comments: @last_comments) %>
     </div>
   </div>

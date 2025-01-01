@@ -1,0 +1,9 @@
+<div>
+  <div class="h2 text-secondary mb-3">
+    <%= t("home.user_signed_in.last_visualizations") %>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-3 g-4 mb-4">
+    <%= render(partial: "home/user_signed_in/gallery", collection: visualizations, as: :visualization) %>
+  </div>
+</div>
