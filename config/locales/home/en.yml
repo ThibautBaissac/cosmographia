@@ -14,7 +14,6 @@ en:
       last_visualizations: Last visualizations
       my_contributions: My contributions
       post_visualization: Post your visualizations
-      see_all_visualizations: Discover all visualizations!
       visualizations_count: More than %{count} visualizations shared by our community
         are waiting for you.
     user_signed_out:
