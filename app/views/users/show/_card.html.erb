@@ -2,15 +2,15 @@
   <div class="card shadow-sm rounded-4">
     <div class="card-body">
       <!-- Bio -->
-      <p class="card-text text-muted"><%= @user.bio %></p>
+      <p class="card-text text-muted"><%= user.bio %></p>
 
       <!-- Social Links Section -->
       <h5 class="card-title text-primary fw-bold"><%= t("activerecord.attributes.user.social_links") %></h5>
       <% if user.social_links.present? %>
         <ul class="list-inline mt-2">
           <li class="list-inline-item">
-            <% if @user.personal_website.present? %>
-              <%= link_to(@user.personal_website, target: :_blank) do %>
+            <% if user.personal_website.present? %>
+              <%= link_to(user.personal_website, target: :_blank) do %>
                 <%= render(ButtonComponent.new(text: t("activerecord.attributes.user.personal_website"), color: :secondary, size: :sm, outline: :true, rounded: :pill)) %>
               <% end %>
             <% end %>

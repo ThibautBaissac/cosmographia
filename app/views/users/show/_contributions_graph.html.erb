@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <div class="container my-4 pb-4 border-bottom">
+    <div class="h2 text-secondary mb-3">
+      <%= t("user.contributions") %>
+    </div>
+    <div class="d-flex justify-content-center">
+      <%= render(ContributionsGraphComponent.new(weeks:, contributions_by_day:)) %>
+    </div>
+  </div>
+<% end %>

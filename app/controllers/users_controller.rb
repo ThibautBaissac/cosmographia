@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def show
     authorize(@user)
     set_visualizations
+    set_contributions
     @pagy, @visualizations = pagy(@visualizations)
   rescue Pundit::NotAuthorizedError
     redirect_back(fallback_location: root_path(locale), alert: "Action not allowed") and return
@@ -25,5 +26,11 @@ class UsersController < ApplicationController
 
   def set_visualizations
     @visualizations = @user.visualizations.includes(:image_attachment)
+  end
+
+  def set_contributions
+    contribution_service = User::ContributionsService.new(@user)
+    @contributions_by_day = contribution_service.contributions_by_day
+    @weeks = contribution_service.weeks
   end
 end
