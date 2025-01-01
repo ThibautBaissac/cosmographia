@@ -6,7 +6,7 @@
       <div class="card shadow-sm rounded-4">
         <div class="card-body text-center">
           <h4 class="card-title fw-bold mx-auto">
-            <%= @user.first_name %> <%= @user.last_name %>
+            <%= @user.fullname %>
           </h4>
           <p class="card-text text-muted fst-italic"><%= @user.bio || "No bio available." %></p>
 
@@ -34,6 +34,7 @@
           <h5 class="card-title text-primary fw-bold"><%= t("my.profile.contact_info") %></h5>
           <ul class="list-unstyled">
             <li><strong>Email:</strong> <%= @user.email %></li>
+            <li><strong><%= t("activerecord.attributes.user.slug") %>:</strong> <span class="small text-secondary"><%= @user.slug %></span></li>
           </ul>
           <hr>
 

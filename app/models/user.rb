@@ -11,7 +11,7 @@ class User < ApplicationRecord
   normalizes :slug, with: ->(slug) { slug.strip.downcase }
   normalizes :email, with: ->(email) { email.strip.downcase }
 
-  before_validation :generate_slug, on: [ :create ]
+  before_validation :generate_slug, on: [ :create, :update ]
 
   has_many :visualizations, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
@@ -23,7 +23,7 @@ class User < ApplicationRecord
 
   validates :locale, presence: true, inclusion: {in: I18n.available_locales.map(&:to_s)}
   validates :email, presence: true
-  validates :first_name, :last_name, :bio, presence: true, if: :not_guest?
+  validates :first_name, :last_name, presence: true, if: :not_guest?
   validates :slug, presence: true, uniqueness: true, exclusion: {in: I18n.available_locales.map(&:to_s)}
   validates :slug, length: {minimum: 4, maximum: 50}, format: {with: /\A[a-z0-9\-_]+\z/, message: :format}
   validate :allowed_social_links_keys
@@ -43,7 +43,7 @@ class User < ApplicationRecord
   end
 
   def profile_complete?
-    first_name.present? && last_name.present? && bio.present?
+    first_name.present? && last_name.present?
   end
 
   def opted_in_directory?
