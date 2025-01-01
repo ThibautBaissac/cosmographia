@@ -13,7 +13,7 @@
         <div class="card-body">
           <div class="btn-group d-flex flex-wrap" role="group" aria-label="Expertise options">
             <% UserSoftware.expertise_keys.each do |expertise| %>
-              <%= us_form.radio_button(:expertise, expertise.upcase, class: "btn-check", required: true) %>
+              <%= us_form.radio_button(:expertise, expertise.upcase, class: "btn-check") %>
               <%= us_form.label("expertise_#{expertise}", class: "btn btn-outline-primary btn-sm rounded-4 flex-grow-1 m-1") do %>
                 <%= t("softwares.expertises.#{expertise.downcase}") %>
               <% end %>
