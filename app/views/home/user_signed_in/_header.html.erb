@@ -1,5 +1,5 @@
 <div class="container">
-  <%= render(HeaderComponent.new(title: t("common.hello", name: current_user.first_name))) do %>
+  <%= render(HeaderComponent.new(title: t("common.hello", name: current_user.first_name), border: false)) do %>
     <%= render("home/user_signed_in/install_pwa") %>
   <% end %>
 </div>

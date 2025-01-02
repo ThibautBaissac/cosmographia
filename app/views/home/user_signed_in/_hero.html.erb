@@ -1,4 +1,4 @@
-<div class="container border-bottom bg-light text-center pb-4">
+<div class="border-top border-bottom bg-white text-center py-4">
   <h1 class="display-4 fw-bold text-primary">
     <%= t("common.welcome_to", app_name: "Cosmographia") %>
   </h1>
@@ -8,7 +8,7 @@
       <br>
       <%= t("home.user_signed_in.explore_and_publish") %>
     </p>
-    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+    <div class="d-grid gap-3 d-flex justify-content-center">
       <%= link_to(visualizations_path(locale)) do %>
         <%= render(ButtonComponent.new(text: "🌍 #{t("home.user_signed_in.discover_visualizations")}", color: :secondary, outline: :true, size: :lg, rounded: :pill)) %>
       <% end %>
