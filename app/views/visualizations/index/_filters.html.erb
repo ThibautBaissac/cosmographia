@@ -1,17 +1,20 @@
 <div class="row g-4">
   <div class="col-12">
-    <%= form.label(:categories, t("visualizations.filtering.categories"), class: "form-label fw-semibold") %>
-    <%= form.collection_check_boxes(:categories, Visualization.category_keys, :to_s, :to_s) do |b| %>
-      <div class="d-inline-flex align-items-center">
-        <%= b.check_box(
-              class: "btn-check",
-              checked: params[:categories]&.include?(b.object.to_s)
-            ) %>
-        <%= b.label(class: "btn btn-outline-info btn-sm rounded-4") do %>
-          <%= t("visualizations.category.#{b.object}") %>
-        <% end %>
-      </div>
-    <% end %>
+    <fieldset>
+      <legend class="visually-hidden">Choose visualization category</legend>
+      <%= form.label(:categories, t("visualizations.filtering.categories"), class: "form-label fw-semibold") %>
+      <%= form.collection_check_boxes(:categories, Visualization.category_keys, :to_s, :to_s) do |b| %>
+        <div class="d-inline-flex align-items-center">
+          <%= b.check_box(
+                class: "btn-check",
+                checked: params[:categories]&.include?(b.object.to_s)
+              ) %>
+          <%= b.label(class: "btn btn-outline-info btn-sm rounded-4") do %>
+            <%= t("visualizations.category.#{b.object}") %>
+          <% end %>
+        </div>
+      <% end %>
+    </fieldset>
   </div>
 
   <!-- Creation Date Filter -->

@@ -1,6 +1,6 @@
 <%= form_with(url: update_user_locale_path(locale), method: :patch, data: {turbo: "false"}, html: {id: "locale-form"}) do |form| %>
   <fieldset>
-    <legend class="sr-only">Choose language</legend>
+    <legend class="visually-hidden">Choose language</legend>
     <div class="d-flex align-items-center justify-content-around">
       <% I18n.available_locales.each do |locale| %>
         <div class="w-30">

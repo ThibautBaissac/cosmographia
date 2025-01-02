@@ -4,6 +4,7 @@
       <%= form.text_field(:query, value: @query, placeholder: t("common.search"), class: "form-control rounded-start-pill", aria: {label: t("common.search")}) %>
       <button class="btn btn-outline-success rounded-end-pill" type="submit">
         <i class="fa-solid fa-magnifying-glass"></i>
+        <span class="visually-hidden"><%= t("common.search") %></span>
       </button>
     </div>
   <% end %>
