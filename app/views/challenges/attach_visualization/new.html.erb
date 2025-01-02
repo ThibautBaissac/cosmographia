@@ -6,7 +6,7 @@
           <%= form.radio_button(:visualization_id, visualization.id, id: "visualization_#{visualization.id}", class: "btn-check", required: true) %>
           <%= form.label(:visualization_id, for: "visualization_#{visualization.id}", class: "btn btn-outline-success w-100 p-0 position-relative") do %>
             <div class="ratio ratio-1x1">
-              <%= image_tag(visualization.image, class: "object-fit-cover rounded-top", alt: visualization.title) %>
+              <%= image_tag(visualization.image_thumbnail_lg, class: "object-fit-cover rounded-top", alt: visualization.title) %>
             </div>
             <div class="small p-2 rounded-bottom">
               <%= visualization.title %>

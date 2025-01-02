@@ -46,7 +46,7 @@
       <%= form.file_field(:image, class: "form-control rounded-pill shadow-sm mt-2", accept: "image/webp, image/png, image/jpeg, image/jpg, image/gif") %>
       <% if visualization.image.attached? %>
         <p class="mt-3 fw-semibold"><%= t("visualizations.form.current_image") %></p>
-        <%= image_tag(visualization.image, class: "img-thumbnail shadow-sm", style: "max-height: 150px;") %>
+        <%= image_tag(visualization.image_thumbnail_sm, class: "img-thumbnail shadow-sm", style: "max-height: 150px;") %>
       <% end %>
     </div>
   </div>

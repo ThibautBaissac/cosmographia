@@ -3,7 +3,7 @@
       <% visualizations.each do |visualization| %>
         <div class="col-4">
           <div class="ratio ratio-16x9">
-            <%= image_tag(visualization.image, class: "object-fit-cover disable_img", alt: visualization.title) %>
+            <%= image_tag(visualization.image_thumbnail_lg, class: "object-fit-cover disable_img", alt: visualization.title) %>
           </div>
       </div>
     <% end %>
