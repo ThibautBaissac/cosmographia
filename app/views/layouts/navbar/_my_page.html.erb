@@ -1,3 +1,8 @@
 <% if current_user.opted_in_directory? %>
-  <li><%= link_to(t("navbar.my_public_page"), user_profile_path(locale, current_user.slug), class: "dropdown-item") %></li>
+  <li>
+    <%= link_to(user_profile_path(locale, current_user.slug), class: "dropdown-item") do %>
+      <i class="fa-solid fa-pager text-secondary me-2"></i>
+      <%= t("navbar.my_public_page") %>
+    <% end %>
+    </li>
 <% end %>

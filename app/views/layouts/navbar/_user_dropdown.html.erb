@@ -5,14 +5,44 @@
         <i class="fa-solid fa-circle-user fa-2x text-primary"></i>
       </a>
       <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-        <li><%= link_to(t("navbar.my_info"), my_info_path(locale), class: "dropdown-item") %></li>
-        <li><%= link_to(t("navbar.my_mentions"), my_mentions_path(locale), class: "dropdown-item") %></li>
+        <li>
+          <%= link_to(my_info_path(locale), class: "dropdown-item") do %>
+            <i class="fa-solid fa-address-card text-secondary me-2"></i>
+            <%= t("navbar.my_info") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to(my_mentions_path(locale), class: "dropdown-item") do %>
+            <i class="fa-solid fa-at text-secondary me-2"></i>
+            <%= t("navbar.my_mentions") %>
+          <% end %>
+        </li>
         <%= render("layouts/navbar/my_page") %>
-        <li><%= link_to(t("navbar.my_comments"), my_comments_path(locale), class: "dropdown-item") %></li>
-        <li><%= link_to(t("navbar.my_charts"), my_charts_path(locale), class: "dropdown-item") %></li>
+        <li>
+          <%= link_to(my_comments_path(locale), class: "dropdown-item") do %>
+            <i class="fa-solid fa-comment text-secondary me-2"></i>
+            <%= t("navbar.my_comments") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to(my_charts_path(locale), class: "dropdown-item") do %>
+            <i class="fa-solid fa-chart-pie text-secondary me-2"></i>
+            <%= t("navbar.my_charts") %>
+          <% end %>
+        </li>
         <li><hr class="dropdown-divider"></li>
-        <li><%= button_to(t("auth.sign_out"), destroy_user_session_path(locale), method: :delete, class: "dropdown-item") %></li>
-        <li><%= link_to(t("feedbacks.feedback"), "#offcanvaFeedback", class: "dropdown-item", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvaFeedback"}) %></li>
+        <li>
+          <%= link_to("#offcanvaFeedback", class: "dropdown-item", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvaFeedback"}) do %>
+            <i class="fa-regular fa-comment-dots text-secondary me-2"></i>
+            <%= t("feedbacks.feedback") %>
+          <% end %>
+        </li>
+        <li>
+          <%= button_to(destroy_user_session_path(locale), method: :delete, class: "dropdown-item") do %>
+            <i class="fa-solid fa-sign-out text-secondary me-2"></i>
+            <%= t("auth.sign_out") %>
+          <% end %>
+        </li>
         <%= render("layouts/navbar/install_pwa") %>
         <%= render("layouts/navbar/superadmin_dropdown") %>
       </ul>
