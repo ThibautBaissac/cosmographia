@@ -17,20 +17,13 @@ fr:
       visualizations_count: Plus de %{count} visualisations partagées par notre communauté
         vous attendent.
     user_signed_out:
-      exchange_section_text: Recevez des retours constructifs, partagez vos idées
-        et connectez-vous avec des passionnés dans un esprit de respect et de bienveillance.
-      exchange_section_title: Un lieu d’échange et d’inspiration
+      section_01_html: <b>Présentez</b> vos cartes qui mettent en lumière les défis environnementaux, promeuvent des pratiques durables et favorisent une prise de conscience globale.
+      section_02_html: <b>Collaborez</b> avec une communauté passionnée pour inspirer l'action et stimuler le changement positif grâce à la puissance de la cartographie innovante et de la visualisation des données.
+      section_03_html: <b>Unissez-vous</b> aux cartographes, aux professionnels SIG et aux passionnés de visualisation qui partagent un engagement envers la géoconscience et la bioconscience.
       join_us_button: Rejoignez-nous dès maintenant
       join_us_reasons:
       - Partager dans un environnement respectueux et encourageant.
       - Apprendre et progresser grâce aux retours d’une communauté expérimentée.
       - Echanger avec des experts et des amateurs de visualisation du monde entier.
       join_us_title: Pourquoi rejoindre Cosmographia ?
-      library_section_text: Explorez des créations variées, découvrez des techniques
-        innovantes et laissez-vous inspirer par d’autres cartographes.
-      library_section_title: Bibliothèque communautaire
-      main_description: Cosmographia vous permet de partager vos cartes avec une communauté
-        qui valorise la diversité des approches et des styles.
-      main_sub_description: Que vous réalisiez des cartes ou de la visualisation de
-        données, chaque création trouve ici sa place et son public.
-      main_title: Un espace pour vos créations
+      main_title_html: <span class="fw-bold text-primary">Cosmographia</span> est bien plus qu'une plateforme - c'est un mouvement !

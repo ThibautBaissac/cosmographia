@@ -8,7 +8,7 @@ class HomeController < ApplicationController
       last_comments
       set_charts
     else
-      @visualizations = Visualizations::DailyRandom.new(visualization_count: 9).call
+      @visualizations = Visualizations::DailyRandom.new(visualization_count: 6).call
     end
   end
 

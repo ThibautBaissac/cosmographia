@@ -1,11 +1,15 @@
-<div class="container">
-  <div class="row g-0">
+  <div class="container mb-5 pt-5 border-top">
+    <div class="row g-3">
       <% visualizations.each do |visualization| %>
-        <div class="col-4">
-          <div class="ratio ratio-16x9">
-            <%= image_tag(visualization.image_thumbnail_lg, class: "object-fit-cover disable_img", alt: visualization.title) %>
+        <div class="col-6 col-md-4">
+          <div class="ratio ratio-16x9 overflow-hidden rounded">
+            <%= image_tag(
+              visualization.image_thumbnail_lg,
+              class: "object-fit-cover disable_img",
+              alt: visualization.title
+            ) %>
           </div>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>

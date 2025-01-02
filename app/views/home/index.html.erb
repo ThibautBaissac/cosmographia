@@ -10,6 +10,6 @@
     </div>
   </div>
 <% else %>
-  <%= render("home/user_signed_out/image_grid", visualizations: @visualizations) %>
   <%= render("home/user_signed_out/presentation") %>
+  <%= render("home/user_signed_out/image_grid", visualizations: @visualizations) %>
 <% end %>

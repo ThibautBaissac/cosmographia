@@ -1,38 +1,39 @@
-<main class="container my-5">
+<div class="container">
   <section class="text-center mb-5">
-    <h2><%= t("home.user_signed_out.main_title") %></h2>
-    <p class="mt-3"><%= t("home.user_signed_out.main_description") %></p>
-    <p class="mt-3"><%= t("home.user_signed_out.main_sub_description") %></p>
+    <h1 class=""><%= t("home.user_signed_out.main_title_html") %></h1>
   </section>
+
   <section class="row text-center">
-    <div class="col-md-6 mb-4">
-      <div class="card h-100 rounded-4">
-        <div class="card-body">
-          <h3 class="card-title"><%= t("home.user_signed_out.exchange_section_title") %></h3>
-          <p class="card-text"><%= t("home.user_signed_out.exchange_section_text") %></p>
+    <% sections = [
+      t("home.user_signed_out.section_01_html"),
+      t("home.user_signed_out.section_02_html"),
+      t("home.user_signed_out.section_03_html")
+    ] %>
+    <% sections.each do |content| %>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm rounded-4 border-secondary-subttle">
+          <div class="card-body">
+            <p class="card-text"><%= content %></p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-6 mb-4">
-      <div class="card h-100 rounded-4">
-        <div class="card-body">
-          <h3 class="card-title"><%= t("home.user_signed_out.library_section_title") %></h3>
-          <p class="card-text"><%= t("home.user_signed_out.library_section_text") %></p>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </section>
-  <section class="text-center mb-5 p-5 rounded-5 bg-primary bg-gradient">
-    <h2 class="text-light"><%= t("home.user_signed_out.join_us_title") %></h2>
-    <ul class="list-group list-group-flush mt-3 mx-auto" style="max-width: 700px;">
+
+  <section class="text-center mb-5 p-4 rounded-4 bg-primary bg-gradient text-light">
+    <h2 class="fw-bold"><%= t("home.user_signed_out.join_us_title") %></h2>
+    <ul class="list-group list-group-flush mt-3 mx-auto bg-transparent" style="max-width: 700px;">
       <% t("home.user_signed_out.join_us_reasons").each do |reason| %>
-        <li class="list-group-item bg-transparent text-light"><%= reason %></li>
+        <li class="list-group-item bg-transparent text-light d-flex align-items-center">
+          <i class="bi bi-check-circle me-2"></i>
+          <%= reason %>
+        </li>
       <% end %>
     </ul>
+    <div class="mt-3 d-flex justify-content-center">
+      <%= link_to(new_user_registration_path(locale)) do %>
+        <%= render(ButtonComponent.new(text: t("home.user_signed_out.join_us_button"), color: :success, size: :lg, rounded: :pill)) %>
+      <% end %>
+    </div>
   </section>
-  <div class="d-flex justify-content-center">
-    <%= link_to(new_user_session_path(locale)) do %>
-      <%= render(ButtonComponent.new(text: t("home.user_signed_out.join_us_button"), color: :success, size: :lg)) %>
-    <% end %>
-  </div>
-</main>
+</div>
