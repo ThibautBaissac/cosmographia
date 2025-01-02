@@ -1,5 +1,11 @@
 module Constants
   module Visualizations
+    VARIANT_SIZES = {
+      thumbnail_sm: [200, 200],
+      thumbnail_lg: [500, 500],
+      resized:      [1500, 1500]
+    }.freeze
+
     CATEGORY = %i[ map data ].freeze
     GEOGRAPHIC_COVERAGE = %i[ local municipal Regional national continental global ].freeze
 

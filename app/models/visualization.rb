@@ -18,4 +18,17 @@ class Visualization < ApplicationRecord
   string_enum category: Constants::Visualizations::CATEGORY
   string_enum projection: Constants::Visualizations::PROJECTIONS
   string_enum geographic_coverage: Constants::Visualizations::GEOGRAPHIC_COVERAGE
+
+  def image_variant(name)
+    dimensions = Constants::Visualizations::VARIANT_SIZES[name]
+    return unless dimensions
+
+    image.variant(resize_to_limit: dimensions).processed
+  end
+
+  Constants::Visualizations::VARIANT_SIZES.keys.each do |variant_name|
+    define_method("image_#{variant_name}") do
+      image_variant(variant_name)
+    end
+  end
 end
