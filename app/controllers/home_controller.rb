@@ -2,13 +2,14 @@ class HomeController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    if user_signed_in?
       @visualizations = Visualization.includes(:image_attachment).order(created_at: :desc).limit(12)
       set_contributions
       last_comments
       set_charts
     else
-      @visualizations = Visualizations::DailyRandom.new(visualization_count: 6).call
+      @visualizations = Rails.cache.fetch("homepage/signed_out/visualizations", expires_in: 12.hours) do
+        Visualizations::DailyRandom.new(visualization_count: 6).call
+      end
     end
   end
 
