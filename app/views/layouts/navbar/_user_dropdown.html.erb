@@ -53,12 +53,12 @@
   <ul class="list-group list-group-horizontal w-100 w-lg-auto">
     <li class="list-group-item border-0">
       <%= link_to(new_user_registration_path(locale)) do %>
-        <%= render(ButtonComponent.new(text: t("auth.sign_up"), rounded: :pill, icon: "fa-solid fa-user-plus me-2")) %>
+        <%= render(ButtonComponent.new(text: t("auth.sign_up"), rounded: :pill)) %>
       <% end %>
     </li>
     <li class="list-group-item border-0">
       <%= link_to(new_user_session_path(locale)) do %>
-        <%= render(ButtonComponent.new(text: t("auth.sign_in"), outline: :true, rounded: :pill, icon: "fa-solid fa-arrow-right-to-bracket me-2")) %>
+        <%= render(ButtonComponent.new(text: t("auth.sign_in"), outline: :true, rounded: :pill)) %>
       <% end %>
     </li>
   </ul>
