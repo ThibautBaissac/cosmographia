@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     draw :mentions
     draw :my
     draw :static_pages
+    draw :sources
     draw :users
 
     root "home#index"
