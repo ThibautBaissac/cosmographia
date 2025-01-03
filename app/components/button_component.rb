@@ -69,7 +69,7 @@ class ButtonComponent < ViewComponent::Base
     classes << "btn-#{color}" unless outline
     classes << "btn-#{size}" if size
     classes << "rounded-#{rounded}"
-    classes << "d-flex align-items-center gap-2"
+    classes << "d-flex align-items-center #{"gap-2" if text.present?}"
     classes << extra_classes if extra_classes.present?
     classes.join(" ")
   end
