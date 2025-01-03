@@ -5,6 +5,7 @@ require 'faker'
 @nb_visualizations = 300
 @nb_challenges = 30
 load(Rails.root.join("db", "seeds", "data", "softwares.rb"))
+load(Rails.root.join("db", "seeds", "data", "sources.rb"))
 load(Rails.root.join("db", "seeds", "data", "users.rb"))
 load(Rails.root.join("db", "seeds", "data", "guest_users.rb"))
 load(Rails.root.join("db", "seeds", "data", "visualizations.rb"))
