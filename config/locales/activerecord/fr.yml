@@ -17,6 +17,11 @@ fr:
       software:
         category: Catégorie
         name: Nom
+      source:
+        description: Description
+        name: Nom
+        url: URL
+        location: Localisation
       user:
         bio: Bio
         first_name: Prénom

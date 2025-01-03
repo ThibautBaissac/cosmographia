@@ -2,7 +2,22 @@
 fr:
   source:
     visit_website: Visiter le site web
+    flash:
+      actions:
+        create:
+          failure: La source n'a pas été créée.
+          success: La source a été créée avec succès.
+        update:
+          failure: La source n'a pas été mise à jour.
+          success: La source a été mise à jour avec succès.
   sources:
     count: "%{count} sources"
     search:
       query_placeholder: Rechercher des sources par nom, emplacement ou description
+    form:
+      create_title: Créer une nouvelle source
+      edit_title: Modifier la source
+      name_placeholder: Entrer le nom de la source
+      location_placeholder: Entrer l'emplacement de la source
+      description_placeholder: Entrer la description de la source
+      url_placeholder: Entrer l'URL de la source
