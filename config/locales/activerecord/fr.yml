@@ -56,3 +56,6 @@ fr:
       software:
         one: Logiciel
         other: Logiciels
+      source:
+        one: Source
+        other: Sources

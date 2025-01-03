@@ -56,3 +56,6 @@ en:
       software:
         one: Software
         other: Softwares
+      source:
+        one: Source
+        other: Sources

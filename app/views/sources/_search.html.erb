@@ -1,0 +1,15 @@
+<div class="container mb-3">
+  <%= form_with(url: sources_path(locale), method: :get, local: true, class: "bg-white shadow-sm border border-secondary-subtle p-4 bg-light rounded-4") do |form| %>
+    <div class="form-text mb-3 text-secondary">
+      <%= t("sources.search.query_placeholder") %>
+    </div>
+
+    <div class="input-group mb-4">
+      <%= form.text_field(:source_query, value: query, placeholder: t("common.search"), class: "form-control rounded-start-pill shadow-sm", aria: {label: "Search query"}) %>
+      <button class="btn btn-outline-success rounded-end-pill shadow-sm" type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i></i> <%= t("common.search_btn") %>
+      </button>
+    </div>
+  <% end %>
+  <p class="small mt-2 ms-2 text-muted"><%= t("sources.count", count: @pagy.count) %></p>
+</div>

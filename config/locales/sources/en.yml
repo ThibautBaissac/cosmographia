@@ -1,0 +1,8 @@
+---
+en:
+  source:
+    visit_website: Visit website
+  sources:
+    count: "%{count} sources"
+    search:
+      query_placeholder: Search sources by name, location, or description
