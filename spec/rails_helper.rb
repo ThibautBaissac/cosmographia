@@ -27,6 +27,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
 
   config.include(FactoryBot::Syntax::Methods)
+  config.include(Devise::Test::ControllerHelpers, type: :controller)
 
   Shoulda::Matchers.configure do |config|
     config.integrate do |with|
