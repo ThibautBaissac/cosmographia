@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
+    if user_signed_in?
       @visualizations = Visualization.includes(:image_attachment).order(created_at: :desc).limit(12)
       set_contributions
       last_comments
