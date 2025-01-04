@@ -52,5 +52,6 @@ group :test do
   gem "capybara"
   gem "pundit-matchers", "~> 4.0"
   gem "selenium-webdriver"
+  gem "simplecov", require: false
   gem "shoulda-matchers", "~> 6.0"
 end

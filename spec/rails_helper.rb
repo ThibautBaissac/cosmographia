@@ -9,6 +9,7 @@ return unless Rails.env.test?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rails'
+require 'simplecov'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
