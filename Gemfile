@@ -35,7 +35,7 @@ group :development, :test do
   gem "dotenv"
   gem "factory_bot_rails"
   gem "faker", "~> 3.5"
-  gem "rspec-rails", "~> 7.0.0"
+  gem "rspec-rails", "~> 7.1.0"
   gem "rubocop-rails-omakase", require: false
 end
 
