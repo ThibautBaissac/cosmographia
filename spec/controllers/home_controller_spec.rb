@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe HomeController, type: :controller do
-  include Devise::Test::ControllerHelpers
-
   let(:user) { create(:user) }
 
   describe "GET #index" do
