@@ -9,7 +9,7 @@ class ChallengePolicy < ApplicationPolicy
 
   alias_method(:edit?, :new?)
   alias_method(:update?, :new?)
-  alias_method(:detroy?, :new?)
+  alias_method(:destroy?, :new?)
 
   alias_method(:participations?, :index?)
   alias_method(:discussion?, :index?)
