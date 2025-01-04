@@ -12,7 +12,7 @@ FactoryBot.define do
     last_presence_at { Faker::Date.backward(days: 30) }
     personal_website { Faker::Internet.url }
     social_links { {github: Faker::Internet.url, linkedin: Faker::Internet.url} }
-    guest { false }
+    guest { true }
     optin_directory { false }
     public_profile { false }
 
@@ -20,8 +20,8 @@ FactoryBot.define do
       superadmin { true }
     end
 
-    trait :guest do
-      guest { true }
+    trait :not_guest do
+      guest { false }
     end
 
     trait :public_profile do
@@ -30,6 +30,10 @@ FactoryBot.define do
 
     trait :optin_directory do
       optin_directory { true }
+    end
+
+    trait :public_profile do
+      public_profile { true }
     end
 
     sequence(:slug) { |n| "user-#{n}" }
