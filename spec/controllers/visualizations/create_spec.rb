@@ -44,10 +44,7 @@ RSpec.describe VisualizationsController, type: :controller do
     end
 
     context "when unauthorized" do
-      let(:user) { create(:user, :not_guest) }
-
       before do
-        sign_in(user)
         allow_any_instance_of(VisualizationsController).to receive(:authorize).and_raise(Pundit::NotAuthorizedError)
       end
 
