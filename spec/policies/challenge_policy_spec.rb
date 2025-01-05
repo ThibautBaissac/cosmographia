@@ -11,6 +11,6 @@ RSpec.describe ChallengePolicy do
 
   context 'with superadmins' do
     let(:user) { build(:user, :superadmin) }
-    it { is_expected.to permit_only_actions(%i[index edit new destroy update participations discussion]) }
+    it { is_expected.to permit_only_actions(%i[index edit new destroy update create participations discussion]) }
   end
 end

@@ -8,6 +8,7 @@ class ChallengePolicy < ApplicationPolicy
   end
 
   alias_method(:edit?, :new?)
+  alias_method(:create?, :new?)
   alias_method(:update?, :new?)
   alias_method(:destroy?, :new?)
 
