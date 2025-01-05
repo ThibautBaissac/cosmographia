@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
   before_action :set_locale
-  before_action :update_last_presence_at
 
   private
 
@@ -39,13 +38,5 @@ class ApplicationController < ActionController::Base
 
     flash[:alert] = t("#{policy_name}.#{exception.query}", scope: "pundit", default: :default)
     redirect_back_or_to(root_path(locale))
-  end
-
-  def update_last_presence_at
-    return unless current_user
-
-    if current_user.last_presence_at != Date.current
-      User::UpdateLastPresenceAtJob.perform_later(user_id: current_user.id)
-    end
   end
 end

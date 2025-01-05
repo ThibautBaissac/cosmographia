@@ -210,13 +210,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_03_092432) do
   end
 
   create_table "sources", force: :cascade do |t|
-    t.string "name"
-    t.string "url"
-    t.string "description"
+    t.string "name", null: false
+    t.string "url", null: false
     t.string "location"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["description"], name: "index_sources_on_description"
+    t.index ["location"], name: "index_sources_on_location"
     t.index ["name"], name: "index_sources_on_name"
   end
 
@@ -245,6 +246,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_03_092432) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "superadmin", default: false
@@ -252,7 +262,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_03_092432) do
     t.string "first_name"
     t.string "last_name"
     t.text "bio"
-    t.date "last_presence_at"
     t.string "personal_website"
     t.jsonb "social_links"
     t.boolean "guest", default: true

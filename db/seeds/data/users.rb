@@ -11,10 +11,10 @@ puts("---- Creating users...")
     last_name: Faker::Name.last_name,
     public_profile: [ true, false ].sample,
     bio: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true, random_sentences_to_add: 4),
-    last_presence_at: Faker::Time.backward(days: 365, period: :evening),
     personal_website: Faker::Internet.url,
     guest: false,
     optin_directory: [ true, false ].sample,
+    confirmed_at: Time.now,
     social_links: {
       linkedin: Faker::Internet.url(host: "linkedin.com/in"),
       github: Faker::Internet.url(host: "github.com")
@@ -27,6 +27,8 @@ puts("---- Creating users...")
       expertise: UserSoftware.expertise_values.sample,
     )
   end
+
+
 
   puts("--(#{i + 1}/#{@nb_users}) #{user.email}")
 end
