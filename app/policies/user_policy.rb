@@ -1,10 +1,26 @@
 class UserPolicy < ApplicationPolicy
   def show?
-    return false if user.blank?
-    return true if record.public_profile? || user.not_guest? || user == record || user.superadmin?
-    false
+    return true if record.public_profile?
+    return false if user.nil?
+
+    permitted_to_view_profile?
   end
 
-  alias_method(:edit?, :show?)
-  alias_method(:update?, :show?)
+  def edit?
+    return false if user.nil?
+
+    permitted_to_edit_profile?
+  end
+
+  alias_method(:update?, :edit?)
+
+  private
+
+  def permitted_to_view_profile?
+    user.not_guest? || user == record || user.superadmin?
+  end
+
+  def permitted_to_edit_profile?
+    user == record || user.superadmin?
+  end
 end
