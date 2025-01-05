@@ -10,7 +10,7 @@ class CreateSources < ActiveRecord::Migration[8.0]
     end
 
     add_index(:sources, :name)
-    add_index(:location, :description)
+    add_index(:sources, :location)
     add_index(:sources, :description)
   end
 end
