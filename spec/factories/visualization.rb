@@ -32,8 +32,7 @@ FactoryBot.define do
 
     trait :with_softwares do
       after(:create) do |visualization|
-        # Assumes you have a Software factory defined
-        create_list(:software, 2, visualizations: [visualization])
+        create_list(:visualization_software, 2, visualization: visualization)
       end
     end
   end
