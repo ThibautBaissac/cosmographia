@@ -1,6 +1,6 @@
 class VisualizationsController < ApplicationController
   before_action :set_visualization, only: [ :edit, :update ]
-  before_action :set_challenge, only: [ :new, :create ], if: -> { params[:challenge_id].present? }
+  before_action :set_challenge, only: [ :new, :create ]
 
   def index
     authorize(Visualization)
@@ -61,7 +61,7 @@ class VisualizationsController < ApplicationController
   end
 
   def set_challenge
-    @challenge = Challenge.find(params[:challenge_id])
+    @challenge = Challenge.find_by(id: params[:challenge_id]) if params[:challenge_id].present?
   end
 
   def set_authorize
