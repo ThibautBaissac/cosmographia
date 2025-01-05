@@ -1,0 +1,40 @@
+fr:
+  devise_emails:
+    confirmation_instructions:
+      welcome_title: "Bienvenue sur %{platform_name}"
+      description: "Une plateforme où les cartes éveillent la conscience mondiale et inspirent l'action."
+      greeting: "Bienvenue <strong>%{email}</strong>!"
+      confirm_instruction: "Vous pouvez confirmer votre adresse e-mail via le lien ci-dessous :"
+      confirm_button: "Confirmer Mon Compte"
+    email_changed:
+      title: "Notification de changement d'email"
+      description: "Ce message vous informe d'une mise à jour récente de votre compte."
+      greeting: "Bonjour <strong>%{email}</strong>!"
+      pending_email_change: "Nous vous informons que votre adresse e-mail est en cours de modification vers <strong>%{new_email}</strong>."
+      success_email_change: "Nous vous informons que votre adresse e-mail a été modifiée avec succès vers <strong>%{email}</strong>."
+    password_change:
+      title: "Notification de changement de mot de passe"
+      description: "Ce message vous informe d'une mise à jour de sécurité récente sur votre compte."
+      greeting: "Bonjour <strong>%{email}</strong>!"
+      success_message: "Nous vous informons que votre mot de passe a été modifié avec succès. Si vous n'avez pas effectué ce changement, veuillez agir immédiatement."
+      manage_account_button: "Gérer votre compte"
+      security_warning: "Si vous n'avez pas demandé ce changement, sécurisez immédiatement votre compte en réinitialisant votre mot de passe ou en contactant le support."
+    reset_password_instructions :
+      title: "Demande de réinitialisation du mot de passe"
+      description: "Nous avons reçu une demande de réinitialisation de votre mot de passe. Suivez les instructions ci-dessous si vous souhaitez continuer."
+      greeting: "Bonjour <strong>%{email}</strong>!"
+      instruction: "Vous avez demandé à changer votre mot de passe. Vous pouvez le faire en utilisant le lien ci-dessous :"
+      change_button: "Changer mon mot de passe"
+      ignore_message: "Si vous n'avez pas fait cette demande, veuillez ignorer cet e-mail."
+      no_change_notice: "Votre mot de passe ne sera pas modifié tant que vous n'aurez pas cliqué sur le lien ci-dessus et créé un nouveau mot de passe."
+      support_message: "Si vous avez besoin d'aide supplémentaire, veuillez contacter notre équipe de support."
+    unlock_instructions:
+      unlock_link: "Déverrouiller mon compte"
+      title: "Compte Verrouillé"
+      description: "Votre compte a été temporairement verrouillé pour des raisons de sécurité."
+      greeting: "Bonjour <strong>%{email}</strong>!"
+      locked_message: "Votre compte a été verrouillé en raison d'un nombre excessif de tentatives de connexion infructueuses."
+      instruction: "Cliquez sur le lien ci-dessous pour déverrouiller votre compte :"
+      unlock_button: "Déverrouiller mon compte"
+      security_advice: "Si vous n'avez pas tenté de vous connecter plusieurs fois, envisagez de changer votre mot de passe pour plus de sécurité."
+      support_message: "Si vous avez besoin d'une assistance supplémentaire, veuillez contacter notre équipe de support."

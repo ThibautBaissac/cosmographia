@@ -2,17 +2,26 @@
   <table style="width: 100%; max-width: 600px; margin: 0 auto; border-spacing: 0; border-collapse: collapse;">
     <tr>
       <td style="padding: 20px; background: #f4f4f4; text-align: center; border-radius: 15px;">
-        <h1 style="color: #194a7e; margin: 0; font-size: 28px;">Welcome to <span style="font-weight: bold;">Cosmographia</span>
+        <h1 style="color: #194a7e; margin: 0; font-size: 28px;">
+          <%= t('devise_emails.confirmation_instructions.welcome_title', platform_name: 'Cosmographia') %>
         </h1>
-        <p style="font-size: 16px; margin: 10px 0; color: #555;">A platform where maps ignite global awareness and inspire action.</p>
+        <p style="font-size: 16px; margin: 10px 0; color: #555;">
+          <%= t('devise_emails.confirmation_instructions.description') %>
+        </p>
       </td>
     </tr>
     <tr>
       <td style="padding: 20px;">
-        <p style="font-size: 16px; margin: 0 0 10px;">Welcome <strong><%= @email %> </strong>! </p>
-        <p style="font-size: 16px; margin: 0 0 10px;">You can confirm your account email through the link below:</p>
+        <p style="font-size: 16px; margin: 0 0 10px;">
+          <%= t('devise_emails.confirmation_instructions.greeting_html', email: @email) %>
+        </p>
+        <p style="font-size: 16px; margin: 0 0 10px;">
+          <%= t('devise_emails.confirmation_instructions.confirm_instruction') %>
+        </p>
         <p style="text-align: center; margin: 20px 0;">
-          <a href="<%= confirmation_url(@resource, confirmation_token: @token) %>" style="display: inline-block; padding: 12px 24px; background: #194a7e; color: #fff; text-decoration: none; font-size: 16px; border-radius: 15px;"> Confirm My Account </a>
+          <a href="<%= confirmation_url(@resource, confirmation_token: @token) %>" style="display: inline-block; padding: 12px 24px; background: #194a7e; color: #fff; text-decoration: none; font-size: 16px; border-radius: 15px;">
+            <%= t('devise_emails.confirmation_instructions.confirm_button') %>
+          </a>
         </p>
       </td>
     </tr>

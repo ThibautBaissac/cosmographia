@@ -1,28 +1,41 @@
-<p><%= link_to "Unlock my account", unlock_url(@resource, unlock_token: @token) %></p>
+<p><%= link_to t('devise_emails.unlock_instructions.unlock_link'), unlock_url(@resource, unlock_token: @token) %></p>
+
 <div style="font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333;">
   <table style="width: 100%; max-width: 600px; margin: 0 auto; border-spacing: 0; border-collapse: collapse;">
     <tr>
       <td style="padding: 20px; background: #f4f4f4; text-align: center; border-radius: 15px;">
-        <h1 style="color: #194a7e; margin: 0; font-size: 28px;">Account Locked</h1>
-        <p style="font-size: 16px; margin: 10px 0; color: #555;">Your account has been temporarily locked due to security reasons.</p>
+        <h1 style="color: #194a7e; margin: 0; font-size: 28px;">
+          <%= t('devise_emails.unlock_instructions.title') %>
+        </h1>
+        <p style="font-size: 16px; margin: 10px 0; color: #555;">
+          <%= t('devise_emails.unlock_instructions.description') %>
+        </p>
       </td>
     </tr>
     <tr>
       <td style="padding: 20px;">
-        <p style="font-size: 16px; margin: 0 0 10px;">Hello <strong><%= @resource.email %></strong>!</p>
-        <p style="font-size: 16px; margin: 0 0 10px;">Your account has been locked due to an excessive number of unsuccessful sign-in attempts.</p>
-        <p style="font-size: 16px; margin: 0 0 10px;">Click the link below to unlock your account:</p>
+        <p style="font-size: 16px; margin: 0 0 10px;">
+          <%= t('devise_emails.unlock_instructions.greeting_html', email: @resource.email) %>
+        </p>
+        <p style="font-size: 16px; margin: 0 0 10px;">
+          <%= t('devise_emails.unlock_instructions.locked_message') %>
+        </p>
+        <p style="font-size: 16px; margin: 0 0 10px;">
+          <%= t('devise_emails.unlock_instructions.instruction') %>
+        </p>
 
         <p style="text-align: center; margin: 20px 0;">
           <a href="<%= unlock_url(@resource, unlock_token: @token) %>" style="display: inline-block; padding: 12px 24px; background: #194a7e; color: #fff; text-decoration: none; font-size: 16px; border-radius: 15px;">
-            Unlock My Account
+            <%= t('devise_emails.unlock_instructions.unlock_button') %>
           </a>
         </p>
 
-        <p style="font-size: 16px; margin: 0 0 10px;">If you did not attempt to sign in multiple times, please consider changing your password for better security.</p>
+        <p style="font-size: 16px; margin: 0 0 10px;">
+          <%= t('devise_emails.unlock_instructions.security_advice') %>
+        </p>
 
         <p style="font-size: 14px; color: #777; text-align: center; margin-top: 20px;">
-          If you need further assistance, please contact our support team.
+          <%= t('devise_emails.unlock_instructions.support_message') %>
         </p>
       </td>
     </tr>
