@@ -25,6 +25,16 @@ RSpec.describe VisualizationsController, type: :controller do
       end
     end
 
+    context "with valid parameters and challenge" do
+      let(:challenge) { create(:challenge) }
+      it "creates a new Visualization" do
+      valid_attributes_with_challenge = valid_attributes.merge(challenge_id: challenge.id)
+        expect {
+          post :create, params: { visualization: valid_attributes_with_challenge }
+        }.to change(Visualization, :count).by(1)
+      end
+    end
+
     context "with invalid parameters" do
       it "does not create a new Visualization" do
         expect {
