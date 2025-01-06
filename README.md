@@ -1,5 +1,9 @@
-# COSMOGRAPGIA
+# COSMOGRAPHIA
 
+If switching between devcontainer and local dev, then run:
+```bash
+yarn install
+```
 
 ## RAKE TASKS
 # Sort yaml files in config/locales
