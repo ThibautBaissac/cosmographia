@@ -83,7 +83,7 @@ production:
     <<: *default
     database: cosmographia_production
     username: cosmographia
-    password: <%= ENV["GEOGRAPHIA_DATABASE_PASSWORD"] %>
+    password: <%= ENV["COSMOGRAPHIA_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: cosmographia_production_cache
