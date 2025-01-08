@@ -14,6 +14,10 @@ FactoryBot.define do
     guest { true }
     optin_directory { false }
     public_profile { false }
+    confirmation_token { nil }
+    confirmed_at { DateTime.yesterday }
+    confirmation_sent_at { nil }
+    unconfirmed_email { nil }
 
     trait :superadmin do
       superadmin { true }
