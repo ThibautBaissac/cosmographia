@@ -15,12 +15,17 @@
           <%= form.text_field(:last_name, class: "form-control rounded-pill shadow-sm", placeholder: t("users.form.last_name_placeholder"), required: true) %>
         </div>
       </div>
-      <div class="col">
+      <div class="col mb-3">
         <%= form.label(:personal_website, class: "form-label fw-semibold") %>
         <%= form.url_field(:personal_website, class: "form-control rounded-pill shadow-sm", placeholder: "https://yourwebsite.com") %>
       </div>
+      <div class="col">
+        <%= form.label(:country_code, class: "form-label fw-semibold") %>
+        <%= form.select(:country_code, ISO3166::Country.all.map { |c| [c.common_name, c.alpha2] }, { include_blank: 'Select Country' }, { class: "form-select rounded-pill shadow-sm" }) %>
+      </div>
     </div>
   </div>
+
 
   <div class="row mt-5">
     <div class="col-3">

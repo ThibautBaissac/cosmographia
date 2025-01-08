@@ -26,6 +26,7 @@ en:
         bio: Bio
         first_name: Prénom
         last_name: Nom
+        country_code: Country
         personal_website: Personal website
         slug: Username
         social_links: Social networks

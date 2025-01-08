@@ -31,6 +31,7 @@ class My::ProfileController < ApplicationController
     params.require(:user).permit(
       :first_name,
       :last_name,
+      :country_code,
       :slug,
       :bio,
       :personal_website,
