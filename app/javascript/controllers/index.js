@@ -19,6 +19,9 @@ application.register("mention", MentionController)
 import PwaInstallController from "./pwa_install_controller"
 application.register("pwa-install", PwaInstallController)
 
+import ListFilterController from "./list_filter_controller"
+application.register("list-filter", ListFilterController)
+
 import ToastController from "./toast_controller"
 application.register("toast", ToastController)
 
