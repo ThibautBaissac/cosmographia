@@ -262,6 +262,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_03_092432) do
     t.string "first_name"
     t.string "last_name"
     t.text "bio"
+    t.string "country_code"
     t.string "personal_website"
     t.jsonb "social_links"
     t.boolean "guest", default: true
