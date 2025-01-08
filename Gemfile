@@ -15,7 +15,7 @@ gem "pg", "~> 1.1"
 gem "propshaft"
 gem "puma", ">= 5.0"
 gem "pundit", "~> 2.4"
-gem "rails", "~> 8.0.0"
+gem "rails", "~> 8.0.1"
 gem "stimulus-rails"
 gem "thruster", require: false
 gem "turbo-rails"
