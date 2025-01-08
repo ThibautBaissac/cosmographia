@@ -9,6 +9,7 @@ puts("---- Creating users...")
     created_at: Faker::Date.backward(days: 365),
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
+    country_code: ISO3166::Country.all.sample.alpha2,
     public_profile: [ true, false ].sample,
     bio: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true, random_sentences_to_add: 4),
     personal_website: Faker::Internet.url,

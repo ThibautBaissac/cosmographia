@@ -8,6 +8,7 @@ FactoryBot.define do
     locale { "en" }
     first_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
+    country_code { ISO3166::Country.all.sample.alpha2 }
     bio { Faker::Lorem.paragraph }
     personal_website { Faker::Internet.url }
     social_links { {github: Faker::Internet.url, linkedin: Faker::Internet.url} }
