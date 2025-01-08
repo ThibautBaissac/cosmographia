@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "bootsnap", require: false
 gem "chartkick"
+gem "countries"
 gem "cssbundling-rails"
 gem "devise", "~> 4.9"
 gem "groupdate"
