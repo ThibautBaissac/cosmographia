@@ -13,7 +13,6 @@ puts("---- Creating users...")
     public_profile: [ true, false ].sample,
     bio: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true, random_sentences_to_add: 4),
     personal_website: Faker::Internet.url,
-    guest: false,
     optin_directory: [ true, false ].sample,
     confirmed_at: Time.now,
     social_links: {

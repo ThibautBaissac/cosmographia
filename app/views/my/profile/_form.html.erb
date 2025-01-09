@@ -20,8 +20,8 @@
         <%= form.url_field(:personal_website, class: "form-control rounded-pill shadow-sm", placeholder: "https://yourwebsite.com") %>
       </div>
       <div class="col">
-        <%= form.label(:country_code, class: "form-label fw-semibold") %>
-        <%= form.select(:country_code, ISO3166::Country.all.map { |c| [c.common_name, c.alpha2] }, { include_blank: 'Select Country' }, { class: "form-select rounded-pill shadow-sm" }) %>
+        <%= form.label(:country_code, class: "form-label fw-semibold required") %>
+        <%= form.select(:country_code, ISO3166::Country.all.map { |c| [c.common_name, c.alpha2] }, { include_blank: 'Select Country' }, { class: "form-select rounded-pill shadow-sm", required: true }) %>
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
     </div>
   </div>
 
-  <% if !@user.guest? %>
+  <% if @user.not_guest? %>
     <div class="row mt-5">
       <div class="col-3">
         <h3 class="text-primary"><%= t("users.form.community_section") %></h3>

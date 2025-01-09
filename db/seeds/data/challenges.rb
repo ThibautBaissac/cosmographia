@@ -12,7 +12,7 @@ puts("---- Creating challenges...")
   )
 
   (0..rand(1..10)).each do
-    user = User.where(guest: false).sample
+    user = User.non_guests.sample
     challenge.user_challenges.create!(
       user_id: user.id,
     )

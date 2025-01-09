@@ -7,9 +7,7 @@ class My::ProfileController < ApplicationController
   end
 
   def update
-    update_service = User::UpdateUserProfileService.new(@user, user_params)
-
-    if update_service.call
+    if @user.update(user_params)
       redirect_to(my_info_path(locale), notice: t("my.profile.flash.actions.update.success"))
     else
       flash[:alert] = t("my.profile.flash.actions.update.failure")

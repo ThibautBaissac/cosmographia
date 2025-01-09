@@ -265,7 +265,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_03_092432) do
     t.string "country_code"
     t.string "personal_website"
     t.jsonb "social_links"
-    t.boolean "guest", default: true
     t.boolean "optin_directory", default: false
     t.string "slug", null: false
     t.boolean "public_profile", default: false

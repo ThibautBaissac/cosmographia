@@ -19,6 +19,6 @@ RSpec.describe Visualization::CommentPolicy do
   context 'when the user is a superadmin' do
     let(:user) { build(:user, :superadmin) }
     let(:visualization_comment) { build(:visualization_comment, visualization: visualization, user: user) }
-    it { is_expected.to permit_only_actions(%i[edit update destroy]) }
+    it { is_expected.to permit_only_actions(%i[new create edit update destroy]) }
   end
 end

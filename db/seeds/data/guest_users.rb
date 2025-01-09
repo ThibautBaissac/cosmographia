@@ -6,7 +6,6 @@ puts("---- Creating guest users...")
     password_confirmation: 'Password123.',
     locale: I18n.available_locales.sample.to_s,
     created_at: Faker::Date.backward(days: 365),
-    guest: true
   )
 
   puts("--(#{i + 1}/#{@nb_guest_users}) #{user.email}")

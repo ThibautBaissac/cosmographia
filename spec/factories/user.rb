@@ -12,7 +12,6 @@ FactoryBot.define do
     bio { Faker::Lorem.paragraph }
     personal_website { Faker::Internet.url }
     social_links { {github: Faker::Internet.url, linkedin: Faker::Internet.url} }
-    guest { true }
     optin_directory { false }
     public_profile { false }
     confirmation_token { nil }
@@ -24,8 +23,16 @@ FactoryBot.define do
       superadmin { true }
     end
 
+    trait :guest do
+      first_name { nil }
+      last_name { nil }
+      country_code { nil }
+    end
+
     trait :not_guest do
-      guest { false }
+      first_name { Faker::Name.first_name }
+      last_name { Faker::Name.last_name }
+      country_code { ISO3166::Country.all.sample.alpha2 }
     end
 
     trait :public_profile do

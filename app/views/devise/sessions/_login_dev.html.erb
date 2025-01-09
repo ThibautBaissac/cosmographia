@@ -13,7 +13,7 @@
       <tr class="cursor-pointer" data-email="<%= user.email %>" data-password="Password123.">
         <td><%= user.email %></td>
         <td><%= user.superadmin %></td>
-        <td><%= user.guest %></td>
+        <td><%= user.guest? %></td>
         <td><%= user.locale %></td>
       </tr>
       <% end %>
