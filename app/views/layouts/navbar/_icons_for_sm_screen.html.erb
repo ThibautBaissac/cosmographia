@@ -1,0 +1,21 @@
+<% if user_signed_in? %>
+  <ul class="navbar-nav d-lg-none list-unstyled flex-grow-1">
+    <div class="d-flex justify-content-around align-items-center">
+      <li class="nav-item">
+        <%= link_to(visualizations_path(locale), class: "nav-link #{active_class(visualizations_path)}") do %>
+          <i class="fa-solid fa-image fs-4"></i>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to(community_directory_path(locale), class: "nav-link #{active_class(community_directory_path)}") do %>
+          <i class="fa-solid fa-people-group fs-4"></i>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to(challenges_path(locale), class: "nav-link #{active_class(challenges_path)}") do %>
+          <i class="fa-solid fa-trophy fs-4"></i>
+        <% end %>
+      </li>
+    </div>
+  </ul>
+<% end %>

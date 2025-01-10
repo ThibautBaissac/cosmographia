@@ -1,12 +1,16 @@
 <nav class="navbar navbar-expand-lg container bg-white shadow-sm rounded-4 mt-3 px-3 border border-secondary-subtle" aria-label="Offcanvas navbar">
   <%= link_to(root_path(locale), class: "navbar-brand d-flex align-items-center") do %>
-    <%= image_tag("logo.png", alt: "Cosmographia logo", width: "30", height: "30", class: "d-inline-block align-text-top me-2") %>
+    <%= image_tag("logo.png", alt: "Cosmographia logo", width: "30", height: "30", class: "d-none d-sm-inline-block align-text-top me-2") %>
     <span class="fw-bold text-primary">Cosmographia</span>
   <% end %>
-  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+
+  <%= render("layouts/navbar/icons_for_sm_screen") %>
+
+  <button class="navbar-toggler ms-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
     aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
     aria-labelledby="offcanvasNavbarLabel">
     <h5 id="offcanvasNavbarLabel" class="visually-hidden">Offcanvas Navigation</h5>
