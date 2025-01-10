@@ -27,6 +27,7 @@ class User < ApplicationRecord
   validates :slug, presence: true, uniqueness: true, exclusion: {in: I18n.available_locales.map(&:to_s)}
   validates :slug, length: {minimum: 4, maximum: 50}, format: {with: /\A[a-z0-9\-_]+\z/, message: :format}
   validate :allowed_social_links_keys
+  validates :country_code, inclusion: {in: ISO3166::Country.codes}, if: :not_guest?
 
   accepts_nested_attributes_for :user_softwares, allow_destroy: true
 
