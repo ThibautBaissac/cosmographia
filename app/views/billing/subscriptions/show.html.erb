@@ -10,7 +10,7 @@
           <li class="list-group-item"><strong><%= t("activerecord.attributes.billing_plan_version.price_cents") %>:</strong> <%= number_to_currency(@current_subscription.plan_version.price_cents / 100.0) %> / <%= t("datetime.prompts.month").downcase %></li>
           <li class="list-group-item"><strong><%= t("activerecord.attributes.billing_subscription.start_date") %>:</strong> <%= @current_subscription.start_date.strftime("%B %d, %Y") %></li>
           <li class="list-group-item"><strong><%= t("activerecord.attributes.billing_subscription.status") %>:</strong>
-            <span class="badge <%= @current_subscription.status == Billing::Subscription::Active ? 'bg-success' : 'bg-secondary' %>">
+            <span class="badge <%= @current_subscription.active? ? 'bg-success' : 'bg-secondary' %>">
               <%= @current_subscription.status.capitalize %>
             </span>
           </li>

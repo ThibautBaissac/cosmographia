@@ -21,7 +21,7 @@
               <td><%= subscription.start_date.strftime("%B %d, %Y") %></td>
               <td><%= subscription.end_date.strftime("%B %d, %Y") if subscription.end_date.present? %></td>
               <td>
-                <span class="badge <%= subscription.status == Billing::Subscription::Active ? 'bg-success' : 'bg-secondary' %>">
+                <span class="badge <%= subscription.active? ? 'bg-success' : 'bg-secondary' %>">
                   <%= subscription.status.capitalize %>
                 </span>
               </td>
