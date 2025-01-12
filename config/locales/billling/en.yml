@@ -1,0 +1,13 @@
+---
+en:
+  billing:
+    subscription:
+      my_current_subscription: "My current subscription"
+      change_subscription: "Change subscription"
+      no_subscription_history: "You have no subscription history."
+      subscribe_now: "Subscribe now"
+      subscription_history: "Subscription history"
+      subscribe_to_plan: "Subscribe to a Plan"
+      my_subscription_history: "My subscription history"
+      cancel_subscription: "Cancel subscription"
+      remaining_visualizations: "Remaining visualizations"

@@ -2,6 +2,23 @@
 fr:
   activerecord:
     attributes:
+      billing_plan:
+        name: "Nom"
+        description: "Description"
+        active: "Actif"
+      billing_plan_version:
+        billing_plan_id: "Plan de Facturation"
+        price_cents: "Prix"
+        currency: "Devise"
+        visualization_limit: "Limite de Visualisation"
+        version_number: "Version"
+        active: "Actif"
+      billing_subscription:
+        user_id: "Utilisateur"
+        billing_plan_version_id: "Version du Plan de Facturation"
+        start_date: "Date de Début"
+        end_date: "Date de Fin"
+        status: "Statut"
       challenge:
         category: Catégorie
         description: Description
@@ -59,6 +76,9 @@ fr:
               blank: Le titre ne peut pas être vide
           blank: Ce attribut est obligatoire
     models:
+      billing_plan:
+        one: Abonnement
+        other: Abonnements
       software:
         one: Logiciel
         other: Logiciels

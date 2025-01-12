@@ -57,6 +57,8 @@ fr:
     my_mentions: Mes mentions
     my_public_page: Ma page publique
     visualizations: Visualisations
+    my_subscription: Mon abonnement
+    subscribe_to_plan: Souscrire à un abonnement
   pundit:
     default: Vous ne pouvez pas effectuer cette action.
     user_policy:

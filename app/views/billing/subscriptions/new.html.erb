@@ -1,0 +1,28 @@
+<%= render("billing/subscriptions/header", title: t('billing.subscription.subscribe_to_plan')) %>
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @latest_plan_versions.each do |pv| %>
+      <div class="col">
+        <div class="card h-100 border border-secondary-subttle rounded-4">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <h5 class="card-title fw-bold"><%= pv.plan.name %></h5>
+            <p class="card-text"><%= pv.plan.description %></p>
+            <p class="card-text fs-4 fw-semibold">
+              <%= number_to_currency(pv.price_cents / 100.0, unit: pv.currency) %>
+            </p>
+            <p class="text-muted">Limit: <%= pv.visualization_limit %> views</p>
+            <%= form_with url: billing_subscriptions_path, method: :post, local: true do |form| %>
+              <%= hidden_field_tag :plan_version_id, pv.id %>
+              <%= submit_tag "Subscribe", class: "btn btn-primary w-100 mt-3" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="text-center mt-5">
+    <%= link_to(t('billing.subscription.my_subscription_history'), billing_subscriptions_path(locale), class: "btn btn-outline-secondary btn-lg") %>
+  </div>
+</div>

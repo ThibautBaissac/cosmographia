@@ -57,6 +57,8 @@ en:
     my_mentions: My mentions
     my_public_page: My public page
     visualizations: Visualizations
+    my_subscription: My subscription
+    subscribe_to_plan: Subscribe to a plan
   pundit:
     default: You cannot perform this action.
     user_policy:

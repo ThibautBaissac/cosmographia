@@ -1,0 +1,34 @@
+<%= render("billing/subscriptions/header", title: t('billing.subscription.my_current_subscription')) %>
+
+<div class="container">
+  <% if @current_subscription %>
+    <div class="card border-secondary-subttle mx-auto rounded-4" style="max-width: 600px;">
+      <div class="card-body p-5 text-center">
+        <h4 class="card-title mb-4 fw-bold"><%= @current_subscription.plan_version.plan.name %> (v<%= @current_subscription.plan_version.version_number %>)</h4>
+
+        <ul class="list-group list-group-flush mb-4">
+          <li class="list-group-item"><strong><%= t("activerecord.attributes.billing_plan_version.price_cents") %>:</strong> <%= number_to_currency(@current_subscription.plan_version.price_cents / 100.0) %> / <%= t("datetime.prompts.month").downcase %></li>
+          <li class="list-group-item"><strong><%= t("activerecord.attributes.billing_subscription.start_date") %>:</strong> <%= @current_subscription.start_date.strftime("%B %d, %Y") %></li>
+          <li class="list-group-item"><strong><%= t("activerecord.attributes.billing_subscription.status") %>:</strong>
+            <span class="badge <%= @current_subscription.status == Billing::Subscription::Active ? 'bg-success' : 'bg-secondary' %>">
+              <%= @current_subscription.status.capitalize %>
+            </span>
+          </li>
+          <li class="list-group-item"><strong><%= t('billing.subscription.remaining_visualizations') %>:</strong> <%= @current_subscription.remaining_visualizations %>/<%= @current_subscription.visualization_limit_count %></li>
+        </ul>
+
+        <div class="d-grid gap-2 mt-4">
+          <%= link_to(t('billing.subscription.my_subscription_history'), billing_subscriptions_path(locale), class: "btn btn-outline-primary btn-lg") %>
+          <%= link_to(t('billing.subscription.change_subscription'), new_billing_subscription_path(locale), class: "btn btn-secondary btn-lg") %>
+          <%= button_to(t('billing.subscription.cancel_subscription'), billing_subscription_path(locale, @current_subscription), method: :delete, data: { turbo_confirm: "Are you sure you want to cancel your subscription?" }, class: "btn btn-danger") %>
+        </div>
+      </div>
+    </div>
+
+  <% else %>
+    <div class="alert alert-warning text-center py-5">
+      <p class="fs-4">You do not have an active subscription.</p>
+      <%= link_to(t('billing.subscription.subscribe_now'), new_billing_subscription_path(locale), class: "btn btn-primary btn-lg mt-3") %>
+    </div>
+  <% end %>
+</div>
