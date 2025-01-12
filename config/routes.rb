@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
     devise_for :users
 
+    draw :billing
     draw :challenges
     draw :community
     draw :feedbacks
