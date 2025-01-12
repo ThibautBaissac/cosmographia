@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_03_092432) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_11_141015) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -40,6 +40,44 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_03_092432) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "billing_plan_versions", force: :cascade do |t|
+    t.bigint "billing_plan_id", null: false
+    t.integer "price_cents", default: 0, null: false
+    t.string "currency", default: "EUR", null: false
+    t.integer "visualization_limit", default: 0, null: false
+    t.integer "version_number", null: false
+    t.boolean "active", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["active"], name: "index_billing_plan_versions_on_active"
+    t.index ["billing_plan_id", "version_number"], name: "idx_on_billing_plan_id_version_number_d0c9de3032", unique: true
+    t.index ["billing_plan_id"], name: "index_billing_plan_versions_on_billing_plan_id"
+  end
+
+  create_table "billing_plans", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description"
+    t.boolean "active", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["active"], name: "index_billing_plans_on_active"
+  end
+
+  create_table "billing_subscriptions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "billing_plan_version_id", null: false
+    t.date "start_date", null: false
+    t.date "end_date"
+    t.string "status", default: "ACTIVE", null: false
+    t.string "external_subscription_id"
+    t.string "external_customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["billing_plan_version_id"], name: "index_billing_subscriptions_on_billing_plan_version_id"
+    t.index ["status"], name: "index_billing_subscriptions_on_status"
+    t.index ["user_id"], name: "index_billing_subscriptions_on_user_id"
   end
 
   create_table "challenge_discussions", force: :cascade do |t|
@@ -325,6 +363,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_03_092432) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "billing_plan_versions", "billing_plans"
+  add_foreign_key "billing_subscriptions", "billing_plan_versions"
+  add_foreign_key "billing_subscriptions", "users"
   add_foreign_key "challenge_discussions", "challenges"
   add_foreign_key "challenge_discussions", "users"
   add_foreign_key "feedbacks", "users"
