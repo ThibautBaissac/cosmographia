@@ -25,7 +25,7 @@ Billing::Plan.find_each do |plan|
     Billing::PlanVersion.find_or_create_by!(plan: plan, version_number: 1) do |pv|
       pv.price_cents = 0
       pv.currency = 'EUR'
-      pv.visualization_limit = 5
+      pv.monthly_visualization_limit = 5
       pv.active = true
     end
 
@@ -34,7 +34,7 @@ Billing::Plan.find_each do |plan|
     Billing::PlanVersion.find_or_create_by!(plan: plan, version_number: 1) do |pv|
       pv.price_cents = 1000  # €10.00
       pv.currency = 'EUR'
-      pv.visualization_limit = 50
+      pv.monthly_visualization_limit = 50
       pv.active = false  # Old version
     end
 
@@ -42,7 +42,7 @@ Billing::Plan.find_each do |plan|
     Billing::PlanVersion.find_or_create_by!(plan: plan, version_number: 2) do |pv|
       pv.price_cents = 1200  # €12.00
       pv.currency = 'EUR'
-      pv.visualization_limit = 100
+      pv.monthly_visualization_limit = 100
       pv.active = true  # Current version
     end
 
@@ -51,16 +51,16 @@ Billing::Plan.find_each do |plan|
     Billing::PlanVersion.find_or_create_by!(plan: plan, version_number: 1) do |pv|
       pv.price_cents = 2000  # €20.00
       pv.currency = 'EUR'
-      pv.visualization_limit = 200
-      pv.active = true
+      pv.monthly_visualization_limit = 250
+      pv.active = false
     end
 
     # Version 2 (optional)
     Billing::PlanVersion.find_or_create_by!(plan: plan, version_number: 2) do |pv|
       pv.price_cents = 2200  # €22.00
       pv.currency = 'EUR'
-      pv.visualization_limit = 250
-      pv.active = false
+      pv.monthly_visualization_limit = nil
+      pv.active = true
     end
   end
 end
