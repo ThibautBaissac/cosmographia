@@ -17,16 +17,14 @@
             <strong><%= t("activerecord.attributes.billing_subscription.created_at") %>:</strong>
             <%= l(@current_subscription.created_at, format: :dmy) %>
           </li>
-          <% unless @current_subscription.free? %>
-            <li class="list-group-item">
-              <strong><%= t("billing.subscription.current_billing_cycle_start") %>:</strong>
-              <%= l(@current_subscription.current_billing_cycle_start, format: :dmy) %>
-            </li>
-            <li class="list-group-item">
-              <strong><%= t("billing.subscription.current_billing_cycle_end") %>:</strong>
-              <%= l(@current_subscription.current_billing_cycle_end, format: :dmy) %>
-            </li>
-          <% end %>
+          <li class="list-group-item">
+            <strong><%= t("billing.subscription.current_billing_cycle_start") %>:</strong>
+            <%= l(@current_subscription.current_billing_cycle_start, format: :dmy) %>
+          </li>
+          <li class="list-group-item">
+            <strong><%= t("billing.subscription.current_billing_cycle_end") %>:</strong>
+            <%= l(@current_subscription.current_billing_cycle_end, format: :dmy) %>
+          </li>
           <li class="list-group-item"><strong><%= t("activerecord.attributes.billing_subscription.status") %>:</strong>
             <span class="badge <%= @current_subscription.active? ? 'bg-success' : 'bg-secondary' %>">
               <%= @current_subscription.status.capitalize %>
@@ -36,6 +34,8 @@
             <strong><%= t('billing.subscription.remaining_visualizations') %>:</strong>
             <% if @current_subscription.unlimited_visualizations? %>
               <%= t('billing.subscription.unlimited_visualizations') %>
+            <% elsif @current_subscription.remaining_visualizations.negative? %>
+              0
             <% else %>
               <%= @current_subscription.remaining_visualizations %>/<%= @current_subscription.monthly_visualization_limit_count %>
             <% end %>
