@@ -4,7 +4,6 @@ class CreateBillingSubscriptions < ActiveRecord::Migration[8.0]
       t.references(:user, null: false, foreign_key: true)
       t.references(:billing_plan_version, null: false, foreign_key: true)
       t.date(:end_date)
-      t.date(:billing_cycle_start_date, null: false)
       t.string(:status, default: "ACTIVE", null: false)
       t.string(:external_subscription_id)
       t.string(:external_customer_id)

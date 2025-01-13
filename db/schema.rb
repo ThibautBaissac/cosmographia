@@ -69,7 +69,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_11_141015) do
     t.bigint "user_id", null: false
     t.bigint "billing_plan_version_id", null: false
     t.date "end_date"
-    t.date "billing_cycle_start_date", null: false
     t.string "status", default: "ACTIVE", null: false
     t.string "external_subscription_id"
     t.string "external_customer_id"
