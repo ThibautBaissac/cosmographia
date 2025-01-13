@@ -1,0 +1,11 @@
+FactoryBot.define do
+  factory :billing_plan, class: 'Billing::Plan' do
+    sequence(:name) { |n| "Billing Plan #{n}" }
+    description { "A description for the billing plan." }
+    active { false }
+
+    trait :active do
+      active { true }
+    end
+  end
+end
