@@ -2,7 +2,7 @@ class Billing::PlanVersion < ApplicationRecord
   self.table_name = "billing_plan_versions"
 
   belongs_to :plan, class_name: "Billing::Plan", foreign_key: :billing_plan_id
-  has_many :subscriptions, dependent: :restrict_with_error
+  has_many :subscriptions, dependent: :restrict_with_error, class_name: "Billing::Subscription", foreign_key: :billing_plan_version_id
 
   validates :version_number, presence: true, numericality: {only_integer: true, greater_than: 0}
   validates :version_number, uniqueness: {scope: :billing_plan_id}
