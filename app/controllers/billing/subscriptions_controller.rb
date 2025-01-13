@@ -4,7 +4,7 @@ class Billing::SubscriptionsController < ApplicationController
   def index
     @subscriptions = current_user.subscriptions
                                 .includes(plan_version: :plan)
-                                .order(Arel.sql("CASE WHEN status = 'ACTIVE' THEN 0 ELSE 1 END, start_date DESC"))
+                                .order(Arel.sql("CASE WHEN status = 'ACTIVE' THEN 0 ELSE 1 END, created_at DESC"))
   end
 
   def show
@@ -36,7 +36,7 @@ class Billing::SubscriptionsController < ApplicationController
 
       @subscription = current_user.subscriptions.new(
         plan_version: @plan_version,
-        start_date: Date.today,
+        billing_cycle_start_date: Time.current.to_date,
         status: Billing::Subscription::Active
         # external_subscription_id and external_customer_id will be handled during payment integration
       )
@@ -56,8 +56,13 @@ class Billing::SubscriptionsController < ApplicationController
 
   def destroy
     if @subscription.active?
-      @subscription.update(end_date: Date.today, status: Billing::Subscription::Cancelled)
+      @subscription.update(end_date: Date.today - 1, status: Billing::Subscription::Cancelled)
       # Optional: Handle Stripe or pay-rails cancellation here
+      current_user.subscriptions.create(
+        plan_version: Billing::Plan.active.where(name: 'Free').last,
+        billing_cycle_start_date: Time.current.to_date,
+        status: Billing::Subscription::Active
+      )
       redirect_to(billing_subscriptions_path(locale), notice: "Subscription was successfully canceled.")
     else
       redirect_to(billing_subscriptions_path(locale), alert: "Subscription is not active.")
