@@ -46,7 +46,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_11_141015) do
     t.bigint "billing_plan_id", null: false
     t.integer "price_cents", default: 0, null: false
     t.string "currency", default: "EUR", null: false
-    t.integer "visualization_limit", default: 0, null: false
+    t.integer "monthly_visualization_limit", default: 0
     t.integer "version_number", null: false
     t.boolean "active", default: true, null: false
     t.datetime "created_at", null: false
@@ -68,8 +68,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_11_141015) do
   create_table "billing_subscriptions", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "billing_plan_version_id", null: false
-    t.date "start_date", null: false
     t.date "end_date"
+    t.date "billing_cycle_start_date", null: false
     t.string "status", default: "ACTIVE", null: false
     t.string "external_subscription_id"
     t.string "external_customer_id"
