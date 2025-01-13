@@ -19,11 +19,11 @@
           </li>
           <% unless @current_subscription.free? %>
             <li class="list-group-item">
-              <strong><%= t("activerecord.attributes.billing_subscription.billing_cycle_start_date") %>:</strong>
-              <%= l(@current_subscription.billing_cycle_start_date, format: :dmy) %>
+              <strong><%= t("billing.subscription.current_billing_cycle_start") %>:</strong>
+              <%= l(@current_subscription.current_billing_cycle_start, format: :dmy) %>
             </li>
             <li class="list-group-item">
-              <strong><%= t("billing.subscription.billing_cycle_end_date") %>:</strong>
+              <strong><%= t("billing.subscription.current_billing_cycle_end") %>:</strong>
               <%= l(@current_subscription.current_billing_cycle_end, format: :dmy) %>
             </li>
           <% end %>

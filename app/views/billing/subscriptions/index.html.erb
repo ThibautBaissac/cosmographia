@@ -8,8 +8,8 @@
           <tr>
             <th scope="col"><%= t("activerecord.models.billing_plan", count: 1) %></th>
             <th scope="col"><%= t("activerecord.attributes.billing_subscription.created_at") %></th>
-            <th scope="col"><%= t("activerecord.attributes.billing_subscription.billing_cycle_start_date") %></th>
-            <th scope="col"><%= t("billing.subscription.billing_cycle_end_date") %></th>
+            <th scope="col"><%= t("billing.subscription.current_billing_cycle_start") %></th>
+            <th scope="col"><%= t("billing.subscription.current_billing_cycle_end") %></th>
             <th scope="col"><%= t("activerecord.attributes.billing_subscription.end_date") %></th>
             <th scope="col"><%= t("activerecord.attributes.billing_subscription.status") %></th>
           </tr>
@@ -17,9 +17,12 @@
         <tbody>
           <% @subscriptions.each do |subscription| %>
             <tr>
-              <td><%= subscription.plan_version.plan.name %></td>
+              <td>
+                <%= subscription.plan_version.plan.name %>
+                <%= " (#{number_to_currency(subscription.plan_version.price_cents / 100.0, unit: subscription.plan_version.currency)})" %>
+              </td>
               <td><%= l(subscription.created_at, format: :dmy) %></td>
-              <td><%= l(subscription.billing_cycle_start_date, format: :dmy) %></td>
+              <td><%= l(subscription.current_billing_cycle_start, format: :dmy) %></td>
               <td><%= subscription.active? ? l(subscription.current_billing_cycle_end, format: :dmy) : "-" %></td>
               <td><%= l(subscription.end_date, format: :dmy) if subscription.end_date.present? %></td>
               <td>

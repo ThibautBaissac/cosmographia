@@ -11,5 +11,6 @@ fr:
       my_subscription_history: "Mon historique d'abonnement"
       cancel_subscription: "Annuler l'abonnement"
       remaining_visualizations: "Visualisations restantes"
-      billing_cycle_end_date: "Fin du cycle de Facturation en cours"
+      current_billing_cycle_end: "Fin du cycle de Facturation en cours"
       unlimited_visualizations: "Illimitées"
+      current_billing_cycle_start: "Début du cycle de Facturation en cours"

@@ -14,7 +14,6 @@ en:
         version_number: "Version"
         active: "Active"
       billing_subscription:
-        billing_cycle_start_date: "Start of current Billing Cycle"
         user_id: "User"
         billing_plan_version_id: "Billing Plan Version"
         created_at: "Start Date"

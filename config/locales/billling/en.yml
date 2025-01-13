@@ -11,5 +11,6 @@ en:
       my_subscription_history: "My subscription history"
       cancel_subscription: "Cancel subscription"
       remaining_visualizations: "Remaining visualizations"
-      billing_cycle_end_date: "End of current Billing Cycle"
+      current_billing_cycle_end: "End of current Billing Cycle"
       unlimited_visualizations: "Unlimited"
+      current_billing_cycle_start: "Start of current Billing Cycle"

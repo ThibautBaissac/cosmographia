@@ -14,7 +14,6 @@ fr:
         version_number: "Version"
         active: "Actif"
       billing_subscription:
-        billing_cycle_start_date: "Début du cycle de Facturation en cours"
         user_id: "Utilisateur"
         billing_plan_version_id: "Version du Plan de Facturation"
         created_at: "Date de Début"
