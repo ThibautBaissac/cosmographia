@@ -33,6 +33,7 @@ en:
     - Saturday
     formats:
       default: "%Y-%m-%d"
+      dmy: "%d/%m/%Y"
       long: "%B %d, %Y"
       short: "%b %d"
       ymd: "%d/%m/%Y"

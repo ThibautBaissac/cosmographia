@@ -10,13 +10,14 @@ en:
         billing_plan_id: "Billing Plan"
         price_cents: "Price"
         currency: "Currency"
-        visualization_limit: "Visualization Limit"
+        monthly_visualization_limit: "Visualization Limit"
         version_number: "Version"
         active: "Active"
       billing_subscription:
+        billing_cycle_start_date: "Start of current Billing Cycle"
         user_id: "User"
         billing_plan_version_id: "Billing Plan Version"
-        start_date: "Start Date"
+        created_at: "Start Date"
         end_date: "End Date"
         status: "Status"
       challenge:

@@ -11,7 +11,7 @@
             <p class="card-text fs-4 fw-semibold">
               <%= number_to_currency(pv.price_cents / 100.0, unit: pv.currency) %>
             </p>
-            <p class="text-muted">Limit: <%= pv.visualization_limit %> views</p>
+            <p class="text-muted">Limit: <%= pv.monthly_visualization_limit %> views</p>
             <%= form_with url: billing_subscriptions_path, method: :post, local: true do |form| %>
               <%= hidden_field_tag :plan_version_id, pv.id %>
               <%= submit_tag "Subscribe", class: "btn btn-primary w-100 mt-3" %>

@@ -10,13 +10,14 @@ fr:
         billing_plan_id: "Plan de Facturation"
         price_cents: "Prix"
         currency: "Devise"
-        visualization_limit: "Limite de Visualisation"
+        monthly_visualization_limit: "Limite de Visualisation"
         version_number: "Version"
         active: "Actif"
       billing_subscription:
+        billing_cycle_start_date: "Début du cycle de Facturation en cours"
         user_id: "Utilisateur"
         billing_plan_version_id: "Version du Plan de Facturation"
-        start_date: "Date de Début"
+        created_at: "Date de Début"
         end_date: "Date de Fin"
         status: "Statut"
       challenge:

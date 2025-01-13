@@ -33,6 +33,7 @@ fr:
     - samedi
     formats:
       default: "%d/%m/%Y"
+      dmy: "%d/%m/%Y"
       long: "%e %B %Y"
       short: "%e %b"
       ymd: "%d/%m/%Y"
