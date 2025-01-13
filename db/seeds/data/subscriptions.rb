@@ -46,7 +46,6 @@ users.each_with_index do |user, index|
       user: user,
       plan_version: plan_versions[:free],
       status: 'ACTIVE',
-      billing_cycle_start_date: Faker::Date.between(from: 2.years.ago, to: 1.year.ago),
       external_subscription_id: nil,
       external_customer_id: nil,
       created_at: 3.months.ago
@@ -58,7 +57,6 @@ users.each_with_index do |user, index|
       user: user,
       plan_version: plan_versions[:basic_v2],
       status: 'ACTIVE',
-      billing_cycle_start_date: Faker::Date.between(from: 1.year.ago, to: Date.today),
       external_subscription_id: Faker::Alphanumeric.alphanumeric(number: 10).upcase,
       external_customer_id: Faker::Alphanumeric.alphanumeric(number: 10).upcase,
       created_at: 3.months.ago
@@ -70,12 +68,11 @@ users.each_with_index do |user, index|
         user: user,
         plan_version: plan_versions[:basic_v1],
         status: 'EXPIRED',
-        billing_cycle_start_date: Faker::Date.between(from: 3.years.ago, to: 2.years.ago),
-        end_date: Faker::Date.between(from: 2.years.ago, to: 1.year.ago),
+        end_date: Faker::Date.between(from: 1.month.ago, to: 6.month.ago),
         external_subscription_id: Faker::Alphanumeric.alphanumeric(number: 10).upcase,
         external_customer_id: Faker::Alphanumeric.alphanumeric(number: 10).upcase,
         created_at: 4.years.ago
-      )
+        )
     end
 
   else
@@ -84,7 +81,6 @@ users.each_with_index do |user, index|
       user: user,
       plan_version: plan_versions[:premium_v2],
       status: 'ACTIVE',
-      billing_cycle_start_date: Faker::Date.between(from: 6.months.ago, to: Date.today),
       external_subscription_id: Faker::Alphanumeric.alphanumeric(number: 12).upcase,
       external_customer_id: Faker::Alphanumeric.alphanumeric(number: 12).upcase,
       created_at: 3.months.ago
@@ -96,8 +92,7 @@ users.each_with_index do |user, index|
         user: user,
         plan_version: plan_versions[:free],
         status: 'CANCELLED',
-        billing_cycle_start_date: Faker::Date.between(from: 1.year.ago, to: 6.months.ago),
-        end_date: Faker::Date.between(from: 6.months.ago, to: 5.months.ago),
+        end_date: Faker::Date.between(from: 1.month.ago, to: 6.month.ago),
         external_subscription_id: Faker::Alphanumeric.alphanumeric(number: 10).upcase,
         external_customer_id: Faker::Alphanumeric.alphanumeric(number: 10).upcase,
         created_at: 1.year.ago
