@@ -31,12 +31,11 @@ class Billing::SubscriptionsController < ApplicationController
 
     ActiveRecord::Base.transaction do
       if current_user.current_subscription.present?
-        current_user.current_subscription.update!(end_date: Date.today - 1, status: Billing::Subscription::Cancelled)
+        current_user.current_subscription.update!(end_date: Date.today, status: Billing::Subscription::Cancelled)
       end
 
       @subscription = current_user.subscriptions.new(
         plan_version: @plan_version,
-        billing_cycle_start_date: Time.current.to_date,
         status: Billing::Subscription::Active
         # external_subscription_id and external_customer_id will be handled during payment integration
       )
@@ -56,11 +55,10 @@ class Billing::SubscriptionsController < ApplicationController
 
   def destroy
     if @subscription.active?
-      @subscription.update(end_date: Date.today - 1, status: Billing::Subscription::Cancelled)
+      @subscription.update(end_date: Date.today, status: Billing::Subscription::Cancelled)
       # Optional: Handle Stripe or pay-rails cancellation here
       current_user.subscriptions.create(
-        plan_version: Billing::Plan.active.where(name: 'Free').last,
-        billing_cycle_start_date: Time.current.to_date,
+        plan_version: Billing::PlanVersion.active.where(price_cents: 0).last,
         status: Billing::Subscription::Active
       )
       redirect_to(billing_subscriptions_path(locale), notice: "Subscription was successfully canceled.")
