@@ -53,6 +53,6 @@ class User < ApplicationRecord
   end
 
   def current_subscription
-    subscriptions.current.order(created_at: :desc).first
+    subscriptions.active.order(created_at: :desc).first
   end
 end

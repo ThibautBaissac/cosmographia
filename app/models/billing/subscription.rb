@@ -9,7 +9,7 @@ class Billing::Subscription < ApplicationRecord
 
   string_enum status: %w[active cancelled trialing expired].freeze
 
-  scope :current, -> { where(status: Billing::Subscription::Active) }
+  scope :active, -> { where(status: Billing::Subscription::Active) }
   scope :past, -> { where.not(end_date: nil).where("end_date < ?", Date.today) }
 
 
