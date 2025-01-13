@@ -4,7 +4,6 @@ class Billing::Subscription < ApplicationRecord
   belongs_to :user
   belongs_to :plan_version, class_name: "Billing::PlanVersion", foreign_key: :billing_plan_version_id
 
-  validates :billing_cycle_start_date, presence: true
   validates :status, presence: true
   validates :user_id, uniqueness: {scope: :status, conditions: -> { where(status: Billing::Subscription::Active) }, message: "can only have one active subscription"}
 
@@ -22,36 +21,25 @@ class Billing::Subscription < ApplicationRecord
     plan_version.monthly_visualization_limit.nil?
   end
 
-
   def monthly_visualization_limit_count
     plan_version.monthly_visualization_limit
   end
 
-  def current_billing_cycle
+  def current_billing_cycle_start
     today = Time.current.to_date
-    months_elapsed = (today.year - billing_cycle_start_date.year) * 12 + (today.month - billing_cycle_start_date.month)
-    cycle_start = billing_cycle_start_date.advance(months: months_elapsed)
-    cycle_start = cycle_start > today ? cycle_start.advance(months: -1) : cycle_start
+    months_elapsed = (today.year - created_at.year) * 12 + (today.month - created_at.month)
+    cycle_start = created_at.advance(months: months_elapsed)
     cycle_start
   end
 
   def current_billing_cycle_end
-    current_billing_cycle + 1.month - 1.day
-  end
-
-  def needs_billing_cycle_update?
-    Time.current.to_date > current_billing_cycle_end
-  end
-
-  def update_billing_cycle
-    next_cycle_start = billing_cycle_start_date.advance(months: 1)
-    update(billing_cycle_start_date: next_cycle_start)
+    current_billing_cycle_start + 1.month - 1.day
   end
 
   def remaining_visualizations
     return Float::INFINITY if plan_version.monthly_visualization_limit.nil?
 
-    cycle_start = current_billing_cycle
+    cycle_start = current_billing_cycle_start
     cycle_end = current_billing_cycle_end
 
     # Adjust for cancellation mid-cycle
