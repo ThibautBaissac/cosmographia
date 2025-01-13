@@ -55,4 +55,8 @@ class User < ApplicationRecord
   def current_subscription
     subscriptions.active.order(created_at: :desc).first
   end
+
+  def remaining_visualization_count
+    current_subscription&.remaining_visualizations || 0
+  end
 end
