@@ -59,4 +59,12 @@ class User < ApplicationRecord
   def remaining_visualization_count
     current_subscription&.remaining_visualizations || 0
   end
+
+  def has_remaining_visualizations?
+    remaining_visualization_count&.positive?
+  end
+
+  def current_plan_version
+    current_subscription&.plan_version
+  end
 end
