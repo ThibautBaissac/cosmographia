@@ -9,8 +9,8 @@ RSpec.describe VisualizationPolicy do
     it { is_expected.to permit_only_actions(%i[index new create show edit update]) }
   end
 
-  context 'with not guest users' do
-    let(:user) { build(:user, :not_guest) }
+  context 'with not guest users with remaining visualizations' do
+    let(:user) { create(:user, :with_remaining_visualizations) }
     it { is_expected.to permit_only_actions(%i[index new create show]) }
   end
 

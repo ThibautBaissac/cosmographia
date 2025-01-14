@@ -47,6 +47,15 @@ FactoryBot.define do
       public_profile { true }
     end
 
+    trait :with_remaining_visualizations do
+      not_guest
+      after(:create) do |user|
+        create(:billing_plan)
+        billing_plan_version = create(:billing_plan_version)
+        create(:billing_subscription, user: user, plan_version: billing_plan_version)
+      end
+    end
+
     sequence(:slug) { |n| "user-#{n}" }
   end
 end
