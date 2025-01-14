@@ -17,7 +17,7 @@ class Billing::PlanVersion < ApplicationRecord
 
   def ensure_single_active_version
     if active?
-      Billing::PlanVersion.where(plan_id: plan_id, active: true).where.not(id: id).update_all(active: false)
+      Billing::PlanVersion.where(billing_plan_id: billing_plan_id, active: true).where.not(id: id).update_all(active: false)
     end
   end
 end
