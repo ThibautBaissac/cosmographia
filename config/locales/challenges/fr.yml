@@ -1,6 +1,7 @@
 ---
 fr:
   challenge:
+    not_opted_in_alert: Vous pourrez participer aux challenges une fois que vous aurez rejoint la communauté.
     category:
       data: Visualisation de données
       map: Carte

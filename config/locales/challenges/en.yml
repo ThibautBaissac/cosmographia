@@ -1,6 +1,7 @@
 ---
 en:
   challenge:
+    not_opted_in_alert: You will be able to participate once you have joined the community.
     category:
       data: Data visualization
       map: Map

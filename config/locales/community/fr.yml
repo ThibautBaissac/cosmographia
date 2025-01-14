@@ -3,7 +3,7 @@ fr:
   community:
     directory:
       not_opted_in_alert: Vous pourrez rechercher des membres de la communauté une
-        fois que vous l'avez rejointe
+        fois que vous l'aurez rejointe
       search:
         query_placeholder: Rechercher par prénom, nom, email, logiciel ou catégorie
           de logiciel.

@@ -2,7 +2,6 @@ class ChallengesController < ApplicationController
   before_action :set_challenge, only: [ :edit, :update, :destroy ]
 
   def index
-    authorize(Challenge)
     challenges = Challenge.all.order(start_date: :desc)
     @pagy, @challenges = pagy(challenges)
   end
