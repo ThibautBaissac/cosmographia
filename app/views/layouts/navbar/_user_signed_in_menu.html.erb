@@ -1,0 +1,82 @@
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasUserMenu" aria-labelledby="offcanvasUserMenuLabel">
+  <!-- Offcanvas Header -->
+  <div class="offcanvas-header bg-primary text-white">
+    <h2 class="offcanvas-title fw-bold h5 d-flex align-items-center" id="offcanvasUserMenuLabel">
+      <i class="fa-solid fa-circle-user fa-2x text-white me-2"></i>
+      <%= current_user&.first_name %>
+    </h2>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <!-- Offcanvas Body -->
+  <div class="offcanvas-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item list-group-item-action border-0 p-2">
+        <%= link_to(my_info_path(locale), class: "dropdown-item") do %>
+          <i class="fa-solid fa-address-card text-secondary me-2"></i>
+          <%= t("navbar.my_info") %>
+        <% end %>
+      </li>
+      <li class="list-group-item list-group-item-action border-0 p-2">
+        <%= link_to(my_mentions_path(locale), class: "dropdown-item") do %>
+          <i class="fa-solid fa-at text-secondary me-2"></i>
+          <%= t("navbar.my_mentions") %>
+        <% end %>
+      </li>
+      <%= render("layouts/navbar/my_page") %>
+      <li class="list-group-item list-group-item-action border-0 p-2">
+        <%= link_to(my_comments_path(locale), class: "dropdown-item") do %>
+          <i class="fa-solid fa-comment text-secondary me-2"></i>
+          <%= t("navbar.my_comments") %>
+        <% end %>
+      </li>
+      <li class="list-group-item list-group-item-action border-0 p-2">
+        <%= link_to(my_charts_path(locale), class: "dropdown-item") do %>
+          <i class="fa-solid fa-chart-pie text-secondary me-2"></i>
+          <%= t("navbar.my_charts") %>
+        <% end %>
+      </li>
+
+      <hr>
+
+      <li class="list-group-item list-group-item-action border-0 p-2">
+        <% if current_user&.current_subscription&.present? %>
+          <%= link_to(billing_subscription_path(locale, current_user.current_subscription), class: "dropdown-item") do %>
+            <i class="fa-solid fa-bag-shopping text-secondary me-2"></i>
+            <%= t("navbar.my_subscription") %>
+          <% end %>
+        <% else %>
+          <%= link_to(new_billing_subscription_path(locale), class: "dropdown-item") do %>
+            <i class="fa-solid fa-bag-shopping text-secondary me-2"></i>
+            <%= t("navbar.subscribe_to_plan") %>
+          <% end %>
+        <% end %>
+      </li>
+      <li class="list-group-item list-group-item-action border-0 p-2">
+        <%= link_to("#offcanvaFeedback", class: "dropdown-item", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvaFeedback"}) do %>
+          <i class="fa-regular fa-comment-dots text-secondary me-2"></i>
+          <%= t("feedbacks.feedback") %>
+        <% end %>
+      </li>
+      <%= render("layouts/navbar/install_pwa") %>
+      <hr>
+
+      <li class="list-group-item list-group-item-action border-0 p-2">
+        <%= button_to(destroy_user_session_path(locale), method: :delete, class: "dropdown-item") do %>
+          <i class="fa-solid fa-person-walking-arrow-right text-secondary me-2"></i>
+          <%= t("auth.sign_out") %>
+        <% end %>
+      </li>
+
+      <% if policy([ :admin, :feedback ]).index? %>
+        <hr>
+        <li class="list-group-item list-group-item-action border-0 p-2">
+          <%= link_to("Feedbacks", admin_feedbacks_path(locale), class: "dropdown-item") %>
+        </li>
+        <li class="list-group-item list-group-item-action border-0 p-2">
+          <%= link_to("Mission Control", "/jobs", class: "dropdown-item") %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

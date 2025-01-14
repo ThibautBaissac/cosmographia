@@ -1,65 +1,7 @@
 <% if user_signed_in? %>
-  <ul class="navbar-nav w-lg-auto">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa-solid fa-circle-user fa-2x text-primary"></i>
-        <span class="visually-hidden">User menu</span>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-        <li>
-          <% if current_user.current_subscription.present? %>
-            <%= link_to(billing_subscription_path(locale, current_user.current_subscription), class: "dropdown-item") do %>
-              <i class="fa-solid fa-bag-shopping text-secondary me-2"></i>
-              <%= t("navbar.my_subscription") %>
-            <% end %>
-          <% else %>
-            <%= link_to(new_billing_subscription_path(locale), class: "dropdown-item") do %>
-              <i class="fa-solid fa-bag-shopping text-secondary me-2"></i>
-              <%= t("navbar.subscribe_to_plan") %>
-            <% end %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to(my_info_path(locale), class: "dropdown-item") do %>
-            <i class="fa-solid fa-address-card text-secondary me-2"></i>
-            <%= t("navbar.my_info") %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to(my_mentions_path(locale), class: "dropdown-item") do %>
-            <i class="fa-solid fa-at text-secondary me-2"></i>
-            <%= t("navbar.my_mentions") %>
-          <% end %>
-        </li>
-        <%= render("layouts/navbar/my_page") %>
-        <li>
-          <%= link_to(my_comments_path(locale), class: "dropdown-item") do %>
-            <i class="fa-solid fa-comment text-secondary me-2"></i>
-            <%= t("navbar.my_comments") %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to(my_charts_path(locale), class: "dropdown-item") do %>
-            <i class="fa-solid fa-chart-pie text-secondary me-2"></i>
-            <%= t("navbar.my_charts") %>
-          <% end %>
-        </li>
-        <li><hr class="dropdown-divider"></li>
-        <li>
-          <%= link_to("#offcanvaFeedback", class: "dropdown-item", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvaFeedback"}) do %>
-            <i class="fa-regular fa-comment-dots text-secondary me-2"></i>
-            <%= t("feedbacks.feedback") %>
-          <% end %>
-        </li>
-        <li>
-          <%= button_to(destroy_user_session_path(locale), method: :delete, class: "dropdown-item") do %>
-            <i class="fa-solid fa-person-walking-arrow-right text-secondary me-2"></i>
-            <%= t("auth.sign_out") %>
-          <% end %>
-        </li>
-        <%= render("layouts/navbar/install_pwa") %>
-        <%= render("layouts/navbar/superadmin_dropdown") %>
-      </ul>
-    </li>
-  </ul>
+  <%= link_to("#offcanvasUserMenu", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvasUserMenu"}) do %>
+    <i class="fa-solid fa-circle-user fs-3 text-secondary d-block d-lg-none"></i>
+    <i class="fa-solid fa-circle-user fa-2x text-primary d-none d-lg-block"></i>
+    <span class="visually-hidden">User menu</span>
+  <% end %>
 <% end %>

@@ -14,10 +14,10 @@
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
     aria-labelledby="offcanvasNavbarLabel">
     <h5 id="offcanvasNavbarLabel" class="visually-hidden">Offcanvas Navigation</h5>
-    <div class="offcanvas-header">
-      <%= image_tag("logo.png", alt: "Logo", width: "30", height: "30", class: "d-inline-block align-text-top me-2") %>
-      <span class="fw-bold text-primary">Cosmographia</span>
-      <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="offcanvas-header bg-primary text-white">
+      <%= image_tag("logo_inverted.png", alt: "Logo", width: "30", height: "30", class: "d-inline-block align-text-top me-2") %>
+      <span class="fw-bold">Cosmographia</span>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <ul class="navbar-nav flex-grow-1 pe-3">
@@ -43,7 +43,9 @@
       <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3">
         <%= render("layouts/navbar/search") %>
         <%= render("layouts/navbar/locale") %>
-        <%= render("layouts/navbar/user_signed_in") %>
+        <div class="d-none d-lg-block">
+          <%= render("layouts/navbar/user_signed_in") %>
+        </div>
         <%= render("layouts/navbar/user_signed_out") %>
       </div>
     </div>

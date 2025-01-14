@@ -30,6 +30,7 @@
     <%= render("layouts/footer") %>
     <%= render("users/locale/main") %>
     <%= turbo_frame_tag(:modal) %>
+    <%= render("layouts/navbar/user_signed_in_menu") %>
     <%= render("feedbacks/main") if user_signed_in? %>
   </body>
 </html>

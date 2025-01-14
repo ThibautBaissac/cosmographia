@@ -12,9 +12,7 @@
         <% end %>
       </li>
       <li class="nav-item">
-        <%= link_to(challenges_path(locale), class: "nav-link #{active_class(challenges_path)}") do %>
-          <i class="fa-solid fa-trophy fs-4"></i>
-        <% end %>
+        <%= render("layouts/navbar/user_signed_in") %>
       </li>
     </div>
   </ul>
