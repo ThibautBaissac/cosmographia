@@ -8,7 +8,7 @@ class VisualizationPolicy < ApplicationPolicy
   end
 
   def new?
-    (user&.not_guest? || user&.superadmin?) && user&.remaining_visualization_count&.positive?
+    (user&.not_guest? && user&.has_remaining_visualizations?) || user&.superadmin?
   end
 
   def create?
