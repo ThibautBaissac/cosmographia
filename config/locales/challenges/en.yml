@@ -1,6 +1,15 @@
 ---
 en:
   challenge:
+    will_starin_x_days:
+     one: The challenge will start in %{count} day
+     other: The challenge will start in %{count} days
+     zero: The challenge will start in %{count} day
+    ended: Ended
+    ends_in_x_days:
+      one: Ends in %{count} day
+      other: Ends in %{count} days
+      zero: Ends today
     not_opted_in_alert: You will be able to participate once you have joined the community.
     category:
       data: Data visualization

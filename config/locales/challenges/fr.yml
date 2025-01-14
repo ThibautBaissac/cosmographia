@@ -1,6 +1,15 @@
 ---
 fr:
   challenge:
+    will_starin_x_days:
+     one: Le challenge commencera dans %{count} jour
+     other: Le challenge commencera dans %{count} jours
+     zero: Le challenge commencera dans %{count} jour
+    ended: Cloturé
+    ends_in_x_days:
+      one: Se cloture dans %{count} jour
+      other: Se cloture dans %{count} jours
+      zero: Se cloture aujourd'hui
     not_opted_in_alert: Vous pourrez participer aux challenges une fois que vous aurez rejoint la communauté.
     category:
       data: Visualisation de données
