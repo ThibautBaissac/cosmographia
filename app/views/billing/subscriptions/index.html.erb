@@ -38,14 +38,14 @@
 
     <div class="text-center mt-5">
       <% if current_user.current_subscription.present? %>
-        <%= link_to(t('billing.subscription.my_current_subscription'), billing_subscription_path(locale, current_user.current_subscription), class: "btn btn-outline-primary btn-lg mx-2") %>
+        <%= link_to(t('billing.subscription.my_current_subscription'), billing_subscription_path(locale, current_user.current_subscription), class: "btn btn-outline-primary btn-lg rounded-4 mx-2") %>
       <% end %>
-      <%= link_to(t('billing.subscription.change_subscription'), new_billing_subscription_path(locale), class: "btn btn-secondary btn-lg mx-2") %>
+      <%= link_to(t('billing.subscription.change_subscription'), new_billing_subscription_path(locale), class: "btn btn-secondary btn-lg rounded-4 mx-2") %>
     </div>
-    <% else %>
+  <% else %>
     <div class="alert alert-warning text-center p-5">
       <p class="fs-4"><%= t('billing.subscription.no_subscription_history') %></p>
-      <%= link_to(t('billing.subscription.subscribe_now'), new_billing_subscription_path(locale), class: "btn btn-primary btn-lg mt-4") %>
+      <%= link_to(t('billing.subscription.subscribe_now'), new_billing_subscription_path(locale), class: "btn btn-primary btn-lg rounded-4 mt-4") %>
     </div>
   <% end %>
 </div>

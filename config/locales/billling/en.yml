@@ -2,7 +2,7 @@
 en:
   billing:
     subscription:
-      my_current_subscription: "Your urrent subscription"
+      my_current_subscription: "Your current subscription"
       change_subscription: "Change subscription"
       no_subscription_history: "You have no subscription history."
       subscribe_now: "Subscribe now"

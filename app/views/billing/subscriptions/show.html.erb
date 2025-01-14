@@ -43,8 +43,8 @@
         </ul>
 
         <div class="d-grid gap-2 mt-4">
-          <%= link_to(t('billing.subscription.my_subscription_history'), billing_subscriptions_path(locale), class: "btn btn-primary btn-lg") %>
-          <%= link_to(t('billing.subscription.change_subscription'), new_billing_subscription_path(locale), class: "btn btn-outline-secondary btn-lg") %>
+          <%= link_to(t('billing.subscription.my_subscription_history'), billing_subscriptions_path(locale), class: "btn btn-primary rounded-3") %>
+          <%= link_to(t('billing.subscription.change_subscription'), new_billing_subscription_path(locale), class: "btn btn-outline-secondary rounded-3") %>
           <% unless @current_subscription.free? %>
             <%= button_to(t('billing.subscription.cancel_subscription'), billing_subscription_path(locale, @current_subscription), method: :delete, data: { turbo_confirm: "Are you sure you want to cancel your subscription?" }, class: "btn btn-outline-danger") %>
           <% end %>
