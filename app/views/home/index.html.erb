@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <%= render("home/user_signed_in/header") %>
-  <%= render("my/profile/show/guest_alert") %>
+  <%= render("shared/guest_alert") %>
   <%= render("home/user_signed_in/hero") %>
   <%= render("home/user_signed_in/contributions_graph") %>
   <div class="container mt-5">

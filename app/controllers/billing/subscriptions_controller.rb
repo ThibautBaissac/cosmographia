@@ -2,6 +2,7 @@ class Billing::SubscriptionsController < ApplicationController
   before_action :set_subscription, only: [ :destroy ]
 
   def index
+    authorize(Billing::Subscription)
     @subscriptions = current_user.subscriptions
                                 .includes(plan_version: :plan)
                                 .order(Arel.sql("CASE WHEN status = 'ACTIVE' THEN 0 ELSE 1 END, created_at DESC"))
@@ -9,6 +10,7 @@ class Billing::SubscriptionsController < ApplicationController
 
   def show
     @current_subscription = current_user.current_subscription
+    authorize(@current_subscription)
     if @current_subscription.nil?
       redirect_to(new_billing_subscription_path(locale), notice: "You do not have an active subscription.")
     end
@@ -55,6 +57,7 @@ class Billing::SubscriptionsController < ApplicationController
 
   def destroy
     if @subscription.active?
+      authorize(@subscription)
       @subscription.update(end_date: Date.today, status: Billing::Subscription::Cancelled)
       # Optional: Handle Stripe or pay-rails cancellation here
       current_user.subscriptions.create(
