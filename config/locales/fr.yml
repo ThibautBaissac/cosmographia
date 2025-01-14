@@ -17,6 +17,7 @@ fr:
     save: Sauvegarder
     search: Rechercher...
     search_btn: Rechercher
+    subscribe: Souscrire
     welcome_to: Bienvenue sur %{app_name}
   errors:
     attributes:
