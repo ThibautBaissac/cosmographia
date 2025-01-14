@@ -4,8 +4,12 @@ FactoryBot.define do
     price_cents { 1000 }
     currency { "EUR" }
     monthly_visualization_limit { 100 }
-    version_number { 1 }
-    active { true }
+    sequence(:version_number) { |n| n }
+    active { false }
+
+    trait :active do
+      active { true }
+    end
 
     trait :inactive do
       active { false }
