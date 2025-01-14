@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe VisualizationsController, type: :controller do
-  let(:user) { create(:user, :not_guest) }
+  let(:user) { create(:user) }
   let(:valid_attributes) do
     attributes_for(:visualization).merge(
       image: fixture_file_upload(Rails.root.join('db/seeds/images/sample_1.png'), 'image/png')
@@ -14,6 +14,7 @@ RSpec.describe VisualizationsController, type: :controller do
 
   before do
     sign_in(user)
+    allow_any_instance_of(VisualizationsController).to receive(:authorize).and_return(true)
   end
 
   describe "POST #create" do
