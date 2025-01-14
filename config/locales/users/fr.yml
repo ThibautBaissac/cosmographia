@@ -10,13 +10,13 @@ fr:
     charts:
       tab: Statistiques
     comments:
-      comments: Mes commentaires
+      comments: Vos commentaires
       tab: Commentaires
     info:
       tab: Profil
-      title: Mon profil
+      title: Votre profil
     mentions:
-      title: Mes mentions
+      title: Vos mentions
     profile:
       contact_info: Informations de contact
       flash:
@@ -39,9 +39,9 @@ fr:
       zero: Aucun utilisateur trouvé
     form:
       bio_placeholder: Parlons un peu de vous, de vos projets...
-      bio_section: A propos de moi
+      bio_section: A propos de vous
       community_section: Communauté
-      edit_title: Modifier mon profil
+      edit_title: Modifier votre profil
       first_name_placeholder: Indiquer votre prénom
       general_info_section: Infos générales
       last_name_placeholder: Indiquer votre prénom

@@ -50,15 +50,15 @@ fr:
     challenges: Challenges
     charts: Statistiques
     community: Communauté
-    edit_password: Modifier mon mot de passe
+    edit_password: Modifier votre mot de passe
     install_pwa: Ajouter à l'écran d'accueil
-    my_charts: Mes statistiques
-    my_comments: Mes commentaires
-    my_info: Mon profil
-    my_mentions: Mes mentions
+    my_charts: Vos statistiques
+    my_comments: Vos commentaires
+    my_info: Votre profil
+    my_mentions: Vos mentions
     my_public_page: Ma page publique
     visualizations: Visualisations
-    my_subscription: Mon abonnement
+    my_subscription: Votre abonnement
     subscribe_to_plan: Souscrire à un abonnement
   pundit:
     default: Vous ne pouvez pas effectuer cette action.

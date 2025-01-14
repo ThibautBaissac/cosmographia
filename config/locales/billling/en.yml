@@ -2,13 +2,13 @@
 en:
   billing:
     subscription:
-      my_current_subscription: "My current subscription"
+      my_current_subscription: "Your urrent subscription"
       change_subscription: "Change subscription"
       no_subscription_history: "You have no subscription history."
       subscribe_now: "Subscribe now"
       subscription_history: "Subscription history"
       subscribe_to_plan: "Subscribe to a Plan"
-      my_subscription_history: "My subscription history"
+      my_subscription_history: "Your subscription history"
       cancel_subscription: "Cancel subscription"
       remaining_visualizations: "Remaining visualizations"
       current_billing_cycle_end: "End of current Billing Cycle"

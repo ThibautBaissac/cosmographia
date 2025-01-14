@@ -2,7 +2,7 @@
 fr:
   auth:
     back: Retour
-    cancel_account: Supprimer mon compte
+    cancel_account: Supprimer votre compte
     cancel_account_unhappy: Pas satisfait ? Vous pouvez supprimer votre compte ci-dessous.
     confirmation_instruction_not_received: Vous n'avez pas reçu les instructions de
       confirmation ?

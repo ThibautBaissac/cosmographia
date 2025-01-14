@@ -2,7 +2,7 @@
 en:
   auth:
     back: Back
-    cancel_account: Cancel my account
+    cancel_account: Cancel your account
     cancel_account_unhappy: Unhappy? You can cancel your account below.
     confirmation_instruction_not_received: Didn't receive confirmation instructions?
     current_password: Current password

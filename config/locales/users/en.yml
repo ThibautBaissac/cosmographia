@@ -9,13 +9,13 @@ en:
     charts:
       tab: Charts
     comments:
-      comments: My comments
+      comments: Your comments
       tab: Comments
     info:
       tab: Profile
-      title: My profile
+      title: Your profile
     mentions:
-      title: My mentions
+      title: Your mentions
     profile:
       contact_info: Contact information
       flash:
@@ -25,7 +25,7 @@ en:
             success: Your profile has been updated
       info_disclaimer_html: Your personal information will <b>never be shared</b>
         with third parties outside the Cosmographia community!
-      my_page: My personal page
+      my_page: Your personal page
       not_in_directory: Join the directory
       total_comment_count: "(%{count} in total)"
   user:

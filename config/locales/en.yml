@@ -52,13 +52,13 @@ en:
     community: Community
     edit_password: Edit password
     install_pwa: Add to Home Screen
-    my_charts: My charts
-    my_comments: My comments
-    my_info: My profile
-    my_mentions: My mentions
-    my_public_page: My public page
+    my_charts: Your charts
+    my_comments: Your comments
+    my_info: Your profile
+    my_mentions: Your mentions
+    my_public_page: Your public page
     visualizations: Visualizations
-    my_subscription: My subscription
+    my_subscription: Your subscription
     subscribe_to_plan: Subscribe to a plan
   pundit:
     default: You cannot perform this action.
