@@ -15,7 +15,7 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.new(challenge_params)
     set_authorize
     if @challenge.save
-      redirect_to(@challenge, notice: "Challenge was successfully created.")
+      redirect_to(participations_challenge_path(locale, @challenge), notice: "Challenge was successfully created.")
     else
       render(:new)
     end
@@ -28,7 +28,7 @@ class ChallengesController < ApplicationController
   def update
     set_authorize
     if @challenge.update(challenge_params)
-      redirect_to(@challenge, notice: "Challenge was successfully updated.")
+      redirect_to(participations_challenge_path(locale, @challenge), notice: "Challenge was successfully updated.")
     else
       render(:edit)
     end
