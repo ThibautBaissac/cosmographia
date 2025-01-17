@@ -11,6 +11,7 @@ gem "jsbundling-rails"
 gem "kamal", require: false
 gem "mission_control-jobs"
 gem "pagy", "~> 9.3"
+gem "pay", "~> 8.0"
 gem "pg", "~> 1.1"
 gem "propshaft"
 gem "puma", ">= 5.0"
@@ -24,6 +25,7 @@ gem "view_component"
 gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
+gem "stripe", "~> 13.0"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"

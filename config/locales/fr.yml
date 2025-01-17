@@ -17,7 +17,6 @@ fr:
     save: Sauvegarder
     search: Rechercher...
     search_btn: Rechercher
-    subscribe: Souscrire
     welcome_to: Bienvenue sur %{app_name}
   errors:
     attributes:
@@ -58,8 +57,7 @@ fr:
     my_mentions: Vos mentions
     my_public_page: Ma page publique
     visualizations: Visualisations
-    my_subscription: Votre abonnement
-    subscribe_to_plan: Souscrire à un abonnement
+    subscription: Votre abonnement
   pundit:
     default: Vous ne pouvez pas effectuer cette action.
     user_policy:

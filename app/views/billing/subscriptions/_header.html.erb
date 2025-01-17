@@ -1,9 +1,0 @@
-<div class="container">
-  <%= render(HeaderComponent.new(title:)) do %>
-    <% if current_user.subscriptions.any? %>
-      <%= link_to(billing_subscriptions_path(locale)) do %>
-        <%= render(ButtonComponent.new(text: t("billing.subscription.my_subscription_history"), outline: :true, icon: "fa-solid fa-bag-shopping")) %>
-      <% end %>
-    <% end %>
-  <% end %>
-</div>

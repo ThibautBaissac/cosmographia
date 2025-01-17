@@ -7,7 +7,7 @@ class CreateBillingPlanVersions < ActiveRecord::Migration[8.0]
       t.integer(:monthly_visualization_limit, default: 0)
       t.integer(:version_number, null: false)
       t.boolean(:active, default: true, null: false)
-
+      t.string(:stripe_price_id, null: false)
       t.timestamps
     end
 

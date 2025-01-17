@@ -7,6 +7,7 @@ class User < ApplicationRecord
   include User::Scopes
   include User::CustomValidations
   include User::Callbacks
+  pay_customer default_payment_processor: :stripe, stripe_attributes: :stripe_attributes
 
   normalizes :slug, with: ->(slug) { slug.strip.downcase }
   normalizes :email, with: ->(email) { email.strip.downcase }
@@ -52,19 +53,66 @@ class User < ApplicationRecord
     optin_directory
   end
 
-  def current_subscription
-    subscriptions.active.order(created_at: :desc).first
+  def country
+    ::ISO3166::Country[country_code]
   end
 
-  def remaining_visualization_count
-    current_subscription&.remaining_visualizations || 0
+  def current_subscription
+    @current_subscription || active_plan_names.find { |plan_name| payment_processor.subscribed?(name: plan_name) }
+                                               .then { |plan_name| find_subscription(plan_name) }
+  end
+
+  def subscribed?
+    current_subscription.present?
   end
 
   def has_remaining_visualizations?
     remaining_visualization_count&.positive?
   end
 
+  def unlimited_visualizations?
+    current_plan_version.monthly_visualization_limit.nil?
+  end
+
+  def remaining_visualization_count
+    return Float::INFINITY if current_plan_version.monthly_visualization_limit.nil?
+
+    cycle_start = current_subscription.current_period_start
+    cycle_end = current_subscription.current_period_end
+
+    used_visualizations = visualizations.where(
+      created_at: cycle_start.beginning_of_day..cycle_end.end_of_day
+    ).count
+
+    current_plan_version.monthly_visualization_limit - used_visualizations
+  end
+
+
   def current_plan_version
-    current_subscription&.plan_version
+    @current_plan_version ||= Billing::PlanVersion.find_by(id: current_subscription&.metadata&.dig("plan_version_id"))
+  end
+
+  def stripe_attributes(pay_customer)
+    {
+      address: {
+        country: pay_customer.owner.country.iso_short_name
+      },
+      metadata: {
+        pay_customer_id: pay_customer.id,
+        user_id: id
+      }
+    }
+  end
+
+  private
+
+  def active_plan_names
+    @active_plan_names ||= Billing::PlanVersion.active
+                                          .joins(:plan)
+                                          .pluck("billing_plans.name")
+  end
+
+  def find_subscription(plan_name)
+    payment_processor.subscriptions.find_by(name: plan_name)
   end
 end

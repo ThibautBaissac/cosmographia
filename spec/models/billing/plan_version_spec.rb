@@ -1,10 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Billing::PlanVersion, type: :model do
+RSpec.describe(Billing::PlanVersion, type: :model) do
   # Associations
   describe 'associations' do
     it { should belong_to(:plan).class_name('Billing::Plan').with_foreign_key('billing_plan_id') }
-    it { should have_many(:subscriptions).class_name('Billing::Subscription').with_foreign_key('billing_plan_version_id').dependent(:restrict_with_error) }
   end
 
   # Validations
@@ -30,8 +29,8 @@ RSpec.describe Billing::PlanVersion, type: :model do
         active_plan_version = create(:billing_plan_version, active: true)
         inactive_plan_version = create(:billing_plan_version, active: false)
 
-        expect(Billing::PlanVersion.active).to include(active_plan_version)
-        expect(Billing::PlanVersion.active).not_to include(inactive_plan_version)
+        expect(Billing::PlanVersion.active).to(include(active_plan_version))
+        expect(Billing::PlanVersion.active).not_to(include(inactive_plan_version))
       end
     end
   end
@@ -53,9 +52,9 @@ RSpec.describe Billing::PlanVersion, type: :model do
           active_version2.reload
           new_version.reload
 
-          expect(active_version1.active).to be_falsey
-          expect(active_version2.active).to be_truthy
-          expect(new_version.active).to be_truthy
+          expect(active_version1.active).to(be_falsey)
+          expect(active_version2.active).to(be_truthy)
+          expect(new_version.active).to(be_truthy)
         end
       end
 
@@ -70,30 +69,9 @@ RSpec.describe Billing::PlanVersion, type: :model do
           active_version.reload
           inactive_version.reload
 
-          expect(active_version.active).to be_truthy
-          expect(inactive_version.active).to be_falsey
+          expect(active_version.active).to(be_truthy)
+          expect(inactive_version.active).to(be_falsey)
         end
-      end
-    end
-  end
-
-  # Dependent: restrict_with_error
-  describe 'dependent: restrict_with_error' do
-    context 'when there are associated subscriptions' do
-      it 'prevents deletion and adds an error' do
-        plan_version = create(:billing_plan_version)
-        create(:billing_subscription, plan_version: plan_version)
-
-        expect(plan_version.destroy).to be_falsey
-        expect(plan_version.errors[:base]).to include('Cannot delete record because dependent subscriptions exist')
-      end
-    end
-
-    context 'when there are no associated subscriptions' do
-      it 'allows deletion' do
-        plan_version = create(:billing_plan_version)
-
-        expect { plan_version.destroy }.to change { Billing::PlanVersion.count }.by(-1)
       end
     end
   end

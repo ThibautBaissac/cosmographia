@@ -33,7 +33,8 @@ plan_versions_data = {
       price_cents: 0,
       currency: 'EUR',
       monthly_visualization_limit: 5,
-      active: true
+      active: true,
+      stripe_price_id: 'price_1QhZ1bJzDvctqFzSz8vrXD5T'
     }
   ],
   'Basic' => [
@@ -42,14 +43,16 @@ plan_versions_data = {
       price_cents: 1000,  # €10.00
       currency: 'EUR',
       monthly_visualization_limit: 50,
-      active: false
+      active: false,
+      stripe_price_id: 'price_fake_id_1'
     },
     {
       version_number: 2,
-      price_cents: 1200,  # €12.00
+      price_cents: 500,  # €5.00
       currency: 'EUR',
-      monthly_visualization_limit: 100,
-      active: true
+      monthly_visualization_limit: 10,
+      active: true,
+      stripe_price_id: 'price_1QhTl6JzDvctqFzSyCfOKsvX'
     }
   ],
   'Premium' => [
@@ -58,14 +61,16 @@ plan_versions_data = {
       price_cents: 2000,  # €20.00
       currency: 'EUR',
       monthly_visualization_limit: 250,
-      active: false
+      active: false,
+      stripe_price_id: 'price_fake_id_2'
     },
     {
       version_number: 2,
-      price_cents: 2200,  # €22.00
+      price_cents: 900,  # 9.00
       currency: 'EUR',
       monthly_visualization_limit: nil,  # Unlimited
-      active: true
+      active: true,
+      stripe_price_id: 'price_1QhUH6JzDvctqFzSEbWoP8qw'
     }
   ]
 }

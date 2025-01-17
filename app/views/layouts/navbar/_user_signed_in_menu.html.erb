@@ -40,16 +40,9 @@
       <hr>
 
       <li class="list-group-item list-group-item-action border-0 p-2">
-        <% if current_user&.current_subscription&.present? %>
-          <%= link_to(billing_subscription_path(locale, current_user.current_subscription), class: "dropdown-item") do %>
-            <i class="fa-solid fa-bag-shopping text-secondary me-2"></i>
-            <%= t("navbar.my_subscription") %>
-          <% end %>
-        <% else %>
-          <%= link_to(new_billing_subscription_path(locale), class: "dropdown-item") do %>
-            <i class="fa-solid fa-bag-shopping text-secondary me-2"></i>
-            <%= t("navbar.subscribe_to_plan") %>
-          <% end %>
+        <%= link_to(billing_subscription_path(locale), class: "dropdown-item") do %>
+          <i class="fa-solid fa-bag-shopping text-secondary me-2"></i>
+          <%= t("navbar.subscription") %>
         <% end %>
       </li>
       <li class="list-group-item list-group-item-action border-0 p-2">

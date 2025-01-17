@@ -1,3 +1,7 @@
 namespace :billing do
-  resources :subscriptions, only: [ :index, :show, :new, :create, :destroy ]
+  resource :subscription, only: [ :show ], controller: :subscription do
+    collection do
+      post :checkout
+    end
+  end
 end

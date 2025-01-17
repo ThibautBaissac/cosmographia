@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_11_141015) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_14_162247) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -49,6 +49,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_11_141015) do
     t.integer "monthly_visualization_limit", default: 0
     t.integer "version_number", null: false
     t.boolean "active", default: true, null: false
+    t.string "stripe_price_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["active"], name: "index_billing_plan_versions_on_active"
@@ -63,20 +64,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_11_141015) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["active"], name: "index_billing_plans_on_active"
-  end
-
-  create_table "billing_subscriptions", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "billing_plan_version_id", null: false
-    t.date "end_date"
-    t.string "status", default: "ACTIVE", null: false
-    t.string "external_subscription_id"
-    t.string "external_customer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["billing_plan_version_id"], name: "index_billing_subscriptions_on_billing_plan_version_id"
-    t.index ["status"], name: "index_billing_subscriptions_on_status"
-    t.index ["user_id"], name: "index_billing_subscriptions_on_user_id"
   end
 
   create_table "challenge_discussions", force: :cascade do |t|
@@ -114,6 +101,102 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_11_141015) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_feedbacks_on_user_id"
+  end
+
+  create_table "pay_charges", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.bigint "subscription_id"
+    t.string "processor_id", null: false
+    t.integer "amount", null: false
+    t.string "currency"
+    t.integer "application_fee_amount"
+    t.integer "amount_refunded"
+    t.jsonb "metadata"
+    t.jsonb "data"
+    t.string "stripe_account"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "type"
+    t.index ["customer_id", "processor_id"], name: "index_pay_charges_on_customer_id_and_processor_id", unique: true
+    t.index ["subscription_id"], name: "index_pay_charges_on_subscription_id"
+  end
+
+  create_table "pay_customers", force: :cascade do |t|
+    t.string "owner_type"
+    t.bigint "owner_id"
+    t.string "processor", null: false
+    t.string "processor_id"
+    t.boolean "default"
+    t.jsonb "data"
+    t.string "stripe_account"
+    t.datetime "deleted_at", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "type"
+    t.index ["owner_type", "owner_id", "deleted_at"], name: "pay_customer_owner_index", unique: true
+    t.index ["processor", "processor_id"], name: "index_pay_customers_on_processor_and_processor_id", unique: true
+  end
+
+  create_table "pay_merchants", force: :cascade do |t|
+    t.string "owner_type"
+    t.bigint "owner_id"
+    t.string "processor", null: false
+    t.string "processor_id"
+    t.boolean "default"
+    t.jsonb "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "type"
+    t.index ["owner_type", "owner_id", "processor"], name: "index_pay_merchants_on_owner_type_and_owner_id_and_processor"
+  end
+
+  create_table "pay_payment_methods", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.string "processor_id", null: false
+    t.boolean "default"
+    t.string "payment_method_type"
+    t.jsonb "data"
+    t.string "stripe_account"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "type"
+    t.index ["customer_id", "processor_id"], name: "index_pay_payment_methods_on_customer_id_and_processor_id", unique: true
+  end
+
+  create_table "pay_subscriptions", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.string "name", null: false
+    t.string "processor_id", null: false
+    t.string "processor_plan", null: false
+    t.integer "quantity", default: 1, null: false
+    t.string "status", null: false
+    t.datetime "current_period_start", precision: nil
+    t.datetime "current_period_end", precision: nil
+    t.datetime "trial_ends_at", precision: nil
+    t.datetime "ends_at", precision: nil
+    t.boolean "metered"
+    t.string "pause_behavior"
+    t.datetime "pause_starts_at", precision: nil
+    t.datetime "pause_resumes_at", precision: nil
+    t.decimal "application_fee_percent", precision: 8, scale: 2
+    t.jsonb "metadata"
+    t.jsonb "data"
+    t.string "stripe_account"
+    t.string "payment_method_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "type"
+    t.index ["customer_id", "processor_id"], name: "index_pay_subscriptions_on_customer_id_and_processor_id", unique: true
+    t.index ["metered"], name: "index_pay_subscriptions_on_metered"
+    t.index ["pause_starts_at"], name: "index_pay_subscriptions_on_pause_starts_at"
+  end
+
+  create_table "pay_webhooks", force: :cascade do |t|
+    t.string "processor"
+    t.string "event_type"
+    t.jsonb "event"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "softwares", force: :cascade do |t|
@@ -363,11 +446,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_11_141015) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "billing_plan_versions", "billing_plans"
-  add_foreign_key "billing_subscriptions", "billing_plan_versions"
-  add_foreign_key "billing_subscriptions", "users"
   add_foreign_key "challenge_discussions", "challenges"
   add_foreign_key "challenge_discussions", "users"
   add_foreign_key "feedbacks", "users"
+  add_foreign_key "pay_charges", "pay_customers", column: "customer_id"
+  add_foreign_key "pay_charges", "pay_subscriptions", column: "subscription_id"
+  add_foreign_key "pay_payment_methods", "pay_customers", column: "customer_id"
+  add_foreign_key "pay_subscriptions", "pay_customers", column: "customer_id"
   add_foreign_key "solid_queue_blocked_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_claimed_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_failed_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade

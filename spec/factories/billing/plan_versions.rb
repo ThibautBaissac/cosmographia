@@ -6,6 +6,7 @@ FactoryBot.define do
     monthly_visualization_limit { 100 }
     sequence(:version_number) { |n| n }
     active { false }
+    stripe_price_id { "price_#{SecureRandom.hex(10)}" }
 
     trait :active do
       active { true }

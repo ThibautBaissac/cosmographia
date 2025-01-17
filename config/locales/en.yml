@@ -17,7 +17,6 @@ en:
     save: Save
     search: Search...
     search_btn: Search
-    subscribe: Subscribe
     welcome_to: Welcome to %{app_name}
   errors:
     attributes:
@@ -58,8 +57,7 @@ en:
     my_mentions: Your mentions
     my_public_page: Your public page
     visualizations: Visualizations
-    my_subscription: Your subscription
-    subscribe_to_plan: Subscribe to a plan
+    subscription: Your subscription
   pundit:
     default: You cannot perform this action.
     user_policy:

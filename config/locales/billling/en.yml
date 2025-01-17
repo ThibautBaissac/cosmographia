@@ -2,15 +2,14 @@
 en:
   billing:
     subscription:
-      my_current_subscription: "Your current subscription"
+      subscription: "Subscription"
       change_subscription: "Change subscription"
-      no_subscription_history: "You have no subscription history."
-      subscribe_now: "Subscribe now"
-      subscription_history: "Subscription history"
-      subscribe_to_plan: "Subscribe to a Plan"
-      my_subscription_history: "Your subscription history"
-      cancel_subscription: "Cancel subscription"
       remaining_visualizations: "Remaining visualizations"
       current_billing_cycle_end: "End of current Billing Cycle"
-      unlimited_visualizations: "Unlimited"
+      unlimited: "Unlimited"
       current_billing_cycle_start: "Start of current Billing Cycle"
+      manage_subscription: "Manage subscription"
+      unlimited_visualizations: "Unlimited visualizations"
+      monthly_visualization_limit: "Monthly limit: %{count}"
+      current_subscription: "Current subscription"
+      subscribe: "Subscribe"
