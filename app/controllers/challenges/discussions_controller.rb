@@ -11,11 +11,9 @@ class Challenges::DiscussionsController < ApplicationController
       if @discussion.save
         @toast_message = t("challenge.discussion.flash.actions.create.success")
         format.turbo_stream
-        format.html { redirect_to(discussion_challenge_path(@challenge)) }
+        format.html { redirect_to(discussion_challenge_path(locale, @challenge)) }
       else
-        @toast_message = t("challenge.discussion.flash.actions.create.failure")
-        format.turbo_stream
-        format.html { redirect_to(discussion_challenge_path(@challenge)) }
+        format.html { redirect_to(discussion_challenge_path(locale, @challenge), alert: t("challenge.discussion.flash.actions.create.failure")) }
       end
     end
   end
@@ -30,11 +28,9 @@ class Challenges::DiscussionsController < ApplicationController
       if @discussion.update(discussion_params)
         @toast_message = t("challenge.discussion.flash.actions.update.success")
         format.turbo_stream
-        format.html { redirect_to(discussion_challenge_path(@challenge)) }
+        format.html { redirect_to(discussion_challenge_path(locale, @challenge)) }
       else
-        @toast_message = t("challenge.discussion.flash.actions.update.failure")
-        format.turbo_stream
-        format.html { redirect_to(discussion_challenge_path(@challenge)) }
+        format.html { redirect_to(discussion_challenge_path(locale, @challenge), t("challenge.discussion.flash.actions.update.failure")) }
       end
     end
   end
