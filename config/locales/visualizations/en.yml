@@ -16,13 +16,13 @@ en:
       flash:
         actions:
           create:
-            failure: Comment creation failed
-            success: Your comment was created successfully
+            failure: Your comment could not be created
+            success: Thank you! Your comment was created successfully
           destroy:
-            failure: Comment deletion failed
+            failure: Your comment could not be deleted
             success: Your comment was deleted successfully
           update:
-            failure: Comment update failed
+            failure: Your comment could not be updated
             success: Your comment was updated successfully
       one: comment
       other: comments

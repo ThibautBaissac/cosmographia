@@ -12,9 +12,7 @@ class Visualizations::CommentsController < ApplicationController
         format.turbo_stream
         format.html { redirect_to(@visualization) }
       else
-        @toast_message = t("visualization.comments.flash.actions.create.failure")
-        format.turbo_stream
-        format.html { redirect_to(@visualization) }
+        format.html { redirect_to(@visualization, alert: t("visualization.comments.flash.actions.create.failure")) }
       end
     end
   end
@@ -31,9 +29,7 @@ class Visualizations::CommentsController < ApplicationController
         format.turbo_stream
         format.html { redirect_to(@visualization) }
       else
-        @toast_message = t("visualization.comments.flash.actions.update.failure")
-        format.turbo_stream
-        format.html { redirect_to(@visualization) }
+        format.html { redirect_to(@visualization, alert: t("visualization.comments.flash.actions.update.failure")) }
       end
     end
   end

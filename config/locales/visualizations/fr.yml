@@ -16,13 +16,13 @@ fr:
       flash:
         actions:
           create:
-            failure: Échec de la création de votre commentaire
-            success: Votre commentaire a été créé avec succès
+            failure: Vote commentaire n'a pas pu être créé
+            success: Merci ! Votre commentaire a été créé avec succès
           destroy:
-            failure: Échec de la suppression de votre commentaire
+            failure: Vote commentaire n'a pas pu être supprimé
             success: Votre commentaire a été supprimé avec succès
           update:
-            failure: Échec de la mise à jour de votre commentaire
+            failure: Vote commentaire n'a pas pu être mis à jour
             success: Votre commentaire a été mis à jour avec succès
       one: commentaire
       other: commentaires
