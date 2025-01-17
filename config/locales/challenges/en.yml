@@ -1,6 +1,12 @@
 ---
 en:
   challenge:
+    attach_visualization:
+      flash:
+        actions:
+          create:
+            failure: Sorry but we could not attach your visualization to this challenge
+            success: Thank you for your participation! Your isualization was successfully attached
     will_starin_x_days:
      one: The challenge will start in %{count} day
      other: The challenge will start in %{count} days

@@ -11,9 +11,9 @@ class Challenges::AttachVisualizationController < ApplicationController
     redirect_to(participations_challenge_path(@challenge)) and return if params[:visualization_id].blank?
     visualization = current_user.visualizations.find(params[:visualization_id])
     if visualization.update(challenge_id: @challenge.id)
-      flash[:notice] = "Your visualization has been attached to the challenge"
+      flash[:notice] = t("challenge.attach_visualization.flash.actions.create.success")
     else
-      flash[:alert] = "Failed to attach visualization"
+      flash[:alert] = t("challenge.attach_visualization.flash.actions.create.failure")
     end
     redirect_to(participations_challenge_path(@challenge))
   end

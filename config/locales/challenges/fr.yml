@@ -1,6 +1,12 @@
 ---
 fr:
   challenge:
+    attach_visualization:
+      flash:
+        actions:
+          create:
+            failure: Désolé, nous n'avons pas pu attacher votre visualisation à ce challenge
+            success: Merci pour votre participation ! Votre visualisation a été attachée avec succès
     will_starin_x_days:
      one: Le challenge commencera dans %{count} jour
      other: Le challenge commencera dans %{count} jours
