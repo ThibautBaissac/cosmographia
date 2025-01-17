@@ -25,11 +25,11 @@ class User < ApplicationRecord
 
   validates :locale, presence: true, inclusion: {in: I18n.available_locales.map(&:to_s)}
   validates :email, presence: true
-  validates :first_name, :last_name, :country_code, presence: true, if: :not_guest?
+  validates :first_name, :last_name, :country_code, presence: true, on: :profile_update
   validates :slug, presence: true, uniqueness: true, exclusion: {in: I18n.available_locales.map(&:to_s)}
   validates :slug, length: {minimum: 4, maximum: 50}, format: {with: /\A[a-z0-9\-_]+\z/, message: :format}
   validate :allowed_social_links_keys
-  validates :country_code, inclusion: {in: ISO3166::Country.codes}, if: :not_guest?
+  validates :country_code, inclusion: {in: ISO3166::Country.codes}, on: :profile_update
 
   accepts_nested_attributes_for :user_softwares, allow_destroy: true
 

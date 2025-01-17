@@ -7,7 +7,8 @@ class My::ProfileController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
+    @user.assign_attributes(user_params)
+    if @user.save(context: :profile_update)
       redirect_to(my_info_path(locale), notice: t("my.profile.flash.actions.update.success"))
     else
       flash[:alert] = t("my.profile.flash.actions.update.failure")
