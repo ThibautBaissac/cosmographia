@@ -20,6 +20,8 @@ en:
     password_confirmation_placeholder: Confirm your password
     password_placeholder: Enter your password
     remember_me: Remember me
+    resend_instructions: Resend instructions
+    resend_confirmation_instructions: Resend confirmation instructions
     sign_in: Sign in
     sign_out: Sign out
     sign_up: Sign up

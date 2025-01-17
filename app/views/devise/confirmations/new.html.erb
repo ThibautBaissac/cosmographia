@@ -1,16 +1,39 @@
-<h2>Resend confirmation instructions</h2>
+<div class="container">
+  <!-- Header -->
+  <%= render(HeaderComponent.new(title: t("auth.resend_confirmation_instructions"))) %>
+</div>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: {method: :post}) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- Card Wrapper -->
+      <div class="card shadow-sm rounded-4">
+        <!-- Card Body -->
+        <div class="card-body">
+          <!-- Error Messages -->
+          <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label(:email) %><br />
-    <%= f.email_field(:email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)) %>
+          <!-- Resend Confirmation Form -->
+          <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: {method: :post, class: "needs-validation", novalidate: true}) do |f| %>
+            <!-- Email Field -->
+            <div class="mb-3">
+              <%= f.label(:email, class: "form-label fw-bold") %>
+              <%= f.email_field(:email, class: "form-control rounded-pill", placeholder: t("auth.email_placeholder"), autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)) %>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+              <%= f.submit(t("auth.resend_instructions"), class: "btn btn-info btn-lg rounded-pill shadow-sm text-white") %>
+            </div>
+          <% end %>
+
+          <!-- Back Link -->
+          <div class="mt-3 text-center">
+            <%= link_to t("auth.back"), new_session_path(resource_name), class: "btn btn-link text-info fw-bold" %>
+          </div>
+        </div>
+      </div>
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit("Resend confirmation instructions") %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
