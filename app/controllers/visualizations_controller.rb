@@ -35,7 +35,7 @@ class VisualizationsController < ApplicationController
     set_authorize
 
     if @visualization.save
-      redirect_to(@visualization, notice: "Visualization was successfully created.")
+      redirect_to(@visualization, notice: t("visualization.flash.actions.create.success"))
     else
       render(:new, status: :unprocessable_entity)
     end
@@ -48,7 +48,7 @@ class VisualizationsController < ApplicationController
   def update
     set_authorize
     if @visualization.update(visualization_params)
-      redirect_to(@visualization, notice: "Visualization was successfully updated.")
+      redirect_to(@visualization, notice: t("visualization.flash.actions.update.success"))
     else
       render(:edit, status: :unprocessable_entity)
     end
