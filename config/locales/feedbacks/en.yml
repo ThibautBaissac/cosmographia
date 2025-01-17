@@ -16,3 +16,8 @@ en:
     text: Your thoughts and suggestions help us improve. Whether it’s comment, a suggestion,
       or something we can do better, we’d love to hear from you!
     title: We value your feedback!
+    flash:
+      actions:
+        create:
+          success: Thank you! Your feedback has been sent successfully.
+          failure: Your feedback could not be sent.
