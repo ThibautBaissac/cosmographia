@@ -16,8 +16,10 @@
         <td>
           <% if user.guest? %>
             Guest
-          <% else %>
+          <% elsif user.subscribed? %>
             <%= user.current_plan_version.plan.name %>
+          <% else %>
+            Not Guest && Not subscribed
           <% end %>
         </td>
         <td><%= user.locale %></td>
