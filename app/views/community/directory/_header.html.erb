@@ -1,7 +1,11 @@
 <%= render(HeaderComponent.new(title: t("community.directory.title"))) do %>
-  <% unless current_user.opted_in_directory? %>
+  <% if !current_user.opted_in_directory? %>
     <%= link_to(edit_my_profile_path(locale)) do %>
       <%= render(ButtonComponent.new(text: t("my.profile.not_in_directory"), outline: :true, icon: "fa-solid fa-users")) %>
+    <% end %>
+  <% elsif !current_user.subscribed? %>
+    <%= link_to(billing_subscription_path(locale)) do %>
+      <%= render(ButtonComponent.new(text: t("billing.subscription.change_subscription"), outline: :true, icon: "fa-solid fa-bag-shopping")) %>
     <% end %>
   <% end %>
 <% end %>

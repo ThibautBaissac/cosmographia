@@ -3,7 +3,7 @@
 
   <% if current_user.guest? %>
     <%= render("shared/guest_alert") %>
-  <% elsif current_user.opted_in_directory? %>
+  <% elsif current_user.opted_in_directory? && current_user.subscribed? %>
     <%= render("community/directory/search", query: @query) %>
     <p class="small mt-2 ms-2 text-muted"><%= t("users.count", count: @pagy.count) %></p>
 
@@ -12,7 +12,9 @@
     </div>
 
     <%= render(PaginationComponent.new(pagy: @pagy)) %>
-  <% else %>
+  <% elsif !current_user.opted_in_directory? %>
     <%= render("community/directory/optin_alert") %>
+  <% elsif !current_user.subscribed? %>
+    <%= render("community/directory/subscription_alert") %>
   <% end %>
 </div>
