@@ -3,7 +3,6 @@
 
   <% if current_user.guest? %>
     <%= render("shared/guest_alert") %>
-    </div>
   <% elsif current_user.opted_in_directory? %>
     <%= render("community/directory/search", query: @query) %>
     <p class="small mt-2 ms-2 text-muted"><%= t("users.count", count: @pagy.count) %></p>
