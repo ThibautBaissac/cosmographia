@@ -75,7 +75,7 @@ class User < ApplicationRecord
   end
 
   def remaining_visualization_count
-    return 0 if guest?
+    return 0 if guest? || !subscribed?
     return Float::INFINITY if current_plan_version.monthly_visualization_limit.nil?
 
     cycle_start = current_subscription.current_period_start
