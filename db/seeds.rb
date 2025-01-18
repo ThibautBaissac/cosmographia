@@ -1,6 +1,6 @@
 require 'faker'
 
-@nb_users = 10
+@nb_users = 15
 @nb_guest_users = 10
 @nb_visualizations = 300
 @nb_challenges = 30
