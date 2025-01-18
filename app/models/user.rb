@@ -58,12 +58,12 @@ class User < ApplicationRecord
   end
 
   def current_subscription
-    @current_subscription || active_plan_names.find { |plan_name| payment_processor.subscribed?(name: plan_name) }
+    @current_subscription ||= active_plan_names.find { |plan_name| payment_processor.subscribed?(name: plan_name) }
                                                .then { |plan_name| find_subscription(plan_name) }
   end
 
   def subscribed?
-    current_subscription.present?
+    @subscribed ||= current_subscription.present?
   end
 
   def has_remaining_visualizations?
