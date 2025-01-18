@@ -16,7 +16,7 @@ fr:
       one: Se cloture dans %{count} jour
       other: Se cloture dans %{count} jours
       zero: Se cloture aujourd'hui
-    not_opted_in_alert: Vous pourrez participer aux challenges une fois que vous aurez rejoint la communauté.
+    subscription_alert: Vous devez souscrire au minimum à l'abonnement gratuit pour participer aux challenges.
     category:
       data: Visualisation de données
       map: Carte

@@ -4,7 +4,6 @@ module User::Scopes
   included do
     scope :guests, -> { where(first_name: [nil, ""]).or(where(last_name: [nil, ""])).or(where(country_code: [nil, ""])) }
     scope :non_guests, -> { where.not(id: guests.select(:id)) }
-    scope :opted_in_directory, -> { where(optin_directory: true) }
 
     scope :search, ->(query) {
       return all if query.blank?

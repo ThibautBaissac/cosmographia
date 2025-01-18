@@ -49,10 +49,6 @@ class User < ApplicationRecord
     !guest?
   end
 
-  def opted_in_directory?
-    optin_directory
-  end
-
   def country
     ::ISO3166::Country[country_code]
   end

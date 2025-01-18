@@ -26,7 +26,6 @@ en:
       info_disclaimer_html: Your personal information will <b>never be shared</b>
         with third parties outside the Cosmographia community!
       my_page: Your personal page
-      not_in_directory: Join the directory
       total_comment_count: "(%{count} in total)"
   user:
     contributions: Contributions

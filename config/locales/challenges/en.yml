@@ -16,7 +16,7 @@ en:
       one: Ends in %{count} day
       other: Ends in %{count} days
       zero: Ends today
-    not_opted_in_alert: You will be able to participate once you have joined the community.
+    subscription_alert: You need to subscribe to at least the free subscription to participate in challenges.
     category:
       data: Data visualization
       map: Map

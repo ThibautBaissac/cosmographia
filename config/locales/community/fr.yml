@@ -3,8 +3,6 @@ fr:
   community:
     directory:
       subscription_alert: Vous devez souscrire au minimum à l'abonnement gratuit pour accéder à l'annuaire
-      not_opted_in_alert: Vous pourrez rechercher des membres de la communauté une
-        fois que vous l'aurez rejointe
       search:
         query_placeholder: Rechercher par prénom, nom, email, logiciel ou catégorie
           de logiciel.

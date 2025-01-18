@@ -1,6 +1,6 @@
 class ChallengePolicy < ApplicationPolicy
   def index?
-    user&.opted_in_directory? || user&.superadmin?
+    user&.subscribed? || user&.superadmin?
   end
 
   def new?

@@ -12,7 +12,6 @@ FactoryBot.define do
     bio { Faker::Lorem.paragraph }
     personal_website { Faker::Internet.url }
     social_links { {github: Faker::Internet.url, linkedin: Faker::Internet.url} }
-    optin_directory { false }
     public_profile { false }
     confirmation_token { nil }
     confirmed_at { DateTime.yesterday }
@@ -37,10 +36,6 @@ FactoryBot.define do
 
     trait :public_profile do
       public_profile { true }
-    end
-
-    trait :optin_directory do
-      optin_directory { true }
     end
 
     trait :public_profile do

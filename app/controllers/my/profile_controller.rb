@@ -34,7 +34,6 @@ class My::ProfileController < ApplicationController
       :slug,
       :bio,
       :personal_website,
-      :optin_directory,
       social_links: Constants::Users::SOCIAL_LINK_KEYS,
       user_softwares_attributes: [ :id, :software_id, :expertise, :_destroy ]
     )

@@ -1,8 +1,8 @@
-<% if current_user&.opted_in_directory? %>
+<% if current_user&.not_guest? %>
   <li class="list-group-item list-group-item-action border-0 p-2">
     <%= link_to(user_profile_path(locale, current_user.slug), class: "dropdown-item") do %>
       <i class="fa-solid fa-pager text-secondary me-2"></i>
       <%= t("navbar.my_public_page") %>
     <% end %>
-    </li>
+  </li>
 <% end %>

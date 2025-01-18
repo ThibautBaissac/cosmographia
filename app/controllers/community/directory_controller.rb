@@ -1,7 +1,7 @@
 class Community::DirectoryController < ApplicationController
   def show
     @user_query = params[:user_query]&.strip
-    users = User.opted_in_directory.includes(:softwares)
+    users = User.non_guests.includes(:softwares)
 
     filter = Users::Filter.new(users:, params: user_filter_params)
     users = filter.apply.order(created_at: :desc).distinct

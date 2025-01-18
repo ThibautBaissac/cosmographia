@@ -3,8 +3,6 @@ en:
   community:
     directory:
       subscription_alert: You must subscribe to at least the free subscription to access the directory.
-      not_opted_in_alert: You will be able to search for members of the community once you have joined.
-        it.
       search:
         query_placeholder: Search by user first name, last name, email, software or
           software category.
