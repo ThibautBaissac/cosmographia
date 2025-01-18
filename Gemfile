@@ -4,6 +4,7 @@ gem "bootsnap", require: false
 gem "chartkick"
 gem "countries"
 gem "cssbundling-rails"
+gem "csv"
 gem "devise", "~> 4.9"
 gem "groupdate"
 gem "jbuilder"
