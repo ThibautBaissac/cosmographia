@@ -2,9 +2,7 @@
   <%= render("community/directory/header") %>
 
   <% if current_user.guest? %>
-    <div class="alert alert-primary mt-3 rounded-4" role="alert">
-      <%= t("guest.alert_01_html") %>
-      <%= t("guest.alert_02_html", url: edit_my_profile_path(locale)) %>
+    <%= render("shared/guest_alert") %>
     </div>
   <% elsif current_user.opted_in_directory? %>
     <%= render("community/directory/search", query: @query) %>
