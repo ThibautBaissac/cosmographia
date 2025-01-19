@@ -4,6 +4,7 @@ FactoryBot.define do
     price_cents { 1000 }
     currency { "EUR" }
     monthly_visualization_limit { 100 }
+    monthly_challenge_limit { 10 }
     sequence(:version_number) { |n| n }
     active { false }
     stripe_price_id { "price_#{SecureRandom.hex(10)}" }

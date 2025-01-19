@@ -34,6 +34,18 @@
               <%= current_user.remaining_visualization_count %>/<%= @current_plan_version.monthly_visualization_limit %>
             <% end %>
           </li>
+
+          <li class="list-group-item <%= "text-warning" unless current_user.has_remaining_challenges? %>">
+            <strong><%= t('billing.subscription.remaining_challenge_count') %>:</strong>
+
+            <% if current_user.unlimited_challenges? %>
+              <%= t('billing.subscription.unlimited') %>
+            <% elsif current_user.remaining_challenge_count.negative? %>
+              0
+            <% else %>
+              <%= current_user.remaining_challenge_count %>/<%= @current_plan_version.monthly_visualization_limit %>
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>
