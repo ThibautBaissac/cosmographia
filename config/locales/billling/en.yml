@@ -9,7 +9,28 @@ en:
       unlimited: "Unlimited"
       current_billing_cycle_start: "Start of current Billing Cycle"
       manage_subscription: "Manage subscription"
+      unlimited_challenges: "Unlimited challenges"
+      monthly_challenge_limit: "Participate in %{count} challenges per month"
       unlimited_visualizations: "Unlimited visualizations"
-      monthly_visualization_limit: "Monthly limit: %{count}"
+      monthly_visualization_limit: "Post %{count} visualizations per month"
       current_subscription: "Current subscription"
       subscribe: "Subscribe"
+    pricing:
+      title: Simple, fair pricing
+      subtitle: "Explore, create, and share your work. No hidden charges. Cancel any time."
+    features:
+      guest:
+        - "Explore all visualizations"
+      not_guest:
+        - "Explore all visualizations"
+        - "Comment visualizations"
+      free:
+        - "Access directory"
+      basic:
+        - "Access directory"
+        - "Private personal page"
+      premium:
+        - "Access directory"
+        - "Create your own challenges"
+        - "Private and public personal page"
+        - "All future features"

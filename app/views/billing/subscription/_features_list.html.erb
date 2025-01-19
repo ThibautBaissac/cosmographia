@@ -1,0 +1,17 @@
+<ul class="list-unstyled fs-6 text-start">
+  <li>
+    <i class="fa-solid fa-check me-2 text-success"></i>
+    <% if pv.unlimited_visualizations? %>
+      <%= t("billing.subscription.unlimited_visualizations") %>
+    <% else %>
+      <%= t("billing.subscription.monthly_visualization_limit", count: pv.monthly_visualization_limit) %>
+    <% end %>
+  </li>
+
+  <% t("billing.features.#{pv.plan.name.downcase}").each do |feature| %>
+    <li>
+      <i class="fa-solid fa-check me-2 text-success"></i>
+      <%= feature %>
+    </li>
+  <% end %>
+</ul>

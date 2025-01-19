@@ -9,7 +9,28 @@ fr:
       unlimited: "Illimitées"
       current_billing_cycle_start: "Début du cycle de Facturation en cours"
       manage_subscription: "Gérer votre abonnement"
+      unlimited_challenges: "Challenges illimités"
+      monthly_challenge_limit: "Participer à %{count} challenges par mois"
       unlimited_visualizations: "Visualisations illimitées"
-      monthly_visualization_limit: "Limite mensuelle : %{count}"
+      monthly_visualization_limit: "Poster %{count} visualisations par mois"
       current_subscription: "Abonnement actuel"
       subscribe: "Souscrire"
+    pricing:
+      title: Tarification simple et équitable
+      subtitle: "Explorez, créez et partagez votre travail. Pas de frais cachés. Annulez à tout moment."
+    features:
+      guest:
+        - Explorer toutes les visualisations
+      not_guest:
+        - Explorer toutes les visualisations
+        - Commenter les visualisations
+      free:
+        - Accéder à l'annuaire
+      basic:
+        - Accéder à l'annuaire
+        - Page personnelle privée
+      premium:
+        - Accéder à l'annuaire
+        - Créer vos propres challenges
+        - Page personnelle privée et publique
+        - Toutes les fonctionnalités futures

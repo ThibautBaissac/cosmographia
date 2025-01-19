@@ -1,11 +1,16 @@
 <%= render("shared/guest_alert") %>
 
-<div class="container mt-3">
+<div class="container my-5 border-top">
   <% if policy(Billing::PlanVersion).checkout? %>
+    <div class="text-center my-5">
+      <h5><%= t("billing.pricing.title") %></h5>
+      <h6><%= t("billing.pricing.subtitle") %></h6>
+    </div>
+
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <% @active_plan_versions.each do |pv| %>
         <div class="col">
-          <div class="card h-100 border rounded-4 <%= pv == @current_plan_version ? "border-success shadow-lg" : "border-secondary shadow-sm" %> overflow-hidden">
+          <div class="card border rounded-4 <%= pv == @current_plan_version ? "border-success shadow-lg" : "border-secondary shadow-sm" %> overflow-hidden">
             <% if pv == @current_plan_version %>
               <div class="position-absolute top-0 start-0 m-3">
                 <i class="fa-solid fa-circle-check fs-4 text-success"></i>
@@ -18,16 +23,7 @@
                 <p class="card-text fs-4 fw-semibold">
                   <%= number_to_currency(pv.price_cents / 100.0) %> <small class="text-muted">/ month</small>
                 </p>
-                <ul class="list-unstyled mb-4">
-                  <li>
-                    <i class="fa-solid fa-eye me-2 text-primary"></i>
-                      <% if pv.unlimited_visualizations? %>
-                        <%= t("billing.subscription.unlimited_visualizations") %>
-                      <% else %>
-                        <%= t("billing.subscription.monthly_visualization_limit", count: pv.monthly_visualization_limit) %>
-                      <% end %>
-                  </li>
-                </ul>
+                <%= render("billing/subscription/features_list", pv:) %>
               </div>
               <div>
                 <% if pv == @current_plan_version %>
