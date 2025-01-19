@@ -18,12 +18,21 @@
         <% end %>
       </li>
       <li class="list-group-item list-group-item-action border-0 p-2">
+        <%= link_to(my_subscription_path(locale), class: "dropdown-item") do %>
+          <i class="fa-solid fa-bag-shopping text-secondary me-2"></i>
+          <%= t("navbar.subscription") %>
+        <% end %>
+      </li>
+
+      <hr>
+
+      <%= render("layouts/navbar/my_page") %>
+      <li class="list-group-item list-group-item-action border-0 p-2">
         <%= link_to(my_mentions_path(locale), class: "dropdown-item") do %>
           <i class="fa-solid fa-at text-secondary me-2"></i>
           <%= t("navbar.my_mentions") %>
         <% end %>
       </li>
-      <%= render("layouts/navbar/my_page") %>
       <li class="list-group-item list-group-item-action border-0 p-2">
         <%= link_to(my_comments_path(locale), class: "dropdown-item") do %>
           <i class="fa-solid fa-comment text-secondary me-2"></i>
@@ -39,12 +48,6 @@
 
       <hr>
 
-      <li class="list-group-item list-group-item-action border-0 p-2">
-        <%= link_to(my_subscription_path(locale), class: "dropdown-item") do %>
-          <i class="fa-solid fa-bag-shopping text-secondary me-2"></i>
-          <%= t("navbar.subscription") %>
-        <% end %>
-      </li>
       <li class="list-group-item list-group-item-action border-0 p-2">
         <%= link_to("#offcanvaFeedback", class: "dropdown-item", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvaFeedback"}) do %>
           <i class="fa-regular fa-comment-dots text-secondary me-2"></i>
