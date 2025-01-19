@@ -21,7 +21,7 @@ class User < ApplicationRecord
   has_many :softwares, through: :user_softwares
   has_many :user_challenges, dependent: :destroy
   has_many :challenges, through: :user_challenges
-  has_many :subscriptions, class_name: "Billing::Subscription", dependent: :destroy
+  has_many :dicussions, class_name: "Challenge::Discussion", dependent: :destroy
 
   validates :locale, presence: true, inclusion: {in: I18n.available_locales.map(&:to_s)}
   validates :email, presence: true
