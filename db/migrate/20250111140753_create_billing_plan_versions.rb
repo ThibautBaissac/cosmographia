@@ -5,6 +5,7 @@ class CreateBillingPlanVersions < ActiveRecord::Migration[8.0]
       t.integer(:price_cents, default: 0, null: false)
       t.string(:currency, default: 'EUR', null: false)
       t.integer(:monthly_visualization_limit, default: 0)
+      t.integer(:monthly_challenge_limit, default: 0)
       t.integer(:version_number, null: false)
       t.boolean(:active, default: true, null: false)
       t.string(:stripe_price_id, null: false)
