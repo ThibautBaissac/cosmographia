@@ -1,0 +1,5 @@
+<div class="container">
+  <%= render(HeaderComponent.new(title: t("my.comments.comments"))) do %>
+    <span class="fw-light"><%= t("my.profile.total_comment_count", count: @total_comment_count) %></span>
+  <% end %>
+</div>

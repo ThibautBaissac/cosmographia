@@ -6,15 +6,9 @@
       translation_key: "my.info.tab"
     ),
     TabsNavComponent::Tab.new(
-      path: my_charts_path(locale),
-      icon_class: "fa-solid fa-chart-pie",
-      translation_key: "my.charts.tab"
-    ),
-    TabsNavComponent::Tab.new(
-      path: my_comments_path(locale),
-      icon_class: "fa-solid fa-comment",
-      translation_key: "my.comments.tab"
+      path: my_subscription_path(locale),
+      icon_class: "fa-solid fa-bag-shopping",
+      translation_key: "my.subscription.tab"
     )
-  ],
-  turbo_frame: "profile_tab_content"
+  ]
 )) %>

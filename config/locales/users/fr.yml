@@ -8,10 +8,11 @@ fr:
       informations de votre profil.
   my:
     charts:
-      tab: Statistiques
+      title: Vos statistiques
+    subscription:
+      tab: Subscription
     comments:
       comments: Vos commentaires
-      tab: Commentaires
     info:
       tab: Profil
       title: Votre profil

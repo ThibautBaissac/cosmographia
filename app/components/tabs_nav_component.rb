@@ -3,7 +3,7 @@
 class TabsNavComponent < ViewComponent::Base
   Tab = Struct.new(:path, :icon_class, :translation_key)
 
-  def initialize(tabs:, turbo_frame:)
+  def initialize(tabs:, turbo_frame: nil)
     @tabs = tabs
     @turbo_frame = turbo_frame
   end

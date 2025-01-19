@@ -7,10 +7,11 @@ en:
     alert_02_popover: To start sharing your work, please fill in your profile information.
   my:
     charts:
-      tab: Charts
+      title: Your statistics
+    subscription:
+      tab: Subscription
     comments:
       comments: Your comments
-      tab: Comments
     info:
       tab: Profile
       title: Your profile
