@@ -1,4 +1,4 @@
-class Billing::SubscriptionController < ApplicationController
+class My::SubscriptionController < ApplicationController
   def show
     load_user_subscription_data if current_user.not_guest?
     plans = Billing::Plan.where(active: true)
@@ -34,8 +34,8 @@ class Billing::SubscriptionController < ApplicationController
           plan_version_id: @plan_version.id
         }
       },
-      success_url: billing_subscription_url(locale),
-      cancel_url: billing_subscription_url(locale)
+      success_url: my_subscription_url(locale),
+      cancel_url: my_subscription_url(locale)
     )
   end
 end

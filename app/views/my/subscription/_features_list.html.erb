@@ -2,22 +2,22 @@
   <li class="mb-3">
     <i class="fa-solid fa-check me-2 text-success"></i>
     <% if pv.unlimited_visualizations? %>
-      <%= t("billing.subscription.unlimited_visualizations") %>
+      <%= t("subscription.unlimited_visualizations") %>
     <% else %>
-      <%= t("billing.subscription.monthly_visualization_limit", count: pv.monthly_visualization_limit) %>
+      <%= t("subscription.monthly_visualization_limit", count: pv.monthly_visualization_limit) %>
     <% end %>
   </li>
 
   <li class="mb-3">
     <i class="fa-solid fa-check me-2 text-success"></i>
     <% if pv.unlimited_challenges? %>
-      <%= t("billing.subscription.unlimited_challenges") %>
+      <%= t("subscription.unlimited_challenges") %>
     <% else %>
-      <%= t("billing.subscription.monthly_challenge_limit", count: pv.monthly_challenge_limit) %>
+      <%= t("subscription.monthly_challenge_limit", count: pv.monthly_challenge_limit) %>
     <% end %>
   </li>
 
-  <% t("billing.features.#{pv.plan.name.downcase}").each do |feature| %>
+  <% t("subscription.features.#{pv.plan.name.downcase}").each do |feature| %>
     <li class="mb-3">
       <i class="fa-solid fa-check me-2 text-success"></i>
       <%= feature %>

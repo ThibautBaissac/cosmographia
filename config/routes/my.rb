@@ -4,4 +4,9 @@ namespace :my do
   resource :info, only: %i[show], controller: :info
   resource :charts, only: %i[show]
   resource :comments, only: %i[show]
+  resource :subscription, only: [ :show ], controller: :subscription do
+    collection do
+      post :checkout
+    end
+  end
 end

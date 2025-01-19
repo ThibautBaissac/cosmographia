@@ -1,0 +1,39 @@
+---
+en:
+  subscription:
+    subscription: "Subscription"
+    change_subscription: "Change subscription"
+    remaining_visualizations: "Remaining visualizations"
+    remaining_challenge_count: "Remaining challenges"
+    current_billing_cycle_end: "End of current Billing Cycle"
+    unlimited: "Unlimited"
+    current_billing_cycle_start: "Start of current Billing Cycle"
+    manage_subscription: "Manage subscription"
+    unlimited_challenges: "Unlimited challenges"
+    monthly_challenge_limit:
+      one: "Participate in %{count} challenge per month"
+      other: "Participate in %{count} challenges per month"
+      zero: "No participation in challenges"
+    unlimited_visualizations: "Unlimited visualizations"
+    monthly_visualization_limit: "Post %{count} visualizations per month"
+    current_subscription: "Current subscription"
+    subscribe: "Subscribe"
+    pricing:
+      title: Simple, fair pricing
+      subtitle: "Explore, create, and share your work. No hidden charges. Cancel any time."
+    features:
+      guest:
+        - "Explore all visualizations"
+      not_guest:
+        - "Explore all visualizations"
+        - "Comment visualizations"
+      free:
+        - "Access directory"
+      basic:
+        - "Access directory"
+        - "Private personal page"
+      premium:
+        - "Access directory"
+        - "Create your own challenges"
+        - "Private and public personal page"
+        - "All future features"

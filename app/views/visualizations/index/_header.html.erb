@@ -1,8 +1,8 @@
 <div class="container">
   <%= render(HeaderComponent.new(title: t("visualization.title"))) do %>
     <% if !current_user.has_remaining_visualizations? %>
-      <%= link_to(billing_subscription_path(locale)) do %>
-        <%= render(ButtonComponent.new(text: t("billing.subscription.change_subscription"), outline: :true, icon: "fa-solid fa-bag-shopping")) %>
+      <%= link_to(my_subscription_path(locale)) do %>
+        <%= render(ButtonComponent.new(text: t("subscription.change_subscription"), outline: :true, icon: "fa-solid fa-bag-shopping")) %>
       <% end %>
     <% elsif policy(Visualization).new? %>
       <%= link_to(new_visualization_path(locale)) do %>

@@ -3,8 +3,8 @@
 <div class="container my-5 border-top">
   <% if policy(Billing::PlanVersion).checkout? %>
     <div class="text-center my-5">
-      <h5><%= t("billing.pricing.title") %></h5>
-      <h6><%= t("billing.pricing.subtitle") %></h6>
+      <h5><%= t("subscription.pricing.title") %></h5>
+      <h6><%= t("subscription.pricing.subtitle") %></h6>
     </div>
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -23,16 +23,16 @@
                 <p class="card-text fs-4 fw-semibold">
                   <%= number_to_currency(pv.price_cents / 100.0) %> <small class="text-muted">/ month</small>
                 </p>
-                <%= render("billing/subscription/features_list", pv:) %>
+                <%= render("my/subscription/features_list", pv:) %>
               </div>
               <div>
                 <% if pv == @current_plan_version %>
-                  <button type="button" class="btn btn-primary w-100 mt-3 rounded-3" disabled><%= t("billing.subscription.current_subscription") %></button>
+                  <button type="button" class="btn btn-primary w-100 mt-3 rounded-3" disabled><%= t("subscription.current_subscription") %></button>
                 <% else %>
-                  <%= form_with(url: checkout_billing_subscription_path(locale), method: :post, data: { turbo: false }) do |form| %>
+                  <%= form_with(url: checkout_my_subscription_path(locale), method: :post, data: { turbo: false }) do |form| %>
                     <%= hidden_field_tag(:plan_version_id, pv.id ) %>
                     <%= hidden_field_tag(:stripe_price_id, pv.stripe_price_id ) %>
-                    <%= submit_tag(t("billing.subscription.subscribe"), class: "btn btn-primary w-100 mt-3 rounded-3") %>
+                    <%= submit_tag(t("subscription.subscribe"), class: "btn btn-primary w-100 mt-3 rounded-3") %>
                   <% end %>
                 <% end %>
               </div>
