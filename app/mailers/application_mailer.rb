@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV["ACTION_MAILER_EMAIL"]
+  default from: Rails.application.credentials.dig(:production, :smtp_settings, :user_name) || ENV["GMAIL_USERNAME"]
   layout "mailer"
 end
