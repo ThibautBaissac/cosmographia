@@ -66,8 +66,16 @@ class User < ApplicationRecord
     remaining_visualization_count&.positive?
   end
 
+  def has_remaining_challenges?
+    remaining_challenge_count&.positive?
+  end
+
   def unlimited_visualizations?
     current_plan_version.monthly_visualization_limit.nil?
+  end
+
+  def unlimited_challenges?
+    current_plan_version.monthly_challenge_limit.nil?
   end
 
   def remaining_visualization_count
@@ -82,6 +90,20 @@ class User < ApplicationRecord
     ).count
 
     current_plan_version.monthly_visualization_limit - used_visualizations
+  end
+
+  def remaining_challenge_count
+    return 0 if guest? || !subscribed?
+    return Float::INFINITY if current_plan_version.monthly_challenge_limit.nil?
+
+    cycle_start = current_subscription.current_period_start
+    cycle_end = current_subscription.current_period_end
+
+    used_challenges = challenges.where(
+      created_at: cycle_start.beginning_of_day..cycle_end.end_of_day
+    ).count
+
+    current_plan_version.monthly_challenge_limit - used_challenges
   end
 
 

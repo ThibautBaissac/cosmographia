@@ -7,6 +7,7 @@ class Billing::PlanVersion < ApplicationRecord
   validates :version_number, uniqueness: {scope: :billing_plan_id}
   validates :price_cents, numericality: {greater_than_or_equal_to: 0}
   validates :monthly_visualization_limit, numericality: {only_integer: true, greater_than_or_equal_to: 0}, allow_nil: true
+  validates :monthly_challenge_limit, numericality: {only_integer: true, greater_than_or_equal_to: 0}, allow_nil: true
   validates :stripe_price_id, presence: true, uniqueness: true
 
   scope :active, -> { where(active: true) }
@@ -15,6 +16,10 @@ class Billing::PlanVersion < ApplicationRecord
 
   def unlimited_visualizations?
     monthly_visualization_limit.nil?
+  end
+
+  def unlimited_challenges?
+    monthly_challenge_limit.nil?
   end
 
   private
