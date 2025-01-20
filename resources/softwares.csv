@@ -1,5 +1,6 @@
 name,category
 ArcGIS Pro,GIS
+ArcGIS Online,GIS
 QGIS,GIS
 Photoshop,RASTER
 Gimp,RASTER
@@ -23,3 +24,5 @@ Timesat,OTHER
 SPIRITS,OTHER
 VGT Extract,OTHER
 ViewSpec Pro,OTHER
+Mapbox,OTHER
+Felt,OTHER
