@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for cosmographia on 2025-01-20T15:17:07+01:00
+# fly.toml app configuration file generated for cosmographia on 2025-01-20T15:43:43+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -10,7 +10,7 @@ console_command = '/rails/bin/rails console'
 [build]
 
 [deploy]
-  release_command = "./bin/rails db:prepare"
+  release_command = "sh -c 'cd /rails && /rails/bin/rails db:prepare'"
 
 [http_service]
   internal_port = 3000
