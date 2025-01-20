@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem "aws-sdk-s3", "~> 1.178", :require => false
 gem "bootsnap", require: false
 gem "chartkick"
 gem "countries"
@@ -46,6 +47,7 @@ end
 
 group :development do
   gem "bullet", "~> 8.0"
+  gem "dockerfile-rails", ">= 1.7"
   gem "erb_lint", require: false
   gem "hotwire-spark"
   gem "letter_opener_web"
