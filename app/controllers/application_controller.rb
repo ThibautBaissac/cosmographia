@@ -41,4 +41,11 @@ class ApplicationController < ActionController::Base
     flash[:alert] = t("#{policy_name}.#{exception.query}", scope: "pundit", default: :default)
     redirect_back_or_to(root_path(locale))
   end
+
+  def require_superadmin!
+    unless current_user&.superadmin?
+      flash[:alert] = "You are not authorized to access this section."
+      redirect_to(root_path(locale))
+    end
+  end
 end
