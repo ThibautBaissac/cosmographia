@@ -85,10 +85,10 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    url: postgres://postgres:QJpupjVJxoJSezh@cosmographia-db.flycast:5432
+    url: <%= ENV["DATABASE_URL"] %>
     database: cosmographia-db
     username: postgres
-    password: QJpupjVJxoJSezh
+    password: <%= ENV["DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: cosmographia-db
