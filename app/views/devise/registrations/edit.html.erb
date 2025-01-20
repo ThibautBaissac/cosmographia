@@ -57,15 +57,6 @@
             </div>
           <% end %>
 
-          <!-- Cancel Account Section -->
-          <hr class="my-4">
-          <h4 class="mt-4 text-danger"><%= t("auth.cancel_account") %></h4>
-          <p><%= t("auth.cancel_account_unhappy") %></p>
-          <%= button_to t("auth.cancel_account"), registration_path(resource_name),
-                data: {confirm: "Are you sure you want to cancel your account? This action cannot be undone."},
-                method: :delete,
-                class: "btn btn-danger rounded-pill shadow-sm" %>
-
           <!-- Back Link -->
           <div class="mt-3">
             <%= link_to t("auth.back"), :back, class: "btn btn-outline-secondary rounded-pill" %>
