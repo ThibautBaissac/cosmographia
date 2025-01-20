@@ -2,7 +2,7 @@ class Admin::UsersController < ApplicationController
   before_action :require_superadmin!
 
   def index
-    users = User.order(:id)
+    users = User.order(:last_name, :first_name)
     @pagy, @users = pagy(users)
   end
 
