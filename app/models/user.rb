@@ -54,8 +54,7 @@ class User < ApplicationRecord
   end
 
   def current_subscription
-    @current_subscription ||= active_plan_names.find { |plan_name| payment_processor.subscribed?(name: plan_name) }
-                                               .then { |plan_name| find_subscription(plan_name) }
+    @current_subscription ||= pay_customers&.first&.subscriptions&.first
   end
 
   def subscribed?
@@ -124,12 +123,6 @@ class User < ApplicationRecord
   end
 
   private
-
-  def active_plan_names
-    @active_plan_names ||= Billing::PlanVersion.active
-                                          .joins(:plan)
-                                          .pluck("billing_plans.name")
-  end
 
   def find_subscription(plan_name)
     payment_processor.subscriptions.find_by(name: plan_name)

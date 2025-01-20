@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <% User.all.includes([:payment_processor]).each do |user| %>
+      <% User.all.each do |user| %>
       <tr class="cursor-pointer" data-email="<%= user.email %>" data-password="Password123.">
         <td><%= user.email %></td>
         <td><%= user.superadmin %></td>
