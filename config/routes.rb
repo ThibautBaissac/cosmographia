@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     devise_for :users
     root "home#index"
 
+    draw :admin
     draw :challenges
     draw :community
     draw :feedbacks
