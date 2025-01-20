@@ -212,6 +212,7 @@ en:
     formats:
       default: "%a, %d %b %Y %H:%M:%S %z"
       dmy: "%d/%m/%Y"
+      dmy_hm: "%d/%m/%Y %Hh%M"
       long: "%B %d, %Y %H:%M"
       short: "%I:%M%P"
     pm: pm
