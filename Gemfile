@@ -7,6 +7,7 @@ gem "countries"
 gem "cssbundling-rails"
 gem "csv"
 gem "devise", "~> 4.9"
+gem "faker", "~> 3.5"
 gem "groupdate"
 gem "jbuilder"
 gem "jsbundling-rails"
@@ -40,7 +41,6 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "dotenv"
   gem "factory_bot_rails"
-  gem "faker", "~> 3.5"
   gem "rspec-rails", "~> 7.0.0"
   gem "rubocop-rails-omakase", require: false
 end
