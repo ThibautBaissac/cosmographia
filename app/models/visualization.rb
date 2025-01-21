@@ -23,7 +23,7 @@ class Visualization < ApplicationRecord
     dimensions = Constants::Visualizations::VARIANT_SIZES[name]
     return unless dimensions
 
-    image.variant(resize_to_limit: dimensions).processed
+    image.variant(resize_to_limit: dimensions)
   end
 
   Constants::Visualizations::VARIANT_SIZES.keys.each do |variant_name|
