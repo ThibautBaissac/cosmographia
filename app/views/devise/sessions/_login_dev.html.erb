@@ -4,26 +4,27 @@
       <tr>
         <th scope="col">Email</th>
         <th scope="col">Superadmin</th>
-        <th scope="col">Subuscription</th>
+        <th scope="col">Subscription</th>
         <th scope="col">Locale</th>
       </tr>
     </thead>
     <tbody>
       <% User.all.each do |user| %>
-      <tr class="cursor-pointer" data-email="<%= user.email %>" data-password="Password123.">
-        <td><%= user.email %></td>
-        <td><%= user.superadmin %></td>
-        <td>
-          <% if user.guest? %>
-            Guest
-          <% elsif user.subscribed? %>
-            <%= user.current_plan_version.plan.name %>
-          <% else %>
-            Not Guest && Not subscribed
-          <% end %>
-        </td>
-        <td><%= user.locale %></td>
-      </tr>
+        <% next if user.superadmin? && !Rails.env.development? %>
+        <tr class="cursor-pointer" data-email="<%= user.email %>" data-password="Password123.">
+          <td><%= user.email %></td>
+          <td><%= user.superadmin %></td>
+          <td>
+            <% if user.guest? %>
+              Guest
+            <% elsif user.subscribed? %>
+              <%= user.current_plan_version.plan.name %>
+            <% else %>
+              Not Guest && Not subscribed
+            <% end %>
+          </td>
+          <td><%= user.locale %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>
