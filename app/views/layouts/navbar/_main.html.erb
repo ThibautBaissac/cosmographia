@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg container bg-white shadow-sm rounded-4 mt-3 px-3 border border-secondary-subtle" aria-label="Offcanvas navbar">
+<nav class="navbar navbar-expand-lg container bg-white shadow-sm rounded-4 mt-3 px-3 border <%= Rails.env.development? ? "border-warning" : "border-secondary-subtle" %>" aria-label="Offcanvas navbar">
   <%= link_to(root_path(locale), class: "navbar-brand d-flex align-items-center") do %>
     <%= image_tag("logo.png", alt: "Cosmographia logo", width: "30", height: "30", class: "d-none d-sm-inline-block align-text-top me-2") %>
     <span class="fw-bold text-primary">Cosmographia</span>
