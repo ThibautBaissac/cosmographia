@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for cosmographia on 2025-01-20T15:43:43+01:00
+# fly.toml app configuration file generated for cosmographia on 2025-01-23T14:55:48+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -16,6 +16,18 @@ console_command = '/rails/bin/rails console'
   auto_start_machines = true
   min_machines_running = 0
   processes = ['app']
+
+  [[http_service.checks]]
+    interval = '10s'
+    timeout = '2s'
+    grace_period = '5s'
+    method = 'GET'
+    path = '/up'
+    protocol = 'http'
+    tls_skip_verify = false
+
+    [http_service.checks.headers]
+      X-Forwarded-Proto = 'https'
 
   [[http_service.checks]]
     interval = '10s'
