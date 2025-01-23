@@ -57,6 +57,7 @@ en:
     my_info: Your profile
     my_mentions: Your mentions
     my_public_page: Your personal page
+    pricings: Pricings
     subscription: Your subscription
     visualizations: Visualizations
   pundit:

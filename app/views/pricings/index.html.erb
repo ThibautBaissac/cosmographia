@@ -1,0 +1,25 @@
+<div class="container my-5">
+  <div class="text-center my-5">
+    <h5><%= t("subscription.pricing.title") %></h5>
+    <h6><%= t("subscription.pricing.subtitle") %></h6>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @active_plan_versions.each do |pv| %>
+      <div class="col">
+        <div class="card border rounded-4 border-secondary shadow-sm overflow-hidden">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold"><%= pv.plan.name %></h5>
+              <p class="card-text text-muted"><%= pv.plan.description %></p>
+              <p class="card-text fs-4 fw-semibold">
+                <%= number_to_currency(pv.price_cents / 100.0) %> <small class="text-muted">/ month</small>
+              </p>
+              <%= render("my/subscription/features_list", pv:) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

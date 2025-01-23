@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     draw :visualizations
     draw :mentions
     draw :my
+    draw :pricings
     draw :static_pages
     draw :sources
 
