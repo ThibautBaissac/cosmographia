@@ -1,12 +1,12 @@
 <div data-controller="list-filter">
   <div class="mb-3">
-    <%= form.text_field :list_filter,
+    <%= form.text_field(:list_filter,
           data: {
             list_filter_target: "input",
             action: "input->list-filter#filterElements"
           },
           placeholder: t("users.form.software_filter_placehoder"),
-          class: "form-control rounded-pill" %>
+          class: "form-control rounded-pill") %>
   </div>
 
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-3" data-software-filter-target="softwareList">
@@ -21,7 +21,7 @@
           <div class="card-title p-3 border-bottom">
             <div class="form-check form-switch">
               <%= us_form.hidden_field(:software_id) %>
-              <%= us_form.check_box(:_destroy, { class: "form-check-input", checked: us_form.object.persisted? }, false, true) %>
+              <%= us_form.check_box(:_destroy, {class: "form-check-input", checked: us_form.object.persisted?}, false, true) %>
               <%= us_form.label(:_destroy, software.name, class: "form-check-label") %>
             </div>
           </div>

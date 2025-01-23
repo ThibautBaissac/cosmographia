@@ -1,5 +1,5 @@
 <div class="container">
-  <%= render(HeaderComponent.new(title: t('subscription.subscription'))) do %>
+  <%= render(HeaderComponent.new(title: t("subscription.subscription"))) do %>
     <% if @portal_session %>
       <%= link_to(@portal_session.url) do %>
         <%= render(ButtonComponent.new(text: t("subscription.manage_subscription"), outline: :true, icon: "fa-solid fa-bag-shopping")) %>

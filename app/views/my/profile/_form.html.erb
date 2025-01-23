@@ -21,7 +21,7 @@
       </div>
       <div class="col">
         <%= form.label(:country_code, class: "form-label fw-semibold required") %>
-        <%= form.select(:country_code, ISO3166::Country.all.map { |c| [c.common_name, c.alpha2] }, { include_blank: 'Select Country' }, { class: "form-select rounded-pill shadow-sm", required: true }) %>
+        <%= form.select(:country_code, ISO3166::Country.all.map { |c| [ c.common_name, c.alpha2 ] }, {include_blank: "Select Country"}, {class: "form-select rounded-pill shadow-sm", required: true}) %>
       </div>
     </div>
   </div>

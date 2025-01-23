@@ -3,26 +3,26 @@
     <tr>
       <td style="padding: 20px; background: #f4f4f4; text-align: center; border-radius: 15px;">
         <h1 style="color: #194a7e; margin: 0; font-size: 28px;">
-          <%= t('devise_emails.email_changed.change_notification.title') %>
+          <%= t("devise_emails.email_changed.change_notification.title") %>
         </h1>
         <p style="font-size: 16px; margin: 10px 0; color: #555;">
-          <%= t('devise_emails.email_changed.change_notification.description') %>
+          <%= t("devise_emails.email_changed.change_notification.description") %>
         </p>
       </td>
     </tr>
     <tr>
       <td style="padding: 20px;">
         <p style="font-size: 16px; margin: 0 0 10px;">
-          <%= t('devise_emails.email_changed.change_notification.greeting_html', email: @email) %>
+          <%= t("devise_emails.email_changed.change_notification.greeting_html", email: @email) %>
         </p>
 
         <% if @resource.try(:unconfirmed_email?) %>
           <p style="font-size: 16px; margin: 0 0 10px;">
-            <%= t('devise_emails.email_changed.change_notification.pending_email_change', new_email: @resource.unconfirmed_email) %>
+            <%= t("devise_emails.email_changed.change_notification.pending_email_change", new_email: @resource.unconfirmed_email) %>
           </p>
         <% else %>
           <p style="font-size: 16px; margin: 0 0 10px;">
-            <%= t('devise_emails.email_changed.change_notification.success_email_change', email: @resource.email) %>
+            <%= t("devise_emails.email_changed.change_notification.success_email_change", email: @resource.email) %>
           </p>
         <% end %>
       </td>

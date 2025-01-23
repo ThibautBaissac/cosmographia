@@ -1,4 +1,4 @@
-<%= form_with(model: challenge, data: { turbo: false }, local: true, class: "container needs-validation") do |form| %>
+<%= form_with(model: challenge, data: {turbo: false}, local: true, class: "container needs-validation") do |form| %>
   <div class="row mt-5">
     <div class="col-3">
       <h3 class="text-primary"><%= t("activerecord.attributes.challenge.general_info_section") %></h3>
@@ -13,8 +13,8 @@
           <%= form.label(:difficulty, class: "form-label fw-semibold") %>
           <%= form.select(:difficulty,
             Challenge.difficulty_keys.map { |key| [ t("challenge.difficulty.#{key}"), key.to_s.upcase ] },
-            { include_blank: "Select a difficulty", required: true },
-            { class: "form-select rounded-pill shadow-sm" }) %>
+            {include_blank: "Select a difficulty", required: true},
+            {class: "form-select rounded-pill shadow-sm"}) %>
         </div>
       </div>
 
@@ -23,8 +23,8 @@
           <%= form.label(:category, class: "form-label fw-semibold") %>
           <%= form.select(:category,
             Challenge.category_keys.map { |key| [ t("challenge.category.#{key}"), key.to_s.upcase ] },
-            { include_blank: "Select a category", required: true },
-            { class: "form-select rounded-pill shadow-sm" }) %>
+            {include_blank: "Select a category", required: true},
+            {class: "form-select rounded-pill shadow-sm"}) %>
         </div>
         <div class="col">
           <%= form.label(:start_date, class: "form-label fw-semibold") %>

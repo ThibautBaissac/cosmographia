@@ -24,10 +24,10 @@
             <%= l(@current_subscription.current_period_end, format: :dmy) %>
           </li>
           <li class="list-group-item <%= "text-warning" unless current_user.has_remaining_visualizations? %>">
-            <strong><%= t('subscription.remaining_visualizations') %>:</strong>
+            <strong><%= t("subscription.remaining_visualizations") %>:</strong>
 
             <% if current_user.unlimited_visualizations? %>
-              <%= t('subscription.unlimited') %>
+              <%= t("subscription.unlimited") %>
             <% elsif current_user.remaining_visualization_count.negative? %>
               0
             <% else %>
@@ -36,10 +36,10 @@
           </li>
 
           <li class="list-group-item <%= "text-warning" unless current_user.has_remaining_challenges? %>">
-            <strong><%= t('subscription.remaining_challenge_count') %>:</strong>
+            <strong><%= t("subscription.remaining_challenge_count") %>:</strong>
 
             <% if current_user.unlimited_challenges? %>
-              <%= t('subscription.unlimited') %>
+              <%= t("subscription.unlimited") %>
             <% elsif current_user.remaining_challenge_count.negative? %>
               0
             <% else %>

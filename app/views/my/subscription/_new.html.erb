@@ -29,9 +29,9 @@
                 <% if pv == @current_plan_version %>
                   <button type="button" class="btn btn-primary w-100 mt-3 rounded-3" disabled><%= t("subscription.current_subscription") %></button>
                 <% else %>
-                  <%= form_with(url: checkout_my_subscription_path(locale), method: :post, data: { turbo: false }) do |form| %>
-                    <%= hidden_field_tag(:plan_version_id, pv.id ) %>
-                    <%= hidden_field_tag(:stripe_price_id, pv.stripe_price_id ) %>
+                  <%= form_with(url: checkout_my_subscription_path(locale), method: :post, data: {turbo: false}) do |form| %>
+                    <%= hidden_field_tag(:plan_version_id, pv.id) %>
+                    <%= hidden_field_tag(:stripe_price_id, pv.stripe_price_id) %>
                     <%= submit_tag(t("subscription.subscribe"), class: "btn btn-primary w-100 mt-3 rounded-3") %>
                   <% end %>
                 <% end %>
