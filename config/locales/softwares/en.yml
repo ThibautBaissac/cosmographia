@@ -2,7 +2,7 @@
 en:
   softwares:
     expertises:
-      beginner: Beginner
-      intermediate: Intermediate
       advanced: Advanced
+      beginner: Beginner
       expert: Expert
+      intermediate: Intermediate

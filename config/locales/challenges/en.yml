@@ -6,17 +6,8 @@ en:
         actions:
           create:
             failure: Sorry but we could not attach your visualization to this challenge
-            success: Thank you for your participation! Your isualization was successfully attached
-    will_starin_x_days:
-     one: The challenge will start in %{count} day
-     other: The challenge will start in %{count} days
-     zero: The challenge will start in %{count} day
-    ended: Ended
-    ends_in_x_days:
-      one: Ends in %{count} day
-      other: Ends in %{count} days
-      zero: Ends today
-    subscription_alert: You need to subscribe to at least the free subscription to participate in challenges.
+            success: Thank you for your participation! Your isualization was successfully
+              attached
     category:
       data: Data visualization
       map: Map
@@ -40,6 +31,11 @@ en:
             success: Your message was updated successfully
       form:
         submit: Post the message
+    ended: Ended
+    ends_in_x_days:
+      one: Ends in %{count} day
+      other: Ends in %{count} days
+      zero: Ends today
     go_to: View challenge
     join: Join the challenge
     leave: Leave the challenge
@@ -51,9 +47,15 @@ en:
       zero: No participant yet
     submit_existing_visualization: Submit an existing visualization
     submit_new_visualization: Submit a new visualization
+    subscription_alert: You need to subscribe to at least the free subscription to
+      participate in challenges.
     tabs:
       discussion: Discussion
       participations: Participations
+    will_starin_x_days:
+      one: The challenge will start in %{count} day
+      other: The challenge will start in %{count} days
+      zero: The challenge will start in %{count} day
   challenges:
     form:
       create_title: Create a new challenge

@@ -1,7 +1,6 @@
 ---
 en:
   source:
-    visit_website: Visit website
     flash:
       actions:
         create:
@@ -10,14 +9,15 @@ en:
         update:
           failure: Source was not updated.
           success: Source was successfully updated.
+    visit_website: Visit website
   sources:
     count: "%{count} sources"
-    search:
-      query_placeholder: Search sources by name, location, or description
     form:
       create_title: Create a new source
-      edit_title: Edit source
-      name_placeholder: Enter the source's name
-      location_placeholder: Enter the source's location
       description_placeholder: Enter the source's description
+      edit_title: Edit source
+      location_placeholder: Enter the source's location
+      name_placeholder: Enter the source's name
       url_placeholder: Enter the source's URL
+    search:
+      query_placeholder: Search sources by name, location, or description

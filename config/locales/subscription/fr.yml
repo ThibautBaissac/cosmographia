@@ -1,39 +1,40 @@
 ---
 fr:
   subscription:
-    subscription: "Abonnement"
-    change_subscription: "Changer d'abonnement"
-    remaining_visualizations: "Visualisations restantes"
-    remaining_challenge_count: "Challenges restants"
-    current_billing_cycle_end: "Fin du cycle de Facturation en cours"
-    unlimited: "Illimitées"
-    current_billing_cycle_start: "Début du cycle de Facturation en cours"
-    manage_subscription: "Gérer votre abonnement"
-    unlimited_challenges: "Challenges illimités"
-    monthly_challenge_limit:
-      one: "Participer à %{count} challenge par mois"
-      other: "Participer à %{count} challenges par mois"
-      zero: "Pas de participation aux challenges"
-    unlimited_visualizations: "Visualisations illimitées"
-    monthly_visualization_limit: "Poster %{count} visualisations par mois"
-    current_subscription: "Abonnement actuel"
-    subscribe: "Souscrire"
-    pricing:
-      title: Tarification simple et équitable
-      subtitle: "Explorez, créez et partagez votre travail. Pas de frais cachés. Annulez à tout moment."
+    change_subscription: Changer d'abonnement
+    current_billing_cycle_end: Fin du cycle de Facturation en cours
+    current_billing_cycle_start: Début du cycle de Facturation en cours
+    current_subscription: Abonnement actuel
     features:
-      guest:
-        - Explorer toutes les visualisations
-      not_guest:
-        - Explorer toutes les visualisations
-        - Commenter les visualisations
-      free:
-        - Accéder à l'annuaire
       basic:
-        - Accéder à l'annuaire
-        - Page personnelle privée
+      - Accéder à l'annuaire
+      - Page personnelle privée
+      free:
+      - Accéder à l'annuaire
+      guest:
+      - Explorer toutes les visualisations
+      not_guest:
+      - Explorer toutes les visualisations
+      - Commenter les visualisations
       premium:
-        - Accéder à l'annuaire
-        - Créer vos propres challenges
-        - Page personnelle privée et publique
-        - Toutes les fonctionnalités futures
+      - Accéder à l'annuaire
+      - Créer vos propres challenges
+      - Page personnelle privée et publique
+      - Toutes les fonctionnalités futures
+    manage_subscription: Gérer votre abonnement
+    monthly_challenge_limit:
+      one: Participer à %{count} challenge par mois
+      other: Participer à %{count} challenges par mois
+      zero: Pas de participation aux challenges
+    monthly_visualization_limit: Poster %{count} visualisations par mois
+    pricing:
+      subtitle: Explorez, créez et partagez votre travail. Pas de frais cachés. Annulez
+        à tout moment.
+      title: Tarification simple et équitable
+    remaining_challenge_count: Challenges restants
+    remaining_visualizations: Visualisations restantes
+    subscribe: Souscrire
+    subscription: Abonnement
+    unlimited: Illimitées
+    unlimited_challenges: Challenges illimités
+    unlimited_visualizations: Visualisations illimitées

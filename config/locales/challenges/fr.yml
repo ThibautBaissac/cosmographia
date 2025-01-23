@@ -5,18 +5,10 @@ fr:
       flash:
         actions:
           create:
-            failure: Désolé, nous n'avons pas pu attacher votre visualisation à ce challenge
-            success: Merci pour votre participation ! Votre visualisation a été attachée avec succès
-    will_starin_x_days:
-     one: Le challenge commencera dans %{count} jour
-     other: Le challenge commencera dans %{count} jours
-     zero: Le challenge commencera dans %{count} jour
-    ended: Cloturé
-    ends_in_x_days:
-      one: Se cloture dans %{count} jour
-      other: Se cloture dans %{count} jours
-      zero: Se cloture aujourd'hui
-    subscription_alert: Vous devez souscrire au minimum à l'abonnement gratuit pour participer aux challenges.
+            failure: Désolé, nous n'avons pas pu attacher votre visualisation à ce
+              challenge
+            success: Merci pour votre participation ! Votre visualisation a été attachée
+              avec succès
     category:
       data: Visualisation de données
       map: Carte
@@ -40,6 +32,11 @@ fr:
             success: Votre message a été mis à jour avec succès
       form:
         submit: Soumettre le message
+    ended: Cloturé
+    ends_in_x_days:
+      one: Se cloture dans %{count} jour
+      other: Se cloture dans %{count} jours
+      zero: Se cloture aujourd'hui
     go_to: Voir le challenge
     join: Rejoindre le challenge
     leave: Quitter le challenge
@@ -52,9 +49,15 @@ fr:
       zero: Aucun participant pour le moment
     submit_existing_visualization: Soumettre une visualisation existante
     submit_new_visualization: Soumettre une nouvelle visualisation
+    subscription_alert: Vous devez souscrire au minimum à l'abonnement gratuit pour
+      participer aux challenges.
     tabs:
       discussion: Discussion
       participations: Participations
+    will_starin_x_days:
+      one: Le challenge commencera dans %{count} jour
+      other: Le challenge commencera dans %{count} jours
+      zero: Le challenge commencera dans %{count} jour
   challenges:
     form:
       create_title: Créer un nouveau challenge

@@ -57,8 +57,8 @@ en:
     my_info: Your profile
     my_mentions: Your mentions
     my_public_page: Your personal page
-    visualizations: Visualizations
     subscription: Your subscription
+    visualizations: Visualizations
   pundit:
     default: You cannot perform this action.
     user_policy:

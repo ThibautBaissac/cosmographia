@@ -57,8 +57,8 @@ fr:
     my_info: Votre profil
     my_mentions: Vos mentions
     my_public_page: Ma page personnelle
-    visualizations: Visualisations
     subscription: Votre abonnement
+    visualizations: Visualisations
   pundit:
     default: Vous ne pouvez pas effectuer cette action.
     user_policy:

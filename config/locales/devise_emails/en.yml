@@ -1,40 +1,53 @@
+---
 en:
   devise_emails:
     confirmation_instructions:
-      welcome_title: "Welcome to %{platform_name}"
-      description: "A platform where maps ignite global awareness and inspire action."
-      greeting_html: "Welcome <strong>%{email}</strong>!"
-      confirm_instruction: "You can confirm your account email through the link below:"
-      confirm_button: "Confirm Your Account"
+      confirm_button: Confirm Your Account
+      confirm_instruction: 'You can confirm your account email through the link below:'
+      description: A platform where maps ignite global awareness and inspire action.
+      greeting_html: Welcome <strong>%{email}</strong>!
+      welcome_title: Welcome to %{platform_name}
     email_changed:
-      title: "Email Change Notification"
-      description: "This message is to inform you about a recent update to your account."
-      greeting_html: "Hello <strong>%{email}</strong>!"
-      pending_email_change: "We're notifying you that your email is being changed to <strong>%{new_email}</strong>."
-      success_email_change: "We're notifying you that your email has been successfully changed to <strong>%{email}</strong>."
+      description: This message is to inform you about a recent update to your account.
+      greeting_html: Hello <strong>%{email}</strong>!
+      pending_email_change: We're notifying you that your email is being changed to
+        <strong>%{new_email}</strong>.
+      success_email_change: We're notifying you that your email has been successfully
+        changed to <strong>%{email}</strong>.
+      title: Email Change Notification
     password_change:
-      title: "Password Change Notification"
-      description: "This message is to inform you about a recent security update to your account."
-      greeting_html: "Hello <strong>%{email}</strong>!"
-      success_message: "We're notifying you that your password has been successfully changed. If you did not make this change, please take action immediately."
-      manage_account_button: "Manage Your Account"
-      security_warning: "If you did not request this change, please secure your account immediately by resetting your password or contacting support."
-    reset_password_instructions :
-      title: "Password Reset Request"
-      description: "We received a request to reset your password. Follow the instructions below if you wish to proceed."
-      greeting_html: "Hello <strong>%{email}</strong>!"
-      instruction: "You have requested to change your password. You can do this through the link below:"
-      change_button: "Change Your Password"
-      ignore_message: "If you didn't request this, please ignore this email."
-      no_change_notice: "Your password won't change until you access the link above and create a new one."
-      support_message: "If you need further assistance, please contact our support team."
+      description: This message is to inform you about a recent security update to
+        your account.
+      greeting_html: Hello <strong>%{email}</strong>!
+      manage_account_button: Manage Your Account
+      security_warning: If you did not request this change, please secure your account
+        immediately by resetting your password or contacting support.
+      success_message: We're notifying you that your password has been successfully
+        changed. If you did not make this change, please take action immediately.
+      title: Password Change Notification
+    reset_password_instructions:
+      change_button: Change Your Password
+      description: We received a request to reset your password. Follow the instructions
+        below if you wish to proceed.
+      greeting_html: Hello <strong>%{email}</strong>!
+      ignore_message: If you didn't request this, please ignore this email.
+      instruction: 'You have requested to change your password. You can do this through
+        the link below:'
+      no_change_notice: Your password won't change until you access the link above
+        and create a new one.
+      support_message: If you need further assistance, please contact our support
+        team.
+      title: Password Reset Request
     unlock_instructions:
-      unlock_link: "Unlock Your account"
-      title: "Account Locked"
-      description: "Your account has been temporarily locked due to security reasons."
-      greeting_html: "Hello <strong>%{email}</strong>!"
-      locked_message: "Your account has been locked due to an excessive number of unsuccessful sign-in attempts."
-      instruction: "Click the link below to unlock your account:"
-      unlock_button: "Unlock Your Account"
-      security_advice: "If you did not attempt to sign in multiple times, please consider changing your password for better security."
-      support_message: "If you need further assistance, please contact our support team."
+      description: Your account has been temporarily locked due to security reasons.
+      greeting_html: Hello <strong>%{email}</strong>!
+      instruction: 'Click the link below to unlock your account:'
+      locked_message: Your account has been locked due to an excessive number of unsuccessful
+        sign-in attempts.
+      security_advice: If you did not attempt to sign in multiple times, please consider
+        changing your password for better security.
+      support_message: If you need further assistance, please contact our support
+        team.
+      title: Account Locked
+      unlock_button: Unlock Your Account
+      unlock_link: Unlock Your account

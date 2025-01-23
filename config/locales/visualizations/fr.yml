@@ -1,12 +1,6 @@
 ---
 fr:
   visualization:
-    flash:
-      actions:
-        create:
-          success: "Bravo ! Votre visualisation a été créée avec succès."
-        update:
-          success: "Votre visualisation a été mise à jour avec succès."
     comment:
       destroy: Supprimer votre commentaire
       destroy_confirmation: Êtes-vous sûr de vouloir supprimer votre commentaire ?
@@ -29,6 +23,12 @@ fr:
       show_more: Voir plus de commentaires
       write_comment: Écrire un commentaire
       zero: commentaire
+    flash:
+      actions:
+        create:
+          success: Bravo ! Votre visualisation a été créée avec succès.
+        update:
+          success: Votre visualisation a été mise à jour avec succès.
     go_to: Voir la visualisation
     title: Visualisation
   visualizations:

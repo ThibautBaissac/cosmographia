@@ -17,13 +17,20 @@ fr:
       visualizations_count: Plus de %{count} visualisations partagées par notre communauté
         vous attendent.
     user_signed_out:
-      section_01_html: <b>Présentez</b> vos cartes qui mettent en lumière les défis environnementaux, promeuvent des pratiques durables et favorisent une prise de conscience globale.
-      section_02_html: <b>Collaborez</b> avec une communauté passionnée pour inspirer l'action et stimuler le changement positif grâce à la puissance de la cartographie innovante et de la visualisation des données.
-      section_03_html: <b>Unissez-vous</b> aux cartographes, aux professionnels SIG et aux passionnés de visualisation qui partagent un engagement envers la géoconscience et la bioconscience.
       join_us_button: Rejoignez-nous dès maintenant
       join_us_reasons:
       - Partager dans un environnement respectueux et encourageant.
       - Apprendre et progresser grâce aux retours d’une communauté expérimentée.
       - Echanger avec des experts et des amateurs de visualisation du monde entier.
       join_us_title: Pourquoi rejoindre Cosmographia ?
-      main_title_html: <span class="fw-bold text-primary">Cosmographia</span> est bien plus qu'une plateforme - c'est un mouvement !
+      main_title_html: <span class="fw-bold text-primary">Cosmographia</span> est
+        bien plus qu'une plateforme - c'est un mouvement !
+      section_01_html: "<b>Présentez</b> vos cartes qui mettent en lumière les défis
+        environnementaux, promeuvent des pratiques durables et favorisent une prise
+        de conscience globale."
+      section_02_html: "<b>Collaborez</b> avec une communauté passionnée pour inspirer
+        l'action et stimuler le changement positif grâce à la puissance de la cartographie
+        innovante et de la visualisation des données."
+      section_03_html: "<b>Unissez-vous</b> aux cartographes, aux professionnels SIG
+        et aux passionnés de visualisation qui partagent un engagement envers la géoconscience
+        et la bioconscience."

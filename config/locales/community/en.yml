@@ -2,8 +2,9 @@
 en:
   community:
     directory:
-      subscription_alert: You must subscribe to at least the free subscription to access the directory.
       search:
         query_placeholder: Search by user first name, last name, email, software or
           software category.
+      subscription_alert: You must subscribe to at least the free subscription to
+        access the directory.
       title: Directory

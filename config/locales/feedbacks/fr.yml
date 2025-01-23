@@ -2,6 +2,11 @@
 fr:
   feedbacks:
     feedback: Feedback
+    flash:
+      actions:
+        create:
+          failure: Votre feedback n'a pas pu être envoyé.
+          success: Merci ! Votre feedback a été envoyé avec succès.
     form:
       message_placeholder: Votre message...
       subject_placeholder: Sélectionnez un sujet
@@ -16,8 +21,3 @@ fr:
     text: Vos commentaires nous aident à nous améliorer. Que ce soit une suggestion
       ou quelque chose que nous pouvons améliorer, dites le nous !
     title: À vos commentaires !
-    flash:
-      actions:
-        create:
-          success: Merci ! Votre feedback a été envoyé avec succès.
-          failure: Votre feedback n'a pas pu être envoyé.

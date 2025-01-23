@@ -3,22 +3,22 @@ fr:
   activerecord:
     attributes:
       billing_plan:
-        name: "Nom"
-        description: "Description"
-        active: "Actif"
+        active: Actif
+        description: Description
+        name: Nom
       billing_plan_version:
-        billing_plan_id: "Plan de Facturation"
-        price_cents: "Prix"
-        currency: "Devise"
-        monthly_visualization_limit: "Limite de Visualisation"
-        version_number: "Version"
-        active: "Actif"
+        active: Actif
+        billing_plan_id: Plan de Facturation
+        currency: Devise
+        monthly_visualization_limit: Limite de Visualisation
+        price_cents: Prix
+        version_number: Version
       billing_subscription:
-        user_id: "Utilisateur"
-        billing_plan_version_id: "Version du Plan de Facturation"
-        created_at: "Date de Début"
-        end_date: "Date de Fin"
-        status: "Statut"
+        billing_plan_version_id: Version du Plan de Facturation
+        created_at: Date de Début
+        end_date: Date de Fin
+        status: Statut
+        user_id: Utilisateur
       challenge:
         category: Catégorie
         description: Description
@@ -36,14 +36,14 @@ fr:
         name: Nom
       source:
         description: Description
+        location: Localisation
         name: Nom
         url: URL
-        location: Localisation
       user:
         bio: Bio
+        country_code: Pays
         first_name: Prénom
         last_name: Nom
-        country_code: Pays
         personal_website: Site personnel
         slug: Nom d'utilisateur
         social_links: Réseaux sociaux

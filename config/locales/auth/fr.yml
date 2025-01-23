@@ -22,8 +22,8 @@ fr:
     password_confirmation_placeholder: Confirmez votre mot de passe
     password_placeholder: Entrez votre mot de passe
     remember_me: Se souvenir de moi
-    resend_instructions: Renvoyer les instructions
     resend_confirmation_instructions: Renvoyer les instructions de confirmation
+    resend_instructions: Renvoyer les instructions
     sign_in: Se connecter
     sign_out: Se déconnecter
     sign_up: S'inscrire

@@ -17,13 +17,18 @@ en:
       visualizations_count: More than %{count} visualizations shared by our community
         are waiting for you.
     user_signed_out:
-      section_01_html: <b>Showcase</b> maps that illuminate environmental challenges, promote sustainable practices, and foster global awareness.
-      section_02_html: <b>Collaborate</b> with a passionate community to inspire action and drive positive change through the power of innovative mapping and data visualization.
-      section_03_html: <b>Unite</b> with cartographers, GIS professionals, and visualization enthusiasts who share a commitment to geoconscience and bioconscience.
       join_us_button: Join the Cosmographia movement
       join_us_reasons:
       - Share in a respectful and encouraging environment.
       - Learn and improve through feedback from an experienced community.
       - Connect with experts and enthusiasts of visualization from around the world.
       join_us_title: Why join Cosmographia?
-      main_title_html: <span class="fw-bold text-primary">Cosmographia</span> is more than a platform - it’s a movement!
+      main_title_html: <span class="fw-bold text-primary">Cosmographia</span> is more
+        than a platform - it’s a movement!
+      section_01_html: "<b>Showcase</b> maps that illuminate environmental challenges,
+        promote sustainable practices, and foster global awareness."
+      section_02_html: "<b>Collaborate</b> with a passionate community to inspire
+        action and drive positive change through the power of innovative mapping and
+        data visualization."
+      section_03_html: "<b>Unite</b> with cartographers, GIS professionals, and visualization
+        enthusiasts who share a commitment to geoconscience and bioconscience."

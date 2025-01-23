@@ -2,8 +2,9 @@
 fr:
   community:
     directory:
-      subscription_alert: Vous devez souscrire au minimum à l'abonnement gratuit pour accéder à l'annuaire
       search:
         query_placeholder: Rechercher par prénom, nom, email, logiciel ou catégorie
           de logiciel.
+      subscription_alert: Vous devez souscrire au minimum à l'abonnement gratuit pour
+        accéder à l'annuaire
       title: Annuaire

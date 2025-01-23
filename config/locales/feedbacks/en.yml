@@ -2,6 +2,11 @@
 en:
   feedbacks:
     feedback: Feedback
+    flash:
+      actions:
+        create:
+          failure: Your feedback could not be sent.
+          success: Thank you! Your feedback has been sent successfully.
     form:
       message_placeholder: Your message...
       subject_placeholder: Select a subject
@@ -16,8 +21,3 @@ en:
     text: Your thoughts and suggestions help us improve. Whether it’s comment, a suggestion,
       or something we can do better, we’d love to hear from you!
     title: We value your feedback!
-    flash:
-      actions:
-        create:
-          success: Thank you! Your feedback has been sent successfully.
-          failure: Your feedback could not be sent.

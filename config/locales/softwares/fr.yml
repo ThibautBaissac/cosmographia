@@ -2,7 +2,7 @@
 fr:
   softwares:
     expertises:
-      beginner: Débutant
-      intermediate: Intermédiaire
       advanced: Avancé
+      beginner: Débutant
       expert: Expert
+      intermediate: Intermédiaire

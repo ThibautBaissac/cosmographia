@@ -1,12 +1,6 @@
 ---
 en:
   visualization:
-    flash:
-      actions:
-        create:
-          success: "Congratulations! Your visualization was created successfully."
-        update:
-          success: "Your visualization was updated successfully."
     comment:
       destroy: Delete your comment
       destroy_confirmation: Are you sure you want to delete your comment?
@@ -29,6 +23,12 @@ en:
       show_more: Show more comments
       write_comment: Write a comment
       zero: comment
+    flash:
+      actions:
+        create:
+          success: Congratulations! Your visualization was created successfully.
+        update:
+          success: Your visualization was updated successfully.
     go_to: View visualization
     title: Visualization
   visualizations:

@@ -9,8 +9,6 @@ fr:
   my:
     charts:
       title: Vos statistiques
-    subscription:
-      tab: Subscription
     comments:
       comments: Vos commentaires
     info:
@@ -29,6 +27,8 @@ fr:
         avec des tiers extérieurs à la communauté Cosmographia !
       my_page: Ma page personnelle
       total_comment_count: "(%{count} au total)"
+    subscription:
+      tab: Subscription
   user:
     contributions: Contributions
     visualizations: Visualisations

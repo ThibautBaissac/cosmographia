@@ -4,15 +4,25 @@ en:
     commitments:
       list:
       - title: Respect and Inclusion
-        text: We celebrate the richness of perspectives—embracing diverse cultures, traditions, and sensitivities. A topic as vast as cosmography thrives on a multiplicity of voices that foster deeper understanding and global unity.
+        text: We celebrate the richness of perspectives—embracing diverse cultures,
+          traditions, and sensitivities. A topic as vast as cosmography thrives on
+          a multiplicity of voices that foster deeper understanding and global unity.
       - title: Preservation of Our Planet
-        text: By exploring the intricate connections around us, we aim to raise a profound awareness of our planet's beauty and fragility, motivating action for its preservation.
+        text: By exploring the intricate connections around us, we aim to raise a
+          profound awareness of our planet's beauty and fragility, motivating action
+          for its preservation.
       title: Our Commitments
     header:
-      subtitle: Uniting modern cosmographers with an inspiring and inclusive vision for the future.
+      subtitle: Uniting modern cosmographers with an inspiring and inclusive vision
+        for the future.
       title: About <span class="text-primary">Cosmographia</span>
     mission:
-      text: Cosmographia is more than a platform—it’s a movement to unite modern cosmographers at the crossroads of science, art, and philosophy. By blending knowledge with creative expression, it encourages reflection on our place in the universe while fostering a deeper connection with Earth. We strive to create a welcoming, inclusive space where knowledge, diverse perspectives, and shared values intersect to expand our collective understanding of the cosmos.
+      text: Cosmographia is more than a platform—it’s a movement to unite modern cosmographers
+        at the crossroads of science, art, and philosophy. By blending knowledge with
+        creative expression, it encourages reflection on our place in the universe
+        while fostering a deeper connection with Earth. We strive to create a welcoming,
+        inclusive space where knowledge, diverse perspectives, and shared values intersect
+        to expand our collective understanding of the cosmos.
       title: Our Mission
     values:
       list:
@@ -24,5 +34,8 @@ en:
         description: Preserving and passing on knowledge for a more enlightened future.
       title: Our Values
     why_cosmography:
-      text: Cosmography offers a global lens to explore the relationships between science, philosophy, history, and culture. At Cosmographia, we empower individuals to contribute by sharing creations, insights, and discoveries—each playing a vital role in enriching our understanding of the world and the universe.
+      text: Cosmography offers a global lens to explore the relationships between
+        science, philosophy, history, and culture. At Cosmographia, we empower individuals
+        to contribute by sharing creations, insights, and discoveries—each playing
+        a vital role in enriching our understanding of the world and the universe.
       title: Why Cosmography?

@@ -4,25 +4,42 @@ fr:
     commitments:
       list:
       - title: Respect et Inclusion
-        text: Nous célébrons la richesse des perspectives, en embrassant la diversité des cultures, des traditions et des sensibilités. Un sujet aussi vaste que la cosmographie s'épanouit grâce à la multiplicité des voix, favorisant une compréhension plus profonde et une unité mondiale.
+        text: Nous célébrons la richesse des perspectives, en embrassant la diversité
+          des cultures, des traditions et des sensibilités. Un sujet aussi vaste que
+          la cosmographie s'épanouit grâce à la multiplicité des voix, favorisant
+          une compréhension plus profonde et une unité mondiale.
       - title: Préservation de Notre Planète
-        text: En explorant les liens complexes qui nous entourent, nous aspirons à une prise de conscience profonde de la beauté et de la fragilité de notre planète, incitant à agir pour sa préservation.
+        text: En explorant les liens complexes qui nous entourent, nous aspirons à
+          une prise de conscience profonde de la beauté et de la fragilité de notre
+          planète, incitant à agir pour sa préservation.
       title: Nos Engagements
     header:
-      subtitle: Réunir les cosmographes modernes avec une vision inspirante et inclusive de l'avenir.
+      subtitle: Réunir les cosmographes modernes avec une vision inspirante et inclusive
+        de l'avenir.
       title: À propos de <span class="text-primary">Cosmographia</span>
     mission:
-      text: Cosmographia est plus qu'une plateforme — c'est un mouvement destiné à rassembler les cosmographes modernes au carrefour de la science, de l'art et de la philosophie. En mêlant savoirs et expression créative, elle encourage la réflexion sur notre place dans l'univers tout en renforçant notre lien avec la Terre. Nous nous efforçons de créer un espace accueillant et inclusif, où les savoirs, les perspectives diverses et les valeurs partagées se rencontrent pour enrichir notre compréhension collective du cosmos.
+      text: Cosmographia est plus qu'une plateforme — c'est un mouvement destiné à
+        rassembler les cosmographes modernes au carrefour de la science, de l'art
+        et de la philosophie. En mêlant savoirs et expression créative, elle encourage
+        la réflexion sur notre place dans l'univers tout en renforçant notre lien
+        avec la Terre. Nous nous efforçons de créer un espace accueillant et inclusif,
+        où les savoirs, les perspectives diverses et les valeurs partagées se rencontrent
+        pour enrichir notre compréhension collective du cosmos.
       title: Notre Mission
     values:
       list:
       - title: Partage
-        description: Échanger des connaissances pour élargir les horizons et susciter l'inspiration.
+        description: Échanger des connaissances pour élargir les horizons et susciter
+          l'inspiration.
       - title: Respect
         description: Encourager chaque voix dans un environnement harmonieux et bienveillant.
       - title: Transmission
         description: Préserver et transmettre le savoir pour un avenir éclairé.
       title: Nos Valeurs
     why_cosmography:
-      text: La cosmographie offre une perspective globale pour explorer les relations entre la science, la philosophie, l'histoire et la culture. Chez Cosmographia, nous donnons à chacun la possibilité de contribuer en partageant des créations, des idées et des découvertes — chacune jouant un rôle essentiel dans l'enrichissement de notre compréhension du monde et de l'univers.
+      text: La cosmographie offre une perspective globale pour explorer les relations
+        entre la science, la philosophie, l'histoire et la culture. Chez Cosmographia,
+        nous donnons à chacun la possibilité de contribuer en partageant des créations,
+        des idées et des découvertes — chacune jouant un rôle essentiel dans l'enrichissement
+        de notre compréhension du monde et de l'univers.
       title: Pourquoi la cosmographie ?
