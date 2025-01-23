@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe ChallengesController, type: :controller do
+RSpec.describe(ChallengesController, type: :controller) do
   let(:user) { create(:user) }
   before do
     sign_in user
@@ -9,13 +9,13 @@ RSpec.describe ChallengesController, type: :controller do
   describe "GET #index" do
     context "when user is authorized" do
       before do
-        allow(controller).to receive(:authorize).and_return(true)
+        allow(controller).to(receive(:authorize).and_return(true))
         @challenges = create_list(:challenge, 5, start_date: Date.today)
       end
 
       it "responds successfully with HTTP 200 status" do
         get :index
-        expect(response).to have_http_status(:ok)
+        expect(response).to(have_http_status(:ok))
       end
     end
 
@@ -25,8 +25,8 @@ RSpec.describe ChallengesController, type: :controller do
       end
 
       it "redirects to the sign-in page" do
-        get :index, params: { locale: "en" }
-        expect(response).to redirect_to(new_user_session_path(locale: :en))
+        get :index, params: {locale: "en"}
+        expect(response).to(redirect_to(new_user_session_path(locale: :en)))
       end
     end
   end

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe VisualizationsController, type: :controller do
+RSpec.describe(VisualizationsController, type: :controller) do
   let(:user) { create(:user) }
   let(:visualization) { create(:visualization) }
 
@@ -11,28 +11,28 @@ RSpec.describe VisualizationsController, type: :controller do
   describe "GET #show" do
     context "when user is authorized" do
       before do
-        allow(controller).to receive(:authorize).and_return(true)
+        allow(controller).to(receive(:authorize).and_return(true))
       end
 
       it "responds successfully with HTTP 200 status" do
-        get :show, params: { id: visualization.id }
-        expect(response).to have_http_status(:ok)
+        get :show, params: {id: visualization.id}
+        expect(response).to(have_http_status(:ok))
       end
     end
 
     context "when user is unauthorized" do
       before do
-        allow(controller).to receive(:authorize).and_raise(Pundit::NotAuthorizedError)
+        allow(controller).to(receive(:authorize).and_raise(Pundit::NotAuthorizedError))
       end
 
       it "returns a redirect status" do
-        get :show, params: { id: visualization.id }
-        expect(response).to have_http_status(:found) # 302
+        get :show, params: {id: visualization.id}
+        expect(response).to(have_http_status(:found)) # 302
       end
 
       it "redirects to the homepage page" do
-        get :show, params: { id: visualization.id }
-        expect(response).to redirect_to(root_path(locale: :en))
+        get :show, params: {id: visualization.id}
+        expect(response).to(redirect_to(root_path(locale: :en)))
       end
     end
 
@@ -42,8 +42,8 @@ RSpec.describe VisualizationsController, type: :controller do
       end
 
       it "redirects to the sign-in page" do
-        get :show, params: { locale: "en", id: visualization.id }
-        expect(response).to redirect_to(new_user_session_path(locale: :en))
+        get :show, params: {locale: "en", id: visualization.id}
+        expect(response).to(redirect_to(new_user_session_path(locale: :en)))
       end
     end
   end

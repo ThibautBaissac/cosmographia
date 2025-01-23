@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SourcePolicy do
+RSpec.describe(SourcePolicy) do
   subject { described_class.new(user, source) }
   let(:source) { build(:source) }
 

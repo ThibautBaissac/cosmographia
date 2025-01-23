@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "aws-sdk-s3", "~> 1.178", :require => false
+gem "aws-sdk-s3", "~> 1.178", require: false
 gem "bootsnap", require: false
 gem "chartkick"
 gem "countries"

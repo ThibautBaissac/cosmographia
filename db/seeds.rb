@@ -2,8 +2,8 @@ require 'faker'
 
 @nb_users = 15
 @nb_guest_users = 10
-@nb_visualizations = 300
-@nb_challenges = 30
+@nb_visualizations = 50
+@nb_challenges = 10
 load(Rails.root.join("db", "seeds", "data", "destroy_all.rb"))
 load(Rails.root.join("db", "seeds", "data", "softwares.rb"))
 load(Rails.root.join("db", "seeds", "data", "sources.rb"))

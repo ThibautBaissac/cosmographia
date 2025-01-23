@@ -10,7 +10,7 @@ FactoryBot.define do
     # Traits for flexibility
     trait :with_users do
       after(:create) do |challenge|
-        create_list(:user, 3, challenges: [challenge])
+        create_list(:user, 3, challenges: [ challenge ])
       end
     end
 

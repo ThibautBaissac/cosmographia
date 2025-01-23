@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe HomeController, type: :controller do
+RSpec.describe(HomeController, type: :controller) do
   let(:user) { create(:user) }
 
   describe "GET #index" do
@@ -18,19 +18,19 @@ RSpec.describe HomeController, type: :controller do
       end
 
       it "returns a successful response" do
-        expect(response).to have_http_status(:success)
+        expect(response).to(have_http_status(:success))
       end
     end
 
     context "when user is not signed in" do
       before do
         Rails.cache.delete("homepage/signed_out/visualizations")
-        allow(Visualizations::DailyRandom).to receive(:new).and_return(double(call: create_list(:visualization, 6)))
+        allow(Visualizations::DailyRandom).to(receive(:new).and_return(double(call: create_list(:visualization, 6))))
         get :index
       end
 
       it "returns a successful response" do
-        expect(response).to have_http_status(:success)
+        expect(response).to(have_http_status(:success))
       end
     end
 
@@ -38,10 +38,10 @@ RSpec.describe HomeController, type: :controller do
       before { sign_in user }
 
       it "handles cache fetch failure gracefully" do
-        allow(Rails.cache).to receive(:fetch).and_raise(StandardError, "Cache Error")
+        allow(Rails.cache).to(receive(:fetch).and_raise(StandardError, "Cache Error"))
 
-        expect { get :index }.not_to raise_error
-        expect(response).to have_http_status(:success)
+        expect { get(:index) }.not_to(raise_error)
+        expect(response).to(have_http_status(:success))
       end
     end
   end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ChallengePolicy do
+RSpec.describe(ChallengePolicy) do
   subject { described_class.new(user, challenge) }
   let(:challenge) { build(:challenge) }
 

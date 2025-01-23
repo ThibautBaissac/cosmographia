@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe My::CommentsPolicy do
+RSpec.describe(My::CommentsPolicy) do
   let(:record) { build(:user) }
 
 
@@ -8,6 +8,6 @@ RSpec.describe My::CommentsPolicy do
     let(:user) { record }
     subject { described_class.new(user, record) }
 
-    it { is_expected.to permit_only_actions(%i[show]) }
+    it { is_expected.to(permit_only_actions(%i[show])) }
   end
 end
