@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def user_public_profile?
-    @user&.public_profile
+    authorize(@user)
   end
 
   def set_visualizations
