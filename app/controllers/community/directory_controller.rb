@@ -4,9 +4,9 @@ class Community::DirectoryController < ApplicationController
     users = User.non_guests.includes(:softwares)
 
     filter = Users::Filter.new(users:, params: user_filter_params)
-    users = filter.apply.order(created_at: :desc).distinct
+    filtered_users = filter.apply.order(created_at: :desc).distinct
 
-    @pagy, @users = pagy(users)
+    @pagy, @users = pagy(filtered_users)
   end
 
   private
