@@ -5,7 +5,7 @@
         <th scope="col">Email</th>
         <th scope="col">Superadmin</th>
         <th scope="col">Subscription</th>
-        <th scope="col">Locale</th>
+        <th scope="col">Public_profile</th>
       </tr>
     </thead>
     <tbody>
@@ -23,7 +23,7 @@
               Not Guest && Not subscribed
             <% end %>
           </td>
-          <td><%= user.locale %></td>
+          <td><%= user.public_profile %></td>
         </tr>
       <% end %>
     </tbody>
