@@ -58,7 +58,7 @@ class User < ApplicationRecord
   end
 
   def current_subscription
-    @current_subscription ||= pay_customers&.first&.subscriptions&.first
+    @current_subscription ||= pay_customers&.first&.subscriptions&.active&.last
   end
 
   def subscribed?
