@@ -7,6 +7,20 @@ models_in_order = [
   ActiveStorage::Attachment,
   ActiveStorage::Blob,
 
+  # Solid
+  SolidCache::Entry,
+  SolidQueue::BlockedExecution,
+  SolidQueue::ClaimedExecution,
+  SolidQueue::FailedExecution,
+  SolidQueue::Job,
+  SolidQueue::Pause,
+  SolidQueue::Process,
+  SolidQueue::ReadyExecution,
+  SolidQueue::RecurringExecution,
+  SolidQueue::RecurringTask,
+  SolidQueue::ScheduledExecution,
+  SolidQueue::Semaphore,
+
   # Visualization Related
   Visualization::Comment,
   VisualizationSoftware,
