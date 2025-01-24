@@ -1,6 +1,6 @@
 class ChallengePolicy < ApplicationPolicy
   def index?
-    user&.subscribed? || user&.superadmin?
+    (user&.not_guest? && user&.subscribed?) || user&.superadmin?
   end
 
   def new?
