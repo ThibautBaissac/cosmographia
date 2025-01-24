@@ -8,9 +8,10 @@ class HomeController < ApplicationController
       last_comments
       set_charts
     else
-      @visualizations = Rails.cache.fetch("homepage/signed_out/visualizations", expires_in: 12.hours) do
+      visualization_ids = Rails.cache.fetch("homepage/signed_out/visualizations", expires_in: 12.hours) do
         Visualizations::DailyRandom.new(visualization_count: 6).call
       end
+      @visualizations = Visualization.where(id: visualization_ids).includes(:image_attachment)
     end
   end
 
