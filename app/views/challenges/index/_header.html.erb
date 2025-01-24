@@ -4,7 +4,7 @@
       <%= link_to(new_challenge_path(locale)) do %>
         <%= render(ButtonComponent.new(text: t("challenges.form.create_title"), outline: :true, icon: "fa-regular fa-pen-to-square")) %>
       <% end %>
-    <% elsif !policy(Challenge).index? %>
+    <% elsif current_user.not_guest_not_subscribed? %>
       <%= link_to(my_subscription_path(locale)) do %>
         <%= render(ButtonComponent.new(text: t("subscription.change_subscription"), outline: :true, icon: "fa-solid fa-bag-shopping")) %>
       <% end %>

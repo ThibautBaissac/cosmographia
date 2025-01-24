@@ -12,7 +12,7 @@
     </div>
 
     <%= render(PaginationComponent.new(pagy: @pagy)) %>
-  <% else %>
+  <% elsif current_user.not_guest_not_subscribed? %>
     <%= render("community/directory/subscription_alert") %>
   <% end %>
 </div>

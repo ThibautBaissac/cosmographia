@@ -49,6 +49,10 @@ class User < ApplicationRecord
     !guest?
   end
 
+  def not_guest_not_subscribed?
+    not_guest? && !subscribed?
+  end
+
   def country
     ::ISO3166::Country[country_code]
   end
@@ -62,7 +66,7 @@ class User < ApplicationRecord
   end
 
   def has_remaining_visualizations?
-    remaining_visualization_count&.positive?
+    subscribed? && remaining_visualization_count&.positive?
   end
 
   def has_remaining_challenges?
