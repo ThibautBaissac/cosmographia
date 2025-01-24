@@ -1,5 +1,9 @@
 puts("---- Creating visualizations...")
+image_base_path = Rails.root.join('db/seeds/images')
+file_count = Dir[File.join(image_base_path, '*')].count
+
 (0...@nb_visualizations).each do |i|
+  creation_date = Faker::Date.between(from: 1.year.ago, to: Date.yesterday)
   visualization = Visualization.new(
     category: Visualization.category_values.sample,
     user_id: User.non_guests.pluck(:id).sample,
@@ -10,14 +14,17 @@ puts("---- Creating visualizations...")
     sources: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true, random_sentences_to_add: 4),
     geographic_coverage: Visualization.geographic_coverage_values.sample,
     projection: Visualization.projection_values.sample,
-    created_at: Faker::Date.backward(days: 365)
+    created_at: creation_date,
+    updated_at: creation_date
   )
 
-  image_path = Rails.root.join('db/seeds/images', "sample_#{rand(0..8)}.png")
+  random_image_index = rand(1..file_count/2)
+  extension = %w[png jpg].sample
+  image_path = image_base_path.join("sample_#{random_image_index}.#{extension}")
   visualization.image.attach(
     io: File.open(image_path),
-    filename: "sample#{rand(1..5)}.png",
-    content_type: 'image/png'
+    filename: "sample_#{random_image_index}.#{extension}",
+    content_type: "image/#{extension}"
   )
   visualization.save!
 
