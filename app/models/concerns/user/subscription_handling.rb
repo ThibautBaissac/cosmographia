@@ -15,10 +15,14 @@ module User::SubscriptionHandling
   end
 
   def has_remaining_visualizations?
-    subscribed? && remaining_visualization_count&.positive?
+    return false unless subscribed?
+
+    remaining_visualization_count&.positive?
   end
 
   def has_remaining_challenges?
+    return false unless subscribed?
+
     remaining_challenge_count&.positive?
   end
 
@@ -31,31 +35,11 @@ module User::SubscriptionHandling
   end
 
   def remaining_visualization_count
-    return 0 if guest? || !subscribed?
-    return Float::INFINITY if current_plan_version&.monthly_visualization_limit.nil?
-
-    cycle_start = current_subscription.current_period_start
-    cycle_end   = current_subscription.current_period_end
-
-    used_visualizations = visualizations.where(
-      created_at: cycle_start.beginning_of_day..cycle_end.end_of_day
-    ).count
-
-    current_plan_version.monthly_visualization_limit - used_visualizations
+    @remaining_visualization_count ||= remaining_count(:monthly_visualization_limit, :visualizations)
   end
 
   def remaining_challenge_count
-    return 0 if guest? || !subscribed?
-    return Float::INFINITY if current_plan_version&.monthly_challenge_limit.nil?
-
-    cycle_start = current_subscription.current_period_start
-    cycle_end   = current_subscription.current_period_end
-
-    used_challenges = challenges.where(
-      created_at: cycle_start.beginning_of_day..cycle_end.end_of_day
-    ).count
-
-    current_plan_version.monthly_challenge_limit - used_challenges
+    @remaining_challenge_count ||= remaining_count(:monthly_challenge_limit, :challenges)
   end
 
   def current_plan_version
@@ -77,7 +61,16 @@ module User::SubscriptionHandling
 
   private
 
-  def find_subscription(plan_name)
-    payment_processor.subscriptions.find_by(name: plan_name)
+  def remaining_count(limit_attribute, usage_scope)
+    return 0 if guest? || !subscribed?
+
+    plan_limit = current_plan_version&.public_send(limit_attribute)
+    return Float::INFINITY if plan_limit.nil?
+
+    cycle_start = current_subscription.current_period_start.beginning_of_day
+    cycle_end   = current_subscription.current_period_end.end_of_day
+
+    used = public_send(usage_scope).where(created_at: cycle_start..cycle_end).count
+    plan_limit - used
   end
 end
