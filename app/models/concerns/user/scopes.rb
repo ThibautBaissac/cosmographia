@@ -19,11 +19,11 @@ module User::Scopes
     }
 
     scope :with_subscription_name, ->(name) {
-      with_active_subscriptions.where(pay_subscriptions: {name:})
+      with_active_subscriptions.where("pay_subscriptions.name ILIKE ?", "%#{sanitize_sql_like(name)}%")
     }
 
     scope :search, ->(query) {
-      return all if query.blank?
+      return none if query.blank?
 
       sanitized_query = "%#{sanitize_sql_like(query)}%"
 
