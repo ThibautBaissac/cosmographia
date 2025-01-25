@@ -9,11 +9,11 @@ module User::Validations
     normalizes :email, with: ->(email) { email.strip.downcase }
 
     # Validations
-    validates :locale, presence: true, inclusion: {in: I18n.available_locales.map(&:to_s)}
+    validates :locale, presence: true, inclusion: {in: Constants::Locales::SUPPORTED_LOCALES}
     validates :email, presence: true
     validates :first_name, :last_name, :country_code, presence: true, on: :profile_update
     validates :slug, presence: true, uniqueness: true,
-                      exclusion: {in: I18n.available_locales.map(&:to_s)}
+                      exclusion: {in: Constants::Locales::SUPPORTED_LOCALES}
     validates :slug, length: {minimum: 4, maximum: 50},
                       format: {with: /\A[a-z0-9\-_]+\z/, message: :format}
     validates :country_code, inclusion: {in: ISO3166::Country.codes}, on: :profile_update

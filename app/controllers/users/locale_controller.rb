@@ -2,7 +2,7 @@ class Users::LocaleController < ApplicationController
   skip_before_action :authenticate_user!
 
   def update
-    if params[:new_locale].in?(I18n.available_locales.map(&:to_s))
+    if params[:new_locale].in?(Constants::Locales::SUPPORTED_LOCALES)
       current_user&.update(locale: params[:new_locale])
       I18n.locale = params[:new_locale]
       session[:locale] = I18n.locale
@@ -24,8 +24,8 @@ class Users::LocaleController < ApplicationController
     path_segments = uri.path.split("/")
 
     # Insert or update the locale in the path
-    path_segments[1] = I18n.locale.to_s if I18n.available_locales.map(&:to_s).include?(path_segments[1])
-    path_segments.insert(1, I18n.locale.to_s) unless I18n.available_locales.map(&:to_s).include?(path_segments[1])
+    path_segments[1] = I18n.locale.to_s if Constants::Locales::SUPPORTED_LOCALES.include?(path_segments[1])
+    path_segments.insert(1, I18n.locale.to_s) unless Constants::Locales::SUPPORTED_LOCALES.include?(path_segments[1])
 
     # Update the path with the correct locale
     uri.path = path_segments.join("/")
