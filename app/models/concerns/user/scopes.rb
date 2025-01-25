@@ -1,11 +1,26 @@
+# frozen_string_literal: true
+
 module User::Scopes
   extend ActiveSupport::Concern
 
   included do
-    scope :guests, -> { where(first_name: [ nil, "" ]).or(where(last_name: [ nil, "" ])).or(where(country_code: [ nil, "" ])) }
-    scope :non_guests, -> { where.not(id: guests.select(:id)) }
-    scope :with_active_subscriptions, -> { joins(:subscriptions).where(pay_subscriptions: { status: 'active'}) }
-    scope :with_subscription_name, ->(name) { with_active_subscriptions.where(pay_subscriptions: { name:}) }
+    scope :guests, -> {
+      where(first_name: [ nil, "" ])
+        .or(where(last_name: [ nil, "" ]))
+        .or(where(country_code: [ nil, "" ]))
+    }
+
+    scope :non_guests, -> {
+      where.not(id: guests.select(:id))
+    }
+
+    scope :with_active_subscriptions, -> {
+      joins(:subscriptions).where(pay_subscriptions: {status: "active"})
+    }
+
+    scope :with_subscription_name, ->(name) {
+      with_active_subscriptions.where(pay_subscriptions: {name:})
+    }
 
     scope :search, ->(query) {
       return all if query.blank?
@@ -13,15 +28,15 @@ module User::Scopes
       sanitized_query = "%#{sanitize_sql_like(query)}%"
 
       joins(:softwares)
-      .where(
-        "users.first_name ILIKE :q OR
-        users.last_name ILIKE :q OR
-        users.email ILIKE :q OR
-        softwares.name ILIKE :q OR
-        softwares.category ILIKE :q",
-        q: sanitized_query
+        .where(
+          "users.first_name ILIKE :q OR
+            users.last_name ILIKE :q OR
+            users.email ILIKE :q OR
+            softwares.name ILIKE :q OR
+            softwares.category ILIKE :q",
+          q: sanitized_query
         )
         .distinct
-      }
+    }
   end
 end
