@@ -30,7 +30,7 @@ class My::SubscriptionController < ApplicationController
       } ],
       subscription_data: {
         metadata: {
-          pay_name: @plan_version.plan.name,
+          plan_name: @plan_version.plan.name,
           plan_version_id: @plan_version.id
         }
       },

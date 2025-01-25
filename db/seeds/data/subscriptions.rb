@@ -24,7 +24,7 @@ plan_versions.each_with_index do |plan_version, index|
       name: plan_version.plan.name,
       plan: plan_version.stripe_price_id,
       metadata: {
-        pay_name: plan_version.plan.name,
+        plan_name: plan_version.plan.name,
         plan_version_id: plan_version.id
       }
     )
