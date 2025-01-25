@@ -59,5 +59,8 @@ en:
   challenges:
     form:
       create_title: Create a new challenge
+      description_placeholder: Challenge description
       edit_title: Edit challenge
+      general_info_section: General information
+      title_placeholder: Challenge title
     title: Challenges

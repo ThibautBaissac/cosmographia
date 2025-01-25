@@ -18,6 +18,7 @@ en:
     save: Save
     search: Search...
     search_btn: Search
+    select: Select
     welcome_to: Welcome to %{app_name}
   errors:
     attributes:

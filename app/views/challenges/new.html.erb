@@ -1,5 +1,7 @@
-<%# app/views/challenges/new.html.erb %>
+<div class="container">
+  <%= render(HeaderComponent.new(title: t("challenges.form.create_title"))) %>
+</div>
+
 <div class="container mt-5">
-  <h1>New Challenge</h1>
-  <%= render "form", challenge: @challenge %>
+  <%= render("form", challenge: @challenge) %>
 </div>

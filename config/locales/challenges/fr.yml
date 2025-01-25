@@ -61,5 +61,8 @@ fr:
   challenges:
     form:
       create_title: Créer un nouveau challenge
+      description_placeholder: Description du challenge
       edit_title: Modifier le challenge
+      general_info_section: Informations générales
+      title_placeholder: Titre du challenge
     title: Challenges

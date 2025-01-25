@@ -18,6 +18,7 @@ fr:
     save: Sauvegarder
     search: Rechercher...
     search_btn: Rechercher
+    select: Sélectionner
     welcome_to: Bienvenue sur %{app_name}
   errors:
     attributes:

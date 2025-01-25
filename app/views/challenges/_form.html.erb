@@ -1,38 +1,37 @@
 <%= form_with(model: challenge, data: {turbo: false}, local: true, class: "container needs-validation") do |form| %>
   <div class="row mt-5">
     <div class="col-3">
-      <h3 class="text-primary"><%= t("activerecord.attributes.challenge.general_info_section") %></h3>
+      <h3 class="text-primary"><%= t("challenges.form.general_info_section") %></h3>
     </div>
     <div class="col-9">
-      <div class="row row-cols-1 row-cols-md-2 g-4 mb-3">
+      <div class="row mb-3">
         <div class="col">
           <%= form.label(:title, class: "form-label fw-semibold") %>
           <%= form.text_field(:title, required: true, class: "form-control rounded-pill shadow-sm", placeholder: t("challenges.form.title_placeholder")) %>
         </div>
-        <div class="col">
-          <%= form.label(:difficulty, class: "form-label fw-semibold") %>
-          <%= form.select(:difficulty,
-            Challenge.difficulty_keys.map { |key| [ t("challenge.difficulty.#{key}"), key.to_s.upcase ] },
-            {include_blank: "Select a difficulty", required: true},
-            {class: "form-select rounded-pill shadow-sm"}) %>
-        </div>
       </div>
-
       <div class="row row-cols-1 row-cols-md-2 g-4 mb-3">
         <div class="col">
           <%= form.label(:category, class: "form-label fw-semibold") %>
           <%= form.select(:category,
             Challenge.category_keys.map { |key| [ t("challenge.category.#{key}"), key.to_s.upcase ] },
-            {include_blank: "Select a category", required: true},
+            {include_blank: t("common.select"), required: true},
             {class: "form-select rounded-pill shadow-sm"}) %>
         </div>
         <div class="col">
-          <%= form.label(:start_date, class: "form-label fw-semibold") %>
-          <%= form.date_field(:start_date, value: params[:start_date], class: "form-control rounded-pill shadow-sm", required: true) %>
+          <%= form.label(:difficulty, class: "form-label fw-semibold") %>
+          <%= form.select(:difficulty,
+            Challenge.difficulty_keys.map { |key| [ t("challenge.difficulty.#{key}"), key.to_s.upcase ] },
+            {include_blank: t("common.select"), required: true},
+            {class: "form-select rounded-pill shadow-sm"}) %>
         </div>
       </div>
 
       <div class="row row-cols-1 row-cols-md-2 g-4 mb-3">
+        <div class="col">
+          <%= form.label(:start_date, class: "form-label fw-semibold") %>
+          <%= form.date_field(:start_date, value: params[:start_date], class: "form-control rounded-pill shadow-sm", required: true) %>
+        </div>
         <div class="col">
           <%= form.label(:end_date, class: "form-label fw-semibold") %>
           <%= form.date_field(:end_date, value: params[:end_date], class: "form-control rounded-pill shadow-sm", required: true) %>
@@ -45,11 +44,10 @@
 
   <div class="row mt-5">
     <div class="col-3">
-      <h3 class="text-primary"><%= t("activerecord.attributes.challenge.additional_info_section") %></h3>
+      <h3 class="text-primary"><%= t("activerecord.attributes.challenge.description") %></h3>
     </div>
     <div class="col-9">
       <div class="mb-3">
-        <%= form.label(:description, class: "form-label fw-semibold") %>
         <%= form.text_area(:description, class: "form-control rounded-4 shadow-sm", rows: 5, placeholder: t("challenges.form.description_placeholder"), required: true) %>
       </div>
     </div>
@@ -57,9 +55,9 @@
 
   <div class="row my-3">
     <div class="col-3"></div>
-    <div class="col-9 d-flex justify-content-end">
-      <%= form.submit(t("common.save"), class: "btn btn-primary btn-lg me-2 rounded-pill shadow-sm") %>
-      <%= link_to t("common.cancel"), challenges_path, class: "btn btn-secondary btn-lg rounded-pill shadow-sm" %>
+    <div class="col-9 d-flex">
+      <%= form.submit(t("common.save"), class: "btn btn-primary btn-lg w-100 me-2 rounded-pill shadow-sm") %>
+      <%= link_to(t("common.cancel"), challenges_path, class: "btn btn-outline-secondary btn-lg rounded-pill shadow-sm") %>
     </div>
   </div>
 <% end %>
