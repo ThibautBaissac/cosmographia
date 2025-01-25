@@ -10,6 +10,17 @@ module User::SubscriptionHandling
     @current_subscription ||= pay_customers&.first&.subscriptions&.active&.last
   end
 
+  def current_plan_version
+    @current_plan_version ||=
+      Billing::PlanVersion.find_by(id: current_subscription&.metadata&.dig("plan_version_id"))
+  end
+
+  def current_plan?(plan_names)
+    current_plan = current_plan_version&.plan&.name&.downcase
+    normalized_plan_names = Set.new(Array(plan_names).map { |name| name.to_s.downcase })
+    normalized_plan_names.include?(current_plan)
+  end
+
   def subscribed?
     @subscribed ||= current_subscription.present?
   end
@@ -40,11 +51,6 @@ module User::SubscriptionHandling
 
   def remaining_challenge_count
     @remaining_challenge_count ||= remaining_count(:monthly_challenge_limit, :challenges)
-  end
-
-  def current_plan_version
-    @current_plan_version ||=
-      Billing::PlanVersion.find_by(id: current_subscription&.metadata&.dig("plan_version_id"))
   end
 
   def stripe_attributes(pay_customer)
