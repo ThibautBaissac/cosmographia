@@ -9,6 +9,7 @@ class AddDetailsToUsers < ActiveRecord::Migration[8.0]
     add_column(:users, :bio, :text)
 
     add_column(:users, :country_code, :string)
+    add_index(:users, :country_code)
 
     add_column(:users, :personal_website, :string)
 
