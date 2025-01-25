@@ -25,6 +25,11 @@ module User::Validations
   def allowed_social_links_keys
     return if social_links.blank?
 
+    unless social_links.is_a?(Hash)
+      errors.add(:social_links, "must be a hash")
+      return
+    end
+
     invalid_keys = social_links.keys.map(&:to_s) - Constants::Users::SOCIAL_LINK_KEYS
     if invalid_keys.any?
       errors.add(:social_links, "contains invalid keys: #{invalid_keys.join(', ')}")
