@@ -45,6 +45,7 @@ fr:
         first_name: Prénom
         last_name: Nom
         personal_website: Site personnel
+        public_profile: Profil public
         slug: Nom d'utilisateur
         social_links: Réseaux sociaux
       user_software:

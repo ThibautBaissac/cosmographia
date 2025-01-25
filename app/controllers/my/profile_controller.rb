@@ -27,15 +27,7 @@ class My::ProfileController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(
-      :first_name,
-      :last_name,
-      :country_code,
-      :slug,
-      :bio,
-      :personal_website,
-      social_links: Constants::Users::SOCIAL_LINK_KEYS,
-      user_softwares_attributes: [ :id, :software_id, :expertise, :_destroy ]
-    )
+    policy = UserPolicy.new(current_user, @user)
+    params.require(:user).permit(policy.permitted_attributes)
   end
 end
