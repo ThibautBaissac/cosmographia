@@ -1,6 +1,6 @@
 class UserPolicy < ApplicationPolicy
   def show?
-    user&.subscribed? || record.public_profile || user&.superadmin?
+    record&.current_plan?([ :basic, :premium ]) || record.public_profile || user&.superadmin?
   end
 
   def edit?

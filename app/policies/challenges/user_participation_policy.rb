@@ -1,6 +1,6 @@
 class Challenges::UserParticipationPolicy < ApplicationPolicy
   def create?
-    user&.subscribed? && !record.users.include?(user) && !record.ended?
+    user&.has_remaining_challenges? && !record.users.include?(user) && !record.ended?
   end
 
   def destroy?
