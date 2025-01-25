@@ -1,6 +1,6 @@
 class Visualization < ApplicationRecord
   include Visualization::Scopes
-  include Visualization::CustomValidations
+  include Visualization::Validations
 
   belongs_to :user
   has_many :comments, class_name: "Visualization::Comment", dependent: :destroy
@@ -8,12 +8,6 @@ class Visualization < ApplicationRecord
   has_many :softwares, through: :visualization_softwares
   belongs_to :challenge, optional: true
   has_one_attached :image
-
-  validates :title, presence: true
-  validates :image, presence: true
-  validates :category, presence: true
-  validates :description, presence: true
-  validate :image_format
 
   string_enum category: Constants::Visualizations::CATEGORY
   string_enum projection: Constants::Visualizations::PROJECTIONS
