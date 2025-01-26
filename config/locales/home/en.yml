@@ -23,7 +23,7 @@ en:
       - Learn and improve through feedback from an experienced community.
       - Connect with experts and enthusiasts of visualization from around the world.
       join_us_title: Why join Cosmographia?
-      main_title_html: <span class="fw-bold text-primary">Cosmographia</span> is more
+      main_title_html: <span class="fw-bold text-primary bg-light bg-opacity-25 rounded-3 px-1 pb-1 bg-opacity-50 rounded-4 px-2 pb-1">Cosmographia</span> is more
         than a platform - it’s a movement!
       section_01_html: "<b>Showcase</b> maps that illuminate environmental challenges,
         promote sustainable practices, and foster global awareness."

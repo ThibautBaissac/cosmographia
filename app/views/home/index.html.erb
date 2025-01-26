@@ -6,6 +6,7 @@
   <%= render("home/user_signed_in/last_visualizations", visualizations: @visualizations) %>
   <%= render("home/user_signed_in/last_comments", comments: @last_comments) %>
 <% else %>
+  <%= render("home/user_signed_out/header") %>
   <%= render("home/user_signed_out/presentation") %>
   <%= render("home/user_signed_out/image_grid", visualizations: @visualizations) %>
 <% end %>

@@ -23,7 +23,7 @@ fr:
       - Apprendre et progresser grâce aux retours d’une communauté expérimentée.
       - Echanger avec des experts et des amateurs de visualisation du monde entier.
       join_us_title: Pourquoi rejoindre Cosmographia ?
-      main_title_html: <span class="fw-bold text-primary">Cosmographia</span> est
+      main_title_html: <span class="fw-bold text-primary bg-light bg-opacity-25 rounded-3 px-1 pb-1 bg-opacity-50 rounded-4 px-2 pb-1">Cosmographia</span> est
         bien plus qu'une plateforme - c'est un mouvement !
       section_01_html: "<b>Présentez</b> vos cartes qui mettent en lumière les défis
         environnementaux, promeuvent des pratiques durables et favorisent une prise

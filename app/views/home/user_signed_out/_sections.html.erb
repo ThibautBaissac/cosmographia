@@ -1,0 +1,16 @@
+<section class="row text-center">
+  <% sections = [
+    t("home.user_signed_out.section_01_html"),
+    t("home.user_signed_out.section_02_html"),
+    t("home.user_signed_out.section_03_html")
+  ] %>
+  <% sections.each do |content| %>
+    <div class="col-md-4 mb-4">
+      <div class="card bg-opacity-50 h-100 shadow-sm rounded-4 border-secondary-subttle">
+        <div class="card-body">
+          <p class="card-text"><%= content %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</section>

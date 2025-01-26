@@ -1,12 +1,12 @@
 <% if @current_subscription %>
   <div class="container">
     <div class="card border-success mx-auto rounded-4" style="max-width: 600px;">
-      <div class="card-body p-5 text-center">
+      <div class="card-body p3 text-center">
         <h4 class="card-title mb-4 fw-bold">
           <%= @current_plan_version.plan.name %>
         </h4>
 
-        <ul class="list-group list-group-flush mb-4">
+        <ul class="list-group list-group-flush">
           <li class="list-group-item">
             <strong><%= t("activerecord.attributes.billing_plan_version.price_cents") %>:</strong>
             <%= number_to_currency(@current_plan_version.price_cents / 100.0) %> / <%= t("datetime.prompts.month").downcase %>

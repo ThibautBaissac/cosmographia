@@ -1,25 +1,8 @@
+<div class="container d-flex d-sm-none">
+  <%= render("home/user_signed_out/sections") %>
+</div>
+
 <div class="container">
-  <section class="text-center mb-5">
-    <h1><%= t("home.user_signed_out.main_title_html") %></h1>
-  </section>
-
-  <section class="row text-center">
-    <% sections = [
-      t("home.user_signed_out.section_01_html"),
-      t("home.user_signed_out.section_02_html"),
-      t("home.user_signed_out.section_03_html")
-    ] %>
-    <% sections.each do |content| %>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm rounded-4 border-secondary-subttle">
-          <div class="card-body">
-            <p class="card-text"><%= content %></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </section>
-
   <section class="text-center mb-5 p-4 rounded-4 bg-primary bg-gradient text-light">
     <h2 class="fw-bold"><%= t("home.user_signed_out.join_us_title") %></h2>
     <ul class="list-group list-group-flush mt-3 mx-auto bg-transparent" style="max-width: 700px;">

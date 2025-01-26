@@ -1,0 +1,13 @@
+.homepage-bg {
+  background-image: url('homepage-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 90px);
+  width: 100%;
+}
+
+.homepage-bg>* {
+  position: relative;
+  z-index: 2;
+}
