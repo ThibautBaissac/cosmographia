@@ -10,26 +10,27 @@
     </button>
   </div>
 
-  <!-- Apply Filters Button -->
-  <%= link_to("#collapseFilters",
-              class: "text-decoration-none",
-              data: {bs_toggle: "collapse"},
-              role: "button",
-              aria: {expanded: "false", controls: "collapseFilters"}) do %>
-    <%= render(ButtonComponent.new(color: :dark, outline: :true)) do %>
-      <i class="fa-solid fa-filter"></i>
-      <%= t("common.apply_filters") %>
-      <span class="small fw-light">(<%= @non_empty_params_count %>)</span>
+  <div class="d-flex align-items-center">
+    <!-- Apply Filters Button -->
+    <%= link_to("#collapseFilters",
+                class: "text-decoration-none",
+                data: {bs_toggle: "collapse"},
+                role: "button",
+                aria: {expanded: "false", controls: "collapseFilters"}) do %>
+      <%= render(ButtonComponent.new(color: :dark, outline: :true)) do %>
+        <i class="fa-solid fa-filter"></i>
+        <%= t("common.apply_filters") %>
+        <span class="small fw-light">(<%= @non_empty_params_count %>)</span>
+      <% end %>
     <% end %>
-  <% end %>
-
-  <!-- Reset Filters Link -->
-  <% unless @non_empty_params_count.zero? %>
-    <%= link_to(visualizations_path(locale), class: "small text-secondary ms-3") do %>
-      <i class="fa-solid fa-filter-circle-xmark"></i>
-      <%= t("common.reset_filters") %>
+    <!-- Reset Filters Link -->
+    <% unless @non_empty_params_count.zero? %>
+      <%= link_to(visualizations_path(locale), class: "small text-secondary ms-3") do %>
+        <i class="fa-solid fa-filter-circle-xmark"></i>
+        <%= t("common.reset_filters") %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 
   <!-- Collapsible Filters Section -->
   <div class="collapse mt-3" id="collapseFilters">
