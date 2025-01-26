@@ -28,9 +28,16 @@ fr:
       zero: Pas de participation aux challenges
     monthly_visualization_limit: Poster %{count} visualisations par mois
     pricing:
-      subtitle: Explorez, créez et partagez votre travail. Pas de frais cachés. Annulez
-        à tout moment.
-      title: Une tarification simple et équitable
+      subtitle_01:
+        title: "Débloquez votre créativité sans limites:"
+        list_01: "Des tarifs simples: pas de coûts cachés."
+        list_02: "Flexibilité: Annulez à tout moment."
+      subtitle_02:
+        title: "Engagé pour votre vie privée:"
+        list_01: "Aucune publicité."
+        list_02: "Nous ne partageons ni ne vendons vos informations."
+        list_03: "Vous n'êtes pas le produit, nous respectons cela."
+      title: Tarification transparente et équitable
     remaining_challenge_count: Challenges restants
     remaining_visualizations: Visualisations restantes
     subscribe: Souscrire

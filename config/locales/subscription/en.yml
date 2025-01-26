@@ -28,9 +28,16 @@ en:
       zero: No participation in challenges
     monthly_visualization_limit: Post %{count} visualizations per month
     pricing:
-      subtitle: Explore, create, and share your work. No hidden charges. Cancel any
-        time.
-      title: Simple, fair pricing
+      subtitle_01:
+        title: "Unlock Your Creativity Without Limits:"
+        list_01: "Straightforward Plans: No hidden costs."
+        list_02: "Flexibility: Cancel anytime."
+      subtitle_02:
+        title: "Committed to Your Privacy:"
+        list_01: "No Ads, Ever!"
+        list_02: "We never share or sell your information."
+        list_03: "You are not the product, and we respect that."
+      title: Transparent and Fair Pricing
     remaining_challenge_count: Remaining challenges
     remaining_visualizations: Remaining visualizations
     subscribe: Subscribe
