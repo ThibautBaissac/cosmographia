@@ -1,9 +1,6 @@
-<div class="container my-5">
-  <div class="text-center my-5">
-    <h5><%= t("subscription.pricing.title") %></h5>
-    <h6><%= t("subscription.pricing.subtitle") %></h6>
-  </div>
+<%= render("pricings/header") %>
 
+<div class="container my-5">
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <% @active_plan_versions.each do |pv| %>
       <div class="col">

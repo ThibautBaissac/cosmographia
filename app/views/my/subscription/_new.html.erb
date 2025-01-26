@@ -2,26 +2,7 @@
 
 <div class="container my-5 border-top">
   <% if policy(Billing::PlanVersion).checkout? %>
-    <div class="container text-center my-5">
-      <h2 class="mb-4 fw-bold"><%= t("subscription.pricing.title") %></h2>
-
-      <h5 class="card-title mb-3 text-primary">
-        <%= t("subscription.pricing.subtitle_01.title") %>
-      </h5>
-      <ul class="list-unstyled text-muted">
-        <li><i class="fa-solid fa-circle-chevron-right me-2 text-success"></i></i><%= t("subscription.pricing.subtitle_01.list_01") %></li>
-        <li><i class="fa-solid fa-circle-chevron-right me-2 text-success"></i></i><%= t("subscription.pricing.subtitle_01.list_02") %></li>
-      </ul>
-
-      <h5 class="card-title mb-3 text-primary">
-        <%= t("subscription.pricing.subtitle_02.title") %>
-      </h5>
-      <ul class="list-unstyled text-muted">
-        <li><i class="fa-solid fa-circle-chevron-right me-2 text-success"></i></i><%= t("subscription.pricing.subtitle_02.list_01") %></li>
-        <li><i class="fa-solid fa-circle-chevron-right me-2 text-success"></i></i><%= t("subscription.pricing.subtitle_02.list_02") %></li>
-        <li><i class="fa-solid fa-circle-chevron-right me-2 text-success"></i><%= t("subscription.pricing.subtitle_02.list_03") %></li>
-      </ul>
-    </div>
+    <%= render("pricings/header") %>
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <% @active_plan_versions.each do |pv| %>
