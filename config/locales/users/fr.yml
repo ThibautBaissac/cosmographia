@@ -4,8 +4,6 @@ fr:
     alert_01_html: Vous êtes un utilisateur invité.
     alert_02_html: Pour commencer à partager votre travail, veuillez remplir les <a
       href=%{url} class="alert-link">informations de votre profil</a>.
-    alert_02_popover: Pour commencer à partager votre travail, veuillez remplir les
-      informations de votre profil.
   my:
     charts:
       title: Vos statistiques
@@ -47,5 +45,6 @@ fr:
       last_name_placeholder: Indiquer votre prénom
       missing_softwares: Logiciels manquants ?
       option_directory: Rejoindre l'annuaire
+      public_profile_subscription_warning_html: Votre <a href="%{url}" class="text-secondary text-decoration-underline">abonnement actuel</a> ne vous permet pas de rendre votre profil public.
       public_profile_text: Rendre votre page accéssible publiquement
       software_filter_placehoder: Rechercher dans la liste des logiciels

@@ -55,6 +55,9 @@
         <%= form.check_box(:public_profile, {class: "form-check-input", disabled: !current_user.current_plan?(:premium)}) %>
         <%= form.label(t("users.form.public_profile_text"), for: :user_public_profile, class: "form-check-label") %>
       </div>
+      <% if !current_user.current_plan?(:premium) %>
+        <span class="text-secondary"><%= t("users.form.public_profile_subscription_warning_html", url: my_subscription_path(locale)) %></span>
+      <% end %>
     </div>
   </div>
 

@@ -4,7 +4,6 @@ en:
     alert_01_html: Your are a guest user.
     alert_02_html: To start sharing your work, please fill in your <a href=%{url}
       class="alert-link">profile information</a>.
-    alert_02_popover: To start sharing your work, please fill in your profile information.
   my:
     charts:
       title: Your statistics
@@ -46,5 +45,6 @@ en:
       last_name_placeholder: Enter your last name
       missing_softwares: Missing softwares?
       option_directory: Join the directory
+      public_profile_subscription_warning_html: Your <a href="%{url}" class="text-secondary text-decoration-underline">current subscription</a> does not allow you to make your profile public.
       public_profile_text: Make your page publicly accessible
       software_filter_placehoder: Search in the sofwares list
