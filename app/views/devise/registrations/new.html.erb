@@ -3,22 +3,22 @@
 </div>
 
 <div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
+  <div class="row justify-content-center flex-sm-row-reverse">
+    <div class="col-md-6 mb-3">
       <!-- Card Wrapper -->
-      <div class="card shadow-sm rounded-4">
+      <div class="card shadow-sm rounded-4 h-100">
 
         <!-- Card Body -->
-        <div class="card-body">
+        <div class="card-body d-flex flex-column justify-content-between">
           <!-- Error Messages -->
           <%= render "devise/shared/error_messages", resource: resource %>
 
           <!-- Sign-Up Form -->
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "needs-validation", novalidate: true}) do |f| %>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "needs-validation"}) do |f| %>
             <!-- Email Field -->
             <div class="mb-3">
               <%= f.label(t("auth.email"), class: "form-label fw-bold") %>
-              <%= f.email_field(:email, autofocus: true, class: "form-control rounded-pill", placeholder: t("auth.email_placeholder")) %>
+              <%= f.email_field(:email, autofocus: true, class: "form-control rounded-pill", placeholder: t("auth.email_placeholder"), required: true) %>
             </div>
 
             <!-- Password Field -->
@@ -27,13 +27,13 @@
               <% if @minimum_password_length %>
                 <small class="form-text text-muted">(<%= @minimum_password_length %> characters minimum)</small>
               <% end %>
-              <%= f.password_field(:password, class: "form-control rounded-pill", autocomplete: "new-password", placeholder: t("auth.password_placeholder")) %>
+              <%= f.password_field(:password, class: "form-control rounded-pill", autocomplete: "new-password", placeholder: t("auth.password_placeholder"), required: true) %>
             </div>
 
             <!-- Password Confirmation Field -->
             <div class="mb-3">
               <%= f.label(t("auth.password_confirmation"), class: "form-label fw-bold") %>
-              <%= f.password_field(:password_confirmation, class: "form-control rounded-pill", autocomplete: "new-password", placeholder: t("auth.password_confirmation_placeholder")) %>
+              <%= f.password_field(:password_confirmation, class: "form-control rounded-pill", autocomplete: "new-password", placeholder: t("auth.password_confirmation_placeholder"), required: true) %>
             </div>
 
             <!-- Submit Button -->
@@ -48,6 +48,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="col-md-6">
+      <%= image_tag("homepage-bg.jpg", class: "img-fluid rounded-4") %>
     </div>
   </div>
 </div>
