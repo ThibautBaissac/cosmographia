@@ -31,6 +31,8 @@ fr:
       feedback:
         message: Message
         subject: Sujet
+      pay_subscription:
+        ends_at: Votre abonnement se terminera le %{date}
       software:
         category: Catégorie
         name: Nom

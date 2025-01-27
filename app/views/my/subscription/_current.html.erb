@@ -5,6 +5,11 @@
         <h4 class="card-title mb-4 fw-bold">
           <%= @current_plan_version.plan.name %>
         </h4>
+        <% if @current_subscription.ends_at.present? %>
+          <div class="alert alert-warning rounded-4" role="alert">
+            <%= t("activerecord.attributes.pay_subscription.ends_at", date: l(@current_subscription.ends_at, format: :dmy)) %>
+          </div>
+        <% end %>
 
         <ul class="list-group list-group-flush">
           <li class="list-group-item">

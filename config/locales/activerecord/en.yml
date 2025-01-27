@@ -31,6 +31,8 @@ en:
       feedback:
         message: Message
         subject: Subject
+      pay_subscription:
+        ends_at: Your subscription will end on %{date}
       software:
         category: Category
         name: Name
