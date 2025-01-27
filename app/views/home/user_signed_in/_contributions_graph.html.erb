@@ -1,4 +1,4 @@
-<% if current_user.not_guest? %>
+<% if current_user.current_plan?([:basic, :premium]) %>
   <div class="container pb-4 my-3 border-bottom">
     <div class="d-flex justify-content-between align-items-center mb-3">
       <div class="h2 text-primary">
