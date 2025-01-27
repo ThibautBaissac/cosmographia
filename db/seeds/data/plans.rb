@@ -35,7 +35,7 @@ plan_versions_data = {
       monthly_visualization_limit: 5,
       monthly_challenge_limit: 0,
       active: true,
-      stripe_price_id: 'price_1QhZ1bJzDvctqFzSz8vrXD5T'
+      stripe_price_id: 'price_1QloGnFVL8hLkkrbvyRFfTNb'
     }
   ],
   'Basic' => [
@@ -55,7 +55,7 @@ plan_versions_data = {
       monthly_visualization_limit: 10,
       monthly_challenge_limit: 2,
       active: true,
-      stripe_price_id: 'price_1QhTl6JzDvctqFzSyCfOKsvX'
+      stripe_price_id: 'price_1QloH6FVL8hLkkrbyWt4JUf2'
     }
   ],
   'Premium' => [
@@ -75,7 +75,7 @@ plan_versions_data = {
       monthly_visualization_limit: nil,  # Unlimited
       monthly_challenge_limit: nil,  # Unlimited
       active: true,
-      stripe_price_id: 'price_1QhUH6JzDvctqFzSEbWoP8qw'
+      stripe_price_id: 'price_1QloHGFVL8hLkkrb4mVg0E54'
     }
   ]
 }
