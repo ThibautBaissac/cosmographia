@@ -1,6 +1,14 @@
 ---
 en:
   challenge:
+    flash:
+      actions:
+        create:
+          success: The challenge was created successfully
+        destroy:
+          success: The challenge was deleted successfully
+        update:
+          success: The challenge was updated successfully
     attach_visualization:
       flash:
         actions:
@@ -8,6 +16,14 @@ en:
             failure: Sorry but we could not attach your visualization to this challenge
             success: Thank you for your participation! Your isualization was successfully
               attached
+    user_participation:
+      flash:
+        actions:
+          create:
+            failure: Sorry but we could not register your participation to this challenge
+            success: You have successfully joined the challenge
+          destroy:
+            success: You have left the challenge
     category:
       data: Data visualization
       map: Map

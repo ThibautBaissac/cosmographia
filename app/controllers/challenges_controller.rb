@@ -11,12 +11,13 @@ class ChallengesController < ApplicationController
     set_authorize
   end
 
+
   def create
     @challenge = Challenge.new(challenge_params)
     set_authorize
     if @challenge.save
       redirect_to(participations_challenge_path(locale, @challenge),
-                  notice: "Challenge was successfully created.")
+                  notice: t("challenge.flash.actions.create.success"))
     else
       render(:new)
     end
@@ -30,7 +31,7 @@ class ChallengesController < ApplicationController
     set_authorize
     if @challenge.update(challenge_params)
       redirect_to(participations_challenge_path(locale, @challenge),
-                  notice: "Challenge was successfully updated.")
+                  notice: t("challenge.flash.actions.update.success"))
     else
       render(:edit)
     end
@@ -39,7 +40,7 @@ class ChallengesController < ApplicationController
   def destroy
     set_authorize
     @challenge.destroy
-    redirect_to(challenges_url, notice: "Challenge was successfully destroyed.")
+    redirect_to(challenges_url, notice: t("challenge.flash.actions.destroy.success"))
   end
 
   private

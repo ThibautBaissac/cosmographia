@@ -6,6 +6,9 @@ fr:
         create:
           failure: La source n'a pas été créée.
           success: La source a été créée avec succès.
+        destroy:
+          failure: La source n'a pas été détruite.
+          success: La source a été détruite avec succès.
         update:
           failure: La source n'a pas été mise à jour.
           success: La source a été mise à jour avec succès.

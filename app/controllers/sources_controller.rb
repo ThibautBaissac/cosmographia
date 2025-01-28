@@ -43,7 +43,7 @@ class SourcesController < ApplicationController
 
   def destroy
     @source.destroy
-    redirect_to(sources_path(locale), notice: "Source was successfully destroyed.")
+    redirect_to(sources_path(locale), notice: t("source.flash.actions.destroy.failure"))
   end
 
   private

@@ -6,6 +6,9 @@ en:
         create:
           failure: Source was not created.
           success: Source was successfully created.
+        destroy:
+          failure: Source was not destroyed.
+          success: Source was successfully destroyed.
         update:
           failure: Source was not updated.
           success: Source was successfully updated.

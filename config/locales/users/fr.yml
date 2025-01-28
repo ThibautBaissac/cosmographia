@@ -29,6 +29,8 @@ fr:
       tab: Subscription
   user:
     contributions: Contributions
+    not_allowed: Vous n'êtes pas autorisé à consulter le profil de cet utilisateur
+    not_found: Cet utilisateur n'a pas été trouvé
     visualizations: Visualisations
   users:
     count:

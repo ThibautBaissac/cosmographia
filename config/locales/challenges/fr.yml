@@ -1,6 +1,14 @@
 ---
 fr:
   challenge:
+    flash:
+      actions:
+        create:
+          success: Le challenge a été créé avec succès
+        destroy:
+          success: Le challenge a été supprimé avec succès
+        update:
+          success: Le challenge a été mis à jour avec succès
     attach_visualization:
       flash:
         actions:
@@ -9,6 +17,15 @@ fr:
               challenge
             success: Merci pour votre participation ! Votre visualisation a été attachée
               avec succès
+    user_participation:
+      flash:
+        actions:
+          create:
+            failure: Désolé, nous n'avons pas pu enregistrer votre participation à ce
+              challenge
+            success: Vous avez rejoint le challenge avec succès
+          destroy:
+            success: Vous avez quitté le challenge
     category:
       data: Visualisation de données
       map: Carte

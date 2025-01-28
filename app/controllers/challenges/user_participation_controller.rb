@@ -5,16 +5,17 @@ class Challenges::UserParticipationController < ApplicationController
   def create
     service = Challenge::JoinService.new(current_user, @challenge)
     if service.call.persisted?
-      redirect_to(@challenge, notice: "Successfully joined the challenge.")
+      redirect_to(@challenge, notice: t("challenge.user_participation.flash.actions.create.success"))
     else
-      redirect_to(@challenge, alert: "Unable to join the challenge.")
+      redirect_to(@challenge, alert: t("challenge.user_participation.flash.actions.create.failure"))
     end
   end
+
 
   def destroy
     service = Challenge::LeaveService.new(current_user, @challenge)
     service.call
-    redirect_to(@challenge, alert: "Successfully left the challenge.")
+    redirect_to(@challenge, alert: t("challenge.user_participation.flash.actions.destroy.success"))
   end
 
   private

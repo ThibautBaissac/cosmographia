@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     set_contributions
     @pagy, @visualizations = pagy(@visualizations)
   rescue Pundit::NotAuthorizedError
-    redirect_back(fallback_location: root_path(locale), alert: "Action not allowed") and return
+    redirect_back(fallback_location: root_path(locale), alert: t("user.not_allowed")) and return
   end
 
   private
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def find_user
     @user = User.includes(user_softwares: :software).find_by(slug: params[:slug])
     if @user.nil?
-      redirect_back(fallback_location: root_path(locale), alert: "This user does not exist") and return
+      redirect_back(fallback_location: root_path(locale), alert: t("user.not_found")) and return
     end
   end
 
