@@ -1,0 +1,9 @@
+<div role="alert"
+     class="alert alert-<%= @type %> rounded-<%= @rounded %> shadow-sm <%= @extra_classes %> <%= "alert-dismissible fade show" if @dismissible %>">
+
+  <%= content %>
+
+  <% if @dismissible %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  <% end %>
+</div>
