@@ -3,7 +3,9 @@ class HomeController < ApplicationController
 
   def index
     if user_signed_in?
-      @visualizations = Visualization.includes(:image_attachment).order(created_at: :desc).limit(12)
+      @visualizations = Visualization.includes(:image_attachment)
+                                     .order(created_at: :desc)
+                                     .limit(12)
       set_contributions
       last_comments
       set_charts
@@ -11,14 +13,17 @@ class HomeController < ApplicationController
       visualization_ids = Rails.cache.fetch("homepage/signed_out/visualizations", expires_in: 12.hours) do
         Visualizations::DailyRandom.new(visualization_count: 6).call
       end
-      @visualizations = Visualization.where(id: visualization_ids).includes(:image_attachment)
+      @visualizations = Visualization.where(id: visualization_ids)
+                                     .includes(:image_attachment)
     end
   end
 
   private
 
   def last_comments
-    @last_comments = Visualization::Comment.includes(:user, visualization: :image_attachment).order(created_at: :desc).limit(4)
+    @last_comments = Visualization::Comment.includes(:user, visualization: :image_attachment)
+                                           .order(created_at: :desc)
+                                           .limit(4)
   end
 
   def set_charts

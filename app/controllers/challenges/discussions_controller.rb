@@ -13,7 +13,8 @@ class Challenges::DiscussionsController < ApplicationController
         format.turbo_stream
         format.html { redirect_to(discussion_challenge_path(locale, @challenge)) }
       else
-        format.html { redirect_to(discussion_challenge_path(locale, @challenge), alert: t("challenge.discussion.flash.actions.create.failure")) }
+        format.html { redirect_to(discussion_challenge_path(locale, @challenge),
+                                  alert: t("challenge.discussion.flash.actions.create.failure")) }
       end
     end
   end
@@ -30,7 +31,8 @@ class Challenges::DiscussionsController < ApplicationController
         format.turbo_stream
         format.html { redirect_to(discussion_challenge_path(locale, @challenge)) }
       else
-        format.html { redirect_to(discussion_challenge_path(locale, @challenge), t("challenge.discussion.flash.actions.update.failure")) }
+        format.html { redirect_to(discussion_challenge_path(locale, @challenge),
+                                  alert: t("challenge.discussion.flash.actions.update.failure")) }
       end
     end
   end

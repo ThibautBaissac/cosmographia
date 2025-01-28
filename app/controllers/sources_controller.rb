@@ -20,7 +20,8 @@ class SourcesController < ApplicationController
     set_authorize
 
     if @source.save
-      redirect_to(sources_path(locale), notice: t("source.flash.actions.create.success"))
+      redirect_to(sources_path(locale),
+                  notice: t("source.flash.actions.create.success"))
     else
       render(:new, status: :unprocessable_entity)
     end
@@ -52,7 +53,11 @@ class SourcesController < ApplicationController
   end
 
   def source_params
-    params.require(:source).permit(:name, :url, :location, :description)
+    params.require(:source)
+          .permit(:name,
+                  :url,
+                  :location,
+                  :description)
   end
 
   def set_authorize

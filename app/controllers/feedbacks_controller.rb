@@ -3,9 +3,11 @@ class FeedbacksController < ApplicationController
     set_authorize
     @feedback = current_user.feedbacks.new(feedback_params)
     if @feedback.save
-      redirect_to(root_path(locale), notice: t("feedbacks.flash.actions.create.success"))
+      redirect_to(root_path(locale),
+                  notice: t("feedbacks.flash.actions.create.success"))
     else
-      redirect_to(root_path(locale), alert: t("feedbacks.flash.actions.create.failure"))
+      redirect_to(root_path(locale),
+                  alert: t("feedbacks.flash.actions.create.failure"))
     end
   end
 

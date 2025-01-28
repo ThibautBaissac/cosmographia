@@ -12,7 +12,8 @@ class Visualizations::CommentsController < ApplicationController
         format.turbo_stream
         format.html { redirect_to(@visualization) }
       else
-        format.html { redirect_to(@visualization, alert: t("visualization.comments.flash.actions.create.failure")) }
+        format.html { redirect_to(@visualization,
+                                  alert: t("visualization.comments.flash.actions.create.failure")) }
       end
     end
   end
@@ -29,7 +30,8 @@ class Visualizations::CommentsController < ApplicationController
         format.turbo_stream
         format.html { redirect_to(@visualization) }
       else
-        format.html { redirect_to(@visualization, alert: t("visualization.comments.flash.actions.update.failure")) }
+        format.html { redirect_to(@visualization,
+                      alert: t("visualization.comments.flash.actions.update.failure")) }
       end
     end
   end
@@ -55,6 +57,8 @@ class Visualizations::CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:visualization_comment).permit(:content).merge(user: current_user)
+    params.require(:visualization_comment)
+          .permit(:content)
+          .merge(user: current_user)
   end
 end

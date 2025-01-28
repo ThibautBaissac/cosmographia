@@ -2,7 +2,10 @@ class My::SubscriptionController < ApplicationController
   def show
     load_user_subscription_data if current_user.not_guest?
     plans = Billing::Plan.active
-    @active_plan_versions = plans.map { |plan| plan.plan_versions.active.order(version_number: :desc).first }
+    @active_plan_versions = plans.map { |plan| plan.plan_versions
+                                                   .active
+                                                   .order(version_number: :desc)
+                                                   .first }
   end
 
   def checkout

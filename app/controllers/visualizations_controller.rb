@@ -5,7 +5,8 @@ class VisualizationsController < ApplicationController
   def index
     authorize(Visualization)
     @query = params[:query]&.strip
-    visualizations = Visualization.includes(:user, :softwares, :image_attachment).references(:softwares, :user)
+    visualizations = Visualization.includes(:user, :softwares, :image_attachment)
+                                  .references(:softwares, :user)
 
     filter = Visualizations::Filter.new(visualizations:, params: visualization_filter_params)
     @non_empty_params_count = Filter::ParamList.new(params: visualization_filter_params).non_empty.size
@@ -17,7 +18,9 @@ class VisualizationsController < ApplicationController
   def show
     @visualization = Visualization.find(params[:id])
     set_authorize
-    @visualizations = Visualization.order("RANDOM()").includes(:user, :image_attachment).limit(6)
+    @visualizations = Visualization.order("RANDOM()")
+                                   .includes(:user, :image_attachment)
+                                   .limit(6)
     @comments = @visualization.comments.order(created_at: :desc)
     @new_comment =  @visualization.comments.new
   end
@@ -69,7 +72,17 @@ class VisualizationsController < ApplicationController
   end
 
   def visualization_params
-    params.require(:visualization).permit(:category, :image, :title, :description, :creation_date, :scale, :sources, :geographic_coverage, :projection, software_ids: [])
+    params.require(:visualization)
+          .permit(:category,
+                  :image,
+                  :title,
+                  :description,
+                  :creation_date,
+                  :scale,
+                  :sources,
+                  :geographic_coverage,
+                  :projection,
+                  software_ids: [])
   end
 
   def visualization_filter_params
