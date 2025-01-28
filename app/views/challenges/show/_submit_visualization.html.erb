@@ -9,7 +9,7 @@
     <% end %>
   </div>
 <% elsif !challenge.ongoing? && !challenge.ended? %>
-  <div class="alert alert-info rounded-4 text-center">
-    <%= t("challenge.will_starin_x_days", count: (challenge.start_date - Date.today).to_i) %>
-  </div>
+  <%= render(AlertComponent.new(type: :info, extra_classes: "text-center")) do %>
+    <%= t("challenge.will_start_in_x_days", count: (challenge.start_date - Date.today).to_i) %>
+  <% end %>
 <% end %>

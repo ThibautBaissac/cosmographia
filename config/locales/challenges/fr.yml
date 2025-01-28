@@ -54,7 +54,7 @@ fr:
     tabs:
       discussion: Discussion
       participations: Participations
-    will_starin_x_days:
+    will_start_in_x_days:
       one: Le challenge commencera dans %{count} jour
       other: Le challenge commencera dans %{count} jours
       zero: Le challenge commencera dans %{count} jour

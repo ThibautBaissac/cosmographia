@@ -9,13 +9,13 @@
     </div>
     <%= render(PaginationComponent.new(pagy: @pagy)) %>
   <% elsif current_user.not_guest_not_subscribed? %>
-    <div class="alert alert-warning bg-white border border-warning shadow-sm rounded-4 p-4 d-flex align-items-center gap-2">
+    <%= render(AlertComponent.new(type: :warning, extra_classes: "bg-white border-warning p-4 d-flex align-items-center gap-2")) do %>
       <div class="text-warning rounded-circle d-flex justify-content-center align-items-center p-3">
         <i class="fa-solid fa-circle-info fa-2x"></i>
       </div>
       <div class="alert-content flex-grow-1">
         <p class="mb-0 text-dark fw-bold"><%= t("challenge.subscription_alert") %></p>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
