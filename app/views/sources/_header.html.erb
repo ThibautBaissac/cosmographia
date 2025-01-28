@@ -2,7 +2,10 @@
   <%= render(HeaderComponent.new(title: t("activerecord.models.source", count: 2))) do %>
     <% if policy(Source).new? %>
       <%= link_to(new_source_path(locale), data: {turbo_frame: :modal, action: "dialog#open"}) do %>
-        <%= render(ButtonComponent.new(text: t("sources.form.create_title"), color: :secondary, outline: :true, icon: "fa-solid fa-circle-plus")) %>
+        <%= render(ButtonComponent.new(text: t("sources.form.create_title"),
+                                       color: :secondary,
+                                       outline: :true,
+                                       icon: "fa-solid fa-circle-plus")) %>
       <% end %>
     <% end %>
   <% end %>

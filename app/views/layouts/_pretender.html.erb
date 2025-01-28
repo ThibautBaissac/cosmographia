@@ -4,7 +4,10 @@
       <div class="c">
         You (<%= true_user.fullname %>) are signed in as <b><%= current_user.fullname %> - <%= current_user.email %></b>
       </div>
-      <%= button_to("Back to admin", stop_impersonating_admin_users_path(locale), data: {turbo: false}, class: "btn btn-primary rounded-pill") %>
+      <%= button_to("Back to admin",
+                    top_impersonating_admin_users_path(locale),
+                    data: {turbo: false},
+                    class: "btn btn-primary rounded-pill") %>
     </div>
   </div>
 <% end %>

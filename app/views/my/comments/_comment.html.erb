@@ -1,9 +1,14 @@
 <div class="bg-light rounded-4 p-4 my-3 shadow-sm d-flex align-items-center">
   <% if comment.visualization.image.attached? %>
     <div class="me-3">
-      <%= image_tag(comment.visualization.image_thumbnail_sm, width: 100, height: 100, class: "object-fit-cover rounded-2 disable_img", alt: comment.visualization.title) %>
+      <%= image_tag(comment.visualization.image_thumbnail_sm,
+                    width: 100,
+                    height: 100,
+                    class: "object-fit-cover rounded-2 disable_img",
+                    alt: comment.visualization.title) %>
     </div>
   <% end %>
+
   <div class="w-100">
     <div class="d-flex justify-content-between align-items-center mb-2">
       <% unless current_user == user %>
@@ -15,9 +20,14 @@
         <%= humanized_time_ago(comment.created_at) %>
       </span>
     </div>
+
     <%= simple_format(ContentPresenter.new(comment.content, current_user).with_mentions) %>
+
     <%= link_to(comment.visualization, data: {turbo: :false}) do %>
-        <%= render(ButtonComponent.new(text: t("visualization.go_to"), size: :sm, rounded: :pill, outline: :true)) %>
+      <%= render(ButtonComponent.new(text: t("visualization.go_to"),
+                                     size: :sm,
+                                     rounded: :pill,
+                                     outline: :true)) %>
     <% end %>
   </div>
 </div>

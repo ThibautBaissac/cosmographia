@@ -5,7 +5,9 @@
     <%= render("shared/guest_alert") %>
   <% elsif current_user.subscribed? %>
     <%= render("community/directory/search", query: @query) %>
-    <p class="small mt-2 ms-2 text-muted"><%= t("users.count", count: @pagy.count) %></p>
+    <p class="small mt-2 ms-2 text-muted">
+      <%= t("users.count", count: @pagy.count) %>
+    </p>
 
     <div class="row row-cols-1 row-cols-md-2 mb-3 g-4">
       <%= render(partial: "community/directory/card", collection: @users, as: :user) %>

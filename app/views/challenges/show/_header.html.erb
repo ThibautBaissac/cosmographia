@@ -3,12 +3,17 @@
     <div class="d-flex gap-2">
       <% if policy(Challenge).edit? %>
         <%= link_to(edit_challenge_path(locale, challenge)) do %>
-            <%= render(ButtonComponent.new(text: t("challenges.form.edit_title"), outline: :true, icon: "fa-solid fa-circle-plus")) %>
+            <%= render(ButtonComponent.new(text: t("challenges.form.edit_title"),
+                                           outline: :true,
+                                           icon: "fa-solid fa-circle-plus")) %>
         <% end %>
       <% end %>
 
       <% if Challenges::UserParticipationPolicy.new(current_user, challenge).create? %>
-        <%= button_to(t("challenge.join"), challenge_user_participation_path(locale, challenge), method: :post, class: "btn btn-success rounded-pill") %>
+        <%= button_to(t("challenge.join"),
+                      challenge_user_participation_path(locale, challenge),
+                      method: :post,
+                      class: "btn btn-success rounded-pill") %>
       <% end %>
       <% if Challenges::UserParticipationPolicy.new(current_user, challenge).destroy? %>
         <%= render("challenges/show/leave", challenge:) %>

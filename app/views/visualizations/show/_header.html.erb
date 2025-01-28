@@ -1,7 +1,8 @@
 <div class="container">
   <%= render(HeaderComponent.new(title: visualization.title)) do %>
     <% if policy(visualization).edit? %>
-      <%= link_to(edit_visualization_path(locale, visualization), class: "btn btn-outline-primary btn rounded-4 d-flex align-items-center gap-2") do %>
+      <%= link_to(edit_visualization_path(locale, visualization),
+                  class: "btn btn-outline-primary btn rounded-4 d-flex align-items-center gap-2") do %>
         <i class="fa-regular fa-pen-to-square"></i>
         <span><%= t("common.edit") %></span>
       <% end %>

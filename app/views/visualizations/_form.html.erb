@@ -1,4 +1,7 @@
-<%= form_with(model: visualization, local: true, class: "container needs-validation", data: {controller: "visualization-category-switch"}) do |form| %>
+  <%= form_with(model: visualization,
+                local: true,
+                class: "container needs-validation",
+                data: {controller: "visualization-category-switch"}) do |form| %>
   <%= hidden_field_tag :challenge_id, @challenge.id if @challenge.present? %>
   <div class="row mt-5">
     <div class="col-3">
@@ -6,7 +9,11 @@
     </div>
     <div class="col-9">
       <% Visualization.category_keys.each do |category| %>
-        <%= form.radio_button(:category, category.upcase, class: "btn-check", data: {action: "visualization-category-switch#updateFields"}, required: true) %>
+        <%= form.radio_button(:category,
+                              category.upcase,
+                              class: "btn-check",
+                              data: {action: "visualization-category-switch#updateFields"},
+                              required: true) %>
         <%= form.label("category_#{category}", class: "btn btn-outline-primary rounded-4") do %>
           <i class="fa-solid fa-<%= category == :map ? "map" : "database" %>"></i>
           <%= t("visualizations.category.#{category}") %>
@@ -17,13 +24,18 @@
 
   <div class="row mt-5">
     <div class="col-3">
-      <h3 class="text-primary"><%= t("visualizations.form.general_info_section") %></h3>
+      <h3 class="text-primary">
+        <%= t("visualizations.form.general_info_section") %>
+      </h3>
     </div>
     <div class="col-9">
       <div class="row row-cols-1 row-cols-md-2 g-4 mb-3">
         <div class="col">
           <%= form.label(:title, class: "form-label fw-semibold") %>
-          <%= form.text_field(:title, required: true, class: "form-control rounded-pill shadow-sm", placeholder: t("visualizations.form.title_placeholder")) %>
+          <%= form.text_field(:title,
+                              required: true,
+                              class: "form-control rounded-pill shadow-sm",
+                              placeholder: t("visualizations.form.title_placeholder")) %>
         </div>
         <div class="col">
           <%= form.label(:creation_date, class: "form-label fw-semibold") %>
@@ -32,18 +44,27 @@
       </div>
       <div class="mb-3">
         <%= form.label(:description, class: "form-label fw-semibold") %>
-        <%= form.text_area(:description, class: "form-control rounded-4 shadow-sm", rows: 3, placeholder: t("visualizations.form.description_placeholder"), required: true) %>
+        <%= form.text_area(:description,
+                           class: "form-control rounded-4 shadow-sm",
+                           rows: 3,
+                           placeholder: t("visualizations.form.description_placeholder"),
+                           required: true) %>
       </div>
     </div>
   </div>
 
   <div class="row mt-5">
     <div class="col-3">
-      <h3 class="text-primary"><%= t("visualizations.form.image_section") %></h3>
+      <h3 class="text-primary">
+        <%= t("visualizations.form.image_section") %>
+      </h3>
     </div>
     <div class="col-9">
-      <div class="form-text text-secondary"><%= t("visualizations.form.image_placeholder") %></span>
-      <%= form.file_field(:image, class: "form-control rounded-pill shadow-sm mt-2", accept: "image/webp, image/png, image/jpeg, image/jpg, image/gif") %>
+      <div class="form-text text-secondary"><%= t("visualizations.form.image_placeholder") %></div>
+      <%= form.file_field(:image,
+                          class: "form-control rounded-pill shadow-sm mt-2",
+                          accept: "image/webp, image/png, image/jpeg, image/jpg, image/gif") %>
+
       <% if visualization.image.attached? %>
         <p class="mt-3 fw-semibold"><%= t("visualizations.form.current_image") %></p>
         <%= image_tag(visualization.image_thumbnail_sm, class: "img-thumbnail shadow-sm", style: "max-height: 150px;") %>
@@ -53,32 +74,41 @@
 
   <div class="row mt-5">
     <div class="col-3">
-      <h3 class="text-primary"><%= t("visualizations.form.details_section") %></h3>
+      <h3 class="text-primary">
+        <%= t("visualizations.form.details_section") %>
+      </h3>
     </div>
     <div class="col-9">
       <div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
         <div class="col">
           <%= form.label(:scale, class: "form-label fw-semibold") %>
-          <%= form.number_field(:scale, class: "form-control rounded-pill shadow-sm", placeholder: t("visualizations.form.scale_placeholder"), disabled: true, data: {visualization_category_switch_target: "scale"}) %>
+          <%= form.number_field(:scale,
+                                class: "form-control rounded-pill shadow-sm",
+                                placeholder: t("visualizations.form.scale_placeholder"),
+                                disabled: true,
+                                data: {visualization_category_switch_target: "scale"}) %>
         </div>
         <div class="col">
           <%= form.label(:geographic_coverage, class: "form-label fw-semibold") %>
           <%= form.select(:geographic_coverage,
-                Visualization.geographic_coverage_keys.map { |key| [ t("visualizations.geographic_coverages.#{key}"), key.to_s.upcase ] },
-                {include_blank: t("visualizations.form.geographic_coverage_placeholder")},
-                {class: "form-select rounded-pill shadow-sm", disabled: true, data: {visualization_category_switch_target: "geographicCoverage"}}) %>
+                          Visualization.geographic_coverage_keys.map { |key| [ t("visualizations.geographic_coverages.#{key}"), key.to_s.upcase ] },
+                          {include_blank: t("visualizations.form.geographic_coverage_placeholder")},
+                          {class: "form-select rounded-pill shadow-sm", disabled: true, data: {visualization_category_switch_target: "geographicCoverage"}}) %>
         </div>
         <div class="col">
           <%= form.label(:projection, class: "form-label fw-semibold") %>
           <%= form.select(:projection,
-                Visualization.projection_keys.map { |key| [ t("visualization_projections.#{key}"), key.to_s.upcase ] },
-                {include_blank: "Select a projection"},
-                {class: "form-select rounded-pill shadow-sm", disabled: true, data: {visualization_category_switch_target: "projection"}}) %>
+                          Visualization.projection_keys.map { |key| [ t("visualization_projections.#{key}"), key.to_s.upcase ] },
+                          {include_blank: "Select a projection"},
+                          {class: "form-select rounded-pill shadow-sm", disabled: true, data: {visualization_category_switch_target: "projection"}}) %>
         </div>
       </div>
       <div class="mb-3">
         <%= form.label(:sources, class: "form-label fw-semibold") %>
-        <%= form.text_area(:sources, class: "form-control rounded-4 shadow-sm", rows: 3, placeholder: t("visualizations.form.sources_placeholder")) %>
+        <%= form.text_area(:sources,
+                           class: "form-control rounded-4 shadow-sm",
+                           rows: 3,
+                           placeholder: t("visualizations.form.sources_placeholder")) %>
       </div>
     </div>
   </div>

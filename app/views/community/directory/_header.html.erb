@@ -1,7 +1,9 @@
 <%= render(HeaderComponent.new(title: t("community.directory.title"))) do %>
   <% if current_user.not_guest_not_subscribed? %>
     <%= link_to(my_subscription_path(locale)) do %>
-      <%= render(ButtonComponent.new(text: t("subscription.change_subscription"), outline: :true, icon: "fa-solid fa-bag-shopping")) %>
+      <%= render(ButtonComponent.new(text: t("subscription.change_subscription"),
+                                     outline: :true,
+                                     icon: "fa-solid fa-bag-shopping")) %>
     <% end %>
   <% end %>
 <% end %>

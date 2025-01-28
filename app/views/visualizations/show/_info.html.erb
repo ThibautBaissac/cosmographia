@@ -18,15 +18,33 @@
     <p class="card-text text-secondary"><%= visualization.description %></p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.creation_date") %>:</strong> <%= visualization.creation_date %></li>
+    <li class="list-group-item">
+      <span class="fw-bold"><%= t("activerecord.attributes.visualization.creation_date") %>:</span>
+      <%= visualization.creation_date %>
+    </li>
     <% if visualization.map? %>
-      <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.scale") %>:</strong> <%= visualization.scale %></li>
-      <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.geographic_coverage") %>:</strong> <%= t("visualizations.geographic_coverages.#{visualization.geographic_coverage&.downcase}") %></li>
-      <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.projection") %>:</strong> <%= t("visualization_projections.#{visualization.projection}") %></li>
+      <li class="list-group-item">
+        <span class="fw-bold"><%= t("activerecord.attributes.visualization.scale") %>:</span>
+        <%= visualization.scale %>
+      </li>
+      <li class="list-group-item">
+        <span class="fw-bold"><%= t("activerecord.attributes.visualization.geographic_coverage") %>:</span>
+        <%= t("visualizations.geographic_coverages.#{visualization.geographic_coverage&.downcase}") %>
+      </li>
+      <li class="list-group-item">
+        <span class="fw-bold"><%= t("activerecord.attributes.visualization.projection") %>:</span>
+        <%= t("visualization_projections.#{visualization.projection}") %>
+      </li>
     <% end %>
-    <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.source") %>:</strong> <%= visualization.sources %></li>
+    <li class="list-group-item">
+      <span class="fw-bold"><%= t("activerecord.attributes.visualization.source") %>:</span>
+      <%= visualization.sources %>
+    </li>
     <% if visualization.challenge.present? %>
-      <li class="list-group-item"><strong><%= t("activerecord.attributes.visualization.challenge") %>:</strong> <%= link_to(visualization.challenge.title, participations_challenge_path(locale, visualization.challenge)) %></li>
+      <li class="list-group-item">
+        <span class="fw-bold"><%= t("activerecord.attributes.visualization.challenge") %>:</span>
+        <%= link_to(visualization.challenge.title, participations_challenge_path(locale, visualization.challenge)) %>
+      </li>
     <% end %>
   </ul>
   <div class="card-body">

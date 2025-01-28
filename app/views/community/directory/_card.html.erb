@@ -16,7 +16,12 @@
             <% unless link.blank? %>
               <li class="list-inline-item">
                 <%= link_to(link, target: :_blank) do %>
-                  <%= render(ButtonComponent.new(text: platform.capitalize, color: :secondary, size: :sm, outline: :true, rounded: :pill, icon: "fa-brands fa-#{platform}")) %>
+                  <%= render(ButtonComponent.new(text: platform.capitalize,
+                                                 color: :secondary,
+                                                 size: :sm,
+                                                 outline: :true,
+                                                 rounded: :pill,
+                                                 icon: "fa-brands fa-#{platform}")) %>
                 <% end %>
               </li>
             <% end %>
@@ -26,7 +31,9 @@
       <hr>
 
       <!-- Softwares Section -->
-      <h5 class="card-title text-primary fw-bold"><%= t("activerecord.models.software", count: 2) %></h5>
+      <h5 class="card-title text-primary fw-bold">
+        <%= t("activerecord.models.software", count: 2) %>
+      </h5>
       <ul class="list-inline mt-2">
         <% user.softwares.each do |software| %>
           <li class="list-inline-item mb-2">

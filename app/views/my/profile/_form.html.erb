@@ -1,4 +1,7 @@
-<%= form_with(model: @user, url: my_profile_path(locale), local: true, class: "container needs-validation", novalidate: true) do |form| %>
+<%= form_with(model: @user,
+              url: my_profile_path(locale),
+              local: true,
+              class: "container needs-validation") do |form| %>
   <div class="text-secondary text-center"><%= t("my.profile.info_disclaimer_html") %></div>
   <div class="row mt-5">
     <div class="col-3">
@@ -8,20 +11,31 @@
       <div class="row row-cols-1 row-cols-md-2 g-4 mb-3">
         <div class="col">
           <%= form.label(:first_name, class: "form-label fw-semibold required") %>
-          <%= form.text_field(:first_name, class: "form-control rounded-pill shadow-sm", placeholder: t("users.form.first_name_placeholder"), required: true) %>
+          <%= form.text_field(:first_name,
+                              class: "form-control rounded-pill shadow-sm",
+                              placeholder: t("users.form.first_name_placeholder"),
+                              required: true) %>
         </div>
         <div class="col">
           <%= form.label(:last_name, class: "form-label fw-semibold required") %>
-          <%= form.text_field(:last_name, class: "form-control rounded-pill shadow-sm", placeholder: t("users.form.last_name_placeholder"), required: true) %>
+          <%= form.text_field(:last_name,
+                              class: "form-control rounded-pill shadow-sm",
+                              placeholder: t("users.form.last_name_placeholder"),
+                              required: true) %>
         </div>
       </div>
       <div class="col mb-3">
         <%= form.label(:personal_website, class: "form-label fw-semibold") %>
-        <%= form.url_field(:personal_website, class: "form-control rounded-pill shadow-sm", placeholder: "https://yourwebsite.com") %>
+        <%= form.url_field(:personal_website,
+                           class: "form-control rounded-pill shadow-sm",
+                           placeholder: "https://yourwebsite.com") %>
       </div>
       <div class="col">
         <%= form.label(:country_code, class: "form-label fw-semibold required") %>
-        <%= form.select(:country_code, ISO3166::Country.all.map { |c| [ c.common_name, c.alpha2 ] }, {include_blank: "Select Country"}, {class: "form-select rounded-pill shadow-sm", required: true}) %>
+        <%= form.select(:country_code,
+                        ISO3166::Country.all.map { |c| [ c.common_name, c.alpha2 ] },
+                        {include_blank: "Select Country"},
+                        {class: "form-select rounded-pill shadow-sm", required: true}) %>
       </div>
     </div>
   </div>
@@ -32,14 +46,19 @@
     </div>
     <div class="col-9">
       <div class="mb-3">
-        <%= form.text_area(:bio, class: "form-control rounded-4 shadow-sm", rows: 5, placeholder: t("users.form.bio_placeholder")) %>
+        <%= form.text_area(:bio,
+                           class: "form-control rounded-4 shadow-sm",
+                           rows: 5,
+                           placeholder: t("users.form.bio_placeholder")) %>
       </div>
     </div>
   </div>
 
   <div class="row mt-5">
     <div class="col-3">
-      <h3 class="text-primary"><%= t("activerecord.attributes.user.social_links") %></h3>
+      <h3 class="text-primary">
+        <%= t("activerecord.attributes.user.social_links") %>
+      </h3>
     </div>
     <div class="col-9">
       <%= render("my/profile/form/social_links", form:) %>
@@ -48,23 +67,35 @@
 
   <div class="row mt-5">
     <div class="col-3">
-      <h3 class="text-primary"><%= t("activerecord.attributes.user.public_profile") %></h3>
+      <h3 class="text-primary">
+        <%= t("activerecord.attributes.user.public_profile") %>
+      </h3>
     </div>
     <div class="col-9">
       <div class="form-check form-switch">
-        <%= form.check_box(:public_profile, {class: "form-check-input", disabled: !current_user.current_plan?(:premium)}) %>
+        <%= form.check_box(:public_profile,
+                           {class: "form-check-input", disabled: !current_user.current_plan?(:premium)}) %>
         <%= form.label(t("users.form.public_profile_text"), for: :user_public_profile, class: "form-check-label") %>
       </div>
       <% if !current_user.current_plan?(:premium) %>
-        <span class="text-secondary"><%= t("users.form.public_profile_subscription_warning_html", url: my_subscription_path(locale)) %></span>
+        <span class="text-secondary">
+          <%= t("users.form.public_profile_subscription_warning_html", url: my_subscription_path(locale)) %>
+        </span>
       <% end %>
     </div>
   </div>
 
   <div class="row mt-5">
     <div class="col-3">
-      <h3 class="text-primary"><%= t("activerecord.models.software", count: 2) %></h3>
-      <%= link_to(t("users.form.missing_softwares"), "#offcanvaFeedback", class: "link-secondary small", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvaFeedback"}) %>
+      <h3 class="text-primary">
+        <%= t("activerecord.models.software", count: 2) %>
+      </h3>
+      <%= link_to(t("users.form.missing_softwares"),
+                    "#offcanvaFeedback",
+                    class: "link-secondary small",
+                    data: {bs_toggle: "offcanvas"},
+                    role: "button",
+                    aria: {controls: "offcanvaFeedback"}) %>
     </div>
     <div class="col-9">
       <%= render("my/profile/form/softwares", form:) %>

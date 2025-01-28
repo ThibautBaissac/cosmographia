@@ -41,7 +41,9 @@
               <% end %>
             </td>
             <td>
-              <%= button_to("Connect as", impersonate_admin_user_path(user), method: :post, class: "btn btn-primary btn-sm", data: {turbo: false},) %>
+              <%= button_to(impersonate_admin_user_path(user), method: :post, class: "btn btn-primary btn-sm", data: {turbo: false}) do %>
+                <i class="fa-solid fa-plug"></i>
+              <% end %>
             </td>
           </tr>
         <% end %>

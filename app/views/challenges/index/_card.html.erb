@@ -12,8 +12,12 @@
           <% end %>
           <span class="ms-2"><%= challenge.title %></span>
         </h5>
-        <p class="card-text text-muted"><%= truncate(challenge.description, length: 100) %></p>
+        <p class="card-text text-muted">
+          <%= truncate(challenge.description, length: 100) %>
+        </p>
+
         <hr>
+
         <div class="d-flex justify-content-between gap-2">
           <div>
             <span class="badge text-bg-primary">
@@ -27,6 +31,7 @@
             <%= challenge.users&.count %><i class="fa-solid fa-users-rectangle"></i>
           </div>
         </div>
+
       </div>
     </div>
   <% end %>

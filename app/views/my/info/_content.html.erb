@@ -1,5 +1,7 @@
 <div class="container mt-5">
-  <div class="text-secondary text-center"><%= t("my.profile.info_disclaimer_html") %></div>
+  <div class="text-secondary text-center">
+    <%= t("my.profile.info_disclaimer_html") %>
+  </div>
   <div class="row g-4 mt-3">
     <!-- Profile Card -->
     <div class="col-md-4">
@@ -8,7 +10,9 @@
           <h4 class="card-title fw-bold mx-auto">
             <%= @user.fullname %>
           </h4>
-          <p class="card-text text-muted fst-italic"><%= @user.bio || "No bio available." %></p>
+          <p class="card-text text-muted fst-italic">
+            <%= @user.bio || "No bio available." %>
+          </p>
         </div>
       </div>
     </div>
@@ -19,29 +23,46 @@
       <div class="card shadow-sm rounded-4">
         <div class="card-body">
           <!-- Contact Information Section -->
-          <h5 class="card-title text-primary fw-bold"><%= t("my.profile.contact_info") %></h5>
+          <h5 class="card-title text-primary fw-bold">
+            <%= t("my.profile.contact_info") %>
+          </h5>
           <ul class="list-unstyled">
-            <li><strong>Email:</strong> <%= @user.email %></li>
-            <li><strong><%= t("activerecord.attributes.user.slug") %>:</strong> <span class="small text-secondary"><%= @user.slug %></span></li>
+            <li>
+              <span class="fw-bold">Email:</span>
+              <%= @user.email %>
+            </li>
+            <li>
+              <span class="fw-bold"><%= t("activerecord.attributes.user.slug") %>:</span>
+              <span class="small text-secondary"><%= @user.slug %></span>
+            </li>
           </ul>
           <hr>
 
           <!-- Personal website and Social Links Section -->
           <h5 class="card-title text-primary fw-bold"><%= t("activerecord.attributes.user.social_links") %></h5>
-            <ul class="list-inline mt-2">
-              <li class="list-inline-item">
-              <% if @user.personal_website.present? %>
-                <%= link_to(@user.personal_website, target: :_blank) do %>
-                  <%= render(ButtonComponent.new(text: t("activerecord.attributes.user.personal_website"), color: :secondary, size: :sm, outline: :true, rounded: :pill)) %>
-                <% end %>
+          <ul class="list-inline mt-2">
+            <li class="list-inline-item">
+            <% if @user.personal_website.present? %>
+              <%= link_to(@user.personal_website, target: :_blank) do %>
+                <%= render(ButtonComponent.new(text: t("activerecord.attributes.user.personal_website"),
+                                               color: :secondary,
+                                               size: :sm,
+                                               outline: :true,
+                                               rounded: :pill)) %>
               <% end %>
-              </li>
+            <% end %>
+            </li>
             <% if @user.social_links.present? %>
               <% @user.social_links.each do |platform, link| %>
                 <% unless link.blank? %>
                   <li class="list-inline-item">
                     <%= link_to(link, target: :_blank) do %>
-                      <%= render(ButtonComponent.new(text: platform.capitalize, color: :secondary, size: :sm, outline: :true, rounded: :pill, icon: "fa-brands fa-#{platform}")) %>
+                      <%= render(ButtonComponent.new(text: platform.capitalize,
+                                                     color: :secondary,
+                                                     size: :sm,
+                                                     outline: :true,
+                                                     rounded: :pill,
+                                                     icon: "fa-brands fa-#{platform}")) %>
                     <% end %>
                   </li>
                 <% end %>
@@ -51,7 +72,9 @@
           <hr>
 
           <!-- Softwares Section -->
-          <h5 class="card-title text-primary fw-bold"><%= t("activerecord.models.software", count: 2) %></h5>
+          <h5 class="card-title text-primary fw-bold">
+            <%= t("activerecord.models.software", count: 2) %>
+          </h5>
           <ul class="list-inline mt-2">
             <% @user.softwares.each do |software| %>
               <li class="list-inline-item mb-2">

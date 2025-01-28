@@ -24,7 +24,7 @@
             <!-- Pending Confirmation Notice -->
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div class="alert alert-info" role="alert">
-                Currently waiting confirmation for: <strong><%= resource.unconfirmed_email %></strong>
+                Currently waiting confirmation for: <span class="fw-bold"><%= resource.unconfirmed_email %></span>
               </div>
             <% end %>
 

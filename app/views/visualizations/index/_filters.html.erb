@@ -5,10 +5,8 @@
       <%= form.label(:categories, t("visualizations.filtering.categories"), class: "form-label fw-semibold") %>
       <%= form.collection_check_boxes(:categories, Visualization.category_keys, :to_s, :to_s) do |b| %>
         <div class="d-inline-flex align-items-center">
-          <%= b.check_box(
-                class: "btn-check",
-                checked: params[:categories]&.include?(b.object.to_s)
-              ) %>
+          <%= b.check_box(class: "btn-check",
+                          checked: params[:categories]&.include?(b.object.to_s)) %>
           <%= b.label(class: "btn btn-outline-info btn-sm rounded-4") do %>
             <%= t("visualizations.category.#{b.object}") %>
           <% end %>
@@ -20,11 +18,15 @@
   <!-- Creation Date Filter -->
   <div class="col-6">
     <%= form.label(:creation_date_start, t("visualizations.filtering.creation_date_start"), class: "form-label fw-semibold") %>
-    <%= form.date_field(:creation_date_start, value: params[:creation_date_start], class: "form-control rounded-pill shadow-sm") %>
+    <%= form.date_field(:creation_date_start,
+                        value: params[:creation_date_start],
+                        class: "form-control rounded-pill shadow-sm") %>
   </div>
   <div class="col-6">
     <%= form.label(:creation_date_end, t("visualizations.filtering.creation_date_end"), class: "form-label fw-semibold") %>
-    <%= form.date_field(:creation_date_end, value: params[:creation_date_end], class: "form-control rounded-pill shadow-sm") %>
+    <%= form.date_field(:creation_date_end,
+                        value: params[:creation_date_end],
+                        class: "form-control rounded-pill shadow-sm") %>
   </div>
 
   <!-- Wrapper to fix alignment -->
@@ -33,11 +35,19 @@
       <!-- Scale Filters -->
       <div class="col-6 col-lg-4">
         <%= form.label(:scale_min, t("visualizations.filtering.scale_minimum"), class: "form-label fw-semibold") %>
-        <%= form.number_field(:scale_min, value: params[:scale_min], class: "form-control rounded-pill shadow-sm", step: 1, placeholder: "Enter minimum scale") %>
+        <%= form.number_field(:scale_min,
+                              value: params[:scale_min],
+                              class: "form-control rounded-pill shadow-sm",
+                              step: 1,
+                              placeholder: "Enter minimum scale") %>
       </div>
       <div class="col-6 col-lg-4">
         <%= form.label(:scale_max, t("visualizations.filtering.scale_maximum"), class: "form-label fw-semibold") %>
-        <%= form.number_field(:scale_max, value: params[:scale_max], class: "form-control rounded-pill shadow-sm", step: 1, placeholder: "Enter maximum scale") %>
+        <%= form.number_field(:scale_max,
+                              value: params[:scale_max],
+                              class: "form-control rounded-pill shadow-sm",
+                              step: 1,
+                              placeholder: "Enter maximum scale") %>
       </div>
 
       <!-- Geographic Coverage Filter -->

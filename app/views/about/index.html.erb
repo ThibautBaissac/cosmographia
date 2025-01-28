@@ -10,18 +10,25 @@
 <main class="container my-5">
   <!-- Mission Section -->
   <section class="mb-5">
-    <h2 class="text-center mb-4 fw-semibold text-primary"><%= t("about.mission.title") %></h2>
-    <p class="fs-5 text-secondary text-justify"><%= t("about.mission.text") %></p>
+    <h2 class="text-center mb-4 fw-semibold text-primary">
+      <%= t("about.mission.title") %>
+    </h2>
+    <p class="fs-5 text-secondary text-justify">
+      <%= t("about.mission.text") %>
+    </p>
   </section>
 
   <!-- Values Section -->
   <section class="bg-primary bg-gradient text-white rounded-4 p-5 mb-5 shadow-sm">
-    <h3 class="text-center mb-4"><%= t("about.values.title") %></h3>
+    <h3 class="text-center mb-4">
+      <%= t("about.values.title") %>
+    </h3>
     <ul class="list-unstyled fs-5">
       <% t("about.values.list").each do |value| %>
         <li class="mb-3">
           <i class="bi bi-check-circle-fill me-2"></i>
-          <strong><%= value[:title] %>:</strong> <%= value[:description] %>
+          <span class="fw-bold"><%= value[:title] %>:</span>
+          <%= value[:description] %>
         </li>
       <% end %>
     </ul>
@@ -29,19 +36,29 @@
 
   <!-- Why Cosmography Section -->
   <section class="mb-5">
-    <h3 class="text-center mb-4 fw-semibold text-primary"><%= t("about.why_cosmography.title") %></h3>
-    <p class="fs-5 text-secondary"><%= t("about.why_cosmography.text") %></p>
+    <h3 class="text-center mb-4 fw-semibold text-primary">
+      <%= t("about.why_cosmography.title") %>
+    </h3>
+    <p class="fs-5 text-secondary">
+      <%= t("about.why_cosmography.text") %>
+    </p>
   </section>
 
   <!-- Commitments Section -->
   <section class="mb-5">
-    <h3 class="text-center text-primary mb-4"><%= t("about.commitments.title") %></h3>
+    <h3 class="text-center text-primary mb-4">
+      <%= t("about.commitments.title") %>
+    </h3>
     <div class="row gy-4">
       <% t("about.commitments.list").each do |commitment| %>
         <div class="col-md-6">
           <div class="p-4 bg-white rounded-4 shadow-sm border border-secondary-subtle">
-            <h5 class="fw-bold text-primary"><%= commitment[:title] %></h5>
-            <p class="text-secondary"><%= commitment[:text] %></p>
+            <h5 class="fw-bold text-primary">
+              <%= commitment[:title] %>
+            </h5>
+            <p class="text-secondary">
+              <%= commitment[:text] %>
+            </p>
           </div>
         </div>
       <% end %>

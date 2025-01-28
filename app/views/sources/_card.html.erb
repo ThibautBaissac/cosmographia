@@ -4,13 +4,19 @@
       <div class="d-flex justify-content-between">
         <h2 class="h6 card-title fw-bold text-primary"><%= source.name %></h2>
         <%= link_to(edit_source_path(locale, source), data: {turbo_frame: :modal, action: "dialog#open"}) do %>
-          <%= render(ButtonComponent.new(color: :secondary, outline: :true, icon: "fa-regular fa-pen-to-square")) %>
+          <%= render(ButtonComponent.new(color: :secondary,
+                                         outline: :true,
+                                         icon: "fa-regular fa-pen-to-square")) %>
         <% end %>
       </div>
       <p class="card-text text-muted"><%= source.location %></p>
       <p class="card-text"><%= source.description %></p>
       <%= link_to(source.url, target: :_blank, class: "mt-auto") do %>
-        <%= render(ButtonComponent.new(text: t("source.visit_website"), color: :primary, outline: :true, extra_classes: "w-100", icon: "fa-solid fa-arrow-up-right-from-square")) %>
+        <%= render(ButtonComponent.new(text: t("source.visit_website"),
+                                       color: :primary,
+                                       outline: :true,
+                                       extra_classes: "w-100",
+                                       icon: "fa-solid fa-arrow-up-right-from-square")) %>
       <% end %>
     </div>
   </div>

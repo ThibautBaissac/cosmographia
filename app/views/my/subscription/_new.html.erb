@@ -7,12 +7,13 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <% @active_plan_versions.each do |pv| %>
         <div class="col">
-          <div class="card border rounded-4 <%= pv == @current_plan_version ? "border-success shadow-lg" : "border-secondary shadow-sm" %> overflow-hidden">
+          <div class="card border rounded-4 overflow-hidden <%= pv == @current_plan_version ? "border-success shadow-lg" : "border-secondary shadow-sm" %>">
             <% if pv == @current_plan_version %>
               <div class="position-absolute top-0 start-0 m-3">
                 <i class="fa-solid fa-circle-check fs-4 text-success"></i>
               </div>
             <% end %>
+
             <div class="card-body text-center d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fw-bold"><%= pv.plan.name %></h5>
@@ -22,11 +23,16 @@
                 </p>
                 <%= render("my/subscription/features_list", pv:) %>
               </div>
+
               <div>
                 <% if pv == @current_plan_version %>
-                  <button type="button" class="btn btn-primary w-100 mt-3 rounded-3" disabled><%= t("subscription.current_subscription") %></button>
+                  <button type="button" class="btn btn-primary w-100 mt-3 rounded-3" disabled>
+                    <%= t("subscription.current_subscription") %>
+                  </button>
                 <% else %>
-                  <%= form_with(url: checkout_my_subscription_path(locale), method: :post, data: {turbo: false}) do |form| %>
+                  <%= form_with(url: checkout_my_subscription_path(locale),
+                                method: :post,
+                                data: {turbo: false}) do |form| %>
                     <%= hidden_field_tag(:plan_version_id, pv.id) %>
                     <%= hidden_field_tag(:stripe_price_id, pv.stripe_price_id) %>
                     <%= submit_tag(t("subscription.subscribe"), class: "btn btn-primary w-100 mt-3 rounded-3") %>

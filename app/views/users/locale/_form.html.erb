@@ -1,11 +1,20 @@
-<%= form_with(url: update_user_locale_path(locale), method: :patch, data: {turbo: "false"}, html: {id: "locale-form"}) do |form| %>
+<%= form_with(url: update_user_locale_path(locale),
+              method: :patch,
+              data: {turbo: "false"},
+              html: {id: "locale-form"}) do |form| %>
   <fieldset>
     <legend class="visually-hidden">Choose language</legend>
     <div class="d-flex align-items-center justify-content-around">
       <% I18n.available_locales.each do |locale| %>
         <div class="w-30">
-          <%= form.radio_button(:new_locale, locale, id: locale, class: "visually-hidden", checked: locale == I18n.locale, onchange: "this.form.submit()") %>
-          <%= form.label(:new_locale, for: locale, class: "btn btn-#{locale == I18n.locale ? "primary" : "outline-secondary"} rounded-4 px-4 gap-2 shadow-sm") do %>
+          <%= form.radio_button(:new_locale,
+                                locale, id: locale,
+                                class: "visually-hidden",
+                                checked: locale == I18n.locale,
+                                onchange: "this.form.submit()") %>
+          <%= form.label(:new_locale,
+                         for: locale,
+                         class: "btn btn-#{locale == I18n.locale ? "primary" : "outline-secondary"} rounded-4 px-4 gap-2 shadow-sm") do %>
             <%= t("locale.#{locale}") %>
             <%= render("users/locale/flags/#{locale}") %>
           <% end %>

@@ -3,7 +3,11 @@
     <!-- Logo and Copyright -->
     <div class="col-md-4 d-flex align-items-center">
       <%= link_to(root_path(locale), class: "mb-3 me-2 mb-md-0 text-light text-decoration-none lh-1") do %>
-        <%= image_tag("logo_inverted.png", alt: "Cosmographia logo", width: "40", height: "40", class: "d-inline-block align-text-top") %>
+        <%= image_tag("logo_inverted.png",
+                      alt: "Cosmographia logo",
+                      width: "40",
+                      height: "40",
+                      class: "d-inline-block align-text-top") %>
       <% end %>
       <span class="mb-3 mb-md-0 ms-2">© <%= Date.current.year %> Cosmographia</span>
     </div>
@@ -13,13 +17,21 @@
       <% if user_signed_in? %>
         <li>
           <%= link_to("#offcanvaFeedback", data: {bs_toggle: "offcanvas"}, role: "button", aria: {controls: "offcanvaFeedback"}) do %>
-            <%= render(ButtonComponent.new(text: t("feedbacks.feedback"), color: :light, size: :sm, outline: :true, rounded: 3)) %>
+            <%= render(ButtonComponent.new(text: t("feedbacks.feedback"),
+                                           color: :light,
+                                           size: :sm,
+                                           outline: :true,
+                                           rounded: 3)) %>
           <% end %>
         </li>
       <% end %>
       <li>
         <%= link_to(Constants::Links::GITHUB_REPO, target: :_blank) do %>
-          <%= render(ButtonComponent.new(text: "GitHub", color: :light, size: :sm, outline: :true, rounded: 3)) %>
+          <%= render(ButtonComponent.new(text: "GitHub",
+                                         color: :light,
+                                         size: :sm,
+                                         outline: :true,
+                                         rounded: 3)) %>
         <% end %>
       </li>
     </ul>

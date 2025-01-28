@@ -4,6 +4,7 @@
       <i class="fa-solid fa-users-rectangle"></i>
       <%= t("challenge.participant_list", count: challenge.users&.count) %>
     </h5>
+
     <div class="card-body overflow-scroll" style="min-height: 100px; max-height: 250px;">
       <ul class="list-group list-group-flush">
         <% challenge.users.each do |user| %>
@@ -12,5 +13,6 @@
           </li>
         <% end %>
       </ul>
+    </div>
   </div>
 </div>

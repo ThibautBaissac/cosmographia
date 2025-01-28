@@ -1,7 +1,14 @@
 <% if user_signed_in? %>
-  <%= form_with(url: visualizations_path(locale), method: :get, local: false, class: "d-flex w-100 w-lg-auto") do |form| %>
+  <%= form_with(url: visualizations_path(locale),
+                method: :get,
+                local: false,
+                class: "d-flex w-100 w-lg-auto") do |form| %>
     <div class="input-group">
-      <%= form.text_field(:query, value: @query, placeholder: t("common.search"), class: "form-control rounded-start-pill", aria: {label: t("common.search")}) %>
+      <%= form.text_field(:query,
+                          value: @query,
+                          placeholder: t("common.search"),
+                          class: "form-control rounded-start-pill",
+                          aria: {label: t("common.search")}) %>
       <button class="btn btn-outline-success rounded-end-pill" type="submit">
         <i class="fa-solid fa-magnifying-glass"></i>
         <span class="visually-hidden"><%= t("common.search") %></span>

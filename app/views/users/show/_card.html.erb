@@ -5,13 +5,19 @@
       <p class="card-text text-muted"><%= user.bio %></p>
 
       <!-- Social Links Section -->
-      <h5 class="card-title text-primary fw-bold"><%= t("activerecord.attributes.user.social_links") %></h5>
+      <h5 class="card-title text-primary fw-bold">
+        <%= t("activerecord.attributes.user.social_links") %>
+      </h5>
       <% if user.social_links.present? %>
         <ul class="list-inline mt-2">
           <li class="list-inline-item">
             <% if user.personal_website.present? %>
               <%= link_to(user.personal_website, target: :_blank) do %>
-                <%= render(ButtonComponent.new(text: t("activerecord.attributes.user.personal_website"), color: :secondary, size: :sm, outline: :true, rounded: :pill)) %>
+                <%= render(ButtonComponent.new(text: t("activerecord.attributes.user.personal_website"),
+                                               color: :secondary,
+                                               size: :sm,
+                                               outline: :true,
+                                               rounded: :pill)) %>
               <% end %>
             <% end %>
           </li>
@@ -19,7 +25,12 @@
             <% unless link.blank? %>
               <li class="list-inline-item">
                 <%= link_to(link, target: :_blank) do %>
-                  <%= render(ButtonComponent.new(text: platform.capitalize, color: :secondary, size: :sm, outline: :true, rounded: :pill, icon: "fa-brands fa-#{platform}")) %>
+                  <%= render(ButtonComponent.new(text: platform.capitalize,
+                                                 color: :secondary,
+                                                 size: :sm,
+                                                 outline: :true,
+                                                 rounded: :pill,
+                                                 icon: "fa-brands fa-#{platform}")) %>
                 <% end %>
               </li>
             <% end %>

@@ -12,11 +12,7 @@
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-3" data-software-filter-target="softwareList">
     <%= form.fields_for(:user_softwares) do |us_form| %>
       <% software = us_form.object.software %>
-      <div
-        class="col list-item"
-        data-list-filter-target="listItem"
-        data-list-filter-name="<%= software.name.downcase %>"
-      >
+      <div class="col list-item" data-list-filter-target="listItem" data-list-filter-name="<%= software.name.downcase %>">
         <div class="card shadow-sm rounded-4">
           <div class="card-title p-3 border-bottom">
             <div class="form-check form-switch">

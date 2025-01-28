@@ -8,14 +8,18 @@
     <%= form.label(:subject, class: "form-label fw-semibold") %>
     <%= form.select(:subject,
       Feedback.subject_keys.map { |key| [ t("feedbacks.subjects.#{key}"), key.to_s.upcase ] },
-      {include_blank: t("feedbacks.form.subject_placeholder")},
-      {required: true, class: "form-select rounded-pill shadow-sm"}) %>
+                                            {include_blank: t("feedbacks.form.subject_placeholder")},
+                                            {required: true, class: "form-select rounded-pill shadow-sm"}) %>
   </div>
 
   <!-- Message Field -->
   <div class="mb-3">
     <%= form.label(:message, class: "form-label fw-semibold") %>
-    <%= form.text_area(:message, class: "form-control rounded-4 shadow-sm", rows: 5, required: true, placeholder: t("feedbacks.form.message_placeholder")) %>
+    <%= form.text_area(:message,
+                       class: "form-control rounded-4 shadow-sm",
+                       rows: 5,
+                       required: true,
+                       placeholder: t("feedbacks.form.message_placeholder")) %>
   </div>
 
   <!-- Submit Button -->

@@ -10,6 +10,7 @@
           <h6 class="text-secondary fw-semibold">
             <%= user_software.software.name %>
           </h6>
+
           <div class="text-center mt-3">
             <%= render(StaticTagComponent.new(color: :success)) do %>
               <%= t("softwares.expertises.#{user_software.expertise.downcase}") %>
