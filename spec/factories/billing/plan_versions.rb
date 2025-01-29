@@ -16,5 +16,13 @@ FactoryBot.define do
     trait :inactive do
       active { false }
     end
+
+    trait :free do
+      price_cents { 0 }
+      monthly_visualization_limit { 5 }
+      monthly_challenge_limit { 1 }
+      stripe_price_id { "price_free" }
+      active { true }
+    end
   end
 end

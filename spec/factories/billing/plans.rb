@@ -7,5 +7,10 @@ FactoryBot.define do
     trait :active do
       active { true }
     end
+
+    trait :free do
+      active
+      name { "Free" }
+    end
   end
 end
