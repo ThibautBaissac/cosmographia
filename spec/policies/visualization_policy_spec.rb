@@ -10,7 +10,7 @@ RSpec.describe(VisualizationPolicy) do
   end
 
   context 'with not guest users with remaining visualizations' do
-    let(:user) { create(:user, :with_remaining_visualizations) }
+    let(:user) { create(:user, :with_free_subscription) }
     it { is_expected.to(permit_only_actions(%i[index new create show])) }
   end
 
