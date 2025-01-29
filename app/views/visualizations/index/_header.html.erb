@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="visualizations_header">
   <%= render(HeaderComponent.new(title: t("visualization.title"))) do %>
     <% if !current_user.has_remaining_visualizations? %>
       <%= link_to(my_subscription_path(locale)) do %>
@@ -7,7 +7,7 @@
                                        icon: "fa-solid fa-bag-shopping")) %>
       <% end %>
     <% elsif policy(Visualization).new? %>
-      <%= link_to(new_visualization_path(locale)) do %>
+      <%= link_to(new_visualization_path(locale), id: "create_visualization_title") do %>
         <%= render(ButtonComponent.new(text: t("visualizations.form.create_title"),
                                        outline: :true,
                                        icon: "fa-solid fa-circle-plus")) %>
