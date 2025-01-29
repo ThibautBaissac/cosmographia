@@ -1,5 +1,34 @@
-<h3>Extra confirmation is needed to process your payment</h3>
-<p>Your <%= Pay.application_name %> subscription requires confirmation to process your payment to continue access.</p>
-<p><%= link_to "Confirm your payment", pay.payment_url(params[:payment_intent_id]) %></p>
-<p>If you have any questions, please hit reply and let us know.</p>
-<p>— The <%= Pay.application_name %> Team</p>
+<div style="font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px; margin: 0 auto;">
+    <tr>
+      <td style="padding: 20px; background-color: #ffffff; border-radius: 8px;">
+        <!-- Header Section -->
+        <h3 style="color: #194a7e; font-size: 22px; margin-top: 0;">
+          Extra confirmation is needed to process your payment
+        </h3>
+
+        <!-- Body Section -->
+        <p style="font-size: 16px; line-height: 1.5; margin: 10px 0;">
+          Your <strong><%= Pay.application_name %></strong> subscription requires confirmation to process your payment to continue access.
+        </p>
+
+        <!-- Call-to-Action Button -->
+        <p style="text-align: center; margin: 20px 0;">
+          <a href="<%= pay.payment_url(params[:payment_intent_id]) %>" style="display: inline-block; padding: 12px 24px; background-color: #194a7e; color: #ffffff; text-decoration: none; font-size: 16px; border-radius: 5px;">
+            Confirm your payment
+          </a>
+        </p>
+
+        <!-- Additional Information -->
+        <p style="font-size: 16px; line-height: 1.5; margin: 10px 0;">
+          If you have any questions, please hit reply and let us know.
+        </p>
+
+        <!-- Signature -->
+        <p style="font-size: 16px; line-height: 1.5; margin: 20px 0 0;">
+          — The <strong><%= Pay.application_name %></strong> Team
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>

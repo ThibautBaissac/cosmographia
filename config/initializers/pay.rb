@@ -1,6 +1,6 @@
 Pay.setup do |config|
   # For use in the receipt/refund/renewal mailers
-  config.business_name = "Thibaut Baissac - Cosmographia"
+  config.business_name = "Cosmographia"
   config.business_address = "Paris - France"
   config.application_name = "Cosmographia"
   config.support_email = "Cosmographia <cosmographia.app@gmail.com>"

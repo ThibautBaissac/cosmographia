@@ -1,21 +1,51 @@
-We received payment for your <%= link_to Pay.application_name, root_url %> subscription. Thanks for your business!<br/>
-<br/>
-Questions? Please reply to this email.<br/>
-<br/>
-------------------------------------<br/>
-RECEIPT - SUBSCRIPTION<br/>
-<br/>
+<div style="font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px; margin: 0 auto;">
+    <tr>
+      <td style="padding: 20px; background-color: #ffffff; border-radius: 8px;">
+        <!-- Header Section -->
+        <h2 style="color: #194a7e; font-size: 24px; margin-top: 0;">
+          We received payment for your <a href="<%= root_url %>" style="color: #194a7e; text-decoration: none;"><%= Pay.application_name %></a> subscription
+        </h2>
+        <p style="font-size: 16px; line-height: 1.5; margin: 10px 0;">
+          Thanks for your business!
+        </p>
+        <p style="font-size: 16px; line-height: 1.5; margin: 10px 0;">
+          Questions? Please reply to this email.
+        </p>
 
-<%= Pay.application_name %><br/>
-Amount: <%= params[:pay_charge].amount_with_currency %><br/>
-<br/>
-Charged to: <%= params[:pay_charge].charged_to %><br/>
-Transaction ID: <%= params[:pay_charge].id %><br/>
-Date: <%= l params[:pay_charge].created_at %><br/>
-<% if params[:pay_charge].customer.owner.try(:extra_billing_info?) %>
-<%= params[:pay_charge].customer.owner.extra_billing_info %><br/>
-<% end %>
-<br/>
-<br/>
-<%= simple_format [ Pay.business_name, Pay.business_address ].join("\n") %>
-------------------------------------<br/>
+        <!-- Receipt Section -->
+        <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+        <h3 style="color: #194a7e; font-size: 20px; margin-bottom: 10px;">
+          RECEIPT - SUBSCRIPTION
+        </h3>
+
+        <p style="font-size: 16px; line-height: 1.5; margin: 5px 0;">
+          <strong><%= Pay.application_name %></strong>
+        </p>
+        <p style="font-size: 16px; line-height: 1.5; margin: 5px 0;">
+          <strong>Amount:</strong> <%= params[:pay_charge].amount_with_currency %>
+        </p>
+        <p style="font-size: 16px; line-height: 1.5; margin: 5px 0;">
+          <strong>Charged to:</strong> <%= params[:pay_charge].charged_to %>
+        </p>
+        <p style="font-size: 16px; line-height: 1.5; margin: 5px 0;">
+          <strong>Transaction ID:</strong> <%= params[:pay_charge].id %>
+        </p>
+        <p style="font-size: 16px; line-height: 1.5; margin: 5px 0;">
+          <strong>Date:</strong> <%= l params[:pay_charge].created_at %>
+        </p>
+        <% if params[:pay_charge].customer.owner.try(:extra_billing_info?) %>
+          <p style="font-size: 16px; line-height: 1.5; margin: 5px 0;">
+            <%= params[:pay_charge].customer.owner.extra_billing_info %>
+          </p>
+        <% end %>
+
+        <!-- Business Information -->
+        <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+        <p style="font-size: 14px; line-height: 1.5; color: #777; text-align: center;">
+          <%= simple_format [ Pay.business_name, Pay.business_address ].join("<br/>") %>
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
