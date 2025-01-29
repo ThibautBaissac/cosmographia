@@ -1,7 +1,10 @@
 <%= turbo_frame_tag("visualization_comment_form") do %>
   <% url = comment.persisted? ? visualization_comment_path(comment.visualization, comment) : visualization_comments_path(comment.visualization) %>
 
-  <%= form_with(model: comment, url:, class: "mb-4") do |form| %>
+  <%= form_with(model: comment,
+                url:,
+                id: "new_comment_form",
+                class: "mb-4") do |form| %>
     <div data-controller="mention"
         data-mention-url-value="<%= mentions_path(locale) %>">
       <%= form.label(t("visualization.comments.write_comment"), class: "fs-5 text-light") %>
