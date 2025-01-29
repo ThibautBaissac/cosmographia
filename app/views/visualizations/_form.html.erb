@@ -1,6 +1,7 @@
   <%= form_with(model: visualization,
                 local: true,
                 class: "container needs-validation",
+                id: "visualization_form",
                 data: {controller: "visualization-category-switch"}) do |form| %>
   <%= hidden_field_tag :challenge_id, @challenge.id if @challenge.present? %>
   <div class="row mt-5">
