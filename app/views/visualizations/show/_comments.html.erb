@@ -11,30 +11,31 @@
     <% end %>
 
     <% if comments.any? %>
-      <!-- Render the first 5 comments -->
-      <%= turbo_frame_tag("visualization_#{visualization.id}_comments") do %>
-        <%= render(partial: "visualizations/comments/card",
-                   collection: comments.limit(5).includes(:user),
-                   as: :comment) %>
-      <% end %>
-
-      <% if comments.count > 5 %>
-        <!-- Show More button -->
-        <a class="btn btn-outline-light"
-           data-bs-toggle="collapse"
-           href="#collapseComments"
-           role="button"
-           aria-expanded="false"
-           aria-controls="collapseComments">
-          <%= t("visualization.comments.show_more") %>
-        </a>
-        <!-- Collapsed section with the remaining comments -->
-        <div class="collapse" id="collapseComments">
+      <div id="comments">
+        <!-- Render the first 5 comments -->
+        <%= turbo_frame_tag("visualization_#{visualization.id}_comments") do %>
           <%= render(partial: "visualizations/comments/card",
-                     collection: comments.offset(5).includes(:user),
+                     collection: comments.limit(5).includes(:user),
                      as: :comment) %>
-        </div>
-      <% end %>
+        <% end %>
+        <% if comments.count > 5 %>
+          <!-- Show More button -->
+          <a class="btn btn-outline-light"
+             data-bs-toggle="collapse"
+             href="#collapseComments"
+             role="button"
+             aria-expanded="false"
+             aria-controls="collapseComments">
+            <%= t("visualization.comments.show_more") %>
+          </a>
+          <!-- Collapsed section with the remaining comments -->
+          <div class="collapse" id="collapseComments">
+            <%= render(partial: "visualizations/comments/card",
+                       collection: comments.offset(5).includes(:user),
+                       as: :comment) %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>

@@ -14,7 +14,7 @@ RSpec.feature("Create Visualization", type: :feature) do
 
   context "With remaining visualizations" do
     scenario "User creates new visualization successfully" do
-      visit(visualizations_url(locale: user.locale))
+      visit(visualizations_path(locale: user.locale))
       expect(page).to(have_selector("#visualizations_header"))
 
       click_on("create_visualization_title")
@@ -25,6 +25,9 @@ RSpec.feature("Create Visualization", type: :feature) do
 
       fill_in_comment_form
       expect(page).to(have_content(comment_content))
+
+      # edit_my_comment
+      # expect(page).to(have_content("EditedComment"))
     end
   end
 
@@ -47,4 +50,13 @@ RSpec.feature("Create Visualization", type: :feature) do
       click_on("commit")
     end
   end
+
+  # def edit_my_comment
+  #   within("#comments") do
+  #     href = "/#{user.locale}/visualizations/#{Visualization.last.id}/comments/#{Visualization.last.comments.last.id}/edit"
+  #     find(:xpath, "//a[@href='#{href}']").click
+  #     fill_in("visualization_comment[content]", with: "EditedComment")
+  #     click_on("commit")
+  #   end
+  # end
 end
