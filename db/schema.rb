@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_23_121445) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_01_133923) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+  enable_extension "postgis"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -441,6 +442,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_23_121445) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "challenge_id"
+    t.geography "bounding_box", limit: {srid: 4326, type: "st_polygon", geographic: true}
     t.index ["category"], name: "index_visualizations_on_category"
     t.index ["challenge_id"], name: "index_visualizations_on_challenge_id"
     t.index ["creation_date"], name: "index_visualizations_on_creation_date"

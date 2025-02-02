@@ -1,6 +1,7 @@
 puts("---- Creating visualizations...")
 image_base_path = Rails.root.join('db/seeds/images')
 file_count = Dir[File.join(image_base_path, '*')].count
+factory = RGeo::Geographic.spherical_factory(srid: 4326)
 
 (0...@nb_visualizations).each do |i|
   creation_date = Faker::Date.between(from: 1.year.ago, to: Date.yesterday)
@@ -26,6 +27,11 @@ file_count = Dir[File.join(image_base_path, '*')].count
     filename: "sample_#{random_image_index}.#{extension}",
     content_type: "image/#{extension}"
   )
+
+  if visualization.category == Visualization::Map
+    visualization.bounding_box = generate_bounding_box(factory)
+  end
+
   visualization.save!
 
   (0..rand(0..20)).each do
