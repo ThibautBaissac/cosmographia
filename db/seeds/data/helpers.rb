@@ -10,7 +10,7 @@ def generate_bounding_box(factory)
       factory.point(min_lon, max_lat),
       factory.point(max_lon, max_lat),
       factory.point(max_lon, min_lat),
-      factory.point(min_lon, min_lat)‡
+      factory.point(min_lon, min_lat)
     ])
   )
 
