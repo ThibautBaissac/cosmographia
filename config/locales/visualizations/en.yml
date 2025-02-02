@@ -67,5 +67,4 @@ en:
       national: National
       regional: Regional
     search:
-      query_placeholder: Search by title, description, sources, software name or software
-        category.
+      query_placeholder: Search by title, description, sources, or software

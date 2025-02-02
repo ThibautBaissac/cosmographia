@@ -53,6 +53,7 @@ en:
       user_software:
         expertise: Expertise level
       visualization:
+        bounding_box: Bounding box
         category: Category
         creation_date: Creation date
         description: Description

@@ -67,5 +67,4 @@ fr:
       national: Nationale
       regional: Régionale
     search:
-      query_placeholder: Rechercher par titre, description, sources, nom de logiciel
-        ou catégorie de logiciel.
+      query_placeholder: Rechercher par titre, description, sources ou logiciel

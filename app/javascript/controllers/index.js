@@ -13,14 +13,17 @@ application.register("dialog", DialogController)
 import ExpandImageController from "./expand_image_controller"
 application.register("expand-image", ExpandImageController)
 
+import ListFilterController from "./list_filter_controller"
+application.register("list-filter", ListFilterController)
+
+import LeafletController from "./leaflet_controller"
+application.register("leaflet", LeafletController)
+
 import MentionController from "./mention_controller"
 application.register("mention", MentionController)
 
 import PwaInstallController from "./pwa_install_controller"
 application.register("pwa-install", PwaInstallController)
-
-import ListFilterController from "./list_filter_controller"
-application.register("list-filter", ListFilterController)
 
 import ToastController from "./toast_controller"
 application.register("toast", ToastController)

@@ -14,6 +14,7 @@ class Visualizations::Filter
     filter_by_projection
     filter_by_software_names
     filter_by_software_categories
+    filter_by_bounding_box
 
     @visualizations
   end
@@ -74,6 +75,15 @@ class Visualizations::Filter
   def filter_by_software_categories
     if @params[:software_categories].present?
       @visualizations = @visualizations.joins(:softwares).where(softwares: {category: @params[:software_categories]})
+    end
+  end
+
+  def filter_by_bounding_box
+    if @params[:bounding_box].present?
+      bbox_geojson = JSON.parse(@params[:bounding_box])
+      factory = RGeo::Geographic.spherical_factory(srid: 4326)
+      bbox_geometry = RGeo::GeoJSON.decode(bbox_geojson, geo_factory: factory)
+      @visualizations = Visualization.where("ST_Intersects(bounding_box, ST_GeomFromText(?, 4326))", bbox_geometry&.as_text)
     end
   end
 end
