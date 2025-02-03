@@ -1,6 +1,6 @@
 <div class="container" id="visualizations_header">
-  <%= render(HeaderComponent.new(title: t("visualization.title"))) do %>
-    <% if !current_user.has_remaining_visualizations? %>
+  <%= render(HeaderComponent.new(title: t("visualizations.title"))) do %>
+    <% if current_user && !current_user&.has_remaining_visualizations? %>
       <%= link_to(my_subscription_path(locale)) do %>
         <%= render(ButtonComponent.new(text: t("subscription.change_subscription"),
                                        outline: :true,

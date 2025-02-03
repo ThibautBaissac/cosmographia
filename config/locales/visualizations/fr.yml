@@ -30,7 +30,6 @@ fr:
         update:
           success: Votre visualisation a été mise à jour avec succès.
     go_to: Voir la visualisation
-    title: Visualisation
   visualizations:
     category:
       data: Visualisation de données
@@ -68,3 +67,4 @@ fr:
       regional: Régionale
     search:
       query_placeholder: Rechercher par titre, description, sources ou logiciel
+    title: Visualisations

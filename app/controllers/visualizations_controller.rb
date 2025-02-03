@@ -1,9 +1,9 @@
 class VisualizationsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_visualization, only: [ :edit, :update ]
   before_action :set_challenge, only: [ :new, :create ]
 
   def index
-    authorize(Visualization)
     @query = params[:query]&.strip
     visualizations = Visualization.all
 
@@ -16,7 +16,6 @@ class VisualizationsController < ApplicationController
 
   def show
     @visualization = Visualization.find(params[:id])
-    set_authorize
     @visualizations = Visualization.order("RANDOM()")
                                    .includes(:user, :image_attachment)
                                    .limit(6)

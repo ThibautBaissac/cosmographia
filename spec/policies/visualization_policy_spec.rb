@@ -6,17 +6,17 @@ RSpec.describe(VisualizationPolicy) do
 
   context 'with superadmin' do
     let(:user) { build(:user, :superadmin) }
-    it { is_expected.to(permit_only_actions(%i[index new create show edit update])) }
+    it { is_expected.to(permit_only_actions(%i[new create edit update])) }
   end
 
   context 'with not guest users with remaining visualizations' do
     let(:user) { create(:user, :with_free_subscription) }
-    it { is_expected.to(permit_only_actions(%i[index new create show])) }
+    it { is_expected.to(permit_only_actions(%i[new create])) }
   end
 
   context 'with an author of a visualization' do
     let(:user) { build(:user, :superadmin) }
     let(:visualization) { build(:visualization, user: user) }
-    it { is_expected.to(permit_only_actions(%i[index new create show edit update])) }
+    it { is_expected.to(permit_only_actions(%i[new create edit update])) }
   end
 end
