@@ -5,14 +5,13 @@ class VisualizationsController < ApplicationController
   def index
     authorize(Visualization)
     @query = params[:query]&.strip
-    visualizations = Visualization.includes(:user, :softwares, :image_attachment)
-                                  .references(:softwares, :user)
+    visualizations = Visualization.all
 
     filter = Visualizations::Filter.new(visualizations:, params: visualization_filter_params)
     @non_empty_params_count = Filter::ParamList.new(params: visualization_filter_params).non_empty.size
     visualizations = filter.apply.order(created_at: :desc).distinct
 
-    @pagy, @visualizations = pagy(visualizations)
+    @pagy, @visualizations = pagy(visualizations.includes(:user, :image_attachment))
   end
 
   def show
@@ -37,6 +36,7 @@ class VisualizationsController < ApplicationController
     @visualization.challenge = @challenge if @challenge
     set_authorize
 
+    set_bounding_box
     if @visualization.save
       redirect_to(@visualization, notice: t("visualization.flash.actions.create.success"))
     else
@@ -46,10 +46,12 @@ class VisualizationsController < ApplicationController
 
   def edit
     set_authorize
+    @bounding_box = RGeo::GeoJSON.encode(@visualization.bounding_box).to_json
   end
 
   def update
     set_authorize
+    set_bounding_box
     if @visualization.update(visualization_params)
       redirect_to(@visualization, notice: t("visualization.flash.actions.update.success"))
     else
@@ -71,6 +73,17 @@ class VisualizationsController < ApplicationController
     authorize(@visualization)
   end
 
+  def set_bounding_box
+    if params[:visualization][:bounding_box].present?
+      geojson = JSON.parse(params[:visualization][:bounding_box])
+      factory = RGeo::Geographic.spherical_factory(srid: 4326)
+      geometry = RGeo::GeoJSON.decode(geojson, geo_factory: factory)
+      @visualization.bounding_box = geometry
+    else
+      @visualization.bounding_box = nil
+    end
+  end
+
   def visualization_params
     params.require(:visualization)
           .permit(:category,
@@ -88,6 +101,7 @@ class VisualizationsController < ApplicationController
   def visualization_filter_params
     params.permit(
       :query,
+      :bounding_box,
       :creation_date_start,
       :creation_date_end,
       :scale_min,

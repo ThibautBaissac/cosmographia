@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem "activerecord-postgis-adapter", github: "StoneGod/activerecord-postgis-adapter", branch: "rails-8"
 gem "aws-sdk-s3", "~> 1.178", require: false
 gem "bootsnap", require: false
 gem "chartkick"
@@ -21,6 +22,7 @@ gem "propshaft"
 gem "puma", ">= 5.0"
 gem "pundit", "~> 2.4"
 gem "rails", "~> 8.0.0"
+gem "rgeo-geojson"
 gem "stimulus-rails"
 gem "thruster", require: false
 gem "turbo-rails"

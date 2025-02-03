@@ -13,7 +13,7 @@
 # gem "pg"
 #
 default: &default
-  adapter: postgresql
+  adapter: postgis
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -85,7 +85,7 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    url: <%= ENV["DATABASE_URL"] %>
+    url: <%= ENV.fetch('DATABASE_URL', '').sub(/^postgres/, "postgis") %>
     database: cosmographia-db
     username: postgres
     password: <%= ENV["DATABASE_PASSWORD"] %>
