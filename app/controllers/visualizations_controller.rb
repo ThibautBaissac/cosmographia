@@ -9,7 +9,7 @@ class VisualizationsController < ApplicationController
 
     filter = Visualizations::Filter.new(visualizations:, params: visualization_filter_params)
     @non_empty_params_count = Filter::ParamList.new(params: visualization_filter_params).non_empty.size
-    visualizations = filter.apply.order(created_at: :desc).distinct
+    visualizations = filter.call.order(created_at: :desc).distinct
 
     @pagy, @visualizations = pagy(visualizations.includes(:user, :image_attachment))
   end
