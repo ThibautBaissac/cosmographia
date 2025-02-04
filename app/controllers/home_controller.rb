@@ -33,12 +33,12 @@ class HomeController < ApplicationController
   end
 
   def set_contributions
-    contribution_service = User::ContributionsService.new(current_user)
+    contribution_service = UserContributions::ContributionsService.new(current_user, range: 1.year.ago..Time.current)
     begin
       @contributions_by_day = contribution_service.contributions_by_day
       @weeks = contribution_service.weeks
     rescue StandardError => e
-      Rails.logger.error("Cache fetch error: #{e.message}")
+      Rails.logger.error("❌ Cache fetch error: #{e.message}")
       @contributions_by_day = {}
       @weeks = []
     end

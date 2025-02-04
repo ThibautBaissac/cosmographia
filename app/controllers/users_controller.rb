@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   end
 
   def set_contributions
-    contribution_service = User::ContributionsService.new(@user)
+    contribution_service = UserContributions::ContributionsService.new(current_user, range: 1.year.ago..Time.current)
     @contributions_by_day = contribution_service.contributions_by_day
     @weeks = contribution_service.weeks
   end
