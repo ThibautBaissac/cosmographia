@@ -2,7 +2,7 @@ module Visualization::Scopes
   extend ActiveSupport::Concern
 
   included do
-    scope :search, ->(query) {
+    scope :search, ->(query) do
       return all if query.blank?
 
       sanitized_query = "%#{sanitize_sql_like(query)}%"
@@ -18,27 +18,29 @@ module Visualization::Scopes
         q: sanitized_query
         )
         .distinct
-      }
+    end
 
-    scope :creation_date_between, ->(start_date, end_date) {
+      scope :random, -> { order(Arel.sql("RANDOM()")) }
+
+    scope :creation_date_between, ->(start_date, end_date) do
       where(creation_date: start_date..end_date)
-    }
+    end
 
-    scope :scale_between, ->(min_scale, max_scale) {
+    scope :scale_between, ->(min_scale, max_scale) do
       where(scale: min_scale..max_scale)
-    }
+    end
 
-    scope :with_projections, ->(projections) {
+    scope :with_projections, ->(projections) do
       return all if projections.blank? || projections.include?("all")
       where(projection: projections)
-    }
+    end
 
-    scope :with_software_names, ->(names) {
+    scope :with_software_names, ->(names) do
       joins(:softwares).where(softwares: {name: names}) if names.present?
-    }
+    end
 
-    scope :with_software_categories, ->(categories) {
+    scope :with_software_categories, ->(categories) do
       joins(:softwares).where(softwares: {category: categories}) if categories.present?
-    }
+    end
   end
 end
