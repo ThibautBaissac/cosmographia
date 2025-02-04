@@ -11,7 +11,7 @@ class HomeController < ApplicationController
       set_charts
     else
       visualization_ids = Rails.cache.fetch("homepage/signed_out/visualizations", expires_in: 12.hours) do
-        Visualizations::DailyRandom.new(visualization_count: 6).call
+        Visualizations::DailyRandomSelector.new.call
       end
       @visualizations = Visualization.where(id: visualization_ids)
                                      .includes(:image_attachment)
