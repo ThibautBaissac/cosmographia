@@ -1,45 +1,38 @@
 class Visualizations::CommentsController < ApplicationController
   before_action :set_visualization
   before_action :set_comment, only: %i[edit update destroy]
+  before_action :authorize_existing_comment, only: %i[edit update destroy]
 
   def create
-    @comment = @visualization.comments.new(comment_params)
-    set_authorize
+    @comment = build_comment
+    authorize(@comment)
 
-    respond_to do |format|
-      if @comment.save
-        @toast_message = t("visualization.comments.flash.actions.create.success")
-        format.turbo_stream
-        format.html { redirect_to(@visualization) }
-      else
-        format.html { redirect_to(@visualization,
-                                  alert: t("visualization.comments.flash.actions.create.failure")) }
-      end
+    if @comment.save
+      @toast_message = t("visualization.comments.flash.actions.create.success")
+      respond_success
+    else
+      redirect_to(@visualization,
+                  alert: t("visualization.comments.flash.actions.create.failure"))
     end
   end
 
   def edit
-    set_authorize
   end
 
   def update
-    set_authorize
-    respond_to do |format|
-      if @comment.update(comment_params)
-        @toast_message = t("visualization.comments.flash.actions.update.success")
-        format.turbo_stream
-        format.html { redirect_to(@visualization) }
-      else
-        format.html { redirect_to(@visualization,
-                      alert: t("visualization.comments.flash.actions.update.failure")) }
-      end
+    if @comment.update(comment_params)
+      @toast_message = t("visualization.comments.flash.actions.update.success")
+      respond_success
+    else
+      redirect_to(@visualization,
+                  alert: t("visualization.comments.flash.actions.update.failure"))
     end
   end
 
   def destroy
-    set_authorize
-    @toast_message = t("visualization.comments.flash.actions.destroy.success")
     @comment.destroy
+    @toast_message = t("visualization.comments.flash.actions.destroy.success")
+    respond_success
   end
 
   private
@@ -52,13 +45,24 @@ class Visualizations::CommentsController < ApplicationController
     @comment = @visualization.comments.find(params[:id])
   end
 
-  def set_authorize
+  def authorize_existing_comment
     authorize(@comment)
+  end
+
+  def build_comment
+    @visualization.comments.new(comment_params)
   end
 
   def comment_params
     params.require(:visualization_comment)
           .permit(:content)
           .merge(user: current_user)
+  end
+
+  def respond_success
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to @visualization }
+    end
   end
 end
