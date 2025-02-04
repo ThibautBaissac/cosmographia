@@ -1,19 +1,20 @@
 class FeedbacksController < ApplicationController
+  before_action :authorize_resource, only: [ :create ]
+
   def create
-    set_authorize
-    @feedback = current_user.feedbacks.new(feedback_params)
-    if @feedback.save
-      redirect_to(root_path(locale),
-                  notice: t("feedbacks.flash.actions.create.success"))
+    result = Feedback::CreationService.new(current_user, feedback_params).call
+
+    if result.success?
+      flash[:notice] = t("feedbacks.flash.actions.create.success")
     else
-      redirect_to(root_path(locale),
-                  alert: t("feedbacks.flash.actions.create.failure"))
+      flash[:alert] = t("feedbacks.flash.actions.create.failure")
     end
+    redirect_to(root_path(locale))
   end
 
   private
 
-  def set_authorize
+  def authorize_resource
     authorize(Feedback, :create?)
   end
 
