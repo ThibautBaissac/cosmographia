@@ -1,12 +1,9 @@
 class MentionsController < ApplicationController
   def index
-    if params[:q].present?
-      query = params[:q].to_s.strip.downcase
-      @users = User.where("LOWER(slug) LIKE ?", "#{query}%").limit(10)
-    else
-      @users = User.none
-    end
+    @users = User.by_slug_prefix(params[:q])
+                 .limit(10)
+                 .select(:id, :slug)
 
-    render(json: @users.select(:id, :slug))
+    render json: @users
   end
 end
