@@ -13,7 +13,7 @@ class Challenges::UserParticipationController < ApplicationController
 
 
   def destroy
-    service = Challenge::LeaveService.new(current_user, @challenge)
+    service = Challenge::LeaveService.new(user: current_user, challenge: @challenge)
     service.call
     redirect_to(@challenge, alert: t("challenge.user_participation.flash.actions.destroy.success"))
   end
