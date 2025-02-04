@@ -1,65 +1,61 @@
 class ChallengesController < ApplicationController
-  before_action :set_challenge, only: [ :edit, :update, :destroy ]
+  before_action :build_challenge, only: [:new, :create]
+  before_action :set_challenge, only: [:edit, :update, :destroy]
+  before_action :authorize_resource, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    challenges = Challenge.all.order(start_date: :desc)
+    challenges = Challenge.order(start_date: :desc)
     @pagy, @challenges = pagy(challenges)
   end
 
   def new
-    @challenge = Challenge.new
-    set_authorize
   end
 
-
   def create
-    @challenge = Challenge.new(challenge_params)
-    set_authorize
     if @challenge.save
       redirect_to(participations_challenge_path(locale, @challenge),
                   notice: t("challenge.flash.actions.create.success"))
     else
-      render(:new)
+      render :new
     end
   end
 
   def edit
-    set_authorize
   end
 
   def update
-    set_authorize
     if @challenge.update(challenge_params)
       redirect_to(participations_challenge_path(locale, @challenge),
                   notice: t("challenge.flash.actions.update.success"))
     else
-      render(:edit)
+      render :edit
     end
   end
 
   def destroy
-    set_authorize
     @challenge.destroy
-    redirect_to(challenges_url, notice: t("challenge.flash.actions.destroy.success"))
+    redirect_to(challenges_path(locale), notice: t("challenge.flash.actions.destroy.success"))
   end
 
   private
+
+  def build_challenge
+    @challenge = if action_name == "create"
+                   Challenge.new(challenge_params)
+                 else
+                   Challenge.new
+                 end
+  end
 
   def set_challenge
     @challenge = Challenge.find(params[:id])
   end
 
-  def set_authorize
+  def authorize_resource
     authorize(@challenge)
   end
 
   def challenge_params
-    params.require(:challenge)
-    .permit(:start_date,
-            :end_date,
-            :title,
-            :description,
-            :difficulty,
-            :category)
+    params.fetch(:challenge, {}).permit(:start_date, :end_date, :title, :description, :difficulty, :category)
   end
 end
