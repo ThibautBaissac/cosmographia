@@ -1,11 +1,12 @@
 class Users::Filter
-  def initialize(users:, params:)
-    @users = users
-    @params = params
+  def initialize(scope: User.all, user_query: nil)
+    @scope = scope
+    @user_query = user_query
   end
 
   def apply
-    query = @params[:user_query]
-    query.present? ? @users.search(query) : User.none
+    return @scope.none unless @user_query.present?
+
+    @scope.search(@user_query)
   end
 end
