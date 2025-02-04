@@ -1,6 +1,18 @@
 import { Controller } from "@hotwired/stimulus"
-// import L from "leaflet"
-// import "leaflet-draw"
+
+const DRAW_OPTIONS = {
+  edit: {
+    featureGroup: null // to be set at runtime
+  },
+  draw: {
+    polygon: false,
+    rectangle: true,
+    polyline: false,
+    circle: false,
+    marker: false,
+    circlemarker: false
+  }
+}
 
 export default class extends Controller {
   static targets = ["boundingBox"]
@@ -9,36 +21,16 @@ export default class extends Controller {
   }
 
   connect() {
-    // 1. Initialize the map
     this.initMap()
-
-    // 2. Add tile layer
-    this.addTileLayer()
-
-    // 3. Create a FeatureGroup to store drawn shapes
-    this.drawnItems = new L.FeatureGroup().addTo(this.map)
-
-    // 4. Add drawing controls
-    this.addDrawControls()
-
-    // 5. Set up event handlers for create/edit/delete
+    this.initTileLayer()
+    this.initDrawLayerAndControls()
     this.setupDrawEventHandlers()
-
-    // 6. Attempt to parse a bounding box from the Stimulus value
-    if (this.boundingBoxValue && this.boundingBoxValue !== "null") {
-      this.tryBoundingBox(this.boundingBoxValue)
-    }
-
-    // 7. Attempt to parse a bounding box from URL query param
-    const bboxParam = this.getQueryParam("bounding_box")
-    if (bboxParam) {
-      this.tryBoundingBox(bboxParam)
-    }
+    this.initializeBoundingBox()
   }
 
-  // -------------------------
-  // Helpers
-  // -------------------------
+  // -----------------------
+  // Initialization Methods
+  // -----------------------
   initMap() {
     this.map = L.map(this.element, {
       center: [20, 0],
@@ -47,84 +39,122 @@ export default class extends Controller {
     })
   }
 
-  addTileLayer() {
+  initTileLayer() {
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "© OpenStreetMap contributors"
     }).addTo(this.map)
   }
 
-  addDrawControls() {
-    const drawControl = new L.Control.Draw({
-      edit: {
-        featureGroup: this.drawnItems
-      },
-      draw: {
-        polygon: false,
-        rectangle: true,
-        polyline: false,
-        circle: false,
-        marker: false,
-        circlemarker: false
-      }
-    })
+  initDrawLayerAndControls() {
+    // Create a FeatureGroup to store drawn shapes and add to the map
+    this.drawnItems = new L.FeatureGroup().addTo(this.map)
+
+    // Update draw options to use the created drawnItems FeatureGroup
+    DRAW_OPTIONS.edit.featureGroup = this.drawnItems
+
+    // Add the drawing controls
+    const drawControl = new L.Control.Draw(DRAW_OPTIONS)
     this.map.addControl(drawControl)
   }
 
+  /**
+   * Check for bounding box definitions from Stimulus value or URL param.
+   * If found, try to parse and display it.
+   */
+  initializeBoundingBox() {
+    const candidates = []
+
+    // Stimulus value takes precedence if provided
+    if (this.hasBoundingBoxValue && this.boundingBoxValue !== "null") {
+      candidates.push(this.boundingBoxValue)
+    }
+
+    // URL parameter as fallback/alternative
+    const bboxParam = new URLSearchParams(window.location.search).get("bounding_box")
+    if (bboxParam) {
+      candidates.push(bboxParam)
+    }
+
+    // Use the first valid candidate to set up the bounding box.
+    for (const rawGeoJson of candidates) {
+      if (this.tryBoundingBox(rawGeoJson)) break
+    }
+  }
+
+  // -----------------------
+  // Event Handlers
+  // -----------------------
   setupDrawEventHandlers() {
-    // When a new shape is created
     this.map.on(L.Draw.Event.CREATED, (event) => {
-      this.drawnItems.clearLayers() // Only one shape allowed
-      this.drawnItems.addLayer(event.layer)
-      this.updateHiddenField(event.layer)
+      this.drawnItems.clearLayers() // Only one shape allowed at a time
+      const layer = event.layer
+      this.drawnItems.addLayer(layer)
+      this.updateHiddenField(layer)
     })
 
-    // When shapes are edited
     this.map.on(L.Draw.Event.EDITED, (event) => {
       event.layers.eachLayer((layer) => {
         this.updateHiddenField(layer)
       })
     })
 
-    // When shapes are deleted
     this.map.on(L.Draw.Event.DELETED, () => {
       this.clearHiddenField()
     })
   }
 
-  updateHiddenField(layer) {
-    const geojson = layer.toGeoJSON().geometry
-    this.boundingBoxTarget.value = JSON.stringify(geojson)
-  }
-
-  clearHiddenField() {
-    this.boundingBoxTarget.value = ""
-  }
-
-  getQueryParam(param) {
-    return new URLSearchParams(window.location.search).get(param)
-  }
-
+  // -----------------------
+  // Bounding Box Methods
+  // -----------------------
+  /**
+   * Attempts to parse and display the bounding box.
+   * Returns true if successful.
+   */
   tryBoundingBox(rawGeoJson) {
     const bounds = this.parseGeoJsonBoundingBox(rawGeoJson)
-    if (!bounds) return
+    if (!bounds) return false
 
+    // Draw rectangle from bounds and update the map and hidden field
     const rectangle = L.rectangle(bounds, { color: "#ff7800", weight: 1 })
     this.drawnItems.addLayer(rectangle)
     this.map.fitBounds(bounds)
     this.updateHiddenField(rectangle)
+    return true
   }
 
+  /**
+   * Parses a GeoJSON string to return Leaflet bounds.
+   * Expects a Polygon GeoJSON (only outer ring is used).
+   */
   parseGeoJsonBoundingBox(geojsonString) {
     try {
-      const geojson = JSON.parse(decodeURIComponent(geojsonString))
+      const decoded = decodeURIComponent(geojsonString)
+      const geojson = JSON.parse(decoded)
       if (geojson.type === "Polygon" && Array.isArray(geojson.coordinates)) {
-        const coords = geojson.coordinates[0] // outer ring
+        const coords = geojson.coordinates[0] // Use the outer ring
+        // Convert [lng, lat] to Leaflet's [lat, lng]
         const latLngs = coords.map(([lng, lat]) => [lat, lng])
         return L.latLngBounds(latLngs)
       }
     } catch (err) {
-      console.error("Invalid GeoJSON bounding box format", err)
+      console.error("Invalid GeoJSON bounding box format:", err)
     }
     return null
+  }
+
+  // -----------------------
+  // Hidden Field Helpers
+  // -----------------------
+  updateHiddenField(layer) {
+    try {
+      const geojson = layer.toGeoJSON().geometry
+      this.boundingBoxTarget.value = JSON.stringify(geojson)
+    } catch (err) {
+      console.error("Failed to update bounding box field:", err)
+    }
+  }
+
+  clearHiddenField() {
+    this.boundingBoxTarget.value = ""
   }
 }
