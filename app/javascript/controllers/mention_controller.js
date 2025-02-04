@@ -4,7 +4,7 @@ import debounce from "lodash.debounce"
 export default class extends Controller {
   static targets = ["textarea", "dropdown", "loading"]
   static values = {
-    url: String // e.g., /users/mention_autocomplete
+    url: String
   }
 
   connect() {
@@ -13,35 +13,36 @@ export default class extends Controller {
     this.currentSelectionIndex = -1
     this.debouncedSearch = debounce(this.searchUsers.bind(this), 300)
     this.abortController = null
+
+    // Cache the CSRF token so don't query the DOM on every request
+    const meta = document.querySelector("meta[name='csrf-token']")
+    this.csrfToken = meta && meta.getAttribute("content")
   }
 
   disconnect() {
-    if (this.debouncedSearch.cancel) {
-      this.debouncedSearch.cancel()
-    }
-    if (this.abortController) {
-      this.abortController.abort()
-    }
+    this.debouncedSearch.cancel?.()
+    this.abortController?.abort()
   }
 
-  onInput(event) {
+  onInput() {
     const textarea = this.textareaTarget
     const cursorPosition = textarea.selectionStart
     const textValue = textarea.value
-
     const mentionSubstring = this.getMentionSubstring(textValue, cursorPosition)
 
-    if (mentionSubstring !== null) {
-      this.isMentioning = mentionSubstring !== ""
-      if (this.isMentioning) {
-        this.mentionStartIndex = cursorPosition - mentionSubstring.length - 1
-        this.debouncedSearch(mentionSubstring)
-        this.showDropdown()
-      } else {
-        this.hideDropdown()
-      }
-    } else {
+    // If there’s no mention trigger, reset and hide dropdown
+    if (mentionSubstring === null) {
       this.isMentioning = false
+      return this.hideDropdown()
+    }
+
+    // If the user is actively typing a mention
+    this.isMentioning = mentionSubstring.length > 0
+    if (this.isMentioning) {
+      this.mentionStartIndex = cursorPosition - mentionSubstring.length - 1
+      this.debouncedSearch(mentionSubstring)
+      this.showDropdown()
+    } else {
       this.hideDropdown()
     }
   }
@@ -50,7 +51,7 @@ export default class extends Controller {
     if (!this.isMentioning) return
 
     const items = Array.from(this.dropdownTarget.querySelectorAll(".mention-dropdown-item"))
-    if (items.length === 0) return
+    if (!items.length) return
 
     switch (event.key) {
       case "ArrowDown":
@@ -65,12 +66,9 @@ export default class extends Controller {
         break
       case "Enter":
         event.preventDefault()
-        if (this.currentSelectionIndex >= 0 && this.currentSelectionIndex < items.length) {
-          const selectedUser = {
-            id: items[this.currentSelectionIndex].dataset.userId,
-            slug: items[this.currentSelectionIndex].dataset.slug
-          }
-          this.selectMention(selectedUser)
+        if (items[this.currentSelectionIndex]) {
+          const { userId, slug } = items[this.currentSelectionIndex].dataset
+          this.selectMention({ id: userId, slug })
         }
         break
       case "Escape":
@@ -82,55 +80,55 @@ export default class extends Controller {
     }
   }
 
+  // Returns the substring after the last "@" if it matches a word; otherwise null.
   getMentionSubstring(text, cursorPosition) {
     const beforeCursor = text.slice(0, cursorPosition)
-    const mentionMatch = beforeCursor.match(/@([\w]*)$/)
-    if (mentionMatch) {
-      return mentionMatch[1]
-    }
-    return null
+    const match = beforeCursor.match(/@(\w*)$/)
+    return match ? match[1] : null
   }
 
-  searchUsers(query) {
-    this.loadingTarget.classList.remove("d-none")
+  async searchUsers(query) {
+    this.toggleLoading(true)
 
-    if (this.abortController) {
-      this.abortController.abort()
-    }
+    // Abort any pending request before starting a new one.
+    this.abortController?.abort()
     this.abortController = new AbortController()
+
     const url = `${this.urlValue}?q=${encodeURIComponent(query)}`
-
-    const csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
-
-    fetch(url, {
-      headers: {
-        "Accept": "application/json",
-        "X-CSRF-Token": csrfToken
-      },
-      signal: this.abortController.signal
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        this.loadingTarget.classList.add("d-none")
-        this.renderDropdown(data)
+    try {
+      const response = await fetch(url, {
+        headers: {
+          "Accept": "application/json",
+          "X-CSRF-Token": this.csrfToken
+        },
+        signal: this.abortController.signal
       })
-      .catch((error) => {
-        this.loadingTarget.classList.add("d-none")
-        if (error.name !== 'AbortError') {
-          console.error("Error fetching mention data:", error)
-        }
-      })
+      const data = await response.json()
+      this.renderDropdown(data)
+    } catch (error) {
+      if (error.name !== "AbortError") {
+        console.error("Error fetching mention data:", error)
+      }
+      this.hideDropdown()
+    } finally {
+      this.toggleLoading(false)
+    }
+  }
+
+  toggleLoading(isLoading) {
+    this.loadingTarget.classList.toggle("d-none", !isLoading)
   }
 
   renderDropdown(users) {
     this.clearDropdown()
-    users.forEach((user, index) => this.addDropdownItem(user, index))
-    if (users.length > 0) {
-      this.showDropdown()
-      this.currentSelectionIndex = -1
-    } else {
-      this.hideDropdown()
+    if (users.length === 0) {
+      return this.hideDropdown()
     }
+
+    users.forEach((user, index) => this.addDropdownItem(user, index))
+    this.showDropdown()
+    // Reset selection index when new data arrives.
+    this.currentSelectionIndex = -1
   }
 
   clearDropdown() {
@@ -139,13 +137,14 @@ export default class extends Controller {
 
   addDropdownItem(user, index) {
     const item = document.createElement("div")
-    item.classList.add("mention-dropdown-item")
+    item.className = "mention-dropdown-item"
     item.setAttribute("role", "option")
-    item.setAttribute("id", `mention-option-${index}`)
+    item.id = `mention-option-${index}`
     item.textContent = user.slug
     item.dataset.userId = user.id
     item.dataset.slug = user.slug
 
+    // Use mousedown so that the selection happens before the textarea loses focus.
     item.addEventListener("mousedown", (e) => {
       e.preventDefault()
       this.selectMention(user)
@@ -156,14 +155,10 @@ export default class extends Controller {
 
   highlightSelection(items) {
     items.forEach((item, index) => {
-      if (index === this.currentSelectionIndex) {
-        item.classList.add("highlighted")
-        item.setAttribute("aria-selected", "true")
-        item.scrollIntoView({ block: "nearest" })
-      } else {
-        item.classList.remove("highlighted")
-        item.setAttribute("aria-selected", "false")
-      }
+      const isSelected = index === this.currentSelectionIndex
+      item.classList.toggle("highlighted", isSelected)
+      item.setAttribute("aria-selected", isSelected.toString())
+      if (isSelected) item.scrollIntoView({ block: "nearest" })
     })
   }
 
@@ -171,13 +166,20 @@ export default class extends Controller {
     const textarea = this.textareaTarget
     const textValue = textarea.value
     const cursorPosition = textarea.selectionStart
+    // Compute the substring that was typed (if any) after "@".
+    const currentMention = this.getMentionSubstring(textValue, cursorPosition) || ""
 
+    // Build the new text:
+    //  - Before the "@" that started the mention.
+    //  - Insert the complete mention.
+    //  - Append the text after the mention.
     const beforeMention = textValue.substring(0, this.mentionStartIndex)
-    const afterMention = textValue.substring(this.mentionStartIndex + 1 + (this.getMentionSubstring(textValue, cursorPosition) || "").length)
-    const newText = `${beforeMention}@${user.slug} ` + afterMention
+    const afterMention = textValue.substring(this.mentionStartIndex + 1 + currentMention.length)
+    const newText = `${beforeMention}@${user.slug} ${afterMention}`
 
     textarea.value = newText
 
+    // Set the cursor just after the inserted mention.
     const newCursorPosition = beforeMention.length + 1 + user.slug.length + 1
     textarea.setSelectionRange(newCursorPosition, newCursorPosition)
     textarea.focus()
