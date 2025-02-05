@@ -3,9 +3,6 @@ class PricingsController < ApplicationController
 
   def index
     plans = Billing::Plan.active
-    @active_plan_versions = plans.map { |plan| plan.plan_versions
-                                                   .active
-                                                   .order(version_number: :desc)
-                                                   .first }
+    @active_plan_versions = Billing::ActivePlanVersionsFetcher.new.call
   end
 end
